@@ -37,9 +37,155 @@ AI FORMAT WORKSPACE/
 
 ---
 
-# 1. Folder Structure Explanation
+# 1. Cara Menjalankan Aplikasi
 
-# backend/
+## Prasyarat
+
+Pastikan sudah terinstall:
+
+- Python 3.10+
+- pip
+- Node.js & npm
+- Git
+
+---
+
+## Langkah 1 — Clone Repository
+
+```bash
+git clone <url-repository-ini>
+cd <nama-folder-repository>
+```
+
+---
+
+## Langkah 2 — Menjalankan Backend
+
+### 2.1 Masuk ke folder API
+
+```bash
+cd api
+```
+
+### 2.2 Buat dan aktifkan virtual environment
+
+```bash
+python -m venv venv
+```
+
+**Windows:**
+
+```powershell
+venv\Scripts\activate
+```
+
+**Mac/Linux:**
+
+```bash
+source venv/bin/activate
+```
+
+Kalau berhasil, prompt akan berubah menjadi `(venv)`.
+
+### 2.3 Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 2.4 Set PYTHONPATH ke root project
+
+**Windows:**
+
+```powershell
+$env:PYTHONPATH = (Get-Item ..).FullName
+```
+
+**Mac/Linux:**
+
+```bash
+export PYTHONPATH=$(dirname $(pwd))
+```
+
+> Langkah ini wajib dilakukan agar Python bisa menemukan folder `backend/`.
+
+### 2.5 Jalankan server
+
+```bash
+python main.py
+```
+
+Server akan berjalan di `http://localhost:8000`.
+
+> **Catatan:** Saat pertama kali dijalankan, server akan otomatis mendownload model AI (~6.4GB). Pastikan koneksi internet stabil dan tunggu hingga selesai. Setelah terdownload, model tersimpan di cache dan tidak perlu download ulang.
+
+### Dokumentasi API
+
+Setelah server berjalan, buka browser dan akses:
+
+```
+http://localhost:8000/docs
+```
+
+### Catatan Penggunaan Ulang Backend
+
+Untuk menjalankan server kembali setelah instalasi pertama, cukup:
+
+```bash
+cd api
+
+# Aktifkan virtual environment
+venv\Scripts\activate        # Windows
+source venv/bin/activate     # Mac/Linux
+
+# Set PYTHONPATH
+$env:PYTHONPATH = (Get-Item ..).FullName   # Windows
+export PYTHONPATH=$(dirname $(pwd))        # Mac/Linux
+
+python main.py
+```
+
+---
+
+## Langkah 3 — Menjalankan Frontend
+
+### 3.1 Buka terminal baru, lalu masuk ke folder frontend
+
+```bash
+cd frontend
+```
+
+### 3.2 Install dependencies (pertama kali saja)
+
+```bash
+npm install
+```
+
+### 3.3 Jalankan development server
+
+```bash
+npm run dev
+```
+
+Frontend akan berjalan di `http://localhost:8080`.
+
+> **Catatan:** Pastikan backend sudah berjalan terlebih dahulu di `http://localhost:8000` sebelum membuka frontend.
+
+### Catatan Penggunaan Ulang Frontend
+
+Untuk menjalankan frontend kembali setelah instalasi pertama, cukup:
+
+```bash
+cd frontend
+npm run dev
+```
+
+---
+
+# 2. Folder Structure Explanation
+
+## backend/
+
 Main backend application.
 
 Responsible for:
@@ -53,22 +199,24 @@ Responsible for:
 - observability
 - model interaction
 
-## backend/api/
+### backend/api/
+
 FastAPI application layer.
 
-### Contains:
+Contains:
+
 - routes
 - middleware
 - request schemas
 - dependency injection
 - API entrypoint
 
-### Files:
-
 #### backend/api/main.py
+
 Main FastAPI entrypoint.
 
 Responsible for:
+
 - initializing API
 - registering routes
 - middleware setup
@@ -76,10 +224,12 @@ Responsible for:
 
 ---
 
-## backend/core/
+### backend/core/
+
 Core infrastructure layer.
 
-### Contains:
+Contains:
+
 - tracing
 - streaming
 - observability
@@ -87,38 +237,43 @@ Core infrastructure layer.
 - decorators
 - graph execution
 
-### Subfolders:
-
 #### core/tracing/
+
 Tracing execution across pipelines.
 
 #### core/logging/
+
 Central logging utilities.
 
 #### core/graph/
-Graph execution systems.
-Useful for:
+
+Graph execution systems. Useful for:
+
 - LangGraph
 - DAG execution
 - multi-agent workflow graphs
 
 #### core/state/
+
 Shared runtime state.
 
 #### core/streaming/
+
 Streaming token/output handling.
 
 #### core/decorators/
-Reusable decorators.
-Examples:
+
+Reusable decorators. Examples:
+
 - retry
 - timing
 - logging
 - caching
 
 #### core/observability/
-Monitoring utilities.
-Examples:
+
+Monitoring utilities. Examples:
+
 - metrics
 - telemetry
 - tracing
@@ -126,167 +281,189 @@ Examples:
 
 ---
 
-## backend/services/
+### backend/services/
+
 Business logic services.
 
-### Files:
-
 #### llm_service.py
+
 Handles:
+
 - model inference
 - Ollama requests
 - prompt execution
 - structured outputs
 
 #### embedding_service.py
+
 Embedding generation.
 
 #### retrieval_service.py
+
 Document retrieval orchestration.
 
 #### routing_service.py
+
 Intent routing and pipeline selection.
 
 #### memory_service.py
+
 Conversation memory management.
 
 #### evaluation_service.py
+
 Evaluation and scoring logic.
 
 ---
 
-## backend/pipelines/
+### backend/pipelines/
+
 Pipeline execution layer.
 
-### Subfolders:
-
 #### pipelines/main/
+
 Primary execution pipelines.
 
 #### pipelines/rag/
+
 RAG workflows.
 
 #### pipelines/agents/
+
 Agent orchestration.
 
 #### pipelines/evaluation/
+
 Evaluation pipelines.
 
 ---
 
-## backend/retrieval/
+### backend/retrieval/
+
 Retrieval systems.
 
-### Subfolders:
-
 #### retrieval/vector/
-Vector retrieval.
-Examples:
+
+Vector retrieval. Examples:
+
 - ChromaDB
 - FAISS
 - Qdrant
 
 #### retrieval/graph/
-Graph retrieval.
-Examples:
+
+Graph retrieval. Examples:
+
 - Neo4j
 - knowledge graphs
 
 #### retrieval/hybrid/
-Hybrid retrieval.
-Combines:
+
+Hybrid retrieval. Combines:
+
 - vector search
 - keyword search
 - graph retrieval
 
 ---
 
-## backend/models/
+### backend/models/
+
 Model abstractions.
 
-### Subfolders:
-
 #### models/llm/
+
 LLM wrappers and configs.
 
 #### models/embeddings/
+
 Embedding model wrappers.
 
 ---
 
-## backend/database/
+### backend/database/
+
 Database integrations.
 
-### Subfolders:
-
 #### database/neo4j/
+
 Neo4j graph database configuration.
 
 ---
 
-## backend/configs/
+### backend/configs/
+
 Configuration layer.
 
-### Subfolders:
-
 #### configs/models/
+
 Model YAML configurations.
 
 #### configs/prompts/
+
 Prompt templates.
 
 #### configs/pipelines/
+
 Pipeline definitions.
 
 #### configs/logging/
+
 Logging configuration.
 
 ---
 
-# frontend/
+## frontend/
+
 Frontend application.
 
 Responsible for:
+
 - user interface
 - dashboard
 - interaction layer
 - visualization
 
-## frontend/main_app/
+### frontend/main_app/
+
 Main frontend source code.
 
-### Subfolders:
-
 #### components/
+
 Reusable UI components.
 
 #### pages/
+
 Frontend pages/views.
 
 #### services/
+
 Frontend API communication.
 
 #### utils/
+
 Frontend utilities.
 
 #### assets/
-Static assets.
-Examples:
+
+Static assets. Examples:
+
 - images
 - icons
 - CSS
 
-### Files:
-
 #### app.py
+
 Frontend application entrypoint.
 
 ---
 
-# training/
+## training/
+
 Training and fine-tuning system.
 
 Responsible for:
+
 - dataset preparation
 - preprocessing
 - LoRA training
@@ -294,45 +471,50 @@ Responsible for:
 - exporting
 - GGUF conversion
 
-## training/configs/
+### training/configs/
+
 Training configuration files.
 
-### Subfolders:
-
 #### configs/models/
+
 Model configs.
 
 #### configs/lora/
+
 LoRA configs.
 
 #### configs/datasets/
+
 Dataset configs.
 
 ---
 
-## training/preprocessing/
+### training/preprocessing/
+
 Dataset preprocessing scripts.
 
-### Files:
-
 #### clean_dataset.py
+
 Dataset cleaning.
 
 #### chunk_documents.py
+
 Document chunking.
 
 #### generate_qa_pairs.py
+
 Generate synthetic QA data.
 
 #### build_dataset.py
+
 Final dataset formatting.
 
 ---
 
-## training/scripts/
-Training execution scripts.
+### training/scripts/
 
-Examples:
+Training execution scripts. Examples:
+
 - SFT
 - PPO
 - DPO
@@ -341,10 +523,10 @@ Examples:
 
 ---
 
-## training/utils/
-Training helper utilities.
+### training/utils/
 
-Examples:
+Training helper utilities. Examples:
+
 - model loading
 - GGUF conversion
 - Ollama export
@@ -352,67 +534,78 @@ Examples:
 
 ---
 
-## training/datasets/
+### training/datasets/
+
 Dataset storage.
 
-### Subfolders:
-
 #### raw/
+
 Raw unprocessed datasets.
 
 #### processed/
+
 Processed datasets.
 
 #### formatted/
+
 Instruction-formatted datasets.
 
 #### evaluation/
+
 Evaluation datasets.
 
 ---
 
-## training/outputs/
+### training/outputs/
+
 Training outputs.
 
-### Subfolders:
-
 #### adapters/
+
 LoRA adapters.
 
 #### merged/
+
 Merged full models.
 
 #### gguf/
+
 GGUF exported models.
 
 #### checkpoints/
+
 Training checkpoints.
 
 #### runs/
+
 Experiment runs.
 
 #### metrics/
+
 Training metrics.
 
 #### logs/
+
 Training logs.
 
 ---
 
-# deployment/
+## deployment/
+
 Deployment infrastructure.
 
 Responsible for:
+
 - Docker
 - Nginx
 - Ollama deployment
 - scripts
 - production setup
 
-## deployment/docker/
-Dockerfiles.
+### deployment/docker/
 
-### Files:
+Dockerfiles:
+
 - backend.Dockerfile
 - frontend.Dockerfile
 - nginx.Dockerfile
@@ -420,105 +613,120 @@ Dockerfiles.
 
 ---
 
-## deployment/nginx/
+### deployment/nginx/
+
 Nginx reverse proxy configuration.
 
-### Files:
-
 #### nginx.conf
+
 Main Nginx configuration.
 
 ---
 
-## deployment/ngrok/
+### deployment/ngrok/
+
 Ngrok exposure configuration.
 
-### Files:
-
 #### ngrok.yaml
+
 Ngrok configuration.
 
 #### start_ngrok.sh
+
 Launch ngrok tunnel.
 
 ---
 
-## deployment/scripts/
+### deployment/scripts/
+
 Deployment automation scripts.
 
-### Files:
-
 #### deploy.sh
+
 Deploy services.
 
 #### rebuild.sh
+
 Rebuild containers.
 
 #### start.sh
+
 Start services.
 
 #### stop.sh
+
 Stop services.
 
 ---
 
-# tests/
+## tests/
+
 Testing infrastructure.
 
-## Subfolders:
+#### tests/api/
 
-### tests/api/
 API tests.
 
-### tests/pipelines/
+#### tests/pipelines/
+
 Pipeline tests.
 
-### tests/retrieval/
+#### tests/retrieval/
+
 Retrieval tests.
 
-### tests/services/
+#### tests/services/
+
 Service tests.
 
-### tests/evaluation/
+#### tests/evaluation/
+
 Evaluation tests.
 
-### tests/integration/
+#### tests/integration/
+
 End-to-end integration tests.
 
 ---
 
-# docs/
+## docs/
+
 Project documentation.
 
-### Files:
-
 #### architecture.md
+
 System architecture.
 
 #### pipeline.md
+
 Pipeline explanation.
 
 #### deployment.md
+
 Deployment guide.
 
 #### training.md
+
 Training guide.
 
 #### api.md
+
 API documentation.
 
 #### evaluation.md
+
 Evaluation methodology.
 
 #### observability.md
+
 Monitoring and tracing.
 
 ---
 
-# notebooks/
-Jupyter notebooks.
+## notebooks/
 
-Used for:
+Jupyter notebooks. Used for:
+
 - experimentation
 - analysis
 - debugging
@@ -526,66 +734,78 @@ Used for:
 
 ---
 
-# outputs/
+## outputs/
+
 Generated outputs.
 
-### Subfolders:
-
 #### reports/
+
 Generated reports.
 
 #### analytics/
+
 Analytics outputs.
 
 #### exports/
+
 Exported files.
 
 #### generated_answer/
+
 Generated responses.
 
 #### benchmark_results/
+
 Benchmark results.
 
 ---
 
-# logs/
+## logs/
+
 Runtime logs.
 
-### Subfolders:
-
 #### api/
+
 API logs.
 
 #### retrieval/
+
 Retrieval logs.
 
 #### llm/
+
 LLM execution logs.
 
 #### pipelines/
+
 Pipeline logs.
 
 #### evaluations/
+
 Evaluation logs.
 
 #### sessions/
+
 Session logs.
 
 #### traces/
+
 Tracing logs.
 
 #### errors/
+
 Error logs.
 
 #### archive/
+
 Archived logs.
 
 ---
 
-# models/
-Local model storage.
+## models/
 
-Examples:
+Local model storage. Examples:
+
 - base models
 - quantized models
 - exported models
@@ -593,54 +813,48 @@ Examples:
 
 ---
 
-# Root Files
+## Root Files
 
-## docker-compose.yaml
-Main multi-container orchestration.
+### docker-compose.yaml
 
-Responsible for:
+Main multi-container orchestration. Responsible for:
+
 - backend
 - frontend
 - ollama
 - databases
 - nginx
 
----
+### .env
 
-## .env
-Environment variables.
+Environment variables. Examples:
 
-Examples:
 - API keys
 - paths
 - model names
 - database credentials
 
----
+### .gitignore
 
-## .gitignore
-Defines files ignored by git.
+Defines files ignored by git. Examples:
 
-Examples:
 - models
 - checkpoints
 - logs
 - virtual environments
 - datasets
 
----
+### LICENSE
 
-## LICENSE
 Project license.
 
----
+### README.md
 
-## README.md
 Project documentation.
 
 ---
 
-# 2. Best Practices for Git Version Control
+# 3. Best Practices for Git Version Control
 
 ## Recommended Branch Strategy
 
@@ -659,287 +873,150 @@ main
 ## Recommended Workflow
 
 ### main
+
 Stable production-ready code.
 
 ### dev
+
 Main development branch.
 
 ### feature/*
+
 New features.
 
 ### fix/*
+
 Bug fixes.
 
 ### experiment/*
+
 Research or experimental features.
 
 ---
 
-# Commit Best Practices
+## Commit Best Practices
 
-## Good Commit Examples
+### Good Commit Examples
 
 ```bash
 git commit -m "Add hybrid retrieval pipeline"
-```
-
-```bash
 git commit -m "Fix ChromaDB metadata parsing"
-```
-
-```bash
 git commit -m "Refactor agent orchestration service"
 ```
 
----
-
-## Bad Commit Examples
+### Bad Commit Examples
 
 ```bash
 git commit -m "update"
-```
-
-```bash
 git commit -m "fix"
-```
-
-```bash
 git commit -m "asdf"
 ```
 
 ---
 
-# 3. Useful Git Commands
+# 4. Useful Git Commands
 
-# Repository Initialization
-
-## Initialize git
+## Repository Initialization
 
 ```bash
 git init
-```
-
-## Clone repository
-
-```bash
 git clone <repository_url>
 ```
 
----
-
-# Branching
-
-## Create new branch
+## Branching
 
 ```bash
-git checkout -b feature/my-feature
+git checkout -b feature/my-feature   # Create new branch
+git checkout dev                     # Switch branch
+git branch                           # List branches
 ```
 
-## Switch branch
-
-```bash
-git checkout dev
-```
-
-## List branches
-
-```bash
-git branch
-```
-
----
-
-# Staging and Commit
-
-## Check status
+## Staging and Commit
 
 ```bash
 git status
-```
-
-## Add all files
-
-```bash
 git add .
-```
-
-## Add specific file
-
-```bash
 git add backend/services/llm_service.py
-```
-
-## Commit changes
-
-```bash
 git commit -m "Add intent routing service"
 ```
 
----
-
-# Push and Pull
-
-## Push branch
+## Push and Pull
 
 ```bash
 git push origin feature/my-feature
-```
-
-## Pull latest changes
-
-```bash
 git pull origin dev
 ```
 
----
-
-# Merge
-
-## Merge branch into current branch
+## Merge
 
 ```bash
 git merge feature/my-feature
 ```
 
----
-
-# Logs and History
-
-## View commit history
+## Logs and History
 
 ```bash
 git log
-```
-
-## Compact commit history
-
-```bash
 git log --oneline
 ```
 
----
-
-# Undo Operations
-
-## Unstage file
+## Undo Operations
 
 ```bash
 git restore --staged <file>
-```
-
-## Restore file changes
-
-```bash
 git restore <file>
-```
-
-## Reset commit softly
-
-```bash
 git reset --soft HEAD~1
 ```
 
----
-
-# Stashing
-
-## Save temporary work
+## Stashing
 
 ```bash
 git stash
-```
-
-## Restore stash
-
-```bash
 git stash pop
 ```
 
----
-
-# Remote Management
-
-## Add remote
+## Remote Management
 
 ```bash
 git remote add origin <repository_url>
-```
-
-## Check remotes
-
-```bash
 git remote -v
 ```
 
 ---
 
-# 4. Version Control Rules
+# 5. Version Control Rules
 
-# Rule 1
-Never commit:
+**Rule 1 — Never commit:**
 
 - datasets
 - model weights
 - checkpoints
 - GGUF models
-- secrets
-- API keys
+- secrets / API keys
 - .env files
 - logs
 
----
+**Rule 2** — Always use branches. Do NOT develop directly on `main` or `production`.
 
-# Rule 2
-Always use branches.
+**Rule 3** — Keep commits focused. One commit = one logical change.
 
-Do NOT develop directly on:
+**Rule 4** — Write meaningful commit messages.
 
-- main
-- production
-
----
-
-# Rule 3
-Keep commits focused.
-
-One commit = one logical change.
-
----
-
-# Rule 4
-Write meaningful commit messages.
-
----
-
-# Rule 5
-Pull latest changes before pushing.
+**Rule 5** — Pull latest changes before pushing.
 
 ```bash
 git pull origin dev
 ```
 
----
+**Rule 6** — Use pull requests for major changes.
 
-# Rule 6
-Use pull requests for major changes.
-
----
-
-# Rule 7
-Tag stable releases.
-
-Example:
+**Rule 7** — Tag stable releases.
 
 ```bash
 git tag v1.0.0
 ```
 
----
-
-# Rule 8
-Use .gitignore properly.
-
-Recommended ignores:
+**Rule 8** — Use `.gitignore` properly.
 
 ```gitignore
 # Python
@@ -964,42 +1041,17 @@ training/datasets/raw/
 .ipynb_checkpoints/
 ```
 
----
+**Rule 9** — Separate experiments from production. Use `experiment/*` for research, temporary ideas, and unstable pipelines.
 
-# Rule 9
-Separate experiments from production.
+**Rule 10** — Document architectural changes. Whenever adding pipelines, changing orchestration, modifying retrieval, or introducing agents — update:
 
-Use:
-
-```text
-experiment/*
-```
-
-for:
-- research
-- temporary ideas
-- unstable pipelines
+- `docs/architecture.md`
+- `docs/pipeline.md`
+- `README.md`
 
 ---
 
-# Rule 10
-Document architectural changes.
-
-Whenever:
-- adding pipelines
-- changing orchestration
-- modifying retrieval
-- introducing agents
-
-update:
-
-- docs/architecture.md
-- docs/pipeline.md
-- README.md
-
----
-
-# Recommended Development Flow
+## Recommended Development Flow
 
 ```text
 1. Create feature branch
@@ -1014,13 +1066,11 @@ update:
 
 ---
 
-# Recommended AI Engineering Practices
+# 6. Recommended AI Engineering Practices
 
 ## Separate Responsibilities
 
-Avoid putting everything inside one file.
-
-Good separation:
+Avoid putting everything inside one file. Good separation:
 
 - services
 - pipelines
@@ -1029,8 +1079,6 @@ Good separation:
 - models
 - configs
 - deployment
-
----
 
 ## Keep YAML Configurable
 
@@ -1042,8 +1090,6 @@ Avoid hardcoding:
 - generation settings
 - runtime configs
 
----
-
 ## Track Experiments
 
 Always save:
@@ -1053,8 +1099,6 @@ Always save:
 - datasets
 - configs
 - model versions
-
----
 
 ## Use Structured Outputs
 
@@ -1067,8 +1111,6 @@ Prefer:
 ```
 
 instead of raw text.
-
----
 
 ## Maintain Observability
 
@@ -1110,4 +1152,3 @@ so the system remains:
 - maintainable
 - scalable
 - production-ready
-
