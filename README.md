@@ -1,35 +1,55 @@
-# AI FORMAT WORKSPACE
+# AI Format Workspace
 
-A modular AI project workspace template designed for:
+Template workspace modular untuk proyek AI — dirancang agar scalable dari eksperimen lokal hingga production.
 
-- LLM systems
-- RAG pipelines
-- Multi-agent architectures
-- Fine-tuning workflows
-- Ollama deployment
-- Evaluation pipelines
-- Production deployment
-- Research experimentation
+**Cocok untuk:** LLM systems · RAG pipelines · Multi-agent architectures · Fine-tuning · Ollama deployment · Evaluation · Research
 
 ---
 
-# Project Structure
+## Daftar Isi
 
-```text
+- [Prasyarat](#prasyarat)
+- [Struktur Proyek](#struktur-proyek)
+- [Cara Menjalankan](#cara-menjalankan)
+  - [1. Clone Repository](#1-clone-repository)
+  - [2. Menjalankan Backend](#2-menjalankan-backend)
+  - [3. Menjalankan Frontend](#3-menjalankan-frontend)
+- [Penjelasan Folder](#penjelasan-folder)
+- [Catatan Arsitektur](#catatan-arsitektur)
+
+---
+
+## Prasyarat
+
+Pastikan tools berikut sudah terinstall sebelum memulai:
+
+| Tool | Versi Minimum |
+|------|---------------|
+| Python | 3.10+ |
+| pip | terbaru |
+| Node.js & npm | terbaru |
+| Git | terbaru |
+
+---
+
+## Struktur Proyek
+
+```
 AI FORMAT WORKSPACE/
 │
-├── backend/
-├── frontend/
-├── training/
-├── deployment/
-├── docs/
-├── tests/
-├── notebooks/
-├── outputs/
-├── logs/
-├── models/
-├── docker-compose.yaml
-├── .env
+├── backend/                # API, services, pipelines, retrieval
+├── frontend/               # UI dan dashboard
+├── training/               # Fine-tuning dan dataset pipeline
+├── deployment/             # Docker, Nginx, Ngrok, scripts
+├── docs/                   # Dokumentasi teknis
+├── tests/                  # Unit, integration, dan evaluation tests
+├── notebooks/              # Jupyter notebooks untuk eksperimen
+├── outputs/                # Hasil generate: laporan, analytics, benchmark
+├── logs/                   # Runtime logs per komponen
+├── models/                 # Penyimpanan model lokal
+│
+├── docker-compose.yaml     # Orkestrasi multi-container
+├── .env                    # Environment variables
 ├── .gitignore
 ├── LICENSE
 └── README.md
@@ -37,20 +57,9 @@ AI FORMAT WORKSPACE/
 
 ---
 
-# 1. Cara Menjalankan Aplikasi
+## Cara Menjalankan
 
-## Prasyarat
-
-Pastikan sudah terinstall:
-
-- Python 3.10+
-- pip
-- Node.js & npm
-- Git
-
----
-
-## Langkah 1 — Clone Repository
+### 1. Clone Repository
 
 ```bash
 git clone <url-repository-ini>
@@ -59,121 +68,113 @@ cd <nama-folder-repository>
 
 ---
 
-## Langkah 2 — Menjalankan Backend
+### 2. Menjalankan Backend
 
-### 2.1 Masuk ke folder API
+#### Langkah 2.1 — Masuk ke folder API
 
 ```bash
 cd api
 ```
 
-### 2.2 Buat dan aktifkan virtual environment
+#### Langkah 2.2 — Buat virtual environment
 
 ```bash
 python -m venv venv
 ```
 
-**Windows:**
-
-```powershell
-venv\Scripts\activate
-```
-
-**Mac/Linux:**
+Aktifkan virtual environment:
 
 ```bash
+# Windows
+venv\Scripts\activate
+
+# Mac / Linux
 source venv/bin/activate
 ```
 
-Kalau berhasil, prompt akan berubah menjadi `(venv)`.
+Jika berhasil, prompt terminal akan berubah menjadi `(venv)`.
 
-### 2.3 Install dependencies
+#### Langkah 2.3 — Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2.4 Set PYTHONPATH ke root project
+#### Langkah 2.4 — Set PYTHONPATH
 
-**Windows:**
-
-```powershell
-$env:PYTHONPATH = (Get-Item ..).FullName
-```
-
-**Mac/Linux:**
+> **Wajib dilakukan** agar Python dapat menemukan folder `backend/`.
 
 ```bash
+# Windows
+$env:PYTHONPATH = (Get-Item ..).FullName
+
+# Mac / Linux
 export PYTHONPATH=$(dirname $(pwd))
 ```
 
-> Langkah ini wajib dilakukan agar Python bisa menemukan folder `backend/`.
-
-### 2.5 Jalankan server
+#### Langkah 2.5 — Jalankan server
 
 ```bash
 python main.py
 ```
 
-Server akan berjalan di `http://localhost:8000`.
+Server berjalan di: **http://localhost:8000**
 
-> **Catatan:** Saat pertama kali dijalankan, server akan otomatis mendownload model AI (~6.4GB). Pastikan koneksi internet stabil dan tunggu hingga selesai. Setelah terdownload, model tersimpan di cache dan tidak perlu download ulang.
+> **⚠️ Catatan — Download model pertama kali:**
+> Server akan otomatis mengunduh model AI (~6.4 GB) saat pertama kali dijalankan.
+> Pastikan koneksi internet stabil. Setelah terunduh, model tersimpan di cache dan tidak perlu diunduh ulang.
 
-### Dokumentasi API
+#### Dokumentasi API (Swagger UI)
 
-Setelah server berjalan, buka browser dan akses:
+Setelah server berjalan, buka:
 
 ```
 http://localhost:8000/docs
 ```
 
-### Catatan Penggunaan Ulang Backend
-
-Untuk menjalankan server kembali setelah instalasi pertama, cukup:
+#### Menjalankan ulang backend (setelah instalasi pertama)
 
 ```bash
 cd api
 
 # Aktifkan virtual environment
-venv\Scripts\activate        # Windows
-source venv/bin/activate     # Mac/Linux
+venv\Scripts\activate          # Windows
+source venv/bin/activate       # Mac / Linux
 
 # Set PYTHONPATH
 $env:PYTHONPATH = (Get-Item ..).FullName   # Windows
-export PYTHONPATH=$(dirname $(pwd))        # Mac/Linux
+export PYTHONPATH=$(dirname $(pwd))        # Mac / Linux
 
 python main.py
 ```
 
 ---
 
-## Langkah 3 — Menjalankan Frontend
+### 3. Menjalankan Frontend
 
-### 3.1 Buka terminal baru, lalu masuk ke folder frontend
+> **Buka terminal baru** — pastikan backend sudah berjalan di `http://localhost:8000` sebelum memulai frontend.
+
+#### Langkah 3.1 — Masuk ke folder frontend
 
 ```bash
 cd frontend
 ```
 
-### 3.2 Install dependencies (pertama kali saja)
+#### Langkah 3.2 — Install dependencies (hanya pertama kali)
 
 ```bash
 npm install
 ```
 
-### 3.3 Jalankan development server
+#### Langkah 3.3 — Jalankan development server
 
 ```bash
 npm run dev
 ```
 
-Frontend akan berjalan di `http://localhost:8080`.
+Frontend berjalan di: **http://localhost:8080**
 
-> **Catatan:** Pastikan backend sudah berjalan terlebih dahulu di `http://localhost:8000` sebelum membuka frontend.
-
-### Catatan Penggunaan Ulang Frontend
-
-Untuk menjalankan frontend kembali setelah instalasi pertama, cukup:
+#### Menjalankan ulang frontend (setelah instalasi pertama)
 
 ```bash
 cd frontend
@@ -182,973 +183,191 @@ npm run dev
 
 ---
 
-# 2. Folder Structure Explanation
-
-## backend/
-
-Main backend application.
-
-Responsible for:
-
-- API serving
-- orchestration
-- pipelines
-- retrieval
-- agent execution
-- business logic
-- observability
-- model interaction
-
-### backend/api/
-
-FastAPI application layer.
-
-Contains:
-
-- routes
-- middleware
-- request schemas
-- dependency injection
-- API entrypoint
-
-#### backend/api/main.py
-
-Main FastAPI entrypoint.
-
-Responsible for:
-
-- initializing API
-- registering routes
-- middleware setup
-- app startup
-
----
-
-### backend/core/
-
-Core infrastructure layer.
-
-Contains:
-
-- tracing
-- streaming
-- observability
-- state management
-- decorators
-- graph execution
-
-#### core/tracing/
-
-Tracing execution across pipelines.
-
-#### core/logging/
-
-Central logging utilities.
-
-#### core/graph/
-
-Graph execution systems. Useful for:
-
-- LangGraph
-- DAG execution
-- multi-agent workflow graphs
-
-#### core/state/
-
-Shared runtime state.
-
-#### core/streaming/
-
-Streaming token/output handling.
-
-#### core/decorators/
-
-Reusable decorators. Examples:
-
-- retry
-- timing
-- logging
-- caching
-
-#### core/observability/
-
-Monitoring utilities. Examples:
-
-- metrics
-- telemetry
-- tracing
-- performance tracking
-
----
-
-### backend/services/
-
-Business logic services.
-
-#### llm_service.py
-
-Handles:
-
-- model inference
-- Ollama requests
-- prompt execution
-- structured outputs
-
-#### embedding_service.py
-
-Embedding generation.
-
-#### retrieval_service.py
-
-Document retrieval orchestration.
-
-#### routing_service.py
-
-Intent routing and pipeline selection.
-
-#### memory_service.py
-
-Conversation memory management.
-
-#### evaluation_service.py
-
-Evaluation and scoring logic.
-
----
-
-### backend/pipelines/
-
-Pipeline execution layer.
-
-#### pipelines/main/
-
-Primary execution pipelines.
-
-#### pipelines/rag/
-
-RAG workflows.
-
-#### pipelines/agents/
-
-Agent orchestration.
-
-#### pipelines/evaluation/
-
-Evaluation pipelines.
-
----
-
-### backend/retrieval/
-
-Retrieval systems.
-
-#### retrieval/vector/
-
-Vector retrieval. Examples:
-
-- ChromaDB
-- FAISS
-- Qdrant
-
-#### retrieval/graph/
-
-Graph retrieval. Examples:
-
-- Neo4j
-- knowledge graphs
-
-#### retrieval/hybrid/
-
-Hybrid retrieval. Combines:
-
-- vector search
-- keyword search
-- graph retrieval
-
----
-
-### backend/models/
-
-Model abstractions.
-
-#### models/llm/
-
-LLM wrappers and configs.
-
-#### models/embeddings/
-
-Embedding model wrappers.
-
----
-
-### backend/database/
-
-Database integrations.
-
-#### database/neo4j/
-
-Neo4j graph database configuration.
-
----
-
-### backend/configs/
-
-Configuration layer.
-
-#### configs/models/
-
-Model YAML configurations.
-
-#### configs/prompts/
-
-Prompt templates.
-
-#### configs/pipelines/
-
-Pipeline definitions.
-
-#### configs/logging/
-
-Logging configuration.
-
----
-
-## frontend/
-
-Frontend application.
-
-Responsible for:
-
-- user interface
-- dashboard
-- interaction layer
-- visualization
-
-### frontend/main_app/
-
-Main frontend source code.
-
-#### components/
-
-Reusable UI components.
-
-#### pages/
-
-Frontend pages/views.
-
-#### services/
-
-Frontend API communication.
-
-#### utils/
-
-Frontend utilities.
-
-#### assets/
-
-Static assets. Examples:
-
-- images
-- icons
-- CSS
-
-#### app.py
-
-Frontend application entrypoint.
-
----
-
-## training/
-
-Training and fine-tuning system.
-
-Responsible for:
-
-- dataset preparation
-- preprocessing
-- LoRA training
-- evaluation
-- exporting
-- GGUF conversion
-
-### training/configs/
-
-Training configuration files.
-
-#### configs/models/
-
-Model configs.
-
-#### configs/lora/
-
-LoRA configs.
-
-#### configs/datasets/
-
-Dataset configs.
-
----
-
-### training/preprocessing/
-
-Dataset preprocessing scripts.
-
-#### clean_dataset.py
-
-Dataset cleaning.
-
-#### chunk_documents.py
-
-Document chunking.
-
-#### generate_qa_pairs.py
-
-Generate synthetic QA data.
-
-#### build_dataset.py
-
-Final dataset formatting.
-
----
-
-### training/scripts/
-
-Training execution scripts. Examples:
-
-- SFT
-- PPO
-- DPO
-- evaluation
-- exporting
-
----
-
-### training/utils/
-
-Training helper utilities. Examples:
-
-- model loading
-- GGUF conversion
-- Ollama export
-- dataset parsing
-
----
-
-### training/datasets/
-
-Dataset storage.
-
-#### raw/
-
-Raw unprocessed datasets.
-
-#### processed/
-
-Processed datasets.
-
-#### formatted/
-
-Instruction-formatted datasets.
-
-#### evaluation/
-
-Evaluation datasets.
-
----
-
-### training/outputs/
-
-Training outputs.
-
-#### adapters/
-
-LoRA adapters.
-
-#### merged/
-
-Merged full models.
-
-#### gguf/
-
-GGUF exported models.
-
-#### checkpoints/
-
-Training checkpoints.
-
-#### runs/
-
-Experiment runs.
-
-#### metrics/
-
-Training metrics.
-
-#### logs/
-
-Training logs.
-
----
-
-## deployment/
-
-Deployment infrastructure.
-
-Responsible for:
-
-- Docker
-- Nginx
-- Ollama deployment
-- scripts
-- production setup
-
-### deployment/docker/
-
-Dockerfiles:
-
-- backend.Dockerfile
-- frontend.Dockerfile
-- nginx.Dockerfile
-- ollama.Dockerfile
-
----
-
-### deployment/nginx/
-
-Nginx reverse proxy configuration.
-
-#### nginx.conf
-
-Main Nginx configuration.
-
----
-
-### deployment/ngrok/
-
-Ngrok exposure configuration.
-
-#### ngrok.yaml
-
-Ngrok configuration.
-
-#### start_ngrok.sh
-
-Launch ngrok tunnel.
-
----
-
-### deployment/scripts/
-
-Deployment automation scripts.
-
-#### deploy.sh
-
-Deploy services.
-
-#### rebuild.sh
-
-Rebuild containers.
-
-#### start.sh
-
-Start services.
-
-#### stop.sh
-
-Stop services.
-
----
-
-## tests/
-
-Testing infrastructure.
-
-#### tests/api/
-
-API tests.
-
-#### tests/pipelines/
-
-Pipeline tests.
-
-#### tests/retrieval/
-
-Retrieval tests.
-
-#### tests/services/
-
-Service tests.
-
-#### tests/evaluation/
-
-Evaluation tests.
-
-#### tests/integration/
-
-End-to-end integration tests.
-
----
-
-## docs/
-
-Project documentation.
-
-#### architecture.md
-
-System architecture.
-
-#### pipeline.md
-
-Pipeline explanation.
-
-#### deployment.md
-
-Deployment guide.
-
-#### training.md
-
-Training guide.
-
-#### api.md
-
-API documentation.
-
-#### evaluation.md
-
-Evaluation methodology.
-
-#### observability.md
-
-Monitoring and tracing.
-
----
-
-## notebooks/
-
-Jupyter notebooks. Used for:
-
-- experimentation
-- analysis
-- debugging
-- visualization
-
----
-
-## outputs/
-
-Generated outputs.
-
-#### reports/
-
-Generated reports.
-
-#### analytics/
-
-Analytics outputs.
-
-#### exports/
-
-Exported files.
-
-#### generated_answer/
-
-Generated responses.
-
-#### benchmark_results/
-
-Benchmark results.
-
----
-
-## logs/
-
-Runtime logs.
-
-#### api/
-
-API logs.
-
-#### retrieval/
-
-Retrieval logs.
-
-#### llm/
-
-LLM execution logs.
-
-#### pipelines/
-
-Pipeline logs.
-
-#### evaluations/
-
-Evaluation logs.
-
-#### sessions/
-
-Session logs.
-
-#### traces/
-
-Tracing logs.
-
-#### errors/
-
-Error logs.
-
-#### archive/
-
-Archived logs.
-
----
-
-## models/
-
-Local model storage. Examples:
-
-- base models
-- quantized models
-- exported models
-- GGUF models
-
----
-
-## Root Files
-
-### docker-compose.yaml
-
-Main multi-container orchestration. Responsible for:
-
-- backend
-- frontend
-- ollama
-- databases
-- nginx
-
-### .env
-
-Environment variables. Examples:
-
-- API keys
-- paths
-- model names
-- database credentials
-
-### .gitignore
-
-Defines files ignored by git. Examples:
-
-- models
-- checkpoints
-- logs
-- virtual environments
-- datasets
-
-### LICENSE
-
-Project license.
-
-### README.md
-
-Project documentation.
-
----
-
-# 3. Best Practices for Git Version Control
-
-## Recommended Branch Strategy
-
-```text
-main
- ├── dev
- │    ├── feature/rag-pipeline
- │    ├── feature/multi-agent
- │    ├── feature/frontend
- │    ├── fix/retrieval-bug
- │    └── experiment/new-router
+## Penjelasan Folder
+
+### `backend/`
+
+Layer utama aplikasi server. Menangani seluruh logika backend, mulai dari API hingga eksekusi pipeline.
+
+```
+backend/
+├── api/            # FastAPI — routes, middleware, schemas, entrypoint (main.py)
+├── core/           # Infrastruktur inti: tracing, logging, graph, state, streaming, decorators, observability
+├── services/       # Business logic services
+│   ├── llm_service.py          # Model inference & Ollama requests
+│   ├── embedding_service.py    # Embedding generation
+│   ├── retrieval_service.py    # Document retrieval orchestration
+│   ├── routing_service.py      # Intent routing & pipeline selection
+│   ├── memory_service.py       # Conversation memory
+│   └── evaluation_service.py   # Evaluation & scoring
+├── pipelines/      # Eksekusi pipeline: main, RAG, agents, evaluation
+├── retrieval/      # Sistem retrieval: vector (ChromaDB/FAISS/Qdrant), graph (Neo4j), hybrid
+├── models/         # Abstraksi model: LLM wrappers & embedding wrappers
+├── database/       # Integrasi database (Neo4j)
+└── configs/        # Konfigurasi YAML: models, prompts, pipelines, logging
 ```
 
 ---
 
-## Recommended Workflow
+### `frontend/`
 
-### main
+Aplikasi antarmuka pengguna.
 
-Stable production-ready code.
-
-### dev
-
-Main development branch.
-
-### feature/*
-
-New features.
-
-### fix/*
-
-Bug fixes.
-
-### experiment/*
-
-Research or experimental features.
-
----
-
-## Commit Best Practices
-
-### Good Commit Examples
-
-```bash
-git commit -m "Add hybrid retrieval pipeline"
-git commit -m "Fix ChromaDB metadata parsing"
-git commit -m "Refactor agent orchestration service"
 ```
-
-### Bad Commit Examples
-
-```bash
-git commit -m "update"
-git commit -m "fix"
-git commit -m "asdf"
+frontend/
+└── main_app/
+    ├── components/   # Reusable UI components
+    ├── pages/        # Halaman / views
+    ├── services/     # Komunikasi ke backend API
+    ├── utils/        # Fungsi utilitas
+    ├── assets/       # Gambar, ikon, CSS
+    └── app.py        # Entrypoint frontend
 ```
 
 ---
 
-# 4. Useful Git Commands
+### `training/`
 
-## Repository Initialization
+Sistem fine-tuning dan manajemen dataset.
 
-```bash
-git init
-git clone <repository_url>
 ```
-
-## Branching
-
-```bash
-git checkout -b feature/my-feature   # Create new branch
-git checkout dev                     # Switch branch
-git branch                           # List branches
-```
-
-## Staging and Commit
-
-```bash
-git status
-git add .
-git add backend/services/llm_service.py
-git commit -m "Add intent routing service"
-```
-
-## Push and Pull
-
-```bash
-git push origin feature/my-feature
-git pull origin dev
-```
-
-## Merge
-
-```bash
-git merge feature/my-feature
-```
-
-## Logs and History
-
-```bash
-git log
-git log --oneline
-```
-
-## Undo Operations
-
-```bash
-git restore --staged <file>
-git restore <file>
-git reset --soft HEAD~1
-```
-
-## Stashing
-
-```bash
-git stash
-git stash pop
-```
-
-## Remote Management
-
-```bash
-git remote add origin <repository_url>
-git remote -v
+training/
+├── configs/          # Konfigurasi: model, LoRA, dataset
+├── preprocessing/    # Skrip preprocessing dataset
+│   ├── clean_dataset.py        # Cleaning data
+│   ├── chunk_documents.py      # Chunking dokumen
+│   ├── generate_qa_pairs.py    # Generate data QA sintetis
+│   └── build_dataset.py        # Format dataset final
+├── scripts/          # Training scripts: SFT, PPO, DPO, evaluation, exporting
+├── utils/            # Utilities: model loading, GGUF conversion, Ollama export
+├── datasets/
+│   ├── raw/          # Dataset mentah
+│   ├── processed/    # Dataset yang sudah diproses
+│   ├── formatted/    # Dataset berformat instruksi
+│   └── evaluation/   # Dataset untuk evaluasi
+└── outputs/
+    ├── adapters/     # LoRA adapters
+    ├── merged/       # Model hasil merge
+    ├── gguf/         # Model format GGUF
+    ├── checkpoints/  # Training checkpoints
+    ├── runs/         # Experiment runs
+    ├── metrics/      # Metrik training
+    └── logs/         # Log training
 ```
 
 ---
 
-# 5. Version Control Rules
+### `deployment/`
 
-**Rule 1 — Never commit:**
+Infrastruktur deployment dan orkestrasi container.
 
-- datasets
-- model weights
-- checkpoints
-- GGUF models
-- secrets / API keys
-- .env files
-- logs
-
-**Rule 2** — Always use branches. Do NOT develop directly on `main` or `production`.
-
-**Rule 3** — Keep commits focused. One commit = one logical change.
-
-**Rule 4** — Write meaningful commit messages.
-
-**Rule 5** — Pull latest changes before pushing.
-
-```bash
-git pull origin dev
+```
+deployment/
+├── docker/           # Dockerfiles: backend, frontend, nginx, ollama
+├── nginx/            # Konfigurasi reverse proxy (nginx.conf)
+├── ngrok/            # Konfigurasi tunnel publik (ngrok.yaml, start_ngrok.sh)
+└── scripts/          # Skrip otomasi
+    ├── deploy.sh     # Deploy semua services
+    ├── rebuild.sh    # Rebuild containers
+    ├── start.sh      # Start services
+    └── stop.sh       # Stop services
 ```
 
-**Rule 6** — Use pull requests for major changes.
+---
 
-**Rule 7** — Tag stable releases.
+### `tests/`
 
-```bash
-git tag v1.0.0
+Infrastruktur testing.
+
+```
+tests/
+├── api/          # API endpoint tests
+├── pipelines/    # Pipeline tests
+├── retrieval/    # Retrieval system tests
+├── services/     # Service unit tests
+├── evaluation/   # Evaluation tests
+└── integration/  # End-to-end integration tests
 ```
 
-**Rule 8** — Use `.gitignore` properly.
+---
 
-```gitignore
-# Python
-__pycache__/
-*.pyc
+### `docs/`
 
-# Virtual environments
-venv/
-.env/
+Dokumentasi teknis lengkap.
 
-# Models
-models/
-training/outputs/
+| File | Isi |
+|------|-----|
+| `architecture.md` | Arsitektur sistem |
+| `pipeline.md` | Penjelasan pipeline |
+| `deployment.md` | Panduan deployment |
+| `training.md` | Panduan training |
+| `api.md` | Dokumentasi API |
+| `evaluation.md` | Metodologi evaluasi |
+| `observability.md` | Monitoring & tracing |
 
-# Logs
+---
+
+### `notebooks/`
+
+Jupyter notebooks untuk eksperimen, analisis, debugging, dan visualisasi.
+
+---
+
+### `outputs/`
+
+Hasil generate dari sistem.
+
+```
+outputs/
+├── reports/           # Laporan generate
+├── analytics/         # Output analitik
+├── exports/           # File ekspor
+├── generated_answer/  # Respons yang dihasilkan
+└── benchmark_results/ # Hasil benchmark
+```
+
+---
+
+### `logs/`
+
+Runtime logs per komponen.
+
+```
 logs/
-
-# Datasets
-training/datasets/raw/
-
-# Notebook checkpoints
-.ipynb_checkpoints/
-```
-
-**Rule 9** — Separate experiments from production. Use `experiment/*` for research, temporary ideas, and unstable pipelines.
-
-**Rule 10** — Document architectural changes. Whenever adding pipelines, changing orchestration, modifying retrieval, or introducing agents — update:
-
-- `docs/architecture.md`
-- `docs/pipeline.md`
-- `README.md`
-
----
-
-## Recommended Development Flow
-
-```text
-1. Create feature branch
-2. Implement feature
-3. Commit changes
-4. Test locally
-5. Push branch
-6. Open pull request
-7. Review and merge into dev
-8. Merge dev into main after validation
+├── api/         ├── retrieval/   ├── llm/
+├── pipelines/   ├── evaluations/ ├── sessions/
+├── traces/      ├── errors/      └── archive/
 ```
 
 ---
 
-# 6. Recommended AI Engineering Practices
+### `models/`
 
-## Separate Responsibilities
-
-Avoid putting everything inside one file. Good separation:
-
-- services
-- pipelines
-- retrieval
-- prompts
-- models
-- configs
-- deployment
-
-## Keep YAML Configurable
-
-Avoid hardcoding:
-
-- model names
-- paths
-- prompts
-- generation settings
-- runtime configs
-
-## Track Experiments
-
-Always save:
-
-- metrics
-- prompts
-- datasets
-- configs
-- model versions
-
-## Use Structured Outputs
-
-Prefer:
-
-```json
-{
-  "answer": "..."
-}
-```
-
-instead of raw text.
-
-## Maintain Observability
-
-Track:
-
-- latency
-- token usage
-- retrieval quality
-- hallucination rate
-- routing decisions
-- agent outputs
+Penyimpanan model lokal: base models, quantized models, GGUF models, exported models.
 
 ---
 
-# Final Notes
+### File Root
 
-This workspace template is designed to scale from:
+| File | Fungsi |
+|------|--------|
+| `docker-compose.yaml` | Orkestrasi container: backend, frontend, ollama, database, nginx |
+| `.env` | Environment variables: API keys, paths, model names, credentials |
+| `.gitignore` | Mengecualikan: models, checkpoints, logs, venv, datasets |
+| `LICENSE` | Lisensi proyek |
+| `README.md` | Dokumentasi ini |
 
-- personal AI projects
-- research projects
-- RAG systems
-- multi-agent systems
-- enterprise AI applications
-- production inference systems
+---
 
-The architecture intentionally separates:
+## Catatan Arsitektur
 
-- inference
-- orchestration
-- retrieval
-- training
-- deployment
-- evaluation
-- observability
+Workspace ini dirancang untuk scale dari proyek personal hingga enterprise AI applications.
 
-so the system remains:
+Arsitektur memisahkan komponen secara eksplisit:
 
-- modular
-- maintainable
-- scalable
-- production-ready
+```
+inference  ·  orchestration  ·  retrieval
+training   ·  deployment     ·  evaluation  ·  observability
+```
+
+Tujuannya agar sistem tetap **modular**, **maintainable**, **scalable**, dan **production-ready**.
