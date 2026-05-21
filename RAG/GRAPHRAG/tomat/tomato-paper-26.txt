@@ -1,0 +1,322 @@
+Authors 
+Daniel S. Egel,  
+Purdue University
+Shubin K. Saha,  
+University of Kentucky
+Purdue Botany & Plant Pathology
+ag.purdue.edu/BTNY
+University of Kentucky Horticulture
+www.uky.edu/hort
+Photos by the authors
+Vegetable Diseases
+Tomato Disease Management 
+in Greenhouses
+Purdue Extension publication BP-197-W
+University of Kentucky Cooperative Extension publication ID-233
+EXTENSION
+However, greenhouse tomatoes are not 
+free from disease; they have their own set 
+of problems. Greenhouse tomatoes often 
+experience conditions of high relative 
+humidity, which is due to the enclosed 
+nature of the structure. Under high 
+relative humidity, the diseases discussed 
+below are more likely to occur. 
+In addition, greenhouse tomatoes 
+grown in-ground to maturity are often 
+not rotated with another crop, which 
+increases disease pressure. Tomatoes 
+grown in containers to maturity do not 
+have the same crop rotation requirements. 
+Tomatoes grown in a greenhouse for 
+transplant production are exposed to 
+greenhouse conditions for only a few 
+weeks. 
+Common Diseases of 
+Greenhouse Tomatoes
+Three of the most common tomato 
+diseases in the greenhouse are discussed 
+below, however, this list is not exhaustive. 
+Many more diseases may occur in Indiana 
+and Kentucky greenhouses.
+Over the last several years, an increasing 
+number of growers have built greenhouses 
+for early production of vegetables. Tomato 
+is, by far, the most common vegetable 
+crop grown in greenhouses in Indiana and 
+Kentucky.
+By definition, a “greenhouse” is a structure 
+that is actively heated with some sort 
+of fuel (propane, wood, etc.), whereas a 
+“high tunnel” is passively heated by solar 
+radiation. This publication uses the term 
+“greenhouse” for both types of structures, 
+because the disease management issues for 
+greenhouses and high tunnels are similar. 
+This publication will examine common 
+tomato diseases of the greenhouse and 
+provide management recommendations.
+Different Conditions, 
+Different Issues 
+Most vegetable diseases require leaves 
+to be wet in order for infection to occur 
+and they rely on rain to spread. Since 
+greenhouse structures keep rainfall 
+off plants, these structures reduce leaf 
+wetness. For this reason, diseases common 
+in field tomatoes such as early blight, 
+Septoria leaf blight, bacterial spot, and 
+bacterial canker are less common in a 
+greenhouse than they are in a field.
+
+2
+Vegetable Diseases • Tomato Disease Management in Greenhouses  •  BP-197-W & ID-233
+Gray Mold (Botrytis cinerea)
+Gray mold affects many vegetable and ornamental 
+crops. Vegetable hosts include tomato, lettuce, pepper, 
+and snap bean. If left uncontrolled, gray mold can 
+cause severe symptoms on leaves, stems, and fruit. 
+Gray mold lesions often start as small, water-soaked 
+areas on leaves. Under dry conditions, the lesions turn 
+a light brown. Lesions often are wedge-shaped with the 
+wide edge on the leaf margin (Figure 1). One can easily 
+observe the growth of the causal fungus with a 10x 
+hand lens. Gray mold may also cause lesions on stems 
+and fruit (Figures 2 and 3).
+Since gray mold often infects injured tissue, 
+growers should avoid practices that wound plants. 
+Temperatures above 75ºF decrease disease severity. 
+Any practice that lowers relative humidity tends 
+to lower the severity of gray mold and many other 
+diseases (see suggestions at the end of this publication). 
+Adding lime to soils to increase the calcium content 
+of tomato plants may help to reduce the susceptibility 
+of tomato plants to gray mold. The fungus that causes 
+gray mold survives season-to-season in crop residue.
+Figure 1. The symptoms of Botrytis gray mold include a wedge-shaped 
+lesion on tomato leaves. One can observe the gray sporulation of the fungus 
+with a 10x hand lens.
+Figure 2. Light brown necrotic area on a stem due to gray mold.
+Figure 3. Rotten fruit with sporulating gray mold fungus visible.
+
+3
+Vegetable Diseases • Tomato Disease Management in Greenhouses  •  BP-197-W & ID-233
+Leaf Mold (Passalora fulva)
+Although leaf mold produces quite noticeable 
+leaf symptoms, the disease is usually not serious, 
+depending on how soon into the season the disease 
+occurs. Leaf mold causes bright yellow, blotchy 
+lesions on the top of tomato leaves (Figure 4). On the 
+undersides of leaves, the fungus that causes leaf mold 
+can clearly be seen as an olive-green “fuzz” (Figure 
+5). Under severe conditions, the fungus can be seen 
+growing on the top of the leaf as well. 
+Lesions do not appear on stems or fruit. The spores are 
+easily airborne, which spreads the disease throughout 
+the greenhouse. Spore germination is favored by high 
+humidity. The optimum temperatures for leaf mold are 
+between 72ºF and 75ºF. 
+An excellent management strategy is to use tomato 
+varieties that have resistance to leaf mold. However, 
+some resistant varieties are not listed as such and 
+variability in the fungus population may overcome the 
+tomato plant’s resistance. Other management options 
+include taking measures to reduce humidity, increase 
+airflow, and improve sanitation. The fungus that causes 
+leaf mold survives season-to-season in crop residue. 
+White Mold (Sclerotinia sclerotiorum) 
+White mold can kill plants, so this disease can be a 
+very serious disease in greenhouses. The first symptom 
+is often the wilting of scattered tomato plants. Upon 
+closer inspection, the lower stem of an affected plant 
+may have a light brown lesion that girdled the plant, 
+causing it to wilt and possibly die.
+The lesions appear woody, which is how this disease 
+got its alternate name: timber rot. The lesions are often 
+accompanied by the white growth of the causal fungus 
+as well as dark, irregularly shaped fungal structures 
+(sclerotia) (see Figure 6). Sclerotia are found on the 
+outside or inside of the stem and allow the fungus to 
+overwinter several years in the soil without a host. 
+White mold may also cause a rot of tomato fruit 
+(Figure 7). 
+In spring, sclerotia germinate to form miniature, 
+mushroom-like fruiting structures, several of which 
+could fit on a dime. Spores from these structures 
+can infect a wide host range of plants. Since sclerotia 
+germinate into mushrooms in the spring, symptoms of 
+white mold on tomato plants often occur in the spring 
+or early summer. 
+Figure 4. Leaf mold of tomato causes bright yellow, blotchy lesions on the 
+tops of leaves. 
+Figure 5. The undersides of leaves infected with leaf mold lesions often 
+have an olive-green fungal fuzz. 
+
+4
+Vegetable Diseases • Tomato Disease Management in Greenhouses  •  BP-197-W & ID-233
+White mold does not spread from plant to plant except 
+when an infected plant directly contacts an unaffected 
+plant. Cool temperatures (59ºF to 70ºF), high humidity, 
+and moist conditions are all favorable for the disease. 
+Crop rotations of continuous tomato also seem to 
+favor the disease; however, the causal fungus has a 
+large host range, so crop rotation with other vegetables 
+may be insufficient to control the disease. The fungus 
+that causes white mold survives year-to-year as dark 
+sclerotia that may be found on or in the stem.
+General Management Methods
+Here are some general management practices that 
+can help reduce the incidence and severity of tomato 
+diseases in greenhouses.
+Crop Rotation
+Rotating out of tomato or related solanaceous crops 
+for three to four years will help to control most tomato 
+diseases. However, many vegetable growers who 
+operate greenhouses find it  economically impractical 
+to rotate away from tomatoes. If you choose to grow 
+tomatoes after tomatoes without crop rotation, you can 
+improve disease management by removing as much of  
+the tomato plant as possible from the greenhouse and 
+away from all potential production areas as soon as the 
+crop is finished in the late summer or fall. 
+To further reduce the amount of crop residue that 
+enters the soil between tomato crops, you can place 
+a cloth ground covering between each row. Figure 8 
+shows a white woven ground cover between rows of 
+tomatoes in black plastic mulch. Such a ground cover 
+will help prevent the buildup of crop residue that might 
+contain plant disease microbes from entering the soil. 
+It also helps eliminate weeds and allows the greenhouse 
+to be easily swept. 
+The white ground cover shown in Figure 8 rests on 
+top of black landscape cloth (Figure 9), making the 
+ground cover easy to clean re-use. While the white 
+ground cover can be washed, sanitized, and re-used 
+next season, the black landscape cloth is not re-useable. 
+Note that the white ground cover can reflect light into 
+the canopy to maximize solar radiation; however, black 
+ground covers are also used successfully. 
+Figure 6. The wood-like area of the stem shown here is typical of white 
+mold (timber rot) of tomato. The dark, irregular-shaped fungal bodies 
+shown here are telltale overwintering structures. 
+Figure 7. Tomato fruit can also express white mold symptoms.
+Figure 8. This photo shows a white, reusable ground cover that can help 
+prevent crop debris from entering the soil, reduce weed pressure, and allow 
+the greenhouse floor to be easily swept.
+
+5
+Vegetable Diseases • Tomato Disease Management in Greenhouses  •  BP-197-W & ID-233
+Greenhouse Ventilation
+In general, any practice that reduces relative humidity 
+and moisture in a greenhouse will reduce the severity 
+of many tomato diseases. 
+Follow these practices that help to ventilate 
+greenhouses:
+1. Ventilate the greenhouse in the evening with 
+relatively dry air when possible. When cool 
+temperatures are a concern, such as in high tunnels 
+where heating is passive, it becomes  important to 
+close the structure before dusk to allow heat to build 
+up before temperatures start to drop. This practice 
+traps heat to avoid overnight cold damage. However, 
+once cool temperatures are no longer a concern, 
+ventilate the greenhouse at dusk so that the drier 
+air from outside may replace humid air inside the 
+greenhouse.
+2. Plant spacing can vary, but a good starting point 
+would be rows spaced 4 to 5 feet apart and 20 to 24 
+inches between plants within the row. Placing too 
+many tomato plants in a high tunnel may restrict 
+airflow and increase humidity. In addition, research 
+has shown that placing tomatoes closer than about 
+20 inches within a row on 5-foot centers decreases 
+fruit size. 
+3. Prune tomato plants to facilitate airflow. This 
+is especially useful with indeterminate tomato 
+varieties. Avoid pruning too much material at any 
+one time. As a general rule, leave indeterminate 
+tomatoes with at least 18 to 20 fully mature leaves 
+after pruning. Determinate tomato plants are often 
+pruned until the first flower cluster, improving 
+airflow and encouraging larger tomato fruit. 
+4. To further reduce humidity and leaf wetness in 
+greenhouses, use appropriate air circulation fans. 
+The placement and number of fans depends on the 
+volume of air within the structure. 
+Fungicides
+Fungicides can help to reduce the severity of tomato 
+diseases in the greenhouse. However, fungicides are 
+no substitute for good management practices. Consult 
+your state extension service for publications that 
+provide the most current fungicide recommendations. 
+In Kentucky, see The Vegetable Production Guide 
+for Commercial Growers (University of Kentucky 
+Extension publication ID-36, www.ca.uky.edu/
+agcomm/pubs.asp). In Indiana, Illinois, Iowa, Kansas, 
+Minnesota, Missouri, and Ohio, see the Midwest 
+Vegetable Production Guide for Commercial Growers 
+(Purdue Extension publication mwveguide.org). 
+Always read and follow labels carefully. 
+Here is a general overview of fungicides, listed by the 
+active ingredient, that are labeled and effective for the 
+greenhouse tomato diseases discussed above: 
+• Botrytis gray mold. 2, 6 – dichloro-4-nitroanaline, 
+copper, mancozeb, penthiopyrad, pyrimethanil, and 
+cyprodinil/fludioxanil. 
+• Leaf mold. copper, mancozeb, difenconazole/
+cyprodinil, difenconazole/mandipromid, and 
+cymoxanil/famoxadone. 
+• White mold (timber rot). The only product currently 
+labeled for white mold is Contans®, which is a 
+parasite of the white mold fungus. This product must 
+be incorporated into the top 1 to 2 inches of soil. See 
+label for detailed instructions. 
+Figure 9. Black landscape fabric that lies underneath the white ground 
+cover shown in Figure 8. The landscape fabric keeps the white ground cover 
+relatively clean. 
+
+6
+Vegetable Diseases • Tomato Disease Management in Greenhouses  •  BP-197-W & ID-233
+Order or download materials from 
+Purdue Extension • The Education Store
+www.edustore.purdue.edu
+The U.S. Department of Agriculture (USDA) prohibits discrimination in all its programs and activities on the basis of race, color, national origin, age, disability, and where applicable, sex, marital status, familial 
+status, parental status, religion, sexual orientation, genetic information, political beliefs, reprisal, or because all or a part of an individual's income is derived from any public assistance program. 
+(Not all prohibited bases apply to all programs.) Persons with disabilities who require alternative means for communication of program information (Braille, large print, audiotape, etc.) 
+should contact USDA's TARGET Center at (202) 720-2600 (voice and TDD). To file a complaint of discrimination write to USDA, Director, Office of Civil Rights, 1400 Independence Avenue, 
+S.W., Washington, D.C. 20250-9410 or call (800) 795-3272 (voice) or (202) 720-6382 (TDD). USDA is an equal opportunity provider and employer.
+Dec 2015
+Additional items to consider when selecting a product 
+from the above list:
+• Carefully note the re-entry interval (REI) and pre-
+harvest interval (PHI). Some products may have
+intervals sufficiently long to restrict their use to early
+season. In particular, mancozeb products and 2, 6 –
+dichloro-4-nitroanaline have relatively long PHIs.
+• Copper and mancozeb products are contact
+fungicides. Contans® is neither contact nor systemic
+and must be incorporated into the soil. The
+remaining products are systemic and will move
+within the plant after application.
+In Indiana, products are allowed for greenhouse 
+use unless stated otherwise in the label. For more 
+information about greenhouse use of fungicides see 
+Table 17 in the Midwest Vegetable Production Guide for 
+Commercial Growers in Indiana, Illinois, Iowa, Kansas, 
+Minnesota, Missouri, and Ohio; and the disease 
+control of vegetable crops section in the Vegetable 
+Production Guide for Commercial Growers in Kentucky. 
+Reference to products in this publication 
+is not intended to be an endorsement to 
+the exclusion of others that may be similar. 
+Individuals using such products assume 
+responsibility for their use in accordance with 
+current directions of the manufacturer.
+Find Out More
+Find more publications in the Vegetable Diseases 
+series by visiting the Purdue Extension Education 
+Store, www.edustore.purdue.edu.
+Resources for vegetable growers are also available 
+from the University of Kentucky Integrated Pest 
+Management Program, 
+www.uky.edu/Ag/IPM/ipmveg/vegipm.htm.

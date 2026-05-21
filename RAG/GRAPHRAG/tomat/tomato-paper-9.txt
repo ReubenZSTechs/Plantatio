@@ -1,0 +1,629 @@
+JKPTB 
+Jurnal Keteknikan Pertanian Tropis dan Biosistem 12(3) 2024 
+151 
+ 
+ doi https://doi.org/10.21776/ub.jkptb.2024.012.03.01 
+ 
+Machine Learning-based Disease Classification in Tomato (Solanum 
+lycopersicum) Plants  
+Klasifikasi Penyakit Berbasis Pembelajaran Mesin pada Tanaman 
+Tomat (Solanum lycopersicum)  
+ 
+Md Towfiqur Rahman 1,2, Sudipto Dhar Dipto2, Israt Jahan June2, Abdul Momin3, Muhammad 
+Rashed Al Mamun2,4 
+1 Department of Biological Systems Engineering, University of Nebraska-Lincoln, Lincoln, NE, USA 68588 
+2 Department of Farm Power and Machinery, Sylhet Agricultural University, Sylhet, 3100 Bangladesh 
+3 Agricultural Engineering Technology, School of Agriculture, Tennessee Tech University, Cookeville, TN 38505, USA 
+4 Faculty of Agriculture, Kyushu University, Fukuoka 819-0395, Japan 
+ 
+email: rashed.fpm@sau.ac.bd 
+ 
+ 
+ARTICLE HISTORY 
+Submitted September 6th, 2024 
+Accepted November 13th, 2024 
+Published December 31st, 2024 
+ 
+ 
+ABSTRACT 
+In Bangladesh, tomato cultivation faces significant challenges due to its 
+susceptibility to various microorganisms, parasites, and bacterial infections. 
+Typically, the early symptoms of these diseases first appear in roots and leaves, 
+complicating timely detection. This study addresses the challenge of timely and 
+accurate detection of diseases in tomato plants, crucial for effective plant 
+protection management. Conventional manual inspection methods are time-
+consuming and subjective, resulting in delays in implementing necessary 
+protection measures. Therefore, an image processing technique and machine 
+learning algorithms were used for rapid and robust detection of diseases in tomato 
+plant leaves, aiming to streamline the detection process for chemical application 
+responses. A dataset containing 250 images of tomato plant leaves were captured 
+under varying light intensities, eye-level angles, and distances. Image 
+augmentation techniques were applied to increase the dataset, resulting in a total 
+of 529 images. These images were converted to LAB color images and then OTSU 
+algorithm was used to segment leaf images and estimate the percentage of 
+affected diseased areas. Various textural features were also extracted from 
+segmented leaf images to create a training dataset. Machine learning algorithms, 
+including Support Vector Machines (SVM), K-Nearest Neighbors (KNN), and 
+decision trees, were trained and evaluated using this dataset to classify images as 
+healthy or diseased. The Quadratic SVM algorithm provided the highest test 
+accuracy of 97.7% for the dataset. This nondestructive processing holds immense 
+promise for improving disease detection efficiency and reducing losses in tomato 
+production, both locally in Bangladesh and globally. 
+ABSTRAK  
+Di Bangladesh, budidaya tomat menghadapi tantangan yang signifikan karena 
+kerentanannya terhadap berbagai mikroorganisme, parasit, dan infeksi bakteri. 
+ 
+KEYWORDS 
+Detection; image processing; 
+machine learning; plant 
+diseases; tomato 
+ 
+KATA KUNCI 
+Deteksi; pembelajaran mesin; 
+pemrosesan gambar; penyakit 
+tanaman; tomat 
+ 
+ 
+
+JKPTB 
+Jurnal Keteknikan Pertanian Tropis dan Biosistem 12(3) 2024 
+152 
+ 
+ doi https://doi.org/10.21776/ub.jkptb.2024.012.03.01 
+Biasanya, gejala awal penyakit-penyakit ini pertama kali muncul di akar dan daun, 
+sehingga menyulitkan deteksi tepat waktu. Penelitian ini membahas tantangan 
+deteksi penyakit yang tepat waktu dan akurat pada tanaman tomat, yang sangat 
+penting untuk manajemen perlindungan tanaman yang efektif. Metode inspeksi 
+manual konvensional memakan waktu dan subjektif, sehingga mengakibatkan 
+penundaan dalam menerapkan tindakan perlindungan yang diperlukan. Oleh 
+karena itu, teknik pemrosesan gambar dan algoritma pembelajaran mesin 
+digunakan untuk mendeteksi penyakit pada daun tanaman tomat dengan cepat 
+dan kuat, yang bertujuan untuk merampingkan proses deteksi untuk respons 
+aplikasi kimia. Sebuah dataset yang berisi 250 gambar daun tanaman tomat 
+diambil di bawah berbagai intensitas cahaya, sudut pandang, dan jarak. Teknik 
+augmentasi gambar diterapkan untuk meningkatkan dataset, menghasilkan total 
+529 gambar. Gambar-gambar ini diubah menjadi gambar berwarna LAB dan 
+kemudian algoritma OTSU digunakan untuk mensegmentasi gambar daun dan 
+memperkirakan persentase area yang terkena penyakit. Berbagai fitur tekstur juga 
+diekstraksi dari gambar daun yang telah disegmentasi untuk membuat dataset 
+pelatihan. Algoritma pembelajaran mesin, termasuk Support Vector Machines 
+(SVM), K-Nearest Neighbors (KNN), dan pohon keputusan, dilatih dan dievaluasi 
+dengan menggunakan set data ini untuk mengklasifikasikan gambar sebagai 
+gambar yang sehat atau sakit. Algoritma Quadratic SVM memberikan akurasi 
+pengujian tertinggi sebesar 97.7% untuk dataset. Pemrosesan nondestruktif ini 
+sangat menjanjikan untuk meningkatkan efisiensi pendeteksian penyakit dan 
+mengurangi kerugian dalam produksi tomat, baik secara lokal di Bangladesh 
+maupun global. 
+ 
+ 
+doi https://doi.org/10.21776/ub.jkptb.2024.012.03.01 
+ 
+1. Introduction 
+With the global population projected to reach 9.6 billion by 2050, ensuring global food security becomes 
+increasingly critical. However, in-field crop losses pose a significant threat, expected to affect a third of total 
+agricultural production by that time [1]. Plant disease stands out as a major barrier to agricultural commodities, 
+resulting in reduced supply and performance degradation. Plant pathogens, such as fungi, bacteria, and viruses, 
+are the primary causes of plant diseases. Over 454 diseases have been recorded in around 100 cultivated crops 
+so far, emphasizing the issue’s breadth [2]. These pathogens and diseases can cause substantial reductions in 
+production, directly impacting public nutrition.  
+Cash crop monitoring is essential for optimizing production and efficiency. Among crops, tomatoes hold 
+significant importance worldwide. Tomatoes are rich sources of natural antioxidants and are widely consumed 
+in various forms in everyday diets worldwide. However, their availability can be limited during certain seasons. 
+In 2015, tomatoes were grown on 5.05 million hectares of land globally, yielding approximately about 187 
+million metric tons [3], figures notably lag behind those observed in other major tomato growing regions 
+studied by [4]. Several factors contribute to this production disparity, including bacteria, fungi, viruses, and 
+nematodes, significantly challenging tomato production. Tomatoes are extensively cultivated in Bangladesh, 
+contributing significantly to agricultural production with an annual yield exceeding 380,000 tons across 
+approximately 27,342 hectares of land. Despite this, Bangladeshi tomato farmers face numerous obstacles 
+throughout the cultivation process. Among these challenges, combating diseases affecting tomato plant leaves 
+is particularly prominent [5]. Healthy tomato plants typically exhibit uniformly green color leaves [6]. However, 
+
+JKPTB 
+Jurnal Keteknikan Pertanian Tropis dan Biosistem 12(3) 2024 
+153 
+ 
+ doi https://doi.org/10.21776/ub.jkptb.2024.012.03.01 
+the onset of disease symptoms on the tomato leaves during growth [7].The current method for detecting 
+tomato plant diseases heavily relies on visual evaluation by experts, which can be both costly and impractical, 
+especially on large-scale farms. Moreover, in developing countries like Bangladesh, farmers lack access to 
+adequate facilities or may not possess the knowledge to promptly notify experts of potential issues. Human-
+based quantification and identification of diseases are prone to inefficiency and errors focusing the urgent need 
+for a convenient, affordable, and precise disease detection method in tomato plant leaf. 
+Computer vision technologies have emerged as promising tools for agricultural applications, including plant 
+phenotyping, disease detection, and identification [7-9]. Over the years, numerous research initiatives on 
+agricultural product processing have been initiated, with several techniques developed to identify and 
+characterize leaf defects [9-10]. Recent literature highlights the widespread and efficient use of image 
+processing techniques for disease detection in agriculture [11-14]. For instance, neural networks have been 
+used to recognize leaf diseases [15], employing Prewitt edge detection and thinning function to obtain back-
+propagation algorithms. Boundary detection and spot detection techniques were used for extracting leaf 
+characteristics [14].  The introduction of the ‘YCbCr’ color space technology' has enabled the  segmentation of 
+disease spots [16]. Grayscale image processing techniques, such as histogram equalization and the co-
+occurrence matrix computation, was proposed by Bashir [17] for the detection of diseases in Malus Domestica 
+leaves. In [18], Singh and Misra described a four-step processing system involving color transformation, masking 
+of green pixels, removal using a specific threshold value, and segmentation for disease detection.  
+In a critical window of time, the timely identification of specific diseases is imperative to prevent their rapid 
+spread, minimize losses from pest or disease infestation, and optimize yield. A monitoring system needs to be 
+rapid and robust to achieve this. Precise classification of diseased and healthy plants through leaves is necessary 
+and identification of infected areas allows targeted chemical application at varying rates, fostering cost-
+effectiveness and environmental sustainability. The present study attempts to classify tomato leaf images as 
+healthy or diseased using minimal image pre-processing and using different machine learning models.  
+ 
+2. Materials and Methods 
+2.1 Image Acquisition 
+The leaf images were acquired using a digital camera (Resolution 13 MP, aperture f/2.2, and ide-angle lens 28 
+mm, Xiaomi Corporation, Beijing, China). These images were captured at a resolution of 1080 × 2340 pixels. 
+The tomato leaf images were collected from plants in August 2019 at the Sylhet Agricultural University research 
+plot, located at coordinates 24°54'40"N, 91°54'08"E in Bangladesh. The images were captured carefully using a 
+white board to exclude complex backgrounds, ensuring clarity in the visual data. Subsequently, the captured 
+images were cropped to include only the leaf portion and resized to dimensions of 300×300 pixels for avoiding 
+unnecessary computing requirement in processing step. In the disease identification process, the leaves of 
+tomato plants are systematically processed to locate the affected areas and identify classifiers for disease 
+detection. This process is illustrated in Figure 1. 
+ 
+ 
+Figure 1. Flowchart illustrating the image processing pipeline for identifying diseases in tomato leaves 
+ 
+
+JKPTB 
+Jurnal Keteknikan Pertanian Tropis dan Biosistem 12(3) 2024 
+154 
+ 
+ doi https://doi.org/10.21776/ub.jkptb.2024.012.03.01 
+The dataset comprised a total of 250 images. Figure 2 shows some images of tomato leaves from the database, 
+with some of the images depicting healthy leaves and remainder showing affected regions which may represent 
+diseased plant. To enhance the dataset’s robustness and diversity for training machine learning models, 
+geometric transformations such as rotation and scaling, along with color jittering and horizontal flipping, were 
+applied for data augmentation to increase the dataset volume. This augmentation process resulted in a total of 
+529 images. 
+ 
+ 
+Figure 2. Sample of tomato leaf images database for processing 
+ 
+2.2 Image Segmentation  
+An Intel® Core™ i9-10885H CPU @ 2.40GHz, operating on a 64-bit operating system with an x64-based 
+processor, was used for image processing tasks. MATLAB R2023b (The MathWorks, Inc., USA) served as the 
+primary software for image processing. In this study, various preprocessing techniques were employed to 
+optimize images of diseased tomato leaves. 
+RGB images were converted to the LAB color space to separate luminosity and chromaticity components, 
+facilitating the extraction of color-based features related to disease. Green or near-green pixels representing 
+healthy regions were removed as shown in Figure 3, and Otsu’s method was applied to segment diseased areas 
+from the background. Otsu’s thresholding was specifically applied to the L channel, with a single threshold value 
+for gray and white pixels after removing healthy regions based on A and B channel values. This thresholding 
+step was iterated to progressively refine segmentation accuracy.  
+ 
+
+JKPTB 
+Jurnal Keteknikan Pertanian Tropis dan Biosistem 12(3) 2024 
+155 
+ 
+ doi https://doi.org/10.21776/ub.jkptb.2024.012.03.01 
+ 
+Figure 3. Steps followed to segment the leaf image and extract affected region 
+ 
+2.3 Feature Extraction 
+The region of interest (ROI) was precisely defined as the leaf portion, excluding the background. The affected 
+region was identified by binarizing the segmented image and counting nonzero pixels. Then the percentage of 
+affected region was calculated using Equation 1. 
+ 
+𝐀𝐟𝐟𝐞𝐜𝐭𝐞𝐝 𝐫𝐞𝐠𝐢𝐨𝐧 (%) = 
+𝐀𝐫𝐞𝐚 𝐨𝐟 𝐭𝐨𝐭𝐚𝐥 𝐚𝐟𝐟𝐞𝐜𝐭𝐞𝐝 𝐫𝐞𝐠𝐢𝐨𝐧 (𝐩𝐢𝐱𝐞𝐥𝐬)
+𝐒𝐞𝐠𝐦𝐞𝐧𝐭𝐞𝐝 𝐋𝐞𝐚𝐟 𝐢𝐦𝐚𝐠𝐞 𝐟𝐫𝐨𝐦 𝐛𝐚𝐜𝐤𝐠𝐫𝐨𝐮𝐧𝐝 (𝐩𝐢𝐱𝐞𝐥𝐬) × 𝟏𝟎𝟎 
+ 
+(1) 
+ 
+To extract features from the ROI of each image, the gray-level co-occurrence matrix (GLCM) method was used. 
+The GLCM measures the frequency of co-occurring gray levels at a specified offset between neighboring pixels 
+in an image. Four offsets in different directions and distances were considered, including vertical, lateral, two 
+diagonals, and four distances.  
+Affected areas for all images were calculated using color thresholding. Statistical texture features extracted 
+from the GLCM included contrast, correlation, energy, and homogeneity. These GLCM-based texture features 
+were constructed from the grayscale image to analyze spatial relationships between pixel intensities. These 
+features captured textural properties such as local intensity variations, linear dependence of pixel intensities, 
+overall intensity content, and homogeneity of pixel distributions. In addition, numerical indicators such as 
+mean, standard deviation, entropy, skewness, and energy were calculated from the histograms of the color 
+planes. The histogram was created using the grayscale image obtained by converting the segmented image to 
+grayscale using the “rgb2gray” function. These features provided insights into the overall intensity distribution 
+and complexity of the leaf region. 
+ 
+2.4 Model Training and Performance 
+The dataset containing both healthy and unhealthy tomato leaf images was used to extract features, which 
+were then trained with different machine learning algorithms. From this dataset (total of 529 images where 217 
+images are from healthy leaves and 312 images from diseased leaves), 75% of data was used for training and 
+25% of it was used for testing. The algorithms included discriminant analysis, native bayes classifiers, SVM, 
+Nearest neighbor classifier and decision trees. During training those models, the predictor variables were 
+contrast, correlation, energy, homogeneity, mean, standard deviation, entropy, skewness, energy and the 
+percentage of affected area in the leaf. The response variable was the image class (healthy or diseased). 
+
+JKPTB 
+Jurnal Keteknikan Pertanian Tropis dan Biosistem 12(3) 2024 
+156 
+ 
+ doi https://doi.org/10.21776/ub.jkptb.2024.012.03.01 
+To assess the performance of these classifiers, standard performance metrics such as accuracy and confusion 
+matrix were used. Since the images were already labelled as healthy or diseased, the formulation for correctly 
+classified instances was calculated using Equation 2. This formulation considers the model’s predictions of true 
+positives, true negatives, false positives, and false negatives, ultimately computing the proportion of correctly 
+classified instances out of the total number of instances. The study attempted to use textural features extracted 
+from the input dataset to accurately classify tomato leaves as healthy or unhealthy, using various classification 
+algorithms. 
+ 
+𝐀𝐜𝐜𝐮𝐫𝐚𝐜𝐲 = 
+𝐓𝐏 + 𝐓𝐍 
+𝐓𝐏 + 𝐓𝐍 + 𝐅𝐏 + 𝐅𝐍 ×100%  
+ 
+(2) 
+ 
+Where, TP = true positive, represents an outcome where the model accurately predicts the positive class; 
+TN=true negative, represents an outcome where the model accurately predicts the negative class; FP=false 
+positive, represents an outcome where the model inaccurately predicts the positive class; FN=false negative, 
+represents an outcome where the model inaccurately predicts the negative class. 
+ 
+3. Results and Discussion 
+3.1 Extracted Features 
+The feature extraction process involved extracting ten different features from the selected leaf area. These 
+features included affected percentage, mean, standard deviation, entropy, RMS, variance, kurtosis, skewness, 
+contrast, and energy. The values of these features were calculated and stored on an Excel sheet, creating a 
+training database. The summary statistics for each feature are presented in Table 1. 
+ 
+Table 1. Summary statistics of extracted features from leaf images 
+  
+Affected 
+area % 
+Mean 
+Std. 
+Dev.  
+Entropy 
+RMS 
+Variance 
+Kurtos
+is 
+Skewne
+ss 
+Contrast 
+Energy 
+Healthy 
+n=217 
+  
+  
+  
+  
+  
+Min. 
+2.99 
+17.43 
+26.24 
+324.80 
+5.70 
+688.40 
+1.30 
+-0.68 
+73.00 
+0.02 
+1st Qu. 
+6.86 
+30.06 
+32.57 
+877.40 
+6.96 
+1061.10 
+2.72 
+0.22 
+212.30 
+0.15 
+Median 
+8.45 
+30.06 
+33.79 
+1011.70 
+7.45 
+1141.70 
+3.48 
+0.56 
+251.70 
+0.22 
+Mean 
+8.70 
+30.06 
+41.29 
+1052.70 
+7.53 
+1845.80 
+3.48 
+0.58 
+265.00 
+0.23 
+3rd Qu. 
+10.74 
+30.06 
+45.03 
+1259.10 
+8.10 
+2027.40 
+4.21 
+0.93 
+326.10 
+0.29 
+Max. 
+16.56 
+30.06 
+65.54 
+1737.40 
+9.96 
+4295.70 
+7.76 
+1.86 
+457.40 
+0.50 
+ Diseased 
+ n= 312 
+  
+  
+  
+  
+Min. 
+1.47 
+15.94 
+24.24 
+404.90 
+4.29 
+587.60 
+1.39 
+-1.47 
+90.61 
+0.01 
+1st Qu. 
+5.78 
+36.77 
+41.30 
+775.70 
+6.93 
+1705.70 
+1.75 
+-0.07 
+189.52 
+0.13 
+Median 
+8.89 
+45.13 
+45.86 
+910.00 
+7.66 
+2103.60 
+1.99 
+0.27 
+220.90 
+0.23 
+Mean 
+12.13 
+47.58 
+45.37 
+954.60 
+7.60 
+2105.60 
+2.23 
+0.29 
+235.91 
+0.24 
+3rd Qu. 
+11.96 
+54.77 
+50.36 
+1074.70 
+8.38 
+2536.30 
+2.45 
+0.68 
+257.28 
+0.32 
+Max. 
+100.00 
+110.8
+1 
+61.33 
+2828.60 
+10.15 
+3761.20 
+6.07 
+1.77 
+711.69 
+0.63 
+In this table, healthy tomato leaves (n=217) showed the mean affected area of 8.70% whereas the diseased 
+leaves (n=312) showed 12.13%.  
+ 
+3.2 Model Performance 
+To evaluate the accuracy of the proposed models, 25% of the dataset was used for testing purposes. The 
+response variable represented the class variable for leaves distinguishing between healthy and diseased. K-fold 
+cross validation (k-fold=7) was used to evaluate the machine learning models, including SVM, discriminant 
+analysis, trees, and KNN, were tested to determine the most suitable model for the dataset. The accuracy results 
+for these models are summarized in Table 3. 
+Among the models tested, the Quadratic SVM model achieved the highest accuracy rates of 98% for validation 
+and 97.7% for the test dataset. This model demonstrated excellent performance in classifying the leaf diseases. 
+
+JKPTB 
+Jurnal Keteknikan Pertanian Tropis dan Biosistem 12(3) 2024 
+157 
+ 
+ doi https://doi.org/10.21776/ub.jkptb.2024.012.03.01 
+Moreover, the medium Gaussian SVM, Cubic SVM, Weighted KNN, Fine KNN, and Linear SVM models showed 
+accuracy rates above 95% for both validation and test results. Conversely, the Coarse KNN showed the lowest 
+accuracy in predicting leaf disease, with validation accuracy at 74.3% and test accuracy at 76.5%. 
+ 
+Table 2. Accuracy result of machine learning models 
+Model 
+Validation  
+Accuracy (%) 
+Test 
+Accuracy (%) 
+Quadratic SVM 
+98.0 
+97.7 
+Medium Gaussian SVM 
+97.0 
+97.0 
+Cubic SVM 
+96.7 
+97.0 
+Weighted KNN 
+96.7 
+95.5 
+Fine KNN 
+96 
+95.5 
+Linear SVM 
+95.3 
+95.5 
+Fine Gaussian SVM 
+94.5 
+93.9 
+Fine tree 
+89.9 
+90.9 
+Gaussian Native Bayes 
+86.6 
+87.9 
+Coarse KNN 
+74.3 
+76.5 
+ 
+The confusion matrix and ROC (receiver operating characteristic) curve shown in Figure 4 further illustrate the 
+performance of the models, revealing high sensitivity and specificity values. The ROC curve, which evaluates 
+the performance of a classification model across all classification thresholds, shows an impressive AUC (area 
+under the curve) of 0.99 for leaf categories. Upon analyzing the confusion matrix, it is apparent that 100% of 
+diseased and 94.4% of healthy leaves were correctly classified, while a small portion (5.6%) of the healthy leaves 
+was misclassified as diseased. The results from this study indicate that the proposed approach in successfully 
+classifying tomato leaf images accurately for healthy and unhealthy category. Specifically, the Quadratic SVM 
+model proved the most accurate for this dataset. To ensure the reliability of the results, cross-checking 
+procedures were implemented. These results provide valuable insights into the performance of the algorithm, 
+serving as a foundation for potential improvements and applications in plant disease detection and agricultural 
+management.  
+
+JKPTB 
+Jurnal Keteknikan Pertanian Tropis dan Biosistem 12(3) 2024 
+158 
+ 
+ doi https://doi.org/10.21776/ub.jkptb.2024.012.03.01 
+ 
+Figure 4. ROC curve and confusion matrix 
+(Note: (a) ROC curve is plotted to graphically represent the connection between clinical sensitivity and 
+specificity for every possible cut-off. For the Quadratic SVM, the value of AUC was found to be 1.00. (b) The 
+confusion matrix for diseased and healthy leaf classification, TPR=True positive rate, FNR= False negative rate) 
+ 
+The main objective of this study is to accurately identify diseased areas on tomato plant leaves and classify 
+them as either diseased or healthy based on leaf features. We employed image acquisition and preprocessing 
+techniques to enhance image quality and reduce noise, mainly focusing on segmentation. The K-means 
+clustering algorithm was utilized for segmentation within LAB color space images, extracting features from each 
+segmented image to represent the actual leaf region without background. Additionally, the algorithm quantified 
+the total affected area of the leaf, a crucial feature for subsequent analysis. All extracted features, including the 
+percentage of affected leaf area, served as predictor variables for training various models. It would be beneficial 
+to include more images covering different stages of tomato plant growth, diverse lighting conditions, and 
+backgrounds to enhance generalization. Prioritizing certain features and introducing additional ones during 
+model training could also improve performance.  
+Overall, the results demonstrate the effectiveness of the developed leaf disease classification system. The high 
+accuracy achieved by the model confirms the potential of the proposed approach for automated leaf disease 
+detection and diagnosis. In the context of Bangladesh, this approach could serve as a valuable tool for 
+developing an automated crop monitoring system. 
+ 
+4. 
+Conclusions 
+In this study, techniques for detecting diseases in tomato plant leaves disease were developed and evaluated. 
+A dataset comprising 529 digital images of both diseased and healthy tomato leaves showing visible affected 
+regions was used for this purpose. Image processing techniques, and machine learning algorithms were used 
+to classify diseased and healthy leaves accurately, and effectively. The image processing algorithms allowed 
+feature extraction from each image, enabling the identification of affected leaf areas. Using the extracted 
+dataset, various machine learning classifiers were trained and evaluated to distinguish between diseased and 
+healthy leaves. The Quadratic SVM algorithm was shown the highest accuracy in predicting whether the leaves 
+were diseased or not. The application of these techniques at an early stage enables expedited disease detection, 
+allowing timely intervention and potential mitigation of crop losses. To achieve optimum detection accuracy 
+
+JKPTB 
+Jurnal Keteknikan Pertanian Tropis dan Biosistem 12(3) 2024 
+159 
+ 
+ doi https://doi.org/10.21776/ub.jkptb.2024.012.03.01 
+across various plant species, further exploration of testing materials, analysis methods, and image processing 
+techniques can be explored.  
+ 
+Acknowledgements 
+This work was supported by the University Grants Commission (UGC), Bangladesh Project No. Agri (Crop-
+30)/2018. The authors would like to appreciate the logistic supports or this study from the Department of Farm 
+Power and Machinery, Sylhet Agricultural University. 
+ 
+References 
+[1] 
+E. Oerke, “Crop losses to pests,” The Journal of Agricultural Science, vol. 144, no. 1, pp. 31–43, Feb. 2006, 
+doi: 10.1017/S0021859605005708. 
+[2] 
+M. T. Hossain, S. M. M. Hossain, M. A. Bakr, A. K. M. Matiar Rahman, and S. N. Uddin, “Survey on major 
+diseases of vegetable and fruit crops in Chittagong region,” Bangladesh Journal of Agricultural Research, 
+vol. 35, no. 3, pp. 423–429, Jan. 2010, doi: 10.3329/BJAR.V35I3.6449. 
+[3] 
+“Worldwide (total fresh) tomato production exceeds 187 million tonnes in 2020 - Tomato News.” 
+Accessed: Apr. 04, 2024. [Online]. Available: https://www.tomatonews.com/en/worldwide-total-fresh-
+tomato-production-exceeds-187-million-tonnes-in-2020_2_1565.html 
+[4] 
+A. Biswas, S. Chandra Dey, and S. Sarker, “Growth and yield performances of tomato genotypes during 
+winter season at eastern surma kushiyara floodplain of Bangladesh,” J. Sylhet Agril. Univ., vol. 4, no. 1, 
+2017. 
+[5] 
+Md. A. A. Mamun, D. Z. Karim, S. N. Pinku, and T. A. Bushra, “TLNet: A Deep CNN model for Prediction of 
+tomato Leaf Diseases,” in 2020 23rd International Conference on Computer and Information Technology 
+(ICCIT), DHAKA, Bangladesh: IEEE, Dec. 2020, pp. 1–6. doi: 10.1109/ICCIT51783.2020.9392664. 
+[6] 
+P. S. Gilmour, “How to select tools for rnicrocontroller software,” IEEE Spectrum, vol. 28, no. 2, pp. 37–39, 
+1991, doi: 10.1109/6.100908. 
+[7] 
+U. Mokhtar et al., “SVM-Based detection of tomato leaves diseases,” Advances in Intelligent Systems and 
+Computing, vol. 323, pp. 641–652, 2015, doi: 10.1007/978-3-319-11310-4_55. 
+[8] 
+Z. Li, R. Guo, M. Li, Y. Chen, and G. Li, “A review of computer vision technologies for plant phenotyping,” 
+Computers 
+and 
+Electronics 
+in 
+Agriculture, 
+vol. 
+176, 
+p. 
+105672, 
+Sep. 
+2020, 
+doi: 
+10.1016/J.COMPAG.2020.105672. 
+[9] 
+M. A. Momin, M. T. Rahman, M. S. Sultana, C. Igathinathane, A. T. M. Ziauddin, and T. E. Grift, “Geometry-
+based mass grading of mango fruits using image processing,” Information Processing in Agriculture, vol. 
+4, no. 2, pp. 150–160, 2017, doi: 10.1016/j.inpa.2017.03.003. 
+[10] T. Rahman et al., “Characterization of tea (Camellia sinensis) granules for quality grading using computer 
+vision system,” Journal of Agriculture and Food Research, vol. 6, p. 100210, 2021, doi: 
+10.1016/j.jafr.2021.100210. 
+[11] J. Gui, L. Hao, Q. Zhang, and X. Bao, “A new method for soybean leaf disease detection based on modified 
+salient regions,” International Journal of Multimedia and Ubiquitous Engineering, vol. 10, no. 6, pp. 45–
+52, 2015, doi: 10.14257/ijmue.2015.10.6.06. 
+[12] N. Chamara, G. Bai, and Y. Ge, “AICropCAM: Deploying classification, segmentation, detection, and 
+counting deep-learning models for crop monitoring on the edge,” Computers and Electronics in 
+Agriculture, vol. 215, p. 108420, Dec. 2023, doi: 10.1016/j.compag.2023.108420. 
+[13] M. S. P. Babu and B. S. Rao, “Leaves Recognition Using Back Propagation Neural Network-Advice for Pest 
+& Disease Control on Crops . Leaves Recognition Using Back Propagation Neural Network-Advice for Pest 
+& Disease Control on Crops . 3 . Requirement Specification 4 . Tools Techniques,” Prospectiva, vol. 7, no. 
+Enero-Junio de 2009, pp. 67–73, 2007. 
+[14] S. Phadikar and J. Sil, “Rice disease identification using pattern recognition techniques,” Proceedings of 
+11th International Conference on Computer and Information Technology, ICCIT 2008, no. Iccit, pp. 420–
+423, 2008, doi: 10.1109/ICCITECHN.2008.4803079. 
+
+JKPTB 
+Jurnal Keteknikan Pertanian Tropis dan Biosistem 12(3) 2024 
+160 
+ 
+ doi https://doi.org/10.21776/ub.jkptb.2024.012.03.01 
+[15] M. S. P. Babu and B. S. Rao, “Leaves Recognition Using Back Propagation Neural Network-Advice for Pest 
+& Disease Control on Crops . Leaves Recognition Using Back Propagation Neural Network-Advice for Pest 
+& Disease Control on Crops . 3 . Requirement Specification 4 . Tools Techniques,” Prospectiva, vol. 7, no. 
+Enero-Junio de 2009, pp. 67–73, 2007. 
+[16] S. Kai, L. Zhikun, S. Hang, and G. Chunhong, “A Research of Maize Disease Image Recognition of Corn Based 
+on BP Networks,” in 2011 Third International Conference on Measuring Technology and Mechatronics 
+Automation, Shanghai, China: IEEE, Jan. 2011, pp. 246–249. doi: 10.1109/ICMTMA.2011.66. 
+[17] S. Bashir, “Remote Area Plant Disease Detection Using Image Processing,” IOSR Journal of Electronics and 
+Communication Engineering, vol. 2, no. 6, pp. 31–34, 2012, doi: 10.9790/2834-0263134. 
+[18] V. Singh and A. K. Misra, “Detection of plant leaf diseases using image segmentation and soft computing 
+techniques,” Information Processing in Agriculture, vol. 4, no. 1, pp. 41–49, 2017, doi: 
+10.1016/j.inpa.2016.10.005.

@@ -1,0 +1,136 @@
+eXtension
+Early Blight Management for Organic Tomato Production
+articles.extension.org/pages/29878/early-blight-management-for-organic-tomato-production
+eOrganic authors:
+Fulya Baysal-Gurel, Department of Plant Pathology, Ohio State University
+Sally Miller, Department of Plant Pathology, Ohio State University
+Introduction
+Early blight is caused by Alternaria solani and A. tomatophila, which survive between crops on infected crop
+residues and on solanaceous host weeds. These fungi can also be carried on tomato seed. Early blight is common
+on tomatoes and potatoes, and it occasionally infects eggplants and peppers. It causes direct losses by the
+infection of fruits and indirect losses through leaf lesions, which reduce plant vigor. The disease is favored by warm
+temperatures and extended periods of leaf wetness from frequent rain, overhead irrigation, or dew. The fungal
+spores can be spread by wind and rain, irrigation, insects, workers, and on tools and equipment. Once the primary
+infections have occurred, they become the most important source of new spore production and are responsible for
+rapid disease spread. Early blight can develop quickly mid- to late season and is more severe when plants are
+stressed by poor nutrition, drought, other diseases, or pests.
+Symptoms
+Early blight ﬁrst appears as small brown-to-black lesions on older foliage. The tissue surrounding the primary
+lesions may become bright yellow, and when lesions are numerous, entire leaves may become chlorotic. As the
+lesions enlarge, they often develop concentric rings giving them a bull's-eye or target-spot appearance (Fig. 1).
+When conditions are favorable for disease development, lesions can become numerous and plants defoliate,
+reducing both fruit quantity and quality. Fruit can become infected either in the green or ripe stage through the
+stem attachment. Lesions can become quite large, involve the whole fruit, and have characteristic concentric rings.
+Infected fruit often drops, and losses of immature fruit may occur. Fruit on defoliated plants are also subject to
+sunscald. Stems and petioles aﬀected by early blight have elliptical concentric lesions, which severely weaken the
+plant (Fig. 2). Lesions at the base of emerging seedlings can cause collar rot. If this arises consecutively on many
+seedlings, it may indicate contamination of tomato seeds or soil used for planting.
+Figure 1. Early blight on tomato leaf. Figure credit: Fulya
+Baysal-Gurel, The Ohio State University
+Figure 2. Early blight on tomato stems. Figure credit: Thomas
+A Zitter, Cornell University
+Management
+Seed selection and treatments
+The planting of pathogen-free organically produced tomato
+seed is an important ﬁrst step in managing early blight disease.
+Further information on organic tomato seed selection can be
+found in the related eOrganic article Sourcing Certiﬁed
+Organic Seed and the National Organic Program Regulations.
+Fungicidal seed treatments are not an option for organic growers; however, there are some seed treatments—such
+as hot water sanitation or National Organic Program (NOP)-compliant protectants—that can be used by organic
+farmers to eradicate some pathogens from seed. Hot water seed treatment at 122°F for 25 minutes is
+1/3
+
+recommended to control early blight on tomato seed. Chlorine
+seed treatment is not an acceptable treatment. Growers
+should always check with their certifying agency prior to using
+any seed treatment. For more information on organic seed
+treatments, see the eOrganic article Organic Seed Treatments
+and Coatings.
+Variety selection
+A number of tomato varieties have been developed that are partially resistant to early blight, such as the Mountain
+series—including Mountain Pride, Mountain Supreme, Mountain Gold, Mountain Fresh, and Mountain Belle. Such
+varieties are sometimes inaccurately described as "tolerant" to early blight. Partially resistant varieties are not
+immune to a particular disease; in the case of partial resistance to early blight, infected plants may develop lesions
+or defoliate to some degree, often depending on environmental conditions, plant stress, and other factors. Further
+information on disease-resistant tomato varieties can be found in databases provided by Cornell University at
+http://vegetablemdonline.ppath.cornell.edu/.
+Propagation and Nursery Management
+The planting of pathogen-free organically produced tomato transplants is essential in managing early blight
+disease. Seeds should be sown in a pathogen-free planting mix that meets organic standards. Field soil may
+contain pathogens, weed seeds, and insect pests, so it is not recommended for seedling production. Flats with
+larger cells allow greater air movement between seedlings, which promote rapid drying of foliage and discourages
+disease development. Mulch (black plastic, straw, and newspaper, for example) helps to protect the plant from
+inoculum splashing from the soil onto lower leaves.
+Crop Rotation
+Early blight is a soilborne disease, so rotation can be a good management tool. A good practice is to treat
+members of the same plant family as a group and rotate based on groups rather than individual crops.
+Solanaceous crops include tomatoes, potatoes, peppers, chilies, eggplants, and tobacco. Using a three or four
+year crop rotation with non-solanaceous crops will allow infested plant debris to decompose in the soil. Rotations
+with small grains, corn, or legumes are preferable.
+Organic amendments
+Good quality compost improves soil structure and its ability to hold water and nutrients; it also supports
+microorganisms that contribute to biological control. Our research has shown that early blight severity was less in
+tomato plants grown in compost-amended soil in the high tunnel than in non-amended soil; furthermore,
+incorporating the amendments into soil increased the total and marketable yield (Baysal-Gurel et al., 2009).
+Sanitation
+Early blight survives between crops in or on the residue from diseased plants, so it is important to remove
+diseased plants or destroy them immediately after harvest. Alternatively, bury diseased crop debris by deep-
+plowing to reduce spore levels available for infection of new plants. Solanaceous weeds, such as jimsonweed,
+horse nettle, ground-cherry, and the numerous nightshades, should be eliminated as they may harbor pathogen
+inoculum. Volunteer potatoes and tomatoes can also be a source of inoculum for early blight. Frequent disinfection
+of pruning tools should be disinfected frequently during use to help prevent the spread of spores. Stakes and cages
+can be disinfected each season before use with an approved product, such as ethanol, hydrogen peroxide, or
+peracetic acid. Disinfection with sodium hypochlorite (bleach) at 0.5% is eﬀective, but must be followed by rinsing.
+Materials
+Early detection is important in disease management, so it is important to scout plants regularly. Disease
+forecasting is another important practice used to predict the probability of disease incidence. Weather monitoring
+instruments are placed in the ﬁeld to collect data on canopy temperature, leaf wetness periods, and other factors
+that aﬀect the likelihood of disease occurrence. The data collected from these monitoring stations are used to time
+fungicidal sprays for their optimum eﬀect, generally resulting in fewer spray applications each growing season. If
+the uses of preventive and cultural methods for disease control are insuﬃcient to manage early blight, National
+Organic Program (NOP)-compliant inputs can be applied to reduce disease spread. NOTE: Before applying any
+pest control product, be sure to (1) read the label to be sure that the product is labeled for the crop you intend to
+2/3
+
+apply it to and the disease you intend to control, (2) read and understand the safety precautions and application
+restrictions, and (3) make sure that the brand name product is listed in your Organic System Plan and is approved
+by your certiﬁer. For more information on how to determine whether a disease management product can be used
+on your farm, see the eOrganic article Can I Use this Product for Disease Management on my Organic Farm ?
+Copper products are considered synthetic and allowed with restrictions. Fixed copper products, hydrogen dioxide
+(=hydrogen peroxide), and potassium bicarbonate can be used against early blight. However, over-application of
+copper products can lead to copper accumulation in the soil, contamination of run-oﬀ water, and subsequent
+toxicity to non-target organisms. Biorational products represent an important option for the management of plant
+diseases. Research has shown that A. solani-inoculated tomato plants treated with compost extract, prepared in a
+ratio of 1:5 compost:water (v/v), showed a signiﬁcant reduction in disease index as compared with the untreated
+inoculated plants (Tsror, 1999). Other research has shown that the eﬃcacy of compost tea was improved when
+combined with the biofungicides Serenade Max™ (Bacillus subtilis) and Sonata™ (Bacillus pumilis). These results
+indicate that the use of compost tea for control of tomato early blight disease may be of some beneﬁt to
+greenhouse tomato growers, and to growers of organic ﬁeld tomatoes who are limited in their disease management
+options (Kouyoumjian, 2007). Garlic- and neem oils and seaweed extract have also been shown to be eﬀective in
+reducing the severity of early blight disease on tomato compared to untreated controls in another research project
+(Wszelaki and Miller, 2005). For more information about microbial biopesticides, see the related eOrganic article
+Biopesticides for Plant Disease Management in Organic Farming.
+References and Citations
+Baysal-Gurel, F., N. Subedi, J. Mera, and S. A. Miller. 2009. Evaluation of composted dairy manure and
+biorational products for the control of diseases of fresh market tomatoes in high tunnels. The sixth
+international IPM symposium, March 24–26, 2009, Portland, Oregon. (Available online at:
+http://www.ipmcenters.org/ipmsymposium09/148_Baysal-Gurel_Miller.pdf) (veriﬁed 14 Sept 2010).
+Kouyoumjian, R. E. 2007. Comparison of compost tea and biological fungicides for control of early blight in
+organic heirloom tomato production. MS Thesis. Clemson University, South Carolina.
+Agricultural Marketing Service—National Organic Program [Online]. United States Department of
+Agriculture. Available at: http://www.ams.usda.gov/nop/ (veriﬁed 3 Sept 2010).
+Tsror, L. 1999. Biological control of early blight in tomatoes. Acta Horticulturae 487: 271–273.
+Vegetable MD Online [Online]. Department of Plant Pathology and Plant-Microbe Biology, Cornell
+University. Available at: http://vegetablemdonline.ppath.cornell.edu/ (veriﬁed 26 March 2010).
+Watson, M.E. 2003. Testing compost. Ohio State University Fact Sheet. ANR-15-03. Ohio State University
+Extension. (Available at: http://ohioline.osu.edu/anr-fact/0015.html) (veriﬁed 16 Sept 2010).
+Wszelaki, A. L., and S. A. Miller. 2005. Determining the eﬃcacy of disease management products in
+organically-produced tomatoes [Online]. Plant Health Progress. Available at: http://dx.doi.org/10.1094/PHP-
+2005-0713-01-RS (veriﬁed 3 Sept 2010).
+ 
+This is an eOrganic article and was reviewed for compliance with National Organic Program regulations by
+members of the eOrganic community. Always check with your organic certiﬁcation agency before adopting new
+practices or using new materials. For more information, refer to eOrganic's articles on organic certiﬁcation.
+eOrganic 4961
+3/3

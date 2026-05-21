@@ -1,0 +1,799 @@
+Basic Tomato (Lycopersicon esculentum) 
+Physiology and Morphology 
+Authored by Emmanuel Torres Quezada, Assistant Professor and Horticultural Cropping Systems Extension Specialist, 
+Ricardo Jose Gandini Taveras, Graduate student, and Suam Perlaza Cruz, Undergraduate student. Eastern Shore 
+Agricultural Research and Extension Center, School of Plant and Environmental Sciences, Virginia Tech
+Economic Importance 
+Tomatoes are a globally significant crop with 
+extensive cultivation worldwide. In the United 
+States, tomato production ranks fourth on a global 
+scale. The state of Virginia harvested between 2,200 
+and 2,800 acres of fresh-market tomatoes per year, 
+with an average yield of 25 tons/acre, and nearly $25 
+million in value in 2018, with most of the fruit 
+intended for wholesale markets and distributed 
+across the east coast of the U.S. (Virginia 
+Department of Agriculture and Consumer Services, 
+2020). Understanding the plant functions, anatomy, 
+and reactions to abiotic stressors is crucial for 
+achieving the desired crop outcomes and optimizing 
+yield within the current production system in 
+Virginia. 
+History  
+The tomato plant is native to western South 
+America, specifically the region encompassing 
+present-day Ecuador, Peru, Bolivia, and northern 
+Chile. The plant's wild ancestors, small and bitter 
+berries, were first cultivated by indigenous peoples 
+in these areas. The earliest evidence of tomato 
+cultivation dates to around 500 BC in what is now 
+modern-day Mexico. The Mesoamerican 
+civilizations, including the Aztecs and Mayans, were 
+among the first to cultivate and consume tomatoes. 
+They appreciated the tomato's vibrant colors and 
+incorporated it into their cuisine (Bergougnoux, V. 
+2014; Smith, 2001).  
+ 
+European exploration brought tomatoes to the 
+attention of the Western world. Spanish 
+conquistadors encountered tomatoes during their 
+expeditions to the Americas and introduced them to 
+Europe. Initially, Europeans regarded tomatoes with 
+suspicion due to their similarity to poisonous plants 
+from the same family, such as belladonna. In 
+Europe, tomatoes were initially cultivated as 
+ornamental plants. It was believed that they 
+possessed aphrodisiac properties, and the fruit's 
+vibrant colors made it an attractive addition to 
+gardens. However, tomatoes began to gain culinary 
+popularity gradually. By the 17th and 18th centuries, 
+tomatoes were used in various European cuisines, 
+particularly Italy and Spain (Bergougnoux, V. 2014; 
+Smith, 2001).  
+ 
+Tomatoes arrived in North America during the 18th 
+century. Thomas Jefferson grew tomatoes at his 
+Monticello estate in Virginia, helping to popularize 
+their cultivation in the country. However, tomatoes 
+were still met with skepticism in some parts of North 
+America, with some considering them to be 
+poisonous or unfit for consumption. Advances in 
+scientific understanding helped dispel myths about 
+their toxicity. The discovery that tomatoes belonged 
+to the nightshade family, which includes many 
+edible plants, reassured people about their safety. 
+Anatomy and Morphology  
+Tomatoes are dicot plants structured of various 
+anatomical organs that contribute to their growth and 
+development. Normally, the tomato plant has a 
+taproot system with a main primary root that extends 
+vertically into the soil. From the primary root, lateral 
+roots branch out, spreading horizontally to absorb 
+water and nutrients. However, tomato plants can 
+have either a fibrous or a taproot, depending on the 
+tissue they are growing from (Ouyang et al., 2021). 
+If the plant comes from a seed, the main roots will 
+be a taproot; whereas when plants grow from a 
+vegetative part, the roots will be fibrous. About 60% 
+of tomato roots are 11 inches below the soil 
+
+ 
+ 
+ 
+Virginia Cooperative Extension 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+2
+(Heuvelink, 2018). The roots play a crucial role in 
+anchoring the plant and absorbing essential elements 
+for growth. The basic root develops from the 
+embryonic radicle. The taproot grows vertically into 
+the soil, providing stability to the plant and serving 
+as the primary channel for water and nutrient uptake. 
+Lateral roots are thinner and extend horizontally in 
+the soil. They arise from the pericycle, a layer of 
+cells in the root's vascular cylinder (stele). These 
+lateral roots increase the root surface area, enhancing 
+the plant's ability to absorb water and nutrients. 
+ 
+At the microscopic level, the root surface is covered 
+with tiny root hairs (Figure 1). Root hairs are 
+elongated, finger-like projections that emerge from 
+the epidermal cells of the root. They greatly increase 
+the surface area available for water and nutrient 
+absorption. Root hairs play a crucial role in 
+facilitating the uptake of water and mineral ions 
+from the soil. Root hair densities in tomato plants 
+range from approximately 100 to 500 root hairs per 
+square millimeter of root surface area. These 
+numbers may vary depending on the specific tomato 
+variety, growth stage, and the region of the root 
+being examined (e.g., root tip or mature sections). 
+ 
+Figure 1. Tomato root (mature). Photo by Ricardo 
+Jose Gandini Taveras 
+ 
+The tip of the tomato root is covered by a protective 
+structure called the root cap. The root cap is 
+composed of specialized cells that provide protection 
+to the root as it grows through the soil or growing 
+media. It also secretes a slimy substance called 
+mucilage, which helps lubricate the root's passage 
+through the soil and aids in water absorption.  
+The stem of a tomato plant is characterized by its 
+herbaceous nature. It grows erect and provides 
+support to the plant. The stem consists of nodes and 
+internodes. Nodes are the points along the stem 
+where leaves, lateral branches, and flowers emerge. 
+Internodes are the spaces between nodes and 
+contribute to the overall length of the stem. 
+Adventitious roots can develop from the stem, 
+particularly when it meets the soil. The stem surface 
+of a tomato plant is smooth and covered with tiny, 
+fine hairs (Figure 2). These hairs, known as 
+trichomes, can vary in density and provide 
+protection against pests, reduce water loss, and 
+contribute to the overall texture of the stem. 
+ 
+Tomato stems have leaf axils, which are the upper 
+angles formed between the stem and the base of the 
+leaf petiole. It is from the leaf axils that lateral 
+branches, flowers, and fruit clusters (inflorescences) 
+emerge. The apical meristem is found at the growing 
+tip of the stem, known as the apical bud or shoot tip. 
+The apical meristem is a region of actively dividing 
+cells responsible for the vertical growth of the stem. 
+It produces new cells that elongate and differentiate 
+into various tissues, allowing the stem to increase in 
+length. Certain tomato varieties, known as 
+stoloniferous or trailing types, produce long, slender 
+stems called stolons, which grow along the ground, 
+and at their nodes, they can form adventitious roots, 
+leading to the development of new plants. 
+ 
+ 
+ 
+Figure 2. Trichomes in tomato stem. Photo by 
+Ricardo Jose Gandini Taveras. 
+ 
+ 
+ 
+
+Virginia Cooperative Extension 
+3
+Commercial tomato plants can be divided into two 
+categories based on their stem-growing habits: 
+indeterminate and determinate (Kandel et al., 2020). 
+The determinate plant will decrease its vegetative 
+development once the reproductive organs (flowers) 
+are developed. On the other hand, indeterminate 
+cultivars will maintain a constant growth of their 
+stem and leaves, even after the first few flowers 
+appear in the plant.  
+Tomato plants have compound leaves that are 
+arranged alternately along the stem. Each leaf 
+typically consists of several leaflets. The leaflets are 
+usually ovate or lanceolate in shape, and they have a 
+serrated margin. The leaves are green and contain 
+chlorophyll, allowing them to carry out 
+photosynthesis, producing energy for the plant. 
+The leaf blade, also known as the lamina, is the 
+leaf’s main, flat, expanded portion. Tomato leaf 
+blades are typically broad, ovate, or lanceolate in 
+shape, with a smooth margin. The size and shape of 
+the leaf blade may vary depending on the tomato 
+variety. Tomato leaves have a network of veins 
+running through the leaf blade (Figure 3). These 
+veins consist of vascular tissues, including xylem 
+and phloem, that transport water, minerals, and 
+sugars within the leaf. The major veins, called 
+primary veins or midribs, extend from the leaf base 
+towards the leaf tip, branching into secondary veins 
+and further into smaller tertiary veins. 
+Figure 3. Tomato leaves veins. Photo by 
+Emmanuel Torres Quezada 
+The leaf petiole is the slender stalk that attaches the 
+leaf blade to the stem. Tomato leaf petioles can vary 
+in length, depending on the specific tomato variety. 
+The petiole provides support and allows for 
+flexibility and movement of the leaf blade. The leaf 
+axil is the upper angle formed between the petiole 
+and the stem. In tomato plants, the leaf axils are 
+important sites for lateral branch development, 
+flower formation, and fruit clusters (inflorescences). 
+The surface of tomato leaves is typically smooth and 
+covered with tiny, fine hairs called trichomes (Figure 
+3). Trichomes can vary in density and length, and 
+they contribute to leaf texture. They can provide 
+protection against pests, reduce water loss through 
+transpiration, and affect leaf temperature regulation.  
+Tomato leaves often have small, leaf-like 
+appendages called stipules at the base of the petiole. 
+Stipules can vary in size and shape, ranging from 
+tiny bristles to leafy structures. In some tomato 
+varieties, stipules may be absent or very small and 
+inconspicuous. On average, tomato leaves have a 
+stomatal density ranging from approximately 50 to 
+150 stomata per square millimeter (mm²) of leaf 
+surface area (Figure 4). However, it's important to 
+note that these values can vary among different 
+tomato varieties and even within different regions of 
+the same leaf. Stomatal density tends to be higher on 
+the lower (abaxial) surface of the tomato leaf 
+compared to the upper (adaxial) surface. The lower 
+surface is more exposed to light and involved in gas 
+exchange and transpiration.  
+Figure 4. Tomato leaf surface stomata (abaxial side). 
+Photo by Suam Perlaza Cruz. 
+ 
+ 
+
+Virginia Cooperative Extension 
+4
+Tomato plants produce yellow, five-petaled flowers 
+that are typically self-fertilizing (Figure 5). The 
+flowers arise from the leaf axils, where the leaves 
+join the stem. Each flower has both male and female 
+reproductive organs. The male reproductive organ is 
+the stamen, which consists of a filament and an 
+anther containing pollen. The female reproductive 
+organ is the pistil, which consists of the stigma, 
+style, and ovary (Went, 1944). 
+Tomato flowers are typically composed of several 
+distinct parts. At the base of the flower, there is a 
+modified stem called the pedicel or flower stalk, 
+which attaches the flower to the main stem of the 
+plant. Flowers have five green, leaf-like sepals, 
+collectively known as the calyx. The sepals enclose 
+and protect the developing flower bud before it 
+opens. They can be seen as small, pointed structures 
+at the base of the flower. Flowers have five fused 
+petals, forming a trumpet-shaped structure called the 
+corolla. The petals are typically yellow in color, 
+although certain varieties may have petals in 
+different shades, such as white or pink. 
+The stamens are the male reproductive organs of the 
+flower. Tomato flowers usually have five stamens, 
+consisting of a filament and an anther. The filament 
+is a slender stalk-like structure that supports the 
+anther, which contains pollen grains. The pollen 
+carries the male gametes required for fertilization. 
+The pistil is the female reproductive organ of the 
+flower, located in the center of the flower, and 
+consists of three main parts: Stigma, Style, and 
+Ovary.  
+The stigma is the receptive surface at the top of the 
+pistil. It is often sticky or hairy, enabling it to 
+capture and hold pollen grains. The style is a slender 
+tube-like structure that connects the stigma to the 
+ovary. It provides a pathway for pollen tubes to 
+reach the ovary during fertilization. The ovary is the 
+enlarged basal part of the pistil. It contains one or 
+more ovules, which are potential seeds. After 
+fertilization, the ovary develops into the fruit of the 
+tomato plant. 
+Figure 5. Tomato flower. Photo by Emmanuel Torres 
+Quezada. 
+Tomato flowers are borne in clusters called 
+inflorescences. The inflorescence of a tomato plant 
+is called a raceme, which is a type of unbranched, 
+elongated cluster. It consists of multiple flowers 
+attached to a main axis or peduncle. 
+The fruit of a tomato plant develops from the 
+fertilized ovary after successful pollination. It is a 
+fleshy, berry-like structure that varies in size, shape, 
+and color depending on the tomato variety. The fruit 
+typically contains multiple chambers filled with 
+seeds embedded in a gelatinous pulp. The seeds are 
+dispersed when the fruit ripens, and the pulp 
+becomes soft (Brewer et al., 2007). They have a 
+fleshy pericarp, which is the wall of the fruit, 
+surrounding the seeds. The pericarp is divided into 
+three main layers: the exocarp (outermost layer), the 
+mesocarp (middle layer), and the endocarp 
+(innermost layer). The exocarp of tomato fruit is 
+commonly referred to as the skin or peel. It is thin, 
+smooth, and typically glossy. The color of the skin 
+can vary widely, ranging from green (unripe) to red, 
+yellow, orange, pink, or even striped or bi-colored, 
+depending on the cultivar. The skin serves as a 
+protective layer for the underlying fruit tissues. 
+The mesocarp or flesh of tomato fruit is the juicy, 
+edible part. It is composed of parenchyma cells filled 
+with water, sugars, acids, and other nutrients. The 
+flesh is typically soft and succulent, with varying 
+textures and flavors depending on the tomato 
+ 
+
+Virginia Cooperative Extension 
+5
+variety. Tomato fruits contain numerous seed 
+locules, which are the cavities or compartments 
+within the fruit that house the seeds. The number of 
+seed locules can vary depending on the tomato 
+variety. Commonly, tomato fruits have multiple seed 
+locules arranged in a radial pattern around the 
+central core. 
+Each seed locule of a tomato fruit contains multiple 
+seeds. The seeds are small, flattened, and kidney-
+shaped. They are encased within a gel-like substance 
+called placental tissue. Tomato seeds are surrounded 
+by a seed coat that protects and houses the 
+embryonic plant. At the top of the fruit, there is a 
+small, woody structure called the fruit stalk or 
+pedicel. The fruit stalk connects the fruit to the 
+peduncle, which is the main stem of the plant. The 
+fruit stalk facilitates nutrient transport and provides 
+support for the developing fruit (Fruit: Rančić et 
+al., 2010).  
+Air Temperature 
+Air temperature has a significant effect on tomato 
+plant growth and development. Different 
+temperature ranges can influence various 
+physiological processes and ultimately impact the 
+overall growth and productivity of tomato plants 
+(Heuvelink et al., 2018).   
+Air and soil temperature play a crucial role in seed 
+germination and early seedling growth. The optimal 
+germination temperature for tomato seeds typically 
+ranges between 20°C and 30°C (68°F-86°F). Higher 
+temperatures promote faster germination, while 
+lower temperatures can result in delayed or uneven 
+germination. Once germinated, tomato seedlings 
+thrive best in slightly cooler temperatures around 
+18°C to 24°C (64°F-75°F). 
+Air temperature also affects vegetative growth in 
+tomato plants, including leaf and stem development. 
+Tomato plants generally prefer daytime temperatures 
+around 21°C to 27°C (70°F-81°F) for optimal 
+vegetative growth. In this temperature range, 
+photosynthesis and other metabolic processes occur 
+at an efficient rate, promoting vigorous leaf growth, 
+stem elongation, and overall plant size.  
+Air temperature significantly influences flowering 
+and fruit set in tomato plants. The ideal temperature 
+range for successful flower development and fruit 
+set is typically between 21°C and 24°C (70°F-75°F). 
+Higher temperatures can inhibit pollen viability, 
+resulting in reduced fruit sets and increased flower 
+drops. Conversely, temperatures below 15°C (59°F) 
+or above 32°C (90°F) can also lead to poor fruit set 
+and decreased yield. Warmer temperatures 
+accelerate fruit ripening, while cooler temperatures 
+slow it down. Once the fruits have set, a temperature 
+range of 18°C to 27°C (64°F-81°F) is generally 
+favorable for optimal fruit development and 
+ripening. Extreme heat or cold stress can result in 
+uneven ripening, reduced flavor, and texture quality 
+of the tomatoes. 
+Exposure to prolonged periods of extreme heat 
+above 32°C (90°F) or extended cold spells below 
+10°C (50°F) can negatively impact tomato plants. 
+High temperatures can lead to flower drop, reduced 
+fruit quality, and increased susceptibility to pests 
+and diseases. Cold temperatures can cause chilling 
+injury, resulting in stunted growth, leaf damage, and 
+reduced fruit production. 
+Relative Humidity 
+Relative humidity (the amount of moisture present in 
+the air relative to its maximum retention capacity at 
+a given temperature), can also have both positive 
+and negative effects on tomato growth and yield. 
+Relative humidity affects the rate of transpiration, 
+which is the process by which plants lose water 
+through their leaves. High humidity levels reduce the 
+rate of transpiration, leading to slower water loss 
+from tomato plants. This can be beneficial in 
+preventing excessive water stress and maintaining 
+adequate hydration. However, excessively high 
+humidity for extended periods can also limit 
+transpiration, potentially hindering water uptake and 
+nutrient absorption. 
+High relative humidity levels can also create a 
+favorable environment for the development and 
+spread of fungal and bacterial diseases. Moist 
+conditions provide a breeding ground for pathogens, 
+increasing the risk of diseases such as powdery 
+mildew, leaf spots, and fruit rot. To mitigate disease 
+pressure, it is crucial to maintain proper air 
+circulation, reduce leaf wetness, and manage 
+humidity levels to minimize pathogen proliferation 
+(Figure 6). 
+
+ 
+ 
+ 
+Virginia Cooperative Extension 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+6
+Figure 6. Tomato crop under high tunnel conditions 
+with passive ventilation to reduce excessive 
+humidity. Photo by Emmanuel Torres Quezada 
+ 
+Relative humidity can influence the process of 
+pollination and subsequent fruit set in tomatoes. 
+High humidity, particularly when combined with 
+high temperatures, can adversely affect pollination 
+by reducing pollen viability and hindering pollen 
+transfer by wind or pollinators. This can lead to poor 
+fruit set and reduced yield. Ensuring adequate air 
+movement and lower humidity levels during 
+flowering can help facilitate successful pollination 
+and fruit set. 
+ 
+High humidity levels during fruit development and 
+ripening increase the risk of fruit cracking and the 
+growth of fungal pathogens. Excessive moisture on 
+the fruit surface can also lead to post-harvest rotting. 
+On the other hand, very low humidity levels can 
+cause fruit dehydration and result in reduced fruit 
+quality, flavor, and shelf life. Overall, extremely 
+high, or low air humidity levels can negatively 
+impact overall plant growth and vigor. In general, a 
+relative humidity of around 60% is considered ideal 
+for most stages of tomato growth. 
+Solar Radiation 
+Solar radiation plays a crucial role in tomato plant 
+growth and yield. Solar radiation is the primary 
+energy source for photosynthesis, the process by 
+which plants convert sunlight into energy. Tomato 
+plants require solar radiation to produce 
+carbohydrates, which are essential for growth and 
+fruit development. Sufficient sunlight exposure 
+allows tomato plants to photosynthesize efficiently, 
+resulting in healthy foliage, increased biomass, and 
+overall plant vigor. 
+ 
+The solar radiation requirement for tomato plants 
+can be described in terms of daily light integral 
+(DLI), which represents the total amount of 
+photosynthetically active radiation (PAR) received 
+by the plant over a 24-hour period. Generally, 
+tomato plants require a DLI ranging from 15 to 30 
+mol/m²/day for optimal growth and fruit production. 
+This range ensures that the plants receive sufficient 
+light energy for photosynthesis, which is essential 
+for plant growth, leaf expansion, flowering, and fruit 
+development. To achieve the desired DLI, tomato 
+plants typically thrive when exposed to direct 
+sunlight for 6 to 8 hours per day. 
+ 
+Insufficient sunlight exposure can lead to tall and 
+thin plants, reduced fruit set, and overall weaker 
+growth. Plants respond best to a balanced spectrum 
+of light, including both blue and red wavelengths. 
+Blue light promotes vegetative growth and overall 
+plant development, while red light is essential for 
+flowering and fruiting.  
+Water Availability  
+Water is essential for maintaining plant hydration 
+and turgidity. Sufficient water availability ensures 
+that tomato plants can maintain proper cell turgor 
+pressure, which is necessary for structural support 
+and upright growth. When water is limited, plants 
+may temporarily wilt, leading to stunted growth and 
+reduced overall vigor. 
+ 
+Adequate water availability enables efficient 
+photosynthesis, promoting the production of 
+carbohydrates and supporting plant growth. Water is 
+also necessary for the uptake and transport of 
+essential nutrients from the soil to different parts of 
+the tomato plant. Sustained water availability also 
+supports leaf expansion and canopy development in 
+tomato plants. Sufficient water uptake allows for the 
+growth of large, healthy leaves, increasing the 
+overall photosynthetic capacity of the plant. A well-
+developed canopy ensures maximum light 
+interception and utilization, contributing to better 
+growth and yield potential. 
+ 
+Water availability during the flowering stage is 
+crucial for successful pollination and fruit set in 
+tomato plants. Inadequate water supply can lead to 
+decreased pollen viability and reduced pollination 
+efficiency. Insufficient water during fruit 
+
+ 
+ 
+ 
+Virginia Cooperative Extension 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+7
+development may result in incomplete fruit 
+development, smaller fruit size, and increased 
+susceptibility to blossom-end rot and other 
+physiological disorders. Insufficient water during 
+fruit development can lead to reduced fruit size, poor 
+flavor, and increased susceptibility to cracking. 
+Water stress during fruit ripening stages may result 
+in uneven ripening and compromised fruit quality. 
+Conversely, optimal water availability supports the 
+production of well-sized, flavorful fruits, and higher 
+yield. 
+ 
+Water stress also weakens the defense mechanisms 
+of tomato plants, making them more susceptible to 
+diseases. Drought-stressed plants are often more 
+prone to infections by fungal pathogens, such as 
+Fusarium and Verticillium, which can cause wilting, 
+root rot, and other diseases. Maintaining adequate 
+soil moisture levels reduces the risk of disease and 
+enhances plant health. 
+Salinity 
+Salinity refers to the presence of excessive salts in 
+the soil or irrigation water, which can have 
+detrimental effects on tomato plant growth and yield. 
+High soil salinity levels create an osmotic 
+imbalance, making it more difficult for tomato plants 
+to absorb water from the soil. This leads to water 
+stress and reduced water uptake, affecting plant 
+growth and development. Additionally, high salt 
+levels can disrupt the uptake and balance of essential 
+nutrients, such as potassium, calcium, and 
+magnesium, further impairing plant nutrition and 
+overall health. 
+ 
+Excessive salt accumulation in the root zone can 
+result in ion toxicity, particularly from sodium (Na+) 
+and chloride (Cl-) ions. Sodium ions can interfere 
+with nutrient uptake and disrupt cell functioning, 
+leading to nutrient deficiencies. Chloride ions, when 
+taken up in high amounts, can cause leaf burn, tissue 
+damage, and reduced photosynthetic efficiency. The 
+imbalance of these ions affects cellular processes, 
+metabolic activities, and overall plant performance. 
+ 
+Salinity stress inhibits tomato plant growth and 
+development. Plants may exhibit stunted growth, 
+reduced shoot, and root development, and overall 
+decreased biomass accumulation. The impact on 
+growth is often more severe in young plants and 
+seedlings, as they are more sensitive to salt stress. 
+Additionally, salinity can hinder the development of 
+flowers, resulting in reduced fruit sets and ultimately 
+lower yields. 
+ 
+High salt concentrations can cause leaf damage and 
+chlorosis in tomato plants. Chlorosis refers to the 
+yellowing of leaves due to a disruption in 
+chlorophyll synthesis and functioning. Salinity-
+induced chlorosis can lead to reduced 
+photosynthesis, lower carbohydrate production, and 
+decreased energy availability for growth and fruit 
+development. 
+ 
+Salinity stress negatively affects fruit quality and 
+yield in tomatoes. The accumulation of salts in the 
+plant can result in reduced fruit size, abnormal 
+shape, and lower overall marketable yield. Salinity-
+induced stress can also affect the flavor, color, and 
+nutritional composition of the fruits, impacting their 
+market value and consumer acceptability. 
+ 
+Salinity stress weakens tomato plants, making them 
+more susceptible to various diseases and pests. The 
+weakened defense mechanisms and physiological 
+imbalances caused by salinity can create favorable 
+conditions for the growth and spread of pathogens, 
+leading to increased disease incidence. Pests, such as 
+nematodes, may also thrive under salinity stress and 
+cause additional damage to the plants. 
+ 
+Mitigating the effects of salinity stress on tomatoes 
+can be challenging, but several strategies can help 
+alleviate the negative impacts. These include 
+selecting salt-tolerant tomato varieties, improving 
+soil drainage and leaching, implementing proper 
+irrigation practices, and using soil amendments to 
+reduce salt accumulation. Additionally, monitoring 
+and managing soil salinity levels through regular 
+testing and appropriate fertilizer application can help 
+optimize tomato growth, yield, and overall plant 
+health in saline environments. 
+ 
+Electrical conductivity (EC) is a measure of a 
+material's ability to conduct an electric current. In 
+the context of water or solutions, it indicates the 
+concentration of ions or dissolved solids present in 
+the solution, which affects its ability to conduct 
+electricity. 
+ 
+
+ 
+ 
+ 
+Virginia Cooperative Extension 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+8
+For tomatoes grown in soilless or hydroponic 
+systems, the recommended EC range is typically 
+between 1.5 and 3.0 millisiemens per centimeter 
+(mS/cm) during the vegetative stage. As the plants 
+transition to the flowering and fruiting stage, the EC 
+can be increased slightly to a range of 2.0 to 4.0 
+mS/cm. These values provide a good balance of 
+nutrient availability and uptake while avoiding 
+excessive salt accumulation. 
+ 
+In soil-based cultivation, the optimal EC levels can 
+be influenced by the specific soil composition and 
+fertility. As a general guideline, an EC range of 1.0 
+to 2.5 mS/cm is often recommended for tomatoes in 
+soil. Regular soil testing and monitoring are 
+essential to adjust and maintain the appropriate EC 
+levels based on the specific soil conditions and 
+nutrient requirements of the plants. 
+ 
+It's important to note that electrical conductivity can 
+be influenced by factors such as temperature and the 
+presence of specific ions or substances in the 
+solution. These factors may require calibration or 
+conversion factors when measuring conductivity in 
+specific applications. 
+Carbon Dioxide  
+CO2 is an essential component for photosynthesis, 
+and its concentration in the atmosphere can 
+significantly influence tomato plant growth and 
+yield. Elevated CO2 levels can stimulate 
+photosynthesis in tomato plants. With higher 
+atmospheric CO2 concentrations, the rate of CO2 
+uptake by the plant increases, leading to enhanced 
+carbon fixation and higher production of 
+carbohydrates. This increased photosynthetic 
+activity provides more energy for growth and 
+development, resulting in improved plant biomass 
+and overall productivity. 
+ 
+Tomato plants grown under elevated CO2 levels 
+often exhibit improved water use efficiency. As CO2 
+concentration rises, the stomatal openings on the 
+leaves can partially close, reducing water loss 
+through transpiration. This helps conserve water and 
+allows the plant to maintain better hydration, even 
+under water-limited conditions. The improved water 
+use efficiency can be particularly beneficial in arid 
+or drought-prone environments. 
+ 
+Increased carbon availability from elevated CO2 
+levels supports greater leaf expansion, stem 
+elongation, and overall biomass accumulation. This 
+results in larger and more vigorous plants with 
+increased leaf area, which can positively impact fruit 
+yield. Elevated CO2 levels can advance the 
+flowering and fruiting process in tomatoes. The 
+enhanced carbon availability stimulates reproductive 
+growth, leading to earlier and more synchronized 
+flowering. This can result in earlier fruit sets and 
+extended fruiting periods, potentially increasing the 
+total yield. 
+ 
+Elevated CO2 concentrations generally have positive 
+effects on fruit quality in tomatoes. The increased 
+carbon availability can enhance the synthesis and 
+accumulation of sugars, organic acids, and other 
+flavor compounds, leading to improved taste and 
+sensory attributes of the fruits. However, it is 
+important to note that the effects of CO2 on fruit 
+quality can vary depending on other environmental 
+factors and the specific tomato variety. 
+ 
+The effects of elevated CO2 on tomato growth and 
+yield can be influenced by other environmental 
+factors, such as temperature, light intensity, and 
+nutrient availability. The response to elevated CO2 
+may differ under different growing conditions and 
+can be modified by the presence of stressors or 
+limitations associated with other factors. 
+ 
+It is worth mentioning that while elevated CO2 levels 
+can have positive effects on tomato growth and 
+yield, these effects can vary depending on the 
+specific concentration of CO2, duration of exposure, 
+and other environmental factors. Additionally, the 
+long-term implications of elevated CO2 on tomato 
+plants and their interactions with changing climatic 
+conditions require further research and investigation. 
+References  
+Bergougnoux, V. (2014). The history of tomato: 
+from domestication to biopharming. 
+Biotechnology advances, 32(1), 170-189. 
+Brewer, M. T., J.B. Moyseenko, A.J. Monforte, and 
+E. van der Knaap. 2007. Morphological variation 
+in tomato: A comprehensive study of quantitative 
+trait loci controlling fruit shape and development. 
+
+ 
+ 
+ 
+Virginia Cooperative Extension 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+9
+Journal of Experimental Botany, 58(6), 1339–
+1349. https://doi.org/10.1093/jxb/erl301. 
+Heuvelink, E., L.T. Li Tao, and M. Dorais. 2018. 
+‘Crop growth and yield.’, Crop Production 
+Science in Horticulture. CABI International. doi: 
+10.1079/9781780641935.0089. 
+Kandel, D. R., Marconi, T. G., Badillo-Vargas, I. E., 
+Enciso, J., Zapata, S. D., Lazcano, C. A., Crosby, 
+K., & Avila, C. A. 2020. Yield and fruit quality 
+of high-tunnel tomato cultivars produced during 
+the off-season in South Texas. Scientia 
+Horticulturae, 272, 109582.  
+Ouyang, Z., J. Tian, X. Yan, and H. Shen. 2021. 
+Effects of different concentrations of dissolved 
+oxygen on the growth, photosynthesis, yield and 
+quality of greenhouse tomatoes and changes in 
+soil microorganisms. Agricultural Water 
+Management, 245, 106579. 
+Rančić, D., Quarrie, S. P., & Pećinar, I. 2010. 
+Anatomy of tomato fruit and fruit pedicel during 
+fruit development. Microscopy: Science, 
+technology, applications, and education, 2, 851-
+861. 
+Smith, A. F. (2001). The tomato in America: early 
+history, culture, and cookery. University of 
+Illinois Press.  
+Virginia Department of Agriculture and Consumer 
+Services. 2020. Virginia Agricultural Statistics 
+2019 Annual Bulletin. Retrieved from:  
+https://www.nass.usda.gov/Statistics_by_State/Vi
+rginia/Publications/Annual_Statistical_Bulletin/A
+nnual%20Bulletin_19.pdf. 
+Went, F. W. 1944. Morphological Observations on 
+the Tomato Plant. Bulletin of the Torrey 
+Botanical Club, 71(1), 77. 
+https://doi.org/10.2307/2481487. 
+ 
+ 
+ 
+ 
+Visit Virginia Cooperative Extension: ext.vt.edu 
+Virginia Cooperative Extension is a partnership of 
+Virginia Tech, Virginia State University, the U.S. 
+Department of Agriculture, and local governments. Its 
+programs and employment are open to all, regardless of 
+age, color, disability, gender, gender identity, gender 
+expression, national origin, political affiliation, race, 
+religion, sexual orientation, genetic information, 
+military status, or any other basis protected by law. 
+2023 
+ 
+ 
+    
+               SPES-508NP

@@ -1,0 +1,178 @@
+1
+Title:
+Use of Plant Activators to Control Common Diseases of Tomato
+Project Leader:
+Christine D. Smart, Department of Plant Pathology, NYSAES
+Cooperators:
+Maryann Borsick Herman (Graduate Student)
+Holly Lange (Research Technician)
+Abstract:
+Plant activators induce defense responses in plants, which can prevent or slow pathogen infection
+and some of these products have been reported to enhance yield.  This project tested several
+activators labeled for use in NY to determine whether induction of defense response pathways
+could be followed in the field and whether these product could be utilized in a manner that if
+there is any yield improvement or efficacy against common tomato diseases.  While we did not
+see a yield enhancement using products that are suggested to increase yield, we did see
+encouraging results for disease control. We found that one class of activators (the SAR-inducing
+type) controlled bacterial speck of tomato without negatively affecting yield.  The ISR-inducing
+activator failed to provide protection from bacterial diseases.  Also, this compound produced
+inconsistent growth enhancement over several field seasons and it is not clear whether this type
+of compound (ISR-inducing) provides yield enhancement.  Based on these findings, we believe
+that the SAR-inducing compound could be a valuable addition to an integrated management
+program of bacterial disease of tomato.
+Background and Justification:
+Activation of plant defense responses against diseases and insect pests can provide a powerful
+management tool.  Induced resistance has been studied in the laboratory for decades, though this
+information has not translated to consistent control of pests in the field.  Plant defense-activating
+compounds are known as plant activators, plant defense activators or systemic acquired
+resistance (SAR) inducers and are frequently termed biopesticides.  Many of these compounds
+claim additional benefits by increasing plant health and yield, and are expected to be
+environmentally friendly, having no direct effect upon the pathogen.  Plant activators could be a
+viable component of an integrated pest management (IPM) program via delaying initial fungicide
+and/or insecticide applications or they could be alternated with chemical control.  Organic
+production systems could benefit as some activators are certified for organic use.  While several
+such compounds are commercially available, their use by NY growers is quite limited.
+Unfortunately, this is most likely due to the inability of plant activators to consistently control
+many pests in the field.
+Control of bacterial speck and spot of tomato is one of the few examples where a plant activator
+is currently recommended to growers in the Northeast, but the compound is not widely used.
+Tomato bacterial disease control is a high priority for the vegetable commodity group, and a
+comprehensive study of plant activators is necessary to determine the efficacy and utility of these
+products in NY.
+
+2
+This study examined one example of each of the two types of plant activators.  The first activator
+class consists of living microbes that colonize plant roots and activate a resistance mechanism
+known as induced systemic resistance (ISR).  Activation of ISR is thought involve priming,
+where induced plants respond more quickly and to a higher level when a pathogen is present.
+Priming and ISR are thought to involve the ethylene and jasmonic acid plant defense response
+pathways.  Frequently, these products are plant growth-promoting rhizobacteria (PGPR), which
+claim to reduce disease and increase yield.  PGPR are living bacteria (many are Bacillus spp.)
+which can be incorporated into the growing medium just prior to planting seed.  The exact
+mechanism by which PGPR act is unknown, though the yield-enhancement is thought to be a
+response to the ‘growth-promoting’ aspect of the organism.  Bacterial colonization of plant roots
+aids in mineral and nutrient uptake while pest control is apparently due to activation of ISR.
+A specific plant defense pathway known as systemic acquired resistance (SAR) is induced by the
+second type of activator.  Acibenzolar-S-methyl (ASM) is the SAR activator included in this
+study, which is a salicylic acid analog that is applied to the foliage.  ASM is commonly used in
+New Jersey and other states to control bacterial diseases of tomato, but has not been used in the
+Northeast.  In contrast to ISR, there have been several reports of yield decreases following
+application of an SAR-inducing compound.  This is thought to occur from the systemic
+activation of SAR, which diverts resources away from other areas of the plant, such as growth.
+While both ISR and SAR induce the plant’s natural defense mechanisms, they are not the same
+and it is unknown which mechanism will have greater efficacy against tomato pathogens in NY.
+In addition, it is unknown if usage of the two products together could act synergistically to
+enhance both yield and disease control.
+Previous studies have shown that plant activators have the greatest efficacy against bacterial
+pathogens, therefore this study focused on bacterial speck disease of tomato, caused by
+Pseudomonas syringae pv. tomato.  While plant activator induction of tomato defense response
+pathways has been extensively studied in the greenhouse and growth chamber, this is the first
+study to examine gene activation in the field.  In this study, marker genes for SAR (salicylic acid
+pathway) and ISR (ethylene and jasmonic acid pathways) were utilized to follow defense
+response pathway activation in the field.  We also determined the effect of plant activators and a
+traditional control compound (copper) on P. syringae pv. tomato populations on the leaf surface.
+Quantification of bacterial populations could provide valuable insight into how these activators
+control disease. This information is crucial to determine the optimal application regime which
+will enable the highest level of disease control.
+Objectives:
+1.  To determine the impact different activators have on disease control and yield
+2.  To evaluate the success of the project based on disease control and yield data which will lay
+the foundation for new IPM control strategies that incorporate activators.  As this is a
+continuing project, the data for three seasons will be compiled.
+Procedures:
+
+3
+1. All field trials were conducted at the Gates Road farm in Geneva, NY.  Tomato seedlings,
+cultivar Sunchief, were grown in the greenhouse and transplanted into the field 5 weeks
+after sowing.  Each plot consisted of 10 tomato plants spaced 45 cm apart.  Treatments
+were arranged in a randomized complete block design with three replications.
+2. Treatments were applied using labeled rates of commercially available products.
+Treatments included: Actigard (acibenzolar-S-methyl, produced by Syngenta, 0.75 oz/A),
+BioYield (plant growth-promoting rhizobacteria produced by Bayer, 2 lb/yd3), Actigard +
+BioYield, the conventional pesticides Cuprofix 40 (copper sulfate, 2.5 lb/A) and Cuprofix
+MZ (copper sulfate + mancozeb, 5 lb/A).  BioYield is a soil amendment and was added to
+seedling mix, as described by the product label.  Foliar applications of all other
+treatments began two weeks prior to inoculation so that the plant had an opportunity to
+“activate” prior to the presence of the pest.  The second application of the products
+occurred 12 hours prior to inoculation with the pathogen.  To insure the presence of
+bacterial speck in our trial, plants were spray inoculated with P. syringae pv. tomato
+(1x108 bacteria/ml) 5 weeks after planting.  Disease severity was assessed twice by
+counting the total number of lesions on 20 leaflets randomly picked from each plot.
+3. Tomato tissue was harvested and flash frozen in liquid nitrogen for bacterial population
+assessment and tomato defense gene studies 12 hours prior to and 12, 36, 60, and 86
+hours after inoculation with P. syrinage pv. tomato.  Two leaves were collected from
+individual field plots for each of three replicates and stored at -80°C.
+4. DNA was extracted from field tomato leaf samples using the Qiagen DNeasy extraction
+kit (Qiagen Inc., Madison, WI).  To determine the amount of P. syringae pv. tomato
+present in samples, real-time quantitative PCR(qRT-PCR) was performed utilizing the
+SYBR green reporter dye system.  Standard curves, made from serial dilutions of
+pathogen DNA, were used to calculate the amount of P. syringae pv. tomato in each
+sample.
+5. Total tomato RNA was extracted from leaf tissue using the SV Total RNA Isolation
+System (Promega Corporation, Madison, WI) and DNase treated with Turbo DNA-free
+(Ambion Inc., Austin, TX).  Two-step qRT-PCR was performed using Taqman
+fluorogenic probes for three marker genes for tomato defense response pathways and one
+housekeeping gene.  Gene transcript levels for each sample were derived from tomato
+genomic DNA standard curves.  Transcript levels were then normalized to the tomato
+housekeeping gene to control for plant-to-plant variation.
+6. Yield (tomato fruit number and weight) were assessed at the end of the season.
+7. The data collected have been evaluated to determine the utility of plant activators in fresh
+market tomato production in NY.  Information on the efficacy of plant activators to
+control common tomato diseases is being presented at educator and grower meetings
+throughout the state.  Results of the project have also been presented at the Fruit and
+Vegetable Expo and American Phytopathological Society National Meetings, and a
+written report of the results will be given to Extension Educators for use in newsletters.
+
+4
+Results and discussion:
+This year, we were able to quantify the pathogen growing on tomatoes in the field over time for
+the first time (Figure 1).  It is intriguing that growth on the untreated control follows the typical
+logarithmic growth pattern of P. syringae pv. tomato, while growth is modified by all of the
+other treatments.
+Activation of SAR was followed using the acidic PR-1 marker gene (Figure 2, A & D).  Both
+Actigard treatments induced the salicylic acid defense response pathway, but a steady increase in
+activation from 12 – 60 hours after inoculation was only observed in inoculated plants.
+Interestingly, at symptom development, acidic PR-1 activation dropped to baseline levels or
+below in Actigard-treated plants in both inoculated and non-inoculated plots.  As plants became
+infected, untreated control and BioYield-treated plots showed increased SAR activation, though
+this response was not enough to prevent disease.
+Basic PR-1 was utilized to follow induction of the ethylene defense response pathway (Figure 2,
+B  & E).  As expected, Actigard application induced this pathway in both inoculated and non-
+inoculated plants.  Trends in activation were similar to SAR induction, with the response being
+slightly greater in inoculated plants.  No priming or ISR induction was observed in either of the
+BioYield treatments.
+Examination of the jasmonic acid wound-induced pathway was performed using the marker gene
+Pin2 (Figure 2, C & F).  The hail storm immediately prior to pathogen inoculation activated this
+pathway at relatively low levels in both inoculated and non-inoculated plants at the 12 hour time
+point.  It is possible that levels had been much higher following the storm and had dropped by
+this sampling time.  As observed in greenhouse studies, activation in untreated controls and
+PGPR-treated plants increased as plants became infected (times 60 hours and symptom).  This
+response was not observed in non-inoculated plants.  Pin2 expression was upregulated to very
+high levels in both Actigard + BioYield and Cuprofix 40-treated plants.  This response could be
+due to an interaction between the wounding from the hail storm and the treatments.  No priming
+effect was observed in BioYield-treated plots as the response was not faster or to a greater degree
+than the other treatments.
+The Actigard treatments reduced the number of leaf lesions and the early Actigard treatment
+(starting one week after transplanting) had the fewest infected fruit and the highest yield.  Yield
+for both BioYield and the control treatments were reduced compared to the other treatments, but
+this difference was not significant.
+The Actigard results are encouraging for growers.  In contrast to previous studies, we did not
+find any decrease in yield relative to the untreated control.  Actigard treatments provided the best
+control of bacterial speck numerically, although they were not statistically different from the
+copper treatments.  This provides evidence that Actigard can be used to compliment a copper
+spray program.  Unfortunately, the PGPR product did not provide protection from bacterial
+speck nor did induce ISR or provide any growth enhancing effects.
+
+5
+In summary, we found that one plant activator, Actigard, does have efficacy against bacterial
+pathogens of tomato.  This activator turns on SAR in tomato plants in the field without
+detrimentally affecting yield.  Thus, it offers growers an additional component in an integrated
+management program. Many growers have asked about the efficacy of activators and yield-
+enhancement products, and wonder if they truly increase yield. We have found that this is
+dependent upon the year, as we saw an increase in yield in 2004, but not in 2005 or 2006.
+Figure 1.  Quantification of Pseudomonas syringae pv. tomato DNA from field tomato samples
+averaged over three replicated plots.
+
+6
+Figure 2.  Expression patterns of three tomato defense response pathway marker genes in field-
+grown tomatoes.

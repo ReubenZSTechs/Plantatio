@@ -1,0 +1,1359 @@
+International Journal of Applied Earth Observation
+and Geoinformation 4 (2003) 295–310
+Detection of stress in tomatoes induced by late blight disease in
+California, USA, using hyperspectral remote sensing
+Minghua Zhang∗, Zhihao Qin, Xue Liu, Susan L. Ustin
+Department of Land, Air and Water Resources, University of California, Davis, CA 95616, USA
+Received 2 October 2002; accepted 14 April 2003
+Abstract
+Large-scale farming of agricultural crops requires on-time detection of diseases for pest management. Hyperspectral remote
+sensing data taken from low-altitude ﬂights usually have high spectral and spatial resolutions, which can be very useful in
+detecting stress in green vegetation. In this study, we used late blight in tomatoes to illustrate the capability of applying
+hyperspectral remote sensing to monitor crop disease in the ﬁeld scale and to develop the methodologies for the purpose.
+A series of ﬁeld experiments was conducted to collect the canopy spectral reﬂectance of tomato plants in a diseased tomato
+ﬁeld in Salinas Valley of California. The disease severity varied from stage 1 (the light symptom), to stage 4 (the sever
+damage). The economic damage of the crop caused by the disease is around the disease stage 3. An airborne visible infrared
+imaging spectrometer (AVIRIS) image with 224 bands within the wavelength range of 0.4–2.5 m was acquired during
+the growing season when the ﬁeld data were collected. The spectral reﬂectance of the ﬁeld samples indicated that the near
+infrared (NIR) region, especially 0.7–1.3 m, was much more valuable than the visible range to detect crop disease. The
+difference of spectral reﬂectance in visible range between health plants and the infected ones at stage 3 was only 1.19%, while
+the difference in the NIR region was high, 10%. We developed an approach including the minimum noise fraction (MNF)
+transformation, multi-dimensional visualization, pure pixels endmember selection and spectral angle mapping (SAM) to
+process the hyperspectral image for identiﬁcation of diseased tomato plants. The results of MNF transformation indicated that
+the ﬁrst 28 eigenimages contain useful information for classiﬁcation of the pixels and the rest were mainly noise-dominated due
+to their low eigenvalues that had few signals. Therefore, the 28 signal eigenimages were used to generate a multi-dimensional
+visualization space for endmember spectra selection and SAM. Classiﬁcation with the SAM technique of plants’ spectra
+showed that the late blight diseased tomatoes at stage 3 or above could be separated from the healthy plants while the less
+infected plants (at stage 1 or 2) were difﬁcult to separate from the healthy plants. The results of the image analysis were
+consistent with the ﬁeld spectra. The mapped disease distribution at stage 3 or above from the image showed an accurate
+conformation of late blight occurrence in the ﬁeld. This result not only conﬁrmed the capability of hyperspectral remote sensing
+in detecting crop disease for precision disease management in the real world, but also demonstrated that the spectra-based
+classiﬁcation approach is an applicable method to crop disease identiﬁcation.
+© 2003 Elsevier B.V. All rights reserved.
+Keywords: Tomato; Pest management; Hyperspectral remote sensing; AVIRIS; Late blight disease; Canopy spectra
+∗Corresponding author. Tel.: +1-530-752-4953;
+fax: +1-530-752-5262.
+E-mail address: mhzhang@ucdavis.edu (M. Zhang).
+1. Introduction
+California accounts for ∼75% of US total harvested
+acreage and >86% of US tomato production (USDA,
+0303-2434/$ – see front matter © 2003 Elsevier B.V. All rights reserved.
+doi:10.1016/S0303-2434(03)00008-4
+
+296
+M. Zhang et al. / International Journal of Applied Earth Observation and Geoinformation 4 (2003) 295–310
+1997). Though climate in California is generally suit-
+able for large-scale tomato farming, disease is still
+one of the leading factors threatening sustainability of
+tomato production. Pest management is usually one
+of the main components in tomato production costs.
+Each year California tomato farmers use 20–23 mil-
+lion pounds of pesticide active ingredients, with an in-
+tensity of 25–30 pounds per acre (CDPR, 2000). The
+use of large amounts of pesticides not only causes po-
+tential risks to the environment and ecosystem but also
+increases the cost of farming. Large-scale tomato crop-
+ping would beneﬁt from a timely and location-speciﬁc
+detection and monitoring system to reduce the cost
+and risks associated with spraying pesticides. Detec-
+tion of crop disease stress potentially represents one
+of the most valuable applications of remote sensing
+to agriculture (Haboudane et al., 2002; Boegh et al.,
+2002).
+With the rapid development of remote sensing
+technology in recent decades, hyperspectral remote
+sensors, such as airborne visible infrared imaging
+spectrometer (AVIRIS), compact airborne spectro-
+graphic imager (CASI), multispectral infrared and vis-
+ible imaging spectrometer (MIVIS), and hyperspectral
+mapping (HyMapTM) system, are now available to
+agricultural applications. These sensors can provide
+quality images with high spatial and spectral resolu-
+tions required for precision agriculture (Taranik et al.,
+1993; Fraser, 1998; Wilson and Felt, 1998; Bianchi
+et al., 1999; Treitz and Howarth, 1999; Leblanc et al.,
+1999; Nolin and Dozier, 2000). These high resolution
+images also have great potential applications in en-
+vironmental impact assessment (Barducci and Pippi,
+1997; Bianchi et al., 1999; Goetz et al., 1985; Deguise
+and Staenz, 1999; Holden and Ledrew, 1998). Be-
+cause of the high spectral resolution with a narrow
+band range of about 10 nm or ﬁner, hyperspectral
+remote sensing images produce a complete spectrum
+for each pixel within the scene. These characteristics
+combined with high signal-to-noise ratio enable us to
+differentiate various vegetation stresses based upon
+spectra of small patches of ground surface (Rush,
+2002; Christ et al., 2000; Lelong et al., 1998).
+When plants are stressed, such as by disease, their
+absorption of incident light changes in the visible
+range and in the NIR range (Carter and Knapp, 2001;
+Adams et al., 1999; Dawson and Curran, 1998;
+Lichtenthaler et al., 1996; Gitelson and Merzlyak,
+1994; Guenther, 1990). This reaction is probably due
+to the decreased chlorophyll content, changes in other
+pigments, and foliar internal structure. The change of
+absorption consequently inﬂuences the reﬂectance of
+stressed plants. Therefore, in comparing the spectrum
+difference of stressed and healthy plants, theoreti-
+cally, we are able to identify the stress severity of
+green vegetation. Many studies have examined the
+relationship between chlorophyll content and spectral
+reﬂectance in visible and NIR ranges (Carter et al.,
+1996; Datt, 1998, 1999; Gitelson and Merzlyak, 1996,
+1997; Gitelson et al., 1996; Knapp and Carter, 1998;
+Blackburn and Steele, 1999). However, most of these
+studies were based on leaf spectral reﬂectance and
+very few were on canopy light response (Gitelson and
+Merzlyak, 1996, 1998).
+If a plant is infected, the physiological reaction
+of a plant caused by disease will result in a change
+of spectral reﬂectance due to the decreasing chloro-
+phyll content and changing internal structure. Since
+the chlorophyll content tends to decrease under dis-
+ease stress, the incident solar radiation absorption of
+the green plant generally results in a decrease in the
+visible region. Consequently, the spectral reﬂectance
+generally is higher in the visible green range de-
+pending on the infection severity. The strong spectral
+reﬂectance of green plants in the NIR range is mainly
+due to its internal foliar structure. Plants under disease
+stress also show various degrees of internal struc-
+tural changes, which lead to a decrease of spectral
+reﬂectance in the NIR range. These spectral features
+of vegetation are the basis for remote sensing of
+disease-stressed tomato plants.
+Late blight, caused by the fungal pathogen Phy-
+tophthora infestans, is a disease that spreads quickly
+in tomato ﬁelds in suitable weather conditions during
+growing season. The infection can threaten the sus-
+tainability of tomato farming in California (Wisler and
+Duffus, 2000; Clark et al., 1998). Humid air with high
+temperature provides favorable weather conditions for
+the outbreak of the disease. In addition to suitable
+weather conditions, such factors as irrigation, cultivar
+and farming system also contribute to the potential
+risk of the disease in some tomato ﬁelds.
+Farmers operating large-scale tomato ﬁelds required
+timely and location-precise detecting and monitoring
+of the infected plants for disease control to ensure their
+harvest while reducing pollution risks from pesticides.
+
+M. Zhang et al. / International Journal of Applied Earth Observation and Geoinformation 4 (2003) 295–310
+297
+Conventional ground scouting was not economic to
+provide the efﬁcient detection and monitoring in a
+large tomato cropping area. Remote sensing, how-
+ever, can provide a powerful technology to collect
+crop canopy data that can be used to analyze the
+geo-temporal and geo-spatial properties of the biolog-
+ical features of the crop canopies, including the symp-
+toms of late blight.
+The objective of this study was to investigate, us-
+ing tomatoes infected by P. infestans as an exam-
+ple, the capability of hyperspectral remote sensing in
+crop disease detection and to develop an approach
+to explore this potential. The purpose was to dis-
+tinguish the infected tomato plants from the healthy
+ones in the AVIRIS image using an approach devel-
+oped from the spectral analysis of the tomato canopy
+spectra collected from the ﬁeld. We combined the
+minimum noise fraction (MNF) transformation with
+multi-dimensional visualization, pure pixels endmem-
+ber selection, and spectral angle mapping (SAM) to
+classify the diseased pixels of tomato canopies from
+the healthy ones in the AVIRIS image. The results
+from the classiﬁcation demonstrated the promising ap-
+plication of hyperspectral remote sensing to detect
+tomato disease when fast image processing is available
+for proper and easily applied identiﬁcation algorithms.
+Fig. 1. Relief image of coastal California, showing the location of Salinas Valley.
+2. Discrimination analysis using ﬁeld canopy
+spectra
+2.1. Spectra data collection
+The canopy spectra data of plants were collected in
+four ﬁelds in Salinas Valley, California (Fig. 1) in the
+late summer of 1998. The ﬁeld’s size was approximate
+40 acres and the tomatoes were at an early to mid-
+dle fruiting stage. Due to the proximity of the Salinas
+Valley to the Paciﬁc Ocean, during the summer, the
+weather is warm and the air relative humidity is high,
+which are suitable for infection by P. infestans and
+development of late blight disease. During the time
+of spectra sampling, the tomato ﬁelds were identiﬁed,
+by the ﬁeld plant pathologist, Carla Thomas from the
+Western Farm Service, as containing late blight dis-
+eased plants with various severities. Probably due to
+the effect of wind direction and moisture levels in the
+ﬁeld, the diseased areas often followed a pattern of
+strips.
+We used a spectrometer GER-2600 to measure the
+spectral reﬂectance of the canopies at 1 m above the
+canopy with a ﬁeld of view (FOV) of 23◦. The wave-
+length of the measurement was conﬁgured for the
+range of 400–2500 nm. A total of 66 canopy spectra
+
+298
+M. Zhang et al. / International Journal of Applied Earth Observation and Geoinformation 4 (2003) 295–310
+Fig. 2. Field spectral reﬂectance. Curve H: the average spectra of healthy plants. Curve 1: the average spectra of infected plants at stage
+1 and curves 2, 3 and 4: at stages 2, 3 and 4, respectively. Curve S: the average spectra of the soil. The insert is an enlarged view of the
+abrupt changes at approximate 1040 nm.
+data were sampled at various disease infection severi-
+ties in the ﬁeld, 22 spectra of healthy plants, 11 spec-
+tra of light diseased plants at stage 1, 12 spectra of
+light diseased plants at stage 2, 17 spectra of diseased
+plants at stage 3, and 4 spectra of diseased plants at
+stage 4. We also sampled nine spectra of bare soils to
+analyze the impact of soil background. Therefore, to-
+gether with the soil, we had six groups of spectra for
+the analysis. The statistical differences were assessed
+by examining the standard deviations of spectra within
+each group (Zhang et al., 2002). After that, the spec-
+tral data were then calculated to obtain a mean spec-
+trum for each group (Fig. 2). Table 1 summarizes the
+spectral characteristics of the six groups.
+To relate the canopy spectra to infection severity, we
+categorically deﬁned the following ﬁve disease sever-
+ity groups:
+(1) healthy plants in which no symptoms were ob-
+served on the leaves;
+(2) infected plants at stage 1 (LB1) in which initial
+symptoms were seen but only with one lesion on
+one or two leaves;
+(3) infected plants at stage 2 (LB2) in which symp-
+toms were a little more severe than stage 1 (one
+lesion on more than two leaves);
+(4) infected plants at stage 3 (LB3) in which a mini-
+mum of two lesions were on at least one leaf;
+(5) infected plants at stage 4 (LB4) in which two le-
+sions were on over half the canopy leaves.
+2.2. Spectra analysis for discrimination
+The spectral characteristics shown in Fig. 2 pro-
+vided a theoretical basis for the potential application
+of remote sensing for the discrimination. The healthy
+plants had a spectrum that is obviously different from
+the diseased plants and soil background (Fig. 2). Four
+sub-ranges were clearly identiﬁed for their spectral dif-
+ferences. In the visible range, the soil had the highest
+reﬂectance and the healthy plants the lowest. For dis-
+eased plants, reﬂectance was between the reﬂectance
+readings of soil and healthy plants. However, a spectral
+difference between the healthy plants and the infected
+ones was small in same ranges of the wavelengths.
+Table 1 indicates that, in the range of 400–700 nm,
+average reﬂectance of healthy plants was 0.0338 and
+
+M. Zhang et al. / International Journal of Applied Earth Observation and Geoinformation 4 (2003) 295–310
+299
+Table 1
+Average ﬁeld spectral reﬂectance of the tomato ﬁeld
+Ranges (nm)
+Healthy plants
+Diseased plants
+Soil
+Stage 1
+Stage 2
+Stage 3
+Stage 4
+Spectral reﬂectance
+400–700
+0.0338
+0.0352
+0.0406
+0.0457
+0.0474
+0.0791
+700–1350
+0.4159
+0.4051
+0.3921
+0.3167
+0.2790
+0.1712
+1350–1900
+0.1224
+0.1300
+0.1508
+0.1649
+0.1720
+0.2025
+1900–2500
+0.0686
+0.0625
+0.0784
+0.0966
+0.1124
+0.1882
+400–500
+0.0229
+0.0238
+0.0257
+0.0268
+0.0278
+0.0525
+500–600
+0.0456
+0.0467
+0.0527
+0.0570
+0.0588
+0.0850
+600–690
+0.0314
+0.0339
+0.0416
+0.0516
+0.0544
+0.0999
+750–930
+0.4826
+0.4714
+0.4466
+0.3353
+0.2879
+0.1713
+950–1030
+0.4031
+0.3842
+0.3747
+0.3332
+0.2954
+0.1773
+1040–1130
+0.4468
+0.4427
+0.4300
+0.3926
+0.3661
+0.2005
+1450–1850
+0.0991
+0.1049
+0.1242
+0.1414
+0.1495
+0.2020
+2000–2400
+0.0528
+0.0540
+0.0687
+0.0911
+0.1012
+0.1860
+Difference from healthy plants
+400–700
+−0.0014
+−0.0068
+−0.0119
+−0.0136
+−0.0453
+700–1350
+0.0108
+0.0239
+0.0992
+0.1369
+0.2448
+1350–1900
+−0.0077
+−0.0284
+−0.0426
+−0.0497
+−0.0801
+1900–2500
+0.0061a
+−0.0098
+−0.0279
+−0.0438
+−0.1196
+400–500
+−0.0009
+−0.0029
+−0.0039
+−0.0049
+−0.0297
+500–600
+−0.0011
+−0.0071
+−0.0114
+−0.0132
+−0.0394
+600–690
+−0.0025
+−0.0102
+−0.0202
+−0.0229
+−0.0685
+750–930
+0.0111
+0.0360
+0.1473
+0.1947
+0.3113
+950–1030
+0.0189
+0.0285
+0.0700
+0.1078
+0.2258
+1040–1130
+0.0041a
+0.0168a
+0.0542
+0.0807
+0.2463
+1450–1850
+−0.0058
+−0.0251
+−0.0423
+−0.0504
+−0.1029
+2000–2400
+−0.0012a
+−0.0159
+−0.0383
+−0.0484
+−0.1332
+a The values are statistically insigniﬁcant at 0.05 level. Other values are all statistically signiﬁcant at 0.01 level.
+average reﬂectance of LB3 and LB4 plants were
+0.0457 and 0.0474, respectively. Their standard devi-
+ations were minimal in magnitude. Thus, the spectra
+differences in the visible range between the healthy
+plants and the most severe infected ones, LB3 and
+LB4 was around 1.19 and 1.46%, respectively. The
+spectra difference was even smaller for the LB1 and
+LB2 plants (0.14 and 0.68%). The spectral difference
+between the healthy plants and the soil was the high-
+est, 4.53%, among all groups. Thus, except for soils,
+the potential discrimination between healthy and dis-
+eased plants was possible for the LB3 and LB4 plants,
+but not for the LB1 and LB2 plants (Fig. 2).
+The lower half of Table 1 provides more detailed
+comparisons. In the red range (600–690 nm), a larger
+difference of spectral reﬂectance was found for the
+healthy plants and the plants at higher infection
+stages. The maximum differences were 2.3 and 2%
+for the LB4 and LB3 plants, respectively (Table 1).
+This was consistent with the result of Carter and
+Knapp (2001) to loblolly pine. Due the statistical sig-
+niﬁcance, healthy and diseased LB3 and LB4 plants
+can be separated in this red range, in addition to soils.
+In the near infrared (NIR), healthy plants had the
+highest spectral reﬂectance, while soils the lowest
+(Fig. 2). On average, healthy plants had a reﬂectance
+of 0.4159, while the LB3 and LB4 plants had a re-
+ﬂectance of 0.3167 and 0.2790 (Table 1). The spectral
+differences between healthy and diseased LB3 and
+LB4 plants were, 9.92 and 13.69%, respectively. The
+spectral difference of healthy plants and soils was
+24.48%. Therefore, this range of wavelength seems
+more valuable than the visible range to detect crop
+disease.
+As shown in Fig. 2, the reﬂectance of the tomato
+plants reached the highest within two narrow ranges:
+
+300
+M. Zhang et al. / International Journal of Applied Earth Observation and Geoinformation 4 (2003) 295–310
+750–930 and 1040–1130 nm. The spectra curves
+showed a valley shape in the range of 950–1030 nm.
+Table 1 showed that the range of 750–930 nm had
+the greatest discrimination among the six groups.
+In this range, the spectral difference of 19.47% was
+found between healthy plants and the LB4 plants,
+and the spectral difference of 31.13% was found
+between healthy plants and soils. Even for the LB1
+and LB2 plants, we observed a difference of 1.11
+and 3.60%, respectively. This notable difference of
+spectra demonstrated the importance of this range in
+remote sensing of diseased tomatoes.
+For the ranges of 950–1030 and 1040–1130 nm, a
+more than 10%, 5–7% of spectral differences were
+found for healthy plants and the LB4 and LB3 plants.
+The spectral differences of healthy and the LB3,
+and LB4 plants were found to be 4.85 and 7.33%
+in the 700–750 nm range, and 7.03 and 10.91%
+in the 950–1040 nm range, respectively (Table 1).
+These ranges were also valuable for remote sens-
+ing of the disease. Even at the ranges of 1450–1850
+and 2000–2400 nm, the spectral differences between
+healthy and disease LB3 and LB4 plants were sufﬁ-
+ciently large for the separations.
+The above spectral analysis indicated that the range
+of 750–930 nm was, statistically, the best wavelength
+interval for remote sensing of the tomato disease, fol-
+lowed by that of 950–1030 and 1040–1130 nm. The
+spectral reﬂectance of the LB3 and LB4 plants was
+signiﬁcantly different from the healthy plants in these
+ranges at signiﬁcance level of P = 0.01. Some narrow
+ranges, such as 700–750 nm also have great potential
+in the discrimination. The generally higher spectral
+difference in the NIR range than in the visible range
+demonstrates the importance of the infrared remote
+sensing in monitoring of tomato disease for precision
+agricultural practices.
+3. Approaches to detect plant diseases
+by AVIRIS imagery
+Based on the above optical feature analysis of plants
+with known disease severity, we used AVIRIS im-
+ages of the ﬁeld to identify diseased plants from the
+healthy plants. The hyperspectral remote sensing im-
+age was acquired at low ﬂight altitude during Septem-
+ber 1998. The spectra had 224 bands with a band span
+of ∼10 nm from 400 to 2500 nm. However, due to in-
+adequate quality of some bands in the original image,
+we conducted a preliminary image process to elimi-
+nate those low quality bands, which resulted in a hy-
+perspectral image with 180 bands for the analysis. The
+image had a spatial resolution of 4 m. The atmospheric
+removal program ATREM developed by University of
+Colorado (CSES, 1999) was used to calibrate the im-
+age before analyses.
+3.1. Minimum noise fraction (MNF) transformation
+The MNF transformation proposed by Green et al.
+(1988) is an effective method to determine the inherent
+dimensionality of image data and to segregate noise
+(Boardman, 1993; Boardman and Kruse, 1994; Jia and
+Richards, 1999). The MNF transformation provided
+in the image-processing package ENVI, version 3.2
+(ENVI, 1999) was essentially a two-cascaded principal
+component transformation (PCT) procedure. The pro-
+cedure assumed that each pixel contained both signal
+and noise. This method, based on the signal-to-noise
+ratio, allowed us to determine which bands were more
+useful in the discrimination between the healthy and
+diseased plants.
+Thus, the ﬁrst step in the MNF transformation
+was to estimate the noise statistics from the data and
+create a noise covariance matrix, which was used to
+decrease correlation among the spectral bands and
+rescales the noise in the data. Results from this ﬁrst
+step were the transformed data in which the noise
+had unit variance and no band-to-band correlation.
+The second step in PCT was a standard principal
+component transformation of the noise-signal data.
+Using each band as a variable and the pixels as
+samples, the principal component transformation pro-
+duced a number of eigenvectors (indicated by their
+eigenvalues) and their corresponding eigenimages for
+the image dataset. However, some eigenvectors were
+more important than others as measured by eigenval-
+ues. Eigenvectors with large eigenvalues constitute
+the main principle components while the ones with
+smaller eigenvalues are less important components.
+The inherent dimensionality of the image data was de-
+termined by examination of the results from the PCT
+in two portions, in which the ﬁrst was associated with
+those eigenvectors with large eigenvalues and their
+coherent eigenimages, and the second with near-unity
+
+M. Zhang et al. / International Journal of Applied Earth Observation and Geoinformation 4 (2003) 295–310
+301
+eigenvalue and noise-dominated images. By using
+only the portion with the coherent eigenimages, the
+noise could be separated from the signal in the image
+data, hence improving the processing results.
+3.2. Classiﬁcation of the image with signal bands
+After removing the noise, classiﬁcation could be
+performed on the image with signal bands for the
+separation. Given that we know the different spectral
+patterns of healthy and diseased plants, supervised
+classiﬁcation is a logical choice to analyze the images.
+Using the ﬁeld spectra as the trained pattern, we were
+able to obtain a direct connection of the classiﬁcation
+with ﬁeld spectral measurements.
+We selected the SAM technique to classify the im-
+age. This SAM technique uses the n-dimensional an-
+gle to match the pixels to the reference (the identiﬁed)
+spectra. It determines the similarity between the two
+spectra by calculating the angle between them. SAM
+treats the spectra as vectors in a space with dimension-
+ality equal to the number of bands and compares the
+angle between the reference spectrum vector and each
+pixel vector in the n-dimensional space, the formula
+as follows:
+SAM = a cos
+
+ XY
+ X2  Y2
+
+.
+Smaller vector angle represents closer matches to the
+reference spectrum, and hence can be grouped into
+the cluster represented by the reference spectrum. Pix-
+els further away than the speciﬁed maximum angle
+threshold in radians are not classiﬁed.
+3.3. Endmember spectra extraction and potential
+pattern identiﬁcation
+SAM classiﬁcation requires the reference spectra
+as inputs to compare with the observed pixel spec-
+tra to identify their similarity. Visualization analysis
+is another method to identify the potential patterns in
+the hyperspectral image and to extract the endmem-
+ber spectra from the image, which can then serve as
+the reference spectra for SAM classiﬁcation. As in our
+case, we ﬁrst created a subset of the AVIRIS image
+and select the ﬁeld with known infected plant distri-
+bution as a region of interest (ROI). Then we used
+the signal bands to generate an n-dimension feature
+space to visualize all the pixels within the ROI sub-
+set image, where n represented the number of signal
+bands. All the pixels within the ROI were projected
+into the space for analysis. Then we spun the visu-
+alized feature space to observe change of the plot in
+the space. Continually spinning the space, we were
+able to identify potential patterns of the pixels in the
+image.
+Pure pixels or the pixels with typical spectral fea-
+tures in the image could be identiﬁed with interac-
+tive selection in the visualization space (Harsanyi and
+Chang, 1994). The endmember spectra of the pure pix-
+els could be obtained through computing their mean
+digital number (DN) value in each band of the im-
+age. Finally, we related these pure pixels with origi-
+nal subset image and extracted image spectra of these
+pure pixels from the 180-band image. This was a cru-
+cial step when interpreting the results of endmember
+spectra extraction because the signal-band MNF image
+for the visualization only generated some endmember
+spectra, and was not directly associated to health sta-
+tus of tomato plants. To use the endmember spectra
+for SAM classiﬁcation, we ﬁrst had to understand the
+meaning of the endmember spectra before using them
+in SAM classiﬁcation.
+To interpret the actual representation of these
+extracted image endmember spectra in terms of in-
+fection severity, we compared the extracted image
+spectra with the obtained ﬁeld spectra. First, we lo-
+cated the disease locations of the ﬁeld in the image
+and determined their infection severities from ﬁeld
+data. We took 10 pixels for each infection stage and
+extracted the pixel DN values from the image bands
+to produce the image spectra. The average DN value
+for the 10 pixels was used to represent the image
+spectra of each infection stage. Then we scaled the
+average DN values into the relative reﬂectance values
+for the comparison, using the DN peak for the healthy
+plants in NIR region as a reference basis. The peak
+DN value of 4999 for healthy plants at 779 nm on the
+image corresponds to the reﬂectance of 0.4639 in the
+ﬁeld spectra. The formula used was
+MDNj =
+ DNij
+N
+,
+where MDN is the average DN of the 10 pixels for
+band j, DNij the DN of pixel i for band j, N the total
+
+302
+M. Zhang et al. / International Journal of Applied Earth Observation and Geoinformation 4 (2003) 295–310
+number of pixels (N = 10). The scale formula used
+was
+REFj = MDNj × max(REF)
+max(MDN)
+,
+where REFj is the scaled reﬂectance for band j,
+MDNj the average DN for j, max(REF) the maximum
+reﬂectance (i.e. max(REF) = 0.4639, REF for the
+band with wavelength 779 nm), max(MDN) the max-
+imum average DN (max(MDN) = 4999, i.e. MDN
+for the band with wavelength 779 nm). After convert-
+ing the DN values into reﬂectance, we calculated the
+spectra differences between the image and the ﬁeld
+spectra data for the speciﬁc wavelength regions of
+interest (the intervals in Table 1). By computing the
+similarity matrix for each identiﬁed group, the SAM
+classiﬁcation was able to provide a preliminary view
+of the capability of separating the identiﬁed groups
+in the image. Rule images were the intermediate
+classiﬁcation result, indicating the similarity of each
+pixel under the classiﬁcation to the identiﬁed clusters.
+Therefore, for each potential cluster, we had one rule
+image. The pixel patterns with low correlation to each
+other could represent the other cluster hidden in the
+images that need to be highlighted.
+3.4. Performance of SAM classiﬁcation
+on the subset image of the ﬁeld
+Taking the extracted endmember spectra from the
+AVIRIS image as the reference, we performed the
+SAM classiﬁcation on the subset image to identify
+the diseased plants. The above visualization analysis
+provided a result of four endmember spectra repre-
+senting four clusters. The MNF analysis indicated
+that the ﬁrst 28 bands are signal bands. Thus, we
+aimed at the four clusters on the subset image with
+28 bands in the SAM classiﬁcation. Since our subset
+image of the ﬁeld also covered some parts of other
+ﬁelds, we also took the spectra of these ﬁelds as refer-
+ence clusters for classiﬁcation. There were four ﬁelds
+surrounding the tomato ﬁeld but the north and the
+south ﬁelds were actually with the same crop. Hence,
+only three extra reference clusters were identiﬁed
+for these surrounded ﬁelds. Therefore, together with
+the four clusters in the tomato ﬁeld, we had seven
+groups for classifying the hyperspectral subset image.
+The SAM analysis applied a pixel-based compar-
+ison between each endmember spectrum and each
+pixel spectrum in the image for the classiﬁcation.
+After trying several options, we found that the angle
+threshold of 0.18 is the best choice for the classiﬁ-
+cation. This was because small angles of two vectors
+meant to be similar for the pixels while large an-
+gles of two vectors meant to be far apart. With this
+threshold all image pixels could be properly classiﬁed
+into the seven clusters with minimal misclassiﬁca-
+tion.
+4. Image analyses
+4.1. Spectral discrimination in the image space
+Field tomato canopy spectra indicated that only cer-
+tain ranges of the wavelengths were valuable for re-
+mote sensing of crop disease. Among the 180 bands of
+the original AVIRIS image, only 28 eigenvectors had
+eigenvalues greater than 2 in MNF analysis (Fig. 3a).
+We used the ﬁrst 28 eigenimages derived from the
+28 eigenvectors with eigenvalues greater than 2 for
+further analysis and created this 28-band eigenimages
+from the original AVIRIS image.
+To perform the classiﬁcation on the newly created
+signal images, we needed to know the relationship
+between each band and the spectral features of the in-
+fected plants relative to the healthy ones. Associated
+with the MNF analysis was a function to project the
+ﬁeld spectra of the tomato plants at various infection
+severities into the same feature space as the MNF
+eigenimage. Fig. 3b illustrated the results for the ﬁrst
+28 important bands. Since the MNF transformation
+was also a normalization process, the resulting MNF
+reﬂectance ﬂuctuated between positive and nega-
+tive values to keep the feature of zero variance. The
+classiﬁcation of the ﬁeld image with the 28 bands
+could be done through the comparison of the spec-
+tral similarity between the pixel and the projected
+spectra from the obtained ﬁeld spectral reﬂectance.
+As shown in Fig. 3b, the MNF reﬂectance for the
+healthy plants (1.714) was very close to the LB1
+plants (1.006). Mean MNF reﬂectance was 4.857 for
+LB3 plants, 5.750 for LB4 plant, with a difference of
+0.893. The difference of the mean MNF reﬂectance
+was 3.143 between healthy and LB3 plants, and 4.750
+between LB4 and LB1 plants. The largest difference
+
+M. Zhang et al. / International Journal of Applied Earth Observation and Geoinformation 4 (2003) 295–310
+303
+Fig. 3. Results of MNF transformation: (a) MNF eigenvalues for the whole 180 bands; (b) MNF reﬂectance for the ﬁrst 28 bands. Healthy
+represents the healthy plants; LB1, LB3, and LB4 represent the infected plants at stages 1, 3 and 4, respectively; and Soils represents the
+background soils.
+of the mean MNF reﬂectance was 4.713 between
+the healthy plants and soils. Moreover, the MNF re-
+ﬂectance of LB3 or LB4 plants was between the two
+extremes of healthy plants and the soil for each band
+(Fig. 3b). These spectral features were the same as
+the features observed from the ﬁeld spectra. Hence,
+these features could be used as a basis for the im-
+age classiﬁcation of diseased and healthy plants of
+tomatoes.
+4.2. Visualization analysis
+Fig. 3 showed the change of the four endmember
+spectra in the range of 0.4–2.4 m. Since the ROI of
+the subset image was a tomato ﬁeld without bare soil,
+we might interpret the endmember spectra as cate-
+gories of the diseased plants at various severities. In
+this way, the endmember 1 in Fig. 3 could be charac-
+terized as the healthy plants because it had the highest
+
+304
+M. Zhang et al. / International Journal of Applied Earth Observation and Geoinformation 4 (2003) 295–310
+Fig. 4. Endmember spectra of the pure pixels representing each category of the classiﬁcation, resulted from the visualization analysis of
+the 28 signal bands. The labels are: 1, the ﬁrst endmember; 2, the second endmember; 3, the third endmember; 4, the fourth endmember.
+DN value in the NIR region (0.7–1.3 m) and the low-
+est DN value in the visible region. In contrast, end-
+member 4 might be referred to the severe diseased
+plants because it had the lowest DN value in the NIR
+region and the highest DN value in the visible region.
+Since the LB4 was referred to most severe diseased
+plants in the ﬁeld, this endmember might represent
+the characteristics of LB4 plants. Endmember 3 had
+slightly higher DN value in the NIR region and a rela-
+tively lower DN value in visible range than endmem-
+ber 4, which was referred as LB3 (Fig. 4). Endmember
+2 had a mean DN value between endmember 1 and
+endmember 3 in the NIR region. Its relatively large
+DN value difference from endmember 1 illustrated that
+this endmember might represent the characteristics of
+the LB2 plants.
+4.3. Comparison of the image spectra with the
+ﬁeld spectra
+As a number of factors, especially atmospheric and
+the environmental factors (mainly soil in our case)
+may affect remotely sensed data, the image spectra
+extracted from hyperspectral remote sensing data was
+usually different from the ﬁeld collected spectra. Be-
+cause the inﬂuencing factors can be minimized in the
+ﬁeld using handheld spectrometer, ﬁeld spectra gen-
+erally were much more pure than the image. Hence,
+comparison of the image spectra with the ﬁeld spec-
+tra would help us better understand about their simi-
+larity and difference in the identiﬁcation capability of
+the crop diseases. Fig. 5 illustrates the average image
+spectra for the tomato plants with various diseased
+stages and the soil. In spite of magnitude difference,
+the shape of the image spectra was similar with that of
+the endmember spectra (Fig. 4). Given that endmem-
+ber spectra are mixed spectra, this was not surprising.
+Though the general shape of the image spectra was
+similar to the ﬁeld spectra (Fig. 2) in the visible and
+NIR regions, the apparent differences could still be
+observed in the range of 1.4–2.5 m, where two main
+domes, with one between 1.5 and 1.8 m and another
+one between 2.05 and 2.3 m. These differences could
+be mainly ascribed to the effects by the sensor charac-
+teristics, the atmospheres, and the environmental fac-
+tors. The complex atmospheric conditions were not
+fully known, hence image calibration can only remove
+the atmospheric effects to some extent. In addition,
+remote sensor properties and the complicated surface
+conditions also added the complexity into the remote
+sensing imagery, which could also contribute to the
+differences of the image spectra from the ﬁeld ones.
+In the visible region (0.4–0.7 m), the average re-
+ﬂectance of the image spectra was relatively higher
+
+M. Zhang et al. / International Journal of Applied Earth Observation and Geoinformation 4 (2003) 295–310
+305
+Fig. 5. Image spectra of the ﬁeld, illustrating the spectral difference of each category in the remote sensing imagery scale. The labels are:
+H for healthy plants, 1 for LB1, 2 for LB2, 3 for LB3, 4 for LB4, and S for soil.
+than that of the ﬁeld spectra, while in the NIR re-
+gion of 0.7–2.5 m, however, the reﬂectance was
+generally lower in the image spectra (Table 2). This
+was probably due to the different contributions of
+atmospheric and environmental (mainly soil) effects
+in these two spectral regions. Background soil had
+higher reﬂectance in the visible region and much
+lower reﬂectance in NIR region than the green crops.
+The spectral reﬂection and absorption of the atmo-
+sphere was also relatively higher in the visible region
+than in the NIR region. Thus, in the visible region,
+the effects of the atmosphere and the background soil
+might eventually lead to an additive contribution to
+the spectral reﬂectance in the image level, while in
+the NIR region, these effects might lead to a subtrac-
+tion to the reﬂectance in the image when compared
+to the reﬂectance in the ﬁeld.
+The average reﬂectance differences of the healthy
+and diseased plants were low in the range of
+0.4–0.7 m (Table 2). The average reﬂectance of the
+image spectra was apparently lower than that of the
+ﬁeld spectra in the region of 0.7–1.35 m. As shown
+in Fig. 5, there were two deep valleys in this region,
+while they were very shallow in the ﬁeld spectra
+as shown in Fig. 2. Detailed comparison to the nar-
+row ranges such as 0.4–0.5, 0.6–0.69, 0.75–0.93,
+1.04–11.30 and 1.45–1.85 m demonstrated that the
+separation capability was generally lower in the image
+spectra than in the ﬁeld spectra. Though the sensor
+characteristics, atmosphere and the environmental
+factors tended to attenuate the general difference of
+spectral reﬂectance between the healthy and diseased
+plants, the separation between them was still high in
+the NIR region especially in the narrow peak region
+such as 0.75–0.9 and 0.95–1.0 m. The relatively
+high spectral differences in these narrow regions pro-
+vided the capability of separation for the healthy and
+diseased plants in the image scale.
+4.4. Preliminary view to the relations in the rule
+image spaces
+Using the SAM technique, we generated four rule
+images to represent the similarity between reference
+spectrum and each pixel spectrum for a preliminary
+view to their relations. If two rule images were highly
+correlated, we could not separate the pixels. There-
+fore, we should only highlight the rule images with
+less correlation for their ability to represent the clus-
+ter hidden in the images. Fig. 6a illustrated the linear
+correlation between the healthy and LB2 plants. The
+determination coefﬁcient was R2 = 0.9638, indicating
+
+306
+M. Zhang et al. / International Journal of Applied Earth Observation and Geoinformation 4 (2003) 295–310
+Table 2
+Average hyperspectral image reﬂectance of the tomato ﬁeld
+Ranges (nm)
+Healthy plants
+Diseased plants
+Soil
+Stage 1
+Stage 2
+Stage 3
+Stage 4
+Spectral reﬂectance
+400–700
+0.0780
+0.0786
+0.0771
+0.0814
+0.0822
+0.1030
+700–1350
+0.2465
+0.2211
+0.2120
+0.2007
+0.1922
+0.1430
+1350–1900
+0.0367
+0.0409
+0.0407
+0.0449
+0.0455
+0.0577
+1900–2500
+0.0144
+0.0175
+0.0174
+0.0205
+0.0218
+0.0366
+400–500
+0.0667
+0.0667
+0.0662
+0.0683
+0.0689
+0.0842
+500–600
+0.0847
+0.0838
+0.0818
+0.0856
+0.0862
+0.1068
+600–690
+0.0710
+0.0748
+0.0731
+0.0805
+0.0819
+0.1105
+750–930
+0.3785
+0.3287
+0.3087
+0.2835
+0.2700
+0.1883
+950–1030
+0.2007
+0.1847
+0.1800
+0.1737
+0.1665
+0.1256
+1040–1130
+0.2175
+0.1950
+0.1890
+0.1792
+0.1706
+0.1177
+1450–1850
+0.0387
+0.0432
+0.0430
+0.0475
+0.0482
+0.0613
+2000–2400
+0.0156
+0.0189
+0.0187
+0.0220
+0.0233
+0.0390
+Difference from healthy plants
+400–700
+−0.0007a
+0.0009a
+−0.0034
+−0.0042
+−0.0250
+700–1350
+0.0254
+0.0345
+0.0458
+0.0543
+0.1035
+1350–1900
+−0.0042
+−0.0040
+−0.0083
+−0.0089
+−0.0211
+1900–2500
+−0.0031
+−0.0030
+−0.0061
+−0.0073
+−0.0222
+400–500
+0.0000a
+0.0005
+−0.0016
+−0.0023
+−0.0176
+500–600
+0.0009
+0.0029
+−0.0009a
+−0.0014a
+−0.0221
+600–690
+−0.0038
+−0.0021
+−0.0095
+−0.0109
+−0.0395
+750–930
+0.0498
+0.0699
+0.0950
+0.1085
+0.1902
+950–1030
+0.0159
+0.0206
+0.0269
+0.0341
+0.0751
+1040–1130
+0.0226
+0.0285
+0.0383
+0.0469
+0.0998
+1450–1850
+−0.0045
+−0.0043
+−0.0088
+−0.0095
+−0.0226
+2000–2400
+−0.0033
+−0.0032
+−0.0064
+−0.0077
+−0.0234
+a The values are statistically insigniﬁcant at the 0.05 level. Other values are all statistically signiﬁcant at the 0.01 level.
+the mutual variation of the pixel’s similarity on the two
+rule images. Similar correlation was also observed in
+Fig. 6b showing the pixel values of the rule image for
+LB3 and LB4 plants. This indicated that the separation
+between the healthy plants and the LB2 plants as well
+as between the LB3 and LB4 plants was rather weak.
+Fig. 6c and d display the similarity of pixels in the rule
+image spaces of the healthy and the LB3 plants as well
+as LB4 plants. Since the pixels were scattered in the
+two-dimensional space, there was no signiﬁcant spec-
+tral correlation between healthy and diseased plants at
+LB3 and LB4 (r = 0.2483 and 0.1836, respectively
+in Fig. 6c and d). Therefore, using hyperspectral im-
+age analysis for late blight on tomatoes, we were able
+to separate the healthy plants from the LB3 and LB4
+plants although it is difﬁcult to discriminate between
+the LB3 and LB4 plants, and between healthy and LB2
+plants. The results from preliminary view to the clas-
+siﬁcation rule images conﬁrmed our conclusion from
+the ﬁeld collected spectral analysis. Similar conclu-
+sions were found from statistical analyses of the ﬁeld
+spectra (Zhang et al., 2002).
+4.5. Identiﬁcation of the disease in the
+hyperspectral image
+Given the above analysis, we focus the following
+analysis with the hyperspectral image on identiﬁca-
+tion of the healthy and the LB3 and LB4 plants in the
+ﬁeld and kept the four clusters as references. Fig. 7a
+presents the subset image for the classiﬁcation and
+Fig. 7b displays the results of clear identiﬁcation of
+the LB3 and LB4 plants from the healthy plants or
+lightly diseased plants. The close spectral features
+
+M. Zhang et al. / International Journal of Applied Earth Observation and Geoinformation 4 (2003) 295–310
+307
+Fig. 6. Similarity between the rule image for each of the categories of tomato plants, illustrating the correlation of the similarity between
+rule images for (a) healthy plants and infected ones at stage 2, (b) infected plants at stages 3 and 4, (c) healthy plants and infected ones
+at stage 3, and (d) healthy plants and the infected ones at stage 4.
+between healthy and diseased LB2 plants (Fig. 6a), and
+between diseased LB3 and LB4 plants (Fig. 6b) made
+it difﬁcult to separate them though some spectral dif-
+ferences were observed in the NIR region 0.7–0.9 m.
+Therefore, the image classiﬁcation only allowed us to
+clearly identify two categories of the tomato plants:
+healthy or light diseased plants from diseased LB3
+and LB4 plants. Fig. 7b showed the areas with severe
+infections, corresponding to the original image.
+The image analysis also indicated that the southern
+part of the ﬁeld had more disease than the northern
+part. This probably was due to weather-related topog-
+raphy. After the ﬁrst plant in the ﬁeld was infected,
+inoculum would be disseminated by the wind. The
+
+308
+M. Zhang et al. / International Journal of Applied Earth Observation and Geoinformation 4 (2003) 295–310
+Fig. 7. Results of classiﬁcation to the hyperspectral image for
+identiﬁcation of infected plants from the healthy ones. (a) The
+pseudo color composite of the image, (b) the classiﬁed results
+of the image for identiﬁcation of the diseased plants. Note: H is
+healthy plants; LB2, LB3, and LB4 are infected plants at stages
+2, 3, and 4, respectively; and C1, C2 and C3 are other crops
+respectively in the surrounding ﬁelds.
+valley topography results in moist winds that usually
+blow towards the southeast during the day and blow
+backwards at night with much less intensity. Though
+some infection could be seen in the eastern strip, it
+was too faint for image analysis. However, the results
+from aerial image analysis were consistent with the
+ﬁeld investigation. Therefore, we are conﬁdent that
+the aerial hyperspectral images can be used to suc-
+cessfully map the moderate-to-severe diseased plants,
+and to distinguish them from healthy plants or lightly
+diseased plants.
+Economic loss of tomato production due to late
+blight often occurs when infection reaches LB3 or
+above. If farmers could map the disease at the ﬁeld
+level using hyperspectral images, they could use an
+interpreted image as a guide to spray pesticide accord-
+ingly to prevent the spread of the disease. This would
+increase the effectiveness of disease control and de-
+crease the possibility of fungicide contamination in
+the environment.
+5. Conclusion
+Hyperspectral images have great potential in detect-
+ing disease-stressed canopies and thereby allowing
+precision disease management. This study developed
+methodologies to detect diseased plants through a
+spectra-based classiﬁcation including MNF and SAM.
+Field spectra analysis indicated that the most valuable
+wavelengths were between 0.7 and 0.9 m for remote
+sensing of the late blight on tomatoes. In the image
+analysis, after MNF transformation, 28 bands were
+identiﬁed as signal-dominant bands that were valuable
+for separation of the healthy plants from the diseased
+plants. High correlations between the healthy plants
+and the lightly diseased LB1 and LB2 plants and
+between the LB3 and LB4 plants were found, indicat-
+ing difﬁculty in separating the categories. However,
+healthy plants and lightly diseased plants were suc-
+cessfully separated from the moderately and severely
+diseased plants. Comparison of plants ranked for dis-
+ease severity and image analysis also indicated that
+pathogen-induced lesions could be visualized. A sta-
+tistical test for signiﬁcance indicated that both image
+and ﬁeld spectra showed consistent results with the
+informative bands in late blight diseased tomatoes.
+To conclude, we successfully demonstrated that hy-
+perspectral remote sensing using bands mainly in
+the range of 0.7–0.9 m was effective in detecting
+tomatoes late blight disease. Although we believe
+the methodologies developed in this study for image
+analysis can be used to distinguish multiple disease
+types, further research and ﬁeld work are required.
+However, under summer weather conditions in Cali-
+fornia, late blight is the main disease of concern in
+the tomato industry. This study will provide the in-
+formation to tomato farmers and industry for direct
+applications to late blight precision management. No
+doubt, hyperspectral remote sensing could be used
+to monitor disease on large-scale farms, and it would
+become more common in the future, especially when
+images are commercially available and appropriate
+rapid image processing is possible.
+Acknowledgements
+The authors would like to acknowledge Profes-
+sor Alfred Stein, Dr. G. van der He˜ycle, and the
+
+M. Zhang et al. / International Journal of Applied Earth Observation and Geoinformation 4 (2003) 295–310
+309
+anonymous reviewer for their editing and the valuable
+comments to improve the manuscript. We would also
+like to thank Professor Lynn Epstein of the Depart-
+ment of Plant Pathology at the University of Cali-
+fornia, Davis for her valuable comments. We would
+like to thank Carla Thomas, a ﬁeld plant pathologist
+from Western Farmer Service for identifying the ﬁeld
+disease stages for the study. We would also like to
+thank Zeneca Ag Product for partial ﬁnancial support
+in the earlier stage of the project.
+References
+Adams, M.L., Philpot, W.D., Norvell, W.A., 1999. Yellowness
+index: an application of spectral second derivatives to estimate
+chlorosis of leaves in stressed vegetation. Int. J. Remote Sens.
+20 (18), 3663–3675.
+Barducci, A., Pippi, I., 1997. Environmental monitoring of the
+Venice alggon using MIVIS data. Int. Geosci. Remote Sens.
+Symp. (IGARSS) 2, 888–890.
+Bianchi, R., Cavalli, R.M., Fiumi, L., Marino, C.M., Pignatti,
+S., 1999. Airborne MIVIS hyperspectral imaging spectrometer
+over natural and anthropic areas. In: Proceedings of the
+Fourth International Airborne Remote Sensing Conference and
+Exibition/21st Canadian Symposium on Remote Sensing, vol.
+1, Ottawa, Ont., Canada, pp. 337–344.
+Blackburn, G.A., Steele, C.M., 1999. Towards the remote sensing
+of matorral vegetation physiology relationships between spectral
+reﬂectance, pigment, and biophysical characteristics of semiarid
+bushland canopies. Remote Sens. Environ. 70 (3), 278–292.
+Boardman, J.W., 1993. Automated spectral unmixing of AVIRIS
+data using convex geometry concepts. Summaries of Fourth
+JPL Airborne Geoscience Workshop, vol. 1. JPL Publication
+93-26, JPL, Pasadena, CA, USA, pp. 11–14.
+Boardman, J.W., Kruse, F.A., 1994. Automated spectral analysis:
+a geologic example using AVIRIS data, north grapevine
+mountains, Nevada. In: Proceedings of Tenth Conference on
+Geologic Remote Sensing, vol. 1, Environmental Research
+Institute of Michigan, Ann Arbor, MI, USA, pp. 407–418.
+Boegh, E., Soegaard, H., Broge, N., Hasager, C.B., Jensen, N.O.,
+Schelde, K., Thomsen, A., 2002. Airborne multispectral data
+for quantifying leaf area index, nitrogen concentration, and
+photosynthetic efﬁciency in agriculture. Remote Sens. Environ.
+81, 179–193.
+California Department of Pesticide Regulation (CDPR), 2000.
+California Pesticide Use Report (PUR) Database.
+Carter, G.A., Knapp, A.K., 2001. Leaf optical properties in higher
+plants: linking spectral characteristics to stress and chlorophyll
+concentration. Am. J. Bot. 88 (4), 677–684.
+Carter, G.A., Cibula, W.G., Miller, R.L., 1996. Narrow-band
+reﬂectance imagery compared with thermal imagery for early
+detection of plant stress. J. Plant Physiol. 148, 516–523.
+Center for the Study of Earth From Space (CSES), 1999.
+ATmosphere REMoval Program (ATREM) User’s Guide,
+Version 3.1. Center for the Study of Earth From Space (CSES),
+Cooperative Institute for Research in Environmental Sciences
+(CIRES), University of Colorado, Boulder.
+Christ, B.J., Petersen, G., Ressler, L., Warmer, E., 2000. Early
+detection of potato late blight using hyperspectral remote
+sensing. http://cipm.ncsu.edu/cipmprojects/Reports/00Reports1/
+CHRISTB2000S.html.
+Clark, M.S., Ferris, H., Klonsky, K., Lanini, W.T., van Bruggen,
+A.H.C.,
+Zalom,
+F.G.,
+1998.
+Agronomic,
+economic,
+and
+environmental comparison of pest management in conventional
+and alternative tomato and corn systems in northern California.
+Agric. Ecosyst. Environ. 68, 51–71.
+Datt, B., 1998. Remote sensing of chlorophyll a, chlorophyll b,
+chlorophyll a + b and total carotenoid content in eucalyptus
+leaves. Remote Sens. Environ. 66, 111–121.
+Datt, B., 1999. A new reﬂectance index for remote sensing of
+chlorophyll content in higher plants: tests using eucalyptus
+leaves. J. Plant Physiol. 154, 30–36.
+Dawson, T.P., Curran, J., 1998. New technique for interpolating
+the reﬂectance red edge position. Int. J. Remote Sens. 19 (11),
+2133–2139.
+Deguise, J.C., Staenz, K., 1999. Agricultural applications of
+airborne hyperspectral data: weed detection. In: Proceedings of
+the Fourth International Airborne Remote Sensing Conference
+and Exibition/21st Canadian Symposium on Remote Sensing,
+vol. 2, Ottawa, Ont., Canada, pp. 352–358.
+ENVI, 1999. The Environment for Visualizing Images (ENVI):
+User’s Guide, Version 3.2. Research System Institute, USA,
+864 pp.
+Fraser, R.N., 1998. Hyperspectral remote sensing of turbidity and
+chlorophyll a among Nebraska Sand Hills lakes. Int. J. Remote
+Sens. 19 (8), 1579–1589.
+Gitelson, A.A., Merzlyak, M.N., 1994. Spectral reﬂectance changes
+associated with autumn senecens of Aesculus hippocastanum
+L. and Acer Platanoides L. leaves: spectral features and relation
+to chlorophyll estimation. J. Plant Physiol. 143, 286–292.
+Gitelson, A.A., Merzlyak, M.N., 1996. Signature analysis of leaf
+reﬂectance spectra: algorithm development for remote sensing
+of chlorophyll. J. Plant Physiol. 148, 494–500.
+Gitelson, A.A., Merzlyak, M.N., 1997. Remote estimation of
+chlorophyll content in higher plant leaves. Int. J. Remote Sens.
+18, 2691–2697.
+Gitelson, A.A., Merzlyak, M.N., 1998. Remote sensing of
+chlorophyll concentration in higher plant leaves. Adv. Space
+Res. 22 (5), 689–692.
+Gitelson, A.A., Merzlyak, M.N., Lichtenthaler, H.K., 1996.
+Detection of re edge position and chlorophyll content by
+reﬂectance measurements near 700 nm. J. Plant Physiol. 148,
+501–508.
+Green, A.A., Berman, M., Switzer, P., Craig, M.D., 1988. A
+transformation for ordering multispectral data in terms of image
+quality with implications for noise removal. IEEE Trans. Geosci.
+Remote Sens. 26 (1), 65–74.
+Goetz, A.F.H., Vane, G., Solomon, J.E., Rock, B.N., 1985. Imaging
+spectrometer for Earth remote sensing. Science 228 (4704),
+1147–1153.
+Guenther,
+K.P.,
+1990.
+Vegetation
+Stress
+Monitoring
+by
+Fluorescence. European Space Agency—Special Publication
+(ESA SP), ESTEC, Noordwijk, The Netherlands, pp. 135–142.
+
+310
+M. Zhang et al. / International Journal of Applied Earth Observation and Geoinformation 4 (2003) 295–310
+Haboudane, D., Miller, J.R., Tremblay, N., Zarco-Tejada, P.J.,
+Dextraze, L., 2002. Integrated narrow-band vegetation indices
+for prediction of crop chlorophyll content for application to
+precision agriculture. Remote Sens. Environ. 81, 416–426.
+Harsanyi, J.C., Chang, C.I., 1994. Hyperspectral image classi-
+ﬁcation and dimensionality reduction: an orthogonal subspace
+projection approach. IEEE Trans. Geosci. Remote Sens. 32 (4),
+779–785.
+Holden, H., Ledrew, E., 1998. Spectral discrimination of healthy
+and non-healthy corals based on cluster analysis, principal
+components analysis and derivative spectroscopy. Remote Sens.
+Environ. 65 (2), 217–224.
+Jia, X., Richards, J.A., 1999. Segmented principal components
+transformation for efﬁcient hyperspectral remote-sensing image
+display and classiﬁcation. IEEE Trans. Geosci. Remote Sens.
+37 (1), 538–542.
+Knapp, A.K., Carter, G.A., 1998. Variability in leaf optical
+properties among 26 species from a broad range of habitats.
+Am. J. Bot. 85 (7), 940–946.
+Lelong, C.C.D., Pinet, P.C., Poilvé, H., 1998. Hyperspectral
+imaging and stress mapping in agriculture: a case study on
+wheat in Beauce (France). Remote Sens. Environ. 66 (2), 179–
+191.
+Lichtenthaler, H.K., Lang, M., Sowinska, M., Heisel, F., Miehe,
+J.A., 1996. Detection of vegetation stress via a new high
+resolution ﬂuorescence imaging system. J. Plant Physiol. 148,
+599–612.
+Leblanc, S., Chen, M.J., Miller, R.J., Freemantle, J., 1999. Compact
+airborne spectrographic imager (CASI) used for mapping
+leave area index (LAI) of cropland. In: Proceedings of the
+Fourth International Airborne Remote Sensing Conference and
+Exhibition/21st Canadian Symposium on Remote Sensing, vol.
+1, Ottawa, Ont., Canada, pp. 297–303.
+Nolin, A.W., Dozier, J., 2000. Hyperspectral method for remotely
+sensing the grain size of snow. Remote Sens. Environ. 74 (2),
+207–216.
+Rush, C., 2002. Prediction, detection and quantiﬁcation of
+plant diseases with remote sensing technologies. Precision
+Agriculture Initiative for Texas High Plains, 2002 Annual
+Comprehensive
+Report.
+http://precag.tamu.edu/ﬁles/rep42/
+2002PAReportFormandLetter.pdf.
+Taranik, J.V., Mouat, D.A., Elvidge, C.D., 1993. Hyperspectral
+technology for geologic applications, better understanding of
+earth environment. Int. Geosci. Remote Sens. Symp. (IGARSS)
+2, 917–920.
+Treitz, P.M., Howarth, P.J., 1999. Hyperspectral remote sensing for
+estimating biophysical parameters of forest ecosystems. Prog.
+Phys. Geogr. 23 (3), 359–390.
+USDA, 1997. Agricultural Statistics, 1997. Washington, DC, USA.
+Wisler, G.C., Duffus, J.E., 2000. A century of plant virus
+management in the Salinas Valley of California ‘East of Eden’.
+Virus Res. 71, 161–169.
+Wilson, T., Felt, R., 1998. Hyperspectral remote sensing technology
+(HRST) program. IEEE Aerosp. Appl. Conf. Proc. 5, 193–200.
+Zhang, M., Liu, X., Oneill, M., 2002. Spectral Discrimination of
+Phytophthora infestans infection on tomatoes based on principal
+component and cluster analyses. Int. J. Remote Sens. 23 (6),
+1095–1107.

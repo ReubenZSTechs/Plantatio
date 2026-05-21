@@ -1,0 +1,315 @@
+Tomato Disease Management
+Brenna Aegerter, UCCE San Joaquin County
+
+Current and recent past projects –
+Tomato plant health/Disease management
+• Impact of K-Pam fumigation on Fusarium diseases and other 
+soilborne problems, and yield outcomes
+• Fungicide trials: powdery mildew, black mold fruit rot, Fusarium 
+diseases
+• Non-fumigant nematicides in fields with both root knot 
+nematode and Fusarium diseases
+• Variety evaluation in fields with FRD (Fusarium noneumartii/F. 
+falciforme)
+
+Fusarium wilt
+Fusarium crown 
+and root rot
+Fusarium stem 
+rot and decline
+Cassandra Swett
+
+Fusarium
+stem rot and decline
+
+Crown rot/stem rot
+Cassandra Swett
+
+Fungicides (applied at planting and early season):
+•
+Miravis (Syngenta) – pydiflumetofen (FRAC group 7)
+•
+Velum One (Bayer) – fluopyram (7)
+•
+Propulse (Bayer) – prothioconazole (3) +  
+ 
+ 
+ 
+      fluopyram (7) 
+•
+Rhyme (FMC) – flutriafol (3)
+Fumigant (applied at least two weeks prior to planting):
+•
+K-Pam (AMVAC) – metam potassium
+Materials evaluated: 
+Please note that Propulse is not registered for use on California tomatoes.
+
+• Results of 10 trials in Yolo, Solano, and San Joaquin counties
+• Diseases present include FRD, Fusarium wilt and other soilborne 
+diseases
+• Average disease levels ranged 16% to 70% vine decline
+Product (active ingredient)
+Sig. disease 
+effect?
+Sig. yield 
+effect?
+Range in average 
+yield  boost (where 
+sig.)
+K-Pam (metam potassium) ~30 
+gal/acre
+3 (of 6 trials)
+5 (of 7 trials)
+3.5 – 26 t/a
+K-Pam (metam potassium) ~15 
+gal/acre
+2 (of 3)
+2 (of 3)
+11.9 – 13.6 t/a
+Miravis (pydiflumetofen)
+3 (of 3)
+1 (of 3)
+9.2 t/a
+Rhyme (flutriafol)
+2 (of 3)
+1 (of 1)
+10 t/a
+Velum One (fluopyram)
+1* (of 3)
+0 (of 3)
+Chemical effectiveness in product trials, 2019-2024
+
++=statistically weak positive effects ++=statistically strong positive effect; NS=not significant
+Site UC Davis
+Yolo Co.
+San Joaquin 
+Co.
+San 
+Joaquin 
+Co.
+San 
+Joaquin 
+Co.
+Yolo Co.
+Solano Co.
+San 
+Joaquin 
+Co.
+Yolo Co. 
+Yolo Co.
+Year
+2019
+2019
+2019
+2020
+2021
+2023
+2023
+2024
+2024
+2024
+Disease
+FRD
+FRD
+FRD
+Fol & FRD Fol & FRD Fol, FRD, Forl, s. 
+blight
+FRD, Forl
+RKN & 
+FRD
+FRD, vert
+FRD  
+Product
+Vine decline 
+in non-treated 
+control
+47%
+73%
+20%
+31%
+30%
+55%
+16%
+19%
+18%
+21%
+K-Pam ~30 gal
+Disease
++
+++
+NS
+++
+NS
+-
+Yield
+7.2 t/a
+NS
+26 t/a
+4.7 t/a
+3.5 t/a
+NS
+7.5 t/a
+K-Pam ~15 gal
+Disease
+NS
++
+++
+Yield
+11.9 t/a
+NS
+13.6 t/a
+Miravis
+Disease
++
++
+++
+Yield
+NS
+NS
+9.2 t/a
+Rhyme
+Disease
++
+++
+NS
+Yield
+NS
+10 t/a
+NS
+Velum
+Disease
++
+-
+NS
+Yield
+NS
+NS
+NS
+Disease P-
+value
+NS
+NS
+Not tested
+P=0.06
+P=0.0004
+NS
+P=0.008
+NS
+NS
+P=0.04
+Yield P-value
+NS
+P=0.01
+P=0.016
+NS
+P=0.015
+P=0.05
+P=0.01
+NS
+NS
+P=0.0006
+
+Managing Fusarium diseases of tomato
+• Field selection (soil test not yet ready)
+• Equipment sanitation
+• Variety selection (resistance, tolerance)
+– Resistance in many varieties for Fusarium wilt race 3
+– Resistance in a few varieties for Fusarium crown and root rot (HM5522 and 
+others)
+– Tolerance to FRD/F. falciforme (contact me or seed salesperson for list)
+• Fumigants and fungicides
+
+Southern blight – Sclerotium rolfsii
+
+Fungicides (FRAC group)
+Products with SB control on label (any crop)
+Federal crops/labels for SB control
+QoIs/strobilurins (FRAC 11)
+fluoxastrobin
+Evito, Aftershock
+peanut, soybean, fruiting veg group
+azoxystrobin
+Quadris and others
+legume group, soybean, leaves of root and tuber vegetables group 2, Root 
+vegetables crop subgroup 1A, tuberous and corm subgroup 1C
+pyraclostrobin
+Headline, 1 partner of Priaxor, 1 partner of Pristine
+peanut, soybean, Brassica leafy greens, fruiting veg group, carrot & alfalfa
+trifloxystrobin
+partner of Armada, Tartan
+turf and ornamentals
+penthiopyrad
+Fontelis
+tomatoes, root veg
+DMIs/triazoles (FRAC 3)
+triadimefon
+Bayleton, part of Armada & others
+ornamentals
+difenoconazole
+partner of  formulated mixtures Aprovia Top, Quadris Top, 
+Briskway
+fruiting veg group, carrots, turfgrass
+propiconazole
+Tilt, plus numerous formulated mixtures
+beans, turfgrass, peanut
+tebuconazole
+Folicur, plus numerous other, both solo and formulated 
+mixtures
+peanut
+SDHI/carboxamide (FRAC 7)
+bosalid
+Endura, Pristine
+Alfalfa, carrot
+fluxapyroxad
+1 partner of Priaxor
+fruiting veg group, peanut, soybean
+flutolanil
+Convoy, Prostar, Artisan
+peanut, turfgrass 
+inpyrfluzam
+Excalia
+apple, sugarbeet, peanut, soybean
+FRAC group 29
+fluazinam
+Omega
+carrots
+phenylpyrroles (FRAC 12)
+fludioxonil
+Medallion and others
+ornamentals
+
+Powdery mildew fungicides
+Product & rate per acre
+Active ingredient(s)
+FRAC grouping
+Rhyme 7 oz
+flutriafol
+3
+Rally 4 oz
+myclobutanil
+3
+Priaxor 8 oz
+pyraclostrobin + fluxapyroxad
+11 + 7
+Quadris Top 8 oz
+azoxystrobin + difenoconazole
+11 + 3
+Mettle 6 to 8 oz
+tetraconazole
+3
+Luna Sensation 7 oz
+trifloxystrobin + fluopyram
+11+ 7
+Torino 3.4 oz
+cyflufenamid
+U06
+Vivando 15.4 oz
+metrafenone
+B6
+Fontelis 15 oz
+penthiopyrad
+7
+
+Brenna Aegerter
+bjaegerter@ucanr.edu 
+(209) 351-1595

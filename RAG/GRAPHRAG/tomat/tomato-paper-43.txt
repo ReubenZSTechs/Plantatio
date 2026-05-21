@@ -1,0 +1,4241 @@
+Epidemiology of Target spot of cotton and tomato 
+ 
+by 
+ 
+Nancy Sharma 
+ 
+ 
+ 
+ 
+A thesis submitted to the Graduate Faculty of 
+Auburn University 
+in partial fulfillment of the 
+requirements for the Degree of 
+Master of Science 
+ 
+Auburn, Alabama 
+December 16, 2017 
+ 
+ 
+ 
+ 
+Keywords: Conidial germination, onset, lesion development 
+ 
+ 
+Copyright 2017 by Nancy Sharma 
+ 
+ 
+Approved by 
+ 
+Kira L. Bowen, Chair, Professor of Plant Pathology 
+Austin K. Hagan, Professor of Plant Pathology 
+David B. Weaver, Professor Emeritus of Plant Breeding 
+ 
+
+ii 
+ 
+Abstract 
+ 
+ 
+Target spot is a foliar disease of cotton caused by Corynespora cassiicola. This disease 
+was first reported in Alabama in 2011. The overall goal of this study was to address the 
+epidemiology of the target spot of cotton and tomato. The specific objectives were: 1) to 
+determine the effect of the temperature on conidial germination of C. cassiicola causing 
+target spot of cotton; 2) to determine the effect of temperature and leaf wetness duration 
+on target spot of cotton caused by C. cassiicola; and 3) to evaluate the if there is a difference 
+in epidemiology of tomato and cotton isolates of C. cassiicola causing target spot of 
+tomato. For the first objective, spores of cotton isolate of C. cassiicola were incubated in 
+wet water agar at six different temperatures (12, 16, 20, 24, 28, and 32°C) and conidial 
+germination was counted at 4, 8, and 12 hrs. Highest conidial germination percentage 
+occurred at 24°C with 8 and 12 hrs incubation in water. To address the second objective, 
+cotton plants were inoculated with each of three cotton isolates of C. cassiicola (CA1, CC1, 
+and CM18). The inoculated plants were incubated at different temperatures (16, 20, 24, 28, 
+and 32°C) with varying leaf wetness durations (8, 12, 16, 24, 32, 40, and 48 hrs). Early 
+onset, i.e., 1 day after inoculation, was observed at 28°C with ≥24 hr leaf wetness. 
+Lengthening leaf wetness durations lead increased numbers of lesions at all tested 
+
+iii 
+ 
+temperatures (16, 20, 24, 28, and 32°C). Highest lesion numbers were observed at 28°C 
+with 48 hr leaf wetness for all three isolates used in this study. Low lesion numbers were   
+observed at 16 and 32°C for all three isolates (CA1, CC1, and CM18). For the third 
+objective, cotton and tomato isolates of C. cassiicola were inoculated on tomato plants. 
+These inoculated plants were incubated at three temperatures (20, 24, and 28°C) with 
+varying leaf wetness durations (8, 12, 16, 24, 32, 40, and 48 hrs). Highest lesion numbers 
+on tomato was observed at 28°C with 48 hr leaf wetness for cotton and tomato isolates of 
+C. cassiicola. Low temperature (20°C) required ≥40 hr leaf wetness for onset of disease on 
+tomato caused by cotton isolate, while tomato isolates required ≥16 hr wetness for disease 
+onset on tomato. Lowest lesion numbers among the three tested temperatures were 
+observed at 20°C for tomato and cotton isolates. Lengthening leaf wetness duration led to 
+increase in lesion development for both cotton and tomato isolates on tomato. 
+
+iv 
+ 
+Acknowledgments 
+ 
+ 
+I would like to express my sincere gratitude to my major advisor, Dr. Kira L. Bowen 
+for the opportunity to conduct this research and for her guidance. I am thankful for her 
+constant encouragement, constructive criticisms and suggestions in my research and 
+scientific writing. I am also thankful to my committee members, Dr. Austin Hagan and Dr.    
+David Weaver for accepting to serve on my thesis advisory committee. I am fortunate 
+enough to get their guidance, suggestions and readiness to help me throughout my research 
+and writing of thesis. 
+I am deeply indebted to my parents, Mr. Rattanjit Kumar and Mrs. Meenakshi, to 
+my brother, Mohit Sharma for their constant support and understanding in my research and 
+my time at Auburn. I am equally thankful to my best friend and partner in joys and sorrows, 
+Karandeep Singh Chahal for his moral support and suggestions. I am also grateful to my 
+master, Mr. Gurinder Singh Dhillon for guiding me in my life and beyond. I am thankful 
+to my previous lab members, Limin Gong and Brett Brown for their help. I am also thankful 
+to my sister cum friend, Jasmine Kataria for motivating me during my writing. 
+ 
+ 
+
+v 
+ 
+Table of Contents 
+ 
+ 
+Abstract...............................................................................................................................ii  
+Acknowledgments..............................................................................................................iv  
+List of tables......................................................................................................................viii  
+List of figures......................................................................................................................ix  
+Chapter I. Introduction and literature review ......................................................................1  
+Cotton ......................................................................................................................1  
+Origin of cotton .......................................................................................................1  
+Taxonomy of cotton ................................................................................................2  
+Botanical description ...............................................................................................2  
+Types of cotton ........................................................................................................3 
+Cotton as a crop .......................................................................................................6  
+Production practices.................................................................................................8  
+Insect pests of cotton and their management .........................................................11  
+Integrated pest management ..................................................................................14  
+Nematodes and their management .........................................................................16  
+Diseases and their management .............................................................................18  
+
+vi 
+ 
+Methods of measuring cotton seed yield and lint yield .........................................22  
+Introduction of Corynespora cassiicola ................................................................24  
+Taxonomy of Corynespora cassiicola ...................................................................24  
+Description of Corynespora cassiicola ..................................................................25 
+Distribution of Corynespora cassiicola .................................................................26  
+Proof of pathogencity of C. cassiicola on cotton ...................................................28  
+Major diseases caused by Corynespora cassiicola.................................................28  
+Disease epidemiology for different hosts...............................................................30  
+Host specific toxin production................................................................................31  
+Isolation of the pathogen........................................................................................32  
+Enhancing sporulation of Corynespora cassicola .................................................33 
+Storage methods.....................................................................................................33 
+Literature cited.......................................................................................................35 
+Chapter II. Effect of temperature on conidial germination of Corynespora cassiicola                  
+causing target spot of cotton..................................................................................49 
+  
+Abstract .................................................................................................................49  
+Introduction ...........................................................................................................50  
+Materials and methods ..........................................................................................52  
+Results ...................................................................................................................54  
+Discussion .............................................................................................................55  
+Literature cited ......................................................................................................59  
+
+vii 
+ 
+Chapter III. Effect of temperature and leaf wetness duration on target spot of cotton 
+caused by Corynespora cassiicola ........................................................................64  
+ 
+Abstract .................................................................................................................64  
+Introduction ...........................................................................................................65  
+Materials and methods ..........................................................................................68  
+Results ...................................................................................................................70  
+Discussion .............................................................................................................72  
+Literature cited ......................................................................................................77 
+Chapter IV. Difference in epidemiology of target spot of tomato caused by tomato and               
+cotton isolates of Corynespora cassiicola.............................................................87  
+ 
+Abstract .................................................................................................................87  
+Introduction ...........................................................................................................88  
+Materials and methods ..........................................................................................89  
+Results ...................................................................................................................91  
+Discussion .............................................................................................................94  
+Literature cited ......................................................................................................97  
+Chapter V. Summary ......................................................................................................105 
+ 
+
+viii 
+ 
+List of Tables 
+ 
+ 
+Chapter I. Introduction and literature review 
+ 
+Table 1. Cotton production data of top four cotton producing countries (2015) ..............43 
+  
+Table 2. Cotton production data of the United States (2015) ...........................................44 
+ 
+Table 3. Different soil groups on the basis of ECEC value (Modified from Mitchell and 
+Huluka 2012) ........................................................................................................45 
+ 
+Table 4. Soil rating on the basis of extractable P and recommendation rate of P (Modified 
+from Mitchell and Huluka 2012) ..........................................................................46 
+ 
+Table 5. Soil rating on the basis of extractable K and recommendation rate for K 
+(Modified from Mitchell and Huluka 2012) .........................................................47 
+ 
+Table 6. Recommended fungicides for leaf spots and boll rots.........................................48 
+ 
+Chapter III. Effect of temperature and leaf wetness duration on target spot of cotton 
+caused by Corynespora cassiicola 
+ 
+Table 1. Table of significance for the effect of temperature, leaf wetness duration, and 
+isolate on disease severity (3 DAI, 6 DAI, 9 DAI) and onset by C. cassiicola.....81  
+ 
+Chapter IV. Difference in epidemiology of target spot of tomato caused by tomato and 
+cotton isolates of Corynespora cassiicola 
+ 
+Table 1. Table of significance for the effect of temperature, leaf wetness duration, and 
+isolate on disease severity (3 DAI, 6 DAI, 9 DAI) and onset by C. cassiicola 
+................................................................................................................................99 
+ 
+ 
+
+ix 
+ 
+List of Figures 
+ 
+ 
+Chapter II. Effect of temperature on conidial germination of Corynespora cassiicola 
+causing target spot of cotton 
+ 
+Figure 1. Conidia germination percentage with 4, 8, and 12 hrs incubation. Different letters 
+above bars represent significant differences among different temperatures at 
+P=0.05....................................................................................................................61 
+ 
+Figure 2. Effect of temperature on conidia germination after 8 hr incubation. Quadratic 
+regression was conducted using conidia germination percentage (G) after 8 hr as 
+the 
+dependent 
+variable 
+and 
+temperature 
+(T) 
+as 
+the 
+independent 
+variable...................................................................................................................62 
+ 
+Figure 3. Effect of temperature on conidia germination after 12 hr incubation. Quadratic 
+regression was conducted using conidia germination percentage (G) after 12 hr as 
+the 
+dependent 
+variable 
+and 
+temperature 
+(T) 
+as 
+the 
+independent 
+variable...................................................................................................................63 
+ 
+Chapter III. Effect of temperature and leaf wetness duration on target spot of cotton caused 
+by Corynespora cassiicola 
+ 
+Figure 1. Effect of leaf wetness duration on days after inoculation (DAI) required for onset 
+of target spot of cotton by Corynespora cassiicola for isolates CA1 (A), CM18 (B) 
+and CC1 (C) at five different temperatures (16, 20, 24, 28 and 32°C). Different 
+letters above bars represent significant differences among all three isolates and five 
+temperatures at P=0.05...........................................................................................82 
+ 
+Figure 2. Effect of leaf wetness duration on number of lesions produced by Corynespora 
+cassiicola (Isolate: CA1) at five different temperatures (16, 20, 24, 28 and 32°C) 
+counted 3 (A), 6 (B) and 9 (C) days after inoculation (DAI). Linear regression was 
+conducted for incubation temperatures (16, 20, 24, 28 and 32°C) using lesion 
+counts as a dependent variable and leaf wetness duration as an independent 
+variable...................................................................................................................83 
+ 
+Figure 3. Effect of leaf wetness duration on number of lesions produced by Corynespora 
+cassiicola (Isolate: CM18) at five different temperatures (16, 20, 24, 28 and 32°C)  
+
+x 
+ 
+ 
+            counted 3 (A), 6 (B) and 9 (C) days after inoculation (DAI). Linear regression was 
+conducted for incubation temperatures (16, 20, 24, 28 and 32°C) using lesion  
+            counts as a dependent variable and leaf wetness duration as an independent 
+variable...................................................................................................................84 
+ 
+Figure 4. Effect of leaf wetness duration on number of lesions produced by Corynespora 
+cassiicola (Isolate: CC1) at five different temperatures (16, 20, 24, 28 and 32°C) 
+counted 3 (A), 6 (B) and 9 (C) days after inoculation (DAI). Linear regression was 
+conducted for incubation temperatures (16, 20, 24, 28 and 32°C) using lesion 
+counts as a dependent variable and leaf wetness duration as an independent 
+variable...................................................................................................................85 
+ 
+Figure 5. Effect of temperature on number of lesions produced by Corynespora cassiicola 
+(Isolate: CA1) after 24 (A) and 48 hours (B) leaf wetness duration counted 9 days 
+after inoculation (DAI). Cubic regression was conducted for leaf wetness duration 
+(8, 16 and 24 hours) using lesion counts as a dependent variable and temperature 
+as an independent variable......................................................................................86 
+ 
+Chapter IV Difference in epidemiology of target spot of tomato caused by tomato and 
+cotton isolates of Corynespora cassiicola 
+ 
+Figure 1. Effect of leaf wetness duration on days after inoculation (DAI) required for onset 
+of target spot of tomato by Corynespora cassiicola (cotton isolate (CA1) and 
+tomato isolates (1343 and TCL1) at three different temperatures (20, 24, and 28°C). 
+Different letters above bar represent significant differences among all three isolates 
+and three temperatures at P=0.05.........................................................................100 
+ 
+Figure 2. Effect of leaf wetness duration on number of lesions produced by tomato isolate 
+1343 (A), tomato isolate TCL1 (B) and cotton isolate CA1 (C) of Corynespora 
+cassiicola at three different temperatures (20, 24 and 28°C) counted 3 days after 
+inoculation (DAI). Quadratic regression was conducted for incubation temperatures 
+(20, 24 and 28°C) using lesion numbers as a dependent variable and leaf wetness 
+duration (Mst.) as an independent variable...........................................................101 
+ 
+Figure 3. Effect of leaf wetness duration on number of lesions produced by tomato isolate 
+1343 (A), tomato isolate TCL1 (B) and cotton isolate CA1 (C) of Corynespora 
+cassiicola at three different temperatures (20, 24 and 28°C) counted 6 days after 
+inoculation (DAI). Quadratic regression was conducted for incubation temperatures 
+
+xi 
+ 
+(20, 24 and 28°C) using lesion numbers as a dependent variable and leaf wetness 
+duration (Mst.) as an independent variable...........................................................102 
+ 
+Figure 4. Effect of leaf wetness duration on number of lesions produced by tomato isolate 
+1343 (A), tomato isolate TCL1 (B) and cotton isolate CA1 (C) of Corynespora 
+cassiicola at three different temperatures (20, 24 and 28°C) counted 9 days after 
+inoculation (DAI). Quadratic regression was conducted for incubation temperatures 
+(20, 24 and 28°C) using lesion numbers as a dependent variable and leaf wetness 
+duration (Mst.) as an independent variable...........................................................103 
+ 
+Figure 5. Effect of temperature on number of lesions produced by Corynespora cassiicola 
+(Isolate: CA1 and TCL1,) after 48 hr leaf wetness counted 9 days after inoculation 
+(DAI). Quadratic regression was conducted for leaf wetness duration (48 hr) using 
+lesion numbers as a dependent variable and temperature as an independent 
+variable.................................................................................................................104 
+ 
+ 
+
+1 
+ 
+I. Introduction and literature review 
+ 
+ 
+Cotton 
+Cotton (Gossypium hirsutum), which is also known as “white gold”, is an important 
+fiber crop worldwide. Fiber of this plant is used as raw material in the textile, pulp and 
+paper industries, and oil extracted from the cotton seed is used in food, cosmetics, 
+chemicals, pharmaceuticals, etc. Cotton seed cake is also used as a cattle feed (Proto et al. 
+2000). The United States Department of Agriculture-Economic Research Service (USDA-
+ERS 2017) states that cotton contributes 30% to the total world fiber used. The National 
+Cotton Council of America (NCC 2017a) reports that since 1834 (except 1985/86), the 
+United States has been the largest exporter of cotton. United States cotton exports are 
+approximately 10 million bales every year (NCC 2017b). India, China, the United States 
+and Pakistan were the top four cotton producing countries in 2015 (Table 1). India, China, 
+the United States and Pakistan together produce two-thirds of the world’s cotton (USDA-
+ERS 2017). 
+Origin of cotton 
+Biogeographical distribution of types of cotton indicates that domestication of 
+different species of Gossypium occurred in four different areas of the world (Stewart 2001).  
+ 
+ 
+ 
+
+2 
+ 
+Gossypium arboreum and G. barbadense were probably domesticated in the Yucatan 
+Peninsula, G. hirustum was domesticated in Central America, and G. herbaceum was 
+domesticated in southeastern Africa (Stewart 2001).  
+On the basis of the existing degree of diversity of cotton, it seems that four genomic 
+affinity groups (A, B, E, F) of Gossypium have originated in Africa (Stewart 2001). Also, 
+some species in the E genomic group originated in the Horn of Africa and east along the 
+coast of Arabia and the Indian Ocean (Stewart 2001). Three additional related genomic 
+groups (C, G, K), including 17 species, originated in Australia (Stewart 2001). 
+Taxonomy of Cotton (GRIN) 
+Kingdom: Viridiplantae 
+Phylum: Streptophyta 
+Division: Tracheophyta 
+Subdivision: Spermatophyta 
+Class: Rosidae 
+Order: Malvales 
+Family: Malvaceae 
+Genus: Gossypium 
+Botanical description   
+The cotton plant by nature is a perennial but cultivated as an annual shrub. The 
+shape of a cotton seed is ovoid and pointed at one end. The seed coat is covered by lint. 
+Seed is acid-delinted before planting (Oosterhuis and Jernstedt 1999). The cotton seed 
+
+3 
+ 
+germinates by epigeal germination in which the hypocotyl moves downward while the 
+epicotyl and cotyledons are pulled upward through the soil (Oosterhuis and Jernstedt 1999). 
+The root system of the cotton plant consists of a taproot with secondary or lateral roots 
+(Oosterhuis and Jernstedt 1999). The shoot system has a main axis stem, leaves, buds, 
+branches, floral buds, flowers, and bolls (Oosterhuis and Jernstedt 1999). There are two 
+different types of branches: monopodial, i.e. vegetative, and sympodial, i.e. reproductive 
+branches (Oosterhuis and Jernstedt 1999). Leaves are spirally arranged on a stem. Each 
+node has one leaf, and each leaf and branch is 3/8 of a turn away from another leaf and 
+branch respectively (Oosterhuis and Jernstedt 1999). Cotton plants have a complete flower, 
+i.e. flowers have sepals, petals, stamens, and carpels (Oosterhius and Bourland 2001). The 
+flowering pattern of cotton plant is unique.  Flowers open spirally upward among the 
+branches known as vertical flowering, and outward on the same branch known as 
+horizontal flowering. The first flower to open is at 6 or 7 main-stem nodes and at first 
+position on that sympodial branch. The next flower opens after 3 days, on the same relative 
+position on the next higher sympodial branch. In horizontal flowering, the flower which is 
+on the outer side of the predecessor opens after approximately 6 days (Oosterhius and 
+Bourland 2001). Cotton fibers are basically epidermal trichomes which emerge from the 
+primary meristem of the plant (Oosterhius and Bourland 2001). 
+Types of cotton 
+There are many wild species of Gossypium but most do not have fibers and are not 
+economically feasible to cultivate for commercial purposes. These wild species are used as 
+
+4 
+ 
+genetic resources and provide genes for resistance to biotic and abiotic stresses. There are 
+four principle cultivated species of cotton. These species include G. arboreum, G. 
+herbaceum, G. hirsutum and G. barbadense (Lewis and Richmond 1968; Mundro 1987). 
+New world cottons include G. hirsutum and G. barbadense; whereas G. arboreum and G. 
+herbaceum are considered old world cottons. The two main species grown in The United 
+States are G. hirsutum and G. barbadense, with largest planted area under G. hirustum 
+followed by G. barbadense (Table 2). 
+Cotton fiber quality is determined by micronaire, fiber length, fiber strength, and 
+color (Luo et al. 2016). Micronaire represents fineness and maturity of the cotton fiber, and 
+is considered an important component of fiber quality. Coarse fiber possesses has too high 
+of a micronaire value (> 4.5) and is undesirable for spinning (Luo et al. 2016). Immature 
+fiber possesses too low micronaire (<3.8), cause breaks in the yarn and is difficult to dye 
+while processing (Luo et al. 2016). Discoloration of the fiber is undesirable and can cause 
+dyeing problems (Luo et al. 2016). The micronaire values between 3.7 and 4.2 are 
+considered as premium and are most desirable. Micronaire values between 3.5 and 3.6 or 
+between 4.3 and 4.9 are considered as base, which are better than discount values but less 
+desirable than premium values. Micronaire values either below 3.4 or above 5.0 are 
+considered as discount and are least desirable. Discount means an amount by which price 
+is reduced from the base rate in order to purchase low grade cotton fiber. Micronaire values 
+are decreased by potassium deficiency, dense stand, and excess nitrogen, but increased by 
+
+5 
+ 
+poor boll set due to high temperatures and water stress (Hake et al. 1990). Micronaire can 
+vary with cultivar selection (Ramey 1999). 
+Gossypium hirsutum: This tetraploid cotton species is also known as American 
+upland cotton because when it was domesticated by colonists and adapted to upland sites 
+(Lewis and Richmond 1968). Gossypium hirsutum accounts for 90% of the world’s cotton 
+crop (Singh and Kairon 2000). Gossypium hirsutum is desired for its wide adaption, high 
+lint percentage, and high yield (Kohel et al. 2001). These are short staple cottons (Mundro 
+1987) with fiber length averaging 2.92 cm (Benedict et al. 1999). The micronaire value is 
+approximately 4.50 (Benedict et al. 1999). Fiber diameter of G. hirsutum is greater than 
+that of G. barbadense (Benedict et al. 1999).  
+Gossypium barbadense: This tetraploid cotton species is usually known as Sea-
+Island cotton or Egyptian cotton. These are long staple cottons (Mundro 1987) with fiber 
+length averaging 3.25 cm (Benedict et al. 1999). Bracts of G. barbadense cover the whole 
+flower bud due to bract’s large size (Singh and Kairon 2000). Fiber diameter is the lowest 
+among all cotton species. Bundle fiber strength is stronger than that of G. hirustum and G. 
+arboreum. The micronaire value is approximately 4.2 (Benedict et al. 1999). Fiber of this 
+species is of high quality.  
+Gossypium arboreum: This diploid cotton species is produced in India, China and 
+Pakistan (Mundro 1987) and is also known as Indian cotton (Singh and Kairon 2000). Fiber 
+is coarse and yields of this species are low (Mundro 1987; Singh and Kairon 2000). The 
+
+6 
+ 
+micronaire value of this cotton species is 7.50, and the fiber length is approximately 1.88 
+cm (Benedict et al. 1999).  
+Gossypium herbaceum: This species is short staple cotton. G. herbaceum and G. 
+arboreum are together known as Desi cotton or Asiatic cotton (Mundro 1987). Yields of 
+this diploid species are low (Singh and Kairon 2000). Diploid species possess good 
+resistance to biotic and abiotic stresses whereas tetraploid species are high yielding (Singh 
+and Kairon 2000).     
+Cotton as a crop 
+For crop management of cotton plants, growth and development can be divided into 
+stages. These stages are (Oosterhius 2001): germination, emergence and establishment of 
+seedling; development of leaf area canopy; flowering and development of boll; and 
+maturation.  
+Ideally, radicals start germinating 2 to 3 days after sowing. Cotyledons provide food 
+for the developing seedling and help in the absorption of sunlight and are further used for 
+photosynthesis leading to plant growth. In 2 to 4 weeks, true leaves take over the task of 
+photosynthesis (Oosterhius and Bourland 2001). The growth of the plant is upright and 
+indeterminate (Eaton 1955; Oosterhius 2001, Oosterhius and Bourland 2001). Leaves of 
+cotton are of three types: kidney-shaped cotyledons; prophylls, which are the first leaves 
+that develop on a branch and develop without petioles; and true leaves (Oosterhius and 
+Bourland 2001). True leaves are broad with 3 to 5 lobes. The plant has a tap root which 
+can grow about 25 cm deep and branch roots can grow 2 m outward (Oosterhius and 
+
+7 
+ 
+Bourland 2001). In 5 to 7 weeks, the cotton plant produces small green flower buds with a 
+pyramidal structure, commonly known as squares (Oosterhius and Bourland 2001). Over 
+the next 3 to 4 weeks, these squares develop and buds swell and bracts exert pressure until 
+squares open to produce a flower (Oosterhius and Bourland 2001). Due to adverse weather 
+conditions, pest damage, water or nutrient deficiencies, 60% of all squares and juvenile 
+bolls may shed, but flowers are not affected (Oosterhius and Bourland 2001). Both self-
+pollination and cross-pollination occur in cotton plants (Oosterhuis and Jernstedt 1999). 
+The flower usually opens in morning and stays open for a single day (Oosterhuis and 
+Jernstedt 1999). Flower color changes from white to pinkish red during the day after 
+pollination, and the petals wither exposing a green immature boll (Oosterhuis and Jernsedt 
+1999). The boll is a segmented pod with an average of eight seeds per locule attached to 
+its central column (Oosterhuis and Jernstedt 1999). Numbers of locules can vary from three 
+to five (Oosterhuis and Jernstedt 1999). The boll starts increasing its size as the primary 
+growth substance, i.e. cellulose, of the fibers start growing and thickening. The formation 
+of fibers is initiated just before anthesis in G. barbadense, and just after anthesis in G. 
+hirsutum (Oosterhuis and Jernstedt 1999). The boll takes 40 to 45 days after anthesis to 
+mature and split open (Oosterhuis and Jernstedt 1999). The carpels, when fully dry, are 
+known as burs and are responsible for holding locks of fully matured fruit. The cotton is 
+ready to pick at this time.  
+The growth rate of cotton plants follows a sigmoid curve. During emergence and 
+seedling development, the growth rate is slow and then an exponential increase in growth 
+
+8 
+ 
+rate can be seen during canopy development to flowering and boll development. 
+Eventually, the growth rate becomes slow at boll maturation (Oosterhius 2001). 
+Production practices 
+(a) Cultivar selection: Selecting a good cultivar is an important decision. While 
+choosing any variety, its yield potential, pest resistance traits, cold tolerance, fiber quality 
+traits, seedling vigor, heat tolerance, maturity, and technology traits should be kept in mind. 
+Moreover, a cultivar should be chosen according to location and irrigation facilities 
+(Whitaker et al. 2015). A cultivar is said to be more stable if it performs well across a wide 
+range of environments (Silvertooth et al. 1999; Whitaker et al. 2015). 
+(b) Planting dates: Usually late April to early May is considered a good time for 
+planting cotton (Norfleet et al. 1997; Whitaker et al. 2015). When planted early, soil may 
+have sufficient moisture for the crop in rain fed areas but also faces problems such as 
+increased cold weather stress, poor stand and seedling diseases due to cool and wet weather 
+conditions (Silvertooth et al. 1999; Whitaker et al. 2015). Very late planting leads to greater 
+vegetative growth, management difficulties and poor yield (Silvertooth et al. 1999). Soil 
+temperatures should be greater than 18˚C for 3 consecutive days up to a depth of 4 inches 
+at planting (Silvertooth et al. 1999; Whitaker et al. 2015). Planting at soil temperatures 
+below 13˚C leads to reduced seedling vigor and increased seedling disease incidence 
+(Silvertooth et al. 1999). Warm soil temperatures should continue at least for a week to 
+insure stand establishment (Silvertooth et al. 1999; Whitaker et al. 2015).  
+
+9 
+ 
+(c) Plant population/seeding rate: Seeding rate depends on the variety’s seed vigor 
+and soil type (Silvertooth et al. 1999; Whitaker et al. 2015). An optimum plant stand is 7 
+to 10 plants/m of row (Whitaker et al. 2015). If the soil quality is poor, soil is crusted, the 
+field is infested with soil-borne fungi or the seed is of poor quality, then the seeding rate 
+should be increased accordingly (Whitaker et al. 2015). A plant population of 114,000 to 
+121,000 plants/ha is optimal for high yields (Bridge et al. 1972). 
+(d) Fertilization: Alabama soils are inherently moderate in potassium (K) and low 
+in phosphorus (P) due to the scarcity of these nutrients in parent material of the soils, 
+leaching, dissolution and surface runoff (Mitchell and Huluka 2012). Soil testing is an 
+important step that should be taken before applying fertilization. On the basis of Cation 
+Exchange Capacity (CEC or ECEC), Alabama’s soils are divided into 4 categories 
+(Mitchell and Huluka 2012): sandy, loamy to clay, clay, and calcareous clay of Black Belt 
+(Table 3). 
+If soil is acidic, with pH below 6.0, then liming is recommended. An appropriate 
+pH for cotton production is 6.5 (Mitchell and Huluka 2012). Soils with more organic matter 
+and clay particles require more lime to raise the soil pH compared to sandy soils with low 
+organic matter (Mitchell and Huluka 2012). Dolomite limestone has more than 6% Mg and 
+some percentage Ca, so it fulfills the Mg and Ca needs of cotton along with increasing the 
+pH (Whitaker et al. 2015). Soil group 1, with 0 - 28 kg/ha extractable Mg and other soil 
+groups with 0 - 56 kg/ha extractable Mg, are considered to be low in Mg, while Group 1 
+soils with extractable Mg above 28 kg/ha and other soil groups with extractable Mg above 
+
+10 
+ 
+56 kg/ha are considered soils enriched with high Mg. Application of magnesium sulfate or 
+magnesium oxide at 28 kg/ha can correct low Mg, whereas if pH is also below 6.5, then 
+dolomite limestone at 1121 kg/ha can be applied (Mitchell and Huluka 2012). 
+Phosphorus: P is an immobile nutrient; therefore, the entire required dose should 
+be applied before planting (Whitaker et al. 2015). Soil rating and recommendation rate of 
+P for different soil groups in Alabama are described on the basis of extractable P (Table 4).  
+Potassium: Application of the entire required dose of potassium is also 
+recommended before planting. Two foliar sprays at 2.26 - 4.53 kg/K2O can be done during 
+early bloom, if severe K deficiency persists (Whitaker et al. 2015). Appropriate 
+applications of potassium lead to increases in seed cotton yield, size of bolls, and fiber 
+micronaire values (Bennett et al. 1965). Soil rating and recommendation rate of K for 
+different soil groups in Alabama are described on the basis of extractable K (Table 5). 
+Nitrogen: Appropriate amounts of N are very important because low N rates can 
+lead to yield reduction, whereas high N rates can lead to boll rot, increased vegetative 
+growth, delayed maturity and poor yield (Whitaker et al. 2015). Alabama soils are 
+generally low in organic matter, therefore N availability for the crop is also low (Mitchell 
+and Huluka 2012). The recommended N rate is 101 kg/ha which should be applied in splits 
+(Mitchell and Huluka 2012; Touchton et al. 1981; Whitaker et al. 2015). An initial N 
+application should be done at planting and at the rate of 1/4 to 1/3 of the total 
+recommendation. Sidedress N should be applied between first square stage to first bloom 
+stage. After the 3rd week of bloom, application of N is not recommended (Whitaker et al. 
+
+11 
+ 
+2015). The recommended nitrogen rate should be increased by 25% for a cropping pattern 
+of cotton followed by cotton or with deep sandy soils (Whitaker et al. 2015). 
+Boron: This micronutrient plays an important role in flowering, pollination and 
+fruiting of cotton (Mitchell and Huluka 2012, Whitaker et al. 2015). The recommended 
+rate of B is 0.56 kg/ha in two equal splits by foliar spray during first square to first bloom 
+(Whitaker et al. 2015). 
+Water needs: Cotton is a drought tolerant crop but a properly timed irrigation can 
+enhance yield and fiber quality. Soil moisture sensors can be used to measure the moisture 
+level of the soil. Consultants and online scheduling applications such as real time wireless 
+smart sensor array (Vellidis et al. 2008) are also available to help growers for scheduling 
+irrigation. Water needs of the cotton crop increase until the 3rd week after bloom and then 
+declines (Bednarz et al. 2003) Cotton needs 0.38 cm of water per day at 1st bloom (Whitaker 
+et al. 2015). In the 2nd week of bloom, water needs increase to 0.56 cm/day (Whitaker et 
+al. 2015). The water requirements in the 3rd and 4th week after bloom are 0.76 cm/day 
+(Whitaker et al. 2015). In the 5th and 6th week after 1st bloom, water needs decrease to 0.56 
+cm/day (Whitaker et al. 2015). Cotton requires 0.38 cm of water per day in the 7th week 
+after 1st bloom (Whitaker et al. 2015). The crop should be examined in the 8th week after 
+1st bloom to decide if irrigation should be terminated (Whitaker et al. 2015). Usually, 
+irrigation should be terminated completely when the crop reaches 10% open bolls 
+(Whitaker et al. 2015). 
+Insect pests of cotton and their management 
+
+12 
+ 
+In 2016, insects caused 2.6% and 2.3% yield losses in the United States and 
+Alabama, respectively (Williams 2016). Some important insect pests of cotton in Alabama 
+are described below. 
+Bollworms: Cotton bollworm, Helicoverpa zea, and tobacco budworm, Heliothis 
+virescens, are two important pests of cotton. Larvae damage apical buds, squares, blooms 
+and bolls. Infested plants have damaged discolored bolls with open bracts and bolls are 
+usually aborted (Leonard et al. 1999).  
+Spider mites: Spider mites, Tetranychus spp., are problematic in hot and dry 
+weather. They leave foliage discolored after feeding on plant juices (ACES 2016). A 
+heavily infested crop will defoliate (ACES 2016).  
+Armyworms: Early instar larvae of this insect feed on leaf tissue and cause 
+defoliation. Later instar larvae feed inside squares, blooms, and bolls and reduce yield 
+(Leonard et al. 1999). Females lay eggs in clusters of 150 inside the leaves (ACES 2016). 
+Fall armyworms, Spodoptera frugiperda, can be identified due to its typical mark which is 
+shaped like an inverted Y on the head. Another insect is beet armyworm, Spodoptera 
+exigua, which is a sporadic pest (ACES 2016). 
+Cabbage and soybean loopers: The larvae of cabbage looper, Trichoplusia ni, and 
+soybean looper, Pseudoplusia includes, damage interveinal leaf tissue (Leonard et al. 
+1999). A net-like appearance of the remaining leaf area can be seen (Leonard et al. 1999). 
+Loopers can defoliate an entire cotton crop (ACES 2016). 
+
+13 
+ 
+Cutworms: Many cutworm species such as Peridroma saucia, Agrotis ipsilon, A. 
+subterranea, and Feltia ducens are pests of cotton seedlings (ACES 2016; Leonard et al. 
+1999). Cutworms girdle stems at the soil level, reduce the plant stand which leads to 
+delayed crop maturity and poor yields (MU 2004). Fields where the soil temperature is low 
+and where conservation tillage practices are applied, are prone to cutworm infestation 
+(ACES 2016). 
+Cotton Aphids: Aphids, Aphis gossypii, can be found on the underside of leaves, 
+on stems and on terminals. Aphids are vectors of several viruses such as Potyviruses in 
+many crops, and they can transmit Cotton anthocyanosis virus, and cotton blue disease in 
+cotton. Symptoms of aphid infestation are yellowing and curling of leaves. Later, sticky 
+and sugary liquid called honey dew can be seen in open bolls and this can contaminate lint 
+(Leonard et al. 1999).  
+Grasshoppers: Cotton is most susceptible to grasshopper damage from the crook 
+stage to the 6 true leaf stage. The crook stage is a brief period when the hypocotyl elongates 
+from the radicle, forms an arch and begins to push up through the soil, (ACES 2016). Both 
+adults and nymphs chew on the stem and cause destruction by reducing stands (ACES 
+2016). 
+Thrips: Some common species of thrips which attack cotton are Frankliniella fusca, 
+F. tritici, F. occidentalis, and Sericothrips variabilis (Leonard et al. 1999). Common signs 
+of a heavy infestation of thrips in a cotton crop are distorted leaves with brown edges that 
+cup upward (ACES 2016). 
+
+14 
+ 
+Plant bugs: There are several plant species which attack cotton such as Lygus 
+hesperus, L. lineolaris, and Neuroclopus nubilus (Leonard et al. 1999). These pests cause 
+destruction at the bloom stage of cotton by affecting squares and young bolls resulting in 
+hard lock of one or more locks per boll (ACES 2016). 
+Whiteflies: The important species of whiteflies which attack cotton are Trialeurides 
+abutilonea and Bemisia tabaci (Leonard et al. 1999). The nature of damage due to whitefly 
+is by sucking cell sap and secreting honey dew. Sooty mold can grow on honey dew, 
+leading to premature severe defoliation (ACES 2016). All life stages of this insect can be 
+found on the underside of leaves (ACES 2016). Whiteflies are vectors of many important 
+viruses of cotton such as Cotton leaf curl virus, Cotton leaf crumble virus, and Cotton 
+yellow vein virus (Brown 2001). 
+Stink Bugs: The common species of stink bugs which attack cotton are 
+Acrosternum hilare, Nezara viridula, and Euschistus servus (ACES 2016). Damages due 
+to these bugs are more likely in cotton adjacent to peanut or corn. Stink bugs cause damage 
+to seeds in young bolls leading to reduced quantity and inferior lint (ACES 2016). 
+Inspection of the interior of cotton bolls is required to check for infestation as sometimes 
+as there are no external signs.  
+Integrated pest management 
+IPM (Integrated Pest Management) tools for management of cotton include cultural 
+practices, selective use of insecticides, insect scouting, use of transgenic cultivars and 
+beneficial arthropods. Insect management reduces the pest population below the economic 
+
+15 
+ 
+damage level, instead of bringing a pest population to zero, which better maintains 
+ecological balance (ACES 2016).  
+Transgenic varieties: Bollgard cotton varieties which are genetically engineered to 
+produce an insecticidal protein from Bacillus thuringiensis are effective tools for 
+management of cotton bollworm, H. zea, and tobacco budworm, H. virescens (Perlak et al. 
+2001). 
+Cultural control: Some production practices, when altered, reduce pest populations. 
+For example, practices such as increasing plant population density, excessive fertilization 
+with nitrogen, late planting, and improper application of herbicide, can lead to delayed or 
+lengthened fruiting period which makes the plant more susceptible to pest attacks (ACES 
+2016). In addition, conservation tillage in cotton can enhance cutworm infestation while 
+reducing thrips infestation (ACES 2016). Alfalfa, as a trap crop, is an effective method to 
+manage Lygus spp. in cotton (Hokkanen 1991). 
+Biological control: Green lacewings, lady bird beetles, syrphid flies, and spiders 
+are important native predators of aphids, and larvae of beet armyworm, tobacco budworm, 
+and bollworms (ACES 2016). Some major predators of whitefly are Orius spp., Brumoides 
+suturalis, and Coccinella septempunctata (Gerling et al. 2001). Thrips can be managed by 
+native predators such as Chrysoperla carnea, and Orius niger (Atakan 2006). An 
+entomophagus fungus, Neozygites fresenii, which is native to the Midsouth and Southeast 
+United States can be applied as biological control of cotton aphid, A. gossyphii (Steinkraus 
+et al. 2002). Several mycoinsecticide products based on Verticillium lecanii, Paecilomyces 
+
+16 
+ 
+fumosoroseus, and Beauveria bassiana provide good control of whiteflies, B. tabaci (Faria 
+and Wraight 2001). It is important to keep in mind the toxicity level of pesticides to these 
+beneficial insects while choosing any insecticide (ACES 2016). 
+Selective use of insecticide: While selecting any insecticide many things should be 
+considered, including its efficacy against target insects, the chance of insects developing 
+resistance towards that insecticide, human safety hazards, and its effect on non-target 
+organisms (ACES 2016). Regular scouting of the fields should be done to determine the 
+population density of both beneficial and harmful insects. Insecticides should be applied 
+only when the population density of the harmful insect becomes greater than an economic 
+threshold level (ACES 2016). 
+Nematodes and their management 
+Some plant parasitic nematodes cause serious damage on cotton. The most 
+damaging nematodes on cotton in Alabama are the cotton root-knot nematode 
+(Meliodogyne incognita Race 3) and the reniform nematode (Rotylenchulus reniformis). 
+Damage from nematodes results in losses of crop yields, plant quality, or both (Overstreet 
+and McGawley 2001). 
+Nematodes damage cotton by feeding on roots of the plants. Along with direct 
+damage to the roots, M. incognita also causes indirect damage by increasing susceptibility 
+of cotton to Fusarium wilt and to fungal seedling disease complexes (Thomas and 
+Kirkpatrick 2001). Feeding activities of nematodes on the roots cause wounding; this aids 
+the entry of the disease-causing bacteria and fungi into plants (ACES 2016). Reniform 
+
+17 
+ 
+nematodes alter the development of the cotton plant, along with causing reduction of yields 
+(Lawrence and McLean 2001). 
+The initial symptoms of plant parasitic nematode infestation are when the infected 
+plants appear chlorotic and stunted with a weak stem (Overstreet and McGawley 2001). 
+Roots of the cotton plants infected by root-knot nematodes develop spindle-shaped or 
+rounded galls (Thomas and Kirkpatrick 2001).   
+Reniform nematodes do not produce any diagnostic aboveground symptoms. The 
+infected plants are uniformly stunted and show symptoms typical of potassium deficiency 
+such as lower leaves turning yellow with brown tips and leaf margins (Robinson 1999). In 
+fields with established reniform nematode populations, secondary root systems of the 
+infected plants are underdeveloped and have fewer roots (Lawrence and McLean 2001). 
+Cotton fields infested with nematodes can be managed by using IPM strategies. 
+Cotton varieties resistant to root-knot nematode and Fusarium wilt should be planted in the 
+fields infested with these pests (ACES 2016). Crop rotation with peanuts, small grains, 
+millet, sudangrass, sorghum, or pasture grasses reduce the population of cotton root-knot 
+nematodes, since root-knot nematodes cannot reproduce on these crops (ACES 2016). 
+Cotton fields infested with reniform nematodes should be rotated with corn, grain sorghum, 
+small grains, or peanuts (ACES 2016). Plowing the field immediately after picking cotton 
+suppresses nematode populations (ACES 2016). Nematicides such as Velum Total 
+(imidacloprid + fluopyram) at 1.02 – 1.32 l/ha can be applied in-furrow or below seed at 
+planting (ACES 2016).  
+
+18 
+ 
+Diseases and their management 
+Seedling Diseases. Seedling diseases can severely affect cotton production (DeVay 
+2001). Seedling diseases can cause acute disease symptoms such as seed decay, and 
+preemergence or post emergence death of seedlings resulting in a poor stand (DeVay 
+2001). Another symptom pattern is  chronic and involves lesions on the hypocotyl; root 
+lesions are another type of seedling disease symptom which can lead to reduced growth 
+and crop development delay (DeVay 2001). Seedling pathogens of cotton are mainly 
+Pythium spp., Rhizoctonia solani, Fusarium spp., and Thielaviopsis basicola as well as 
+minor fungi, all of which attack plants in the first 6 to 8 weeks after planting (ACES 2016).  
+Seed rot and pre-emergence damping off: These diseases are caused by Pythium 
+spp. during or prior to seed germination (ACES 2016; Howell 2001). Seed rot occurs when 
+the seed is infected by these pathogens within hrs of planting while pre-emergence 
+damping-off occurs between seed germination and seedling emergence (ACES 2016; 
+Howell 2001). The typical symptom of seed rot is, when the seed is squeezed, the rotten 
+content comes out like toothpaste. Symptoms of pre-emergence damping off are a soft and 
+watery appearance of the radicle that leads to seedling death (ACES 2016; Howell 2001). 
+Conducive soil temperatures at planting for Pythium seedling diseases are 16 to 20˚C. Cool 
+temperatures and wet soil conditions are most favorable for Pythium spp. (Howell 2001). 
+Important species associated with these diseases are P. ultimum and P. irregular, which 
+are more desctructive at low temperatures and high moisture conditions, and P. 
+
+19 
+ 
+aphanidermatum, which is more damaging in tropical areas (Howell 2001). Rhizoctonia 
+solani is also often involved in these diseases as well (ACES 2016; Howell 2001).  
+Seedling root rot and post-emergence damping off: Symptoms first appear on 
+hypocotyls. Plants look light green, and pale, with stunted growth (ACES 2016). Fusarium 
+spp. cause dry rot, whereas Pythium causes light brown necrotic lesions at the soil level 
+leading to post-emergence damping off that is more severe in cool and wet seasons (ACES 
+2016; Howell 2001). Rhizoctonia solani causes reddish-brown sunken lesions at or below 
+the soil level on the hypocotyl (ACES 2016; Rothrock 2001). Lesions girdle the hypocotyl 
+creating the symptoms, known as wirestem, and eventually may lead to death of the plant 
+(ACES 2016; Rothrock 2001). 
+Seedling diseases lead to poor stands, which leads to significant reduction of yields 
+(DeVay 2001). Also, poor stands can cause difficulties with the management of the other 
+pests. After some years, fields with established soil borne plant pathogens can result in 
+severe stand losses, which can require replanting (DeVay 2001). In Alabama, losses due to 
+seedling diseases ranged from 3 to 11% annually over the 20-year period from 1978 to 
+1998 (Gazaway 1998). 
+Foliar Diseases. Leaf spots: Corynespora leaf spot or target spot, caused by 
+Corynespora cassiicola, is an emerging disease of intensively managed cotton. Symptoms 
+of this disease start in the lower canopy. Reddish-brown concentric necrotic spots on leaves 
+are formed (Fulmer et al. 2012). A study in 2013 showed that lint loss in Alabama on an 
+
+20 
+ 
+apparently susceptible variety, due to the target spot of cotton, reached approximately 448 
+kg lint/ha (Hagan et al. 2015).  
+Other fungi pathogenic to cotton are Stemphylum solani, Alternaria macrospora, 
+Cercospora gossypina, and Ascochyta gossypii (Baird 2001a; Oosterhius 2001). Alternaria 
+leaf spot is a late season disease which can also be observed on cotyledons and bolls (Baird 
+2001b). Typical symptoms are brown lesions with purple margins which show concentric 
+zones on expansion. Later, the center of lesions may fall out (Baird 2001b). Alternaria leaf 
+spot causes minimal yield losses, because the crop is developed by the time the disease 
+occurs. However, Alternaria leaf spot in a disease complex with Cercospora or 
+Stemphylum leaf spot often results in premature defoliation, reduced fiber quality and 
+suppressed yields (Wade et al. 2015). 
+Another foliar disease, common in cotton-producing regions of the United States, 
+is Ascochyta blight caused by A. gossypii (Baird 2001c). Symptoms of this disease are 
+circular, light brown lesions with dark brown borders on leaves which later coalesce and 
+form irregular necrotic areas. On stems, reddish purple to black cankers can be seen. 
+Girdling of stem leads to death and shredding of the infected tissue leaving behind exposed 
+plant tissue (Baird 2001c). Crop losses due to Ascochyta blight are rare, but in favorable 
+weather conditions have been reported up to 10% (Baird 2001c). Ascochyta blight affects 
+fiber quality along with yields in favorable conditions (Baird 2001c). 
+Boll rots: Boll rots are considered the second most economically important group 
+of diseases after seedling diseases (Batson 2001). According to the Beltwide Cotton 
+
+21 
+ 
+Disease Loss Estimates, boll rots caused an average of 2.0% losses of yield over ten years 
+(1991-2000) in the United States (Batson 2001).  
+Boll rot can be caused by a number of fungi and bacteria such as Fusarium spp., 
+Diplodia spp., Xanthomonas spp., Glomerella gossypii, Rhizoctonia spp., and Alternaria 
+spp. (Batson 2001).  
+Fusarium spp. invade the boll from its base and continues to the top of the boll. 
+Infected bolls turn brown black from the inside while salmon pink color can be seen outside 
+(Batson 2001). Diplodia spp. invade through bracts but if enough moisture is present then 
+the fungus can enter through the carpel. Initially, small brown lesions can be seen on the 
+carpel and bract (Batson 2001). Further, lesions completely cover the bolls which turn 
+black, dry and split open. Xanthomonas spp. also causes angular leaf spot and bacterial 
+blight of cotton along with boll rot. Bacteria enter bolls through nectaries, stomata and 
+sometimes wounds, and produce water soaked, dark green and greasy circular lesions on 
+the boll. Later, these lesions coalesce, become sunken, brown colored and have a dried 
+center with a dark red margin. The bacteria colonize the developing fiber. These locks of 
+colonized fiber do not fluff and become hard (Batson 2001). Alternaria spp. invade the boll 
+from the suture of the opening. In conditions of high humidity, the whole boll is colonized 
+and decays but when it dries it produces hard locks, where the lint fibers do not fluff 
+(Prostko et al. 1998). 
+Disease management. Seedling disease control: (a) A well prepared seedbed with soil 
+temperatures 18˚C or above at 4 inch depth for three consecutive mornings before sowing 
+
+22 
+ 
+reduces risk of seedling diseases (ACES 2016). Seeds are more prone to chilling damage. 
+The seed bed should have adequate moisture but not be wet as these conditions make 
+seedlings more prone to diseases (ACES 2016). 
+(b) If the soil is acidic, lime should be applied as cotton grown in acidic soils is 
+more susceptible to seedling diseases and has reduced seedling growth (ACES 2016) 
+(c) High quality seed should be preferred with greater than 80% germination 
+(ACES 2016). 
+(d) Seed treatment is an important step for managing seedling diseases. Some 
+important fungicides for seed treatment are pentachloronitrobenzene (PCNB), thiram and 
+vitavax as these are effective against Rhizoctonia spp. and Fusarium spp., whereas 
+metalaxyl and mefenoxam are effective against Pythium spp. (ACES 2016). Use of seed 
+treated with a combination of myclobutanil and metalaxyl is effective for management of 
+Rhizoctonia solani-induced damping off and Pythium-induced damping off and result in 
+increased plant stand (Davis et al. 1997). Other fungicides such as Quadris Flowable 
+(azoxystrobin), Ridomil Gold (mefenoxam) and Terramaster (etridiazole) can be applied 
+in-furrow for management of Pythium-incited seedling diseases.  Fungicides recommended 
+for leaf spots and boll rot control include Priaxor (fluxapyroxad and pyraclostrobin), 
+Headline (pyraclostrobin), Quadris Flowable (azoxystrobin), Twinline (pyraclostrobin and 
+metaconzole), and Topguard (flutriafol) (Table 6). 
+Methods of measuring cotton seed yield and lint yield 
+
+23 
+ 
+There are two types of products obtained from cotton that are commercially 
+important. One is the lint, which is used primarily in the textile industry, and another is 
+seed, which is important in the food industry as it is used for cooking oil; the meal and hull 
+of the cotton seed is also used as fertilizer, animal and fish feed (Proto et al. 2000). The 
+unit of measurement used for cotton lint yield is the bale, which is equivalent to 500 pounds 
+of lint. Cotton seed yield can be measured by two methods (Lopez and Elam 1996). One 
+way is to measure the actual seed yield is by taking a sample at the ginning mill. The gin 
+separates the fiber (lint) from seed of the cotton sample. The lint weight is then measured 
+as is the actual cottonseed weight to calculate yield per acre. Another way is to randomly 
+sample 25 to 100 bolls one week before stripping. The lint is manually sorted from the seed 
+and the weight of lint is taken as is the weight of the seed cotton (lint plus seed). Then lint 
+percentage can be calculated by ratio of lint weight/total seed cotton weight. The following 
+formula is used to calculate yield in kg/ha (E):  
+E= {LY*[(100-L%) / L%]}×1.121 where LY= lint yield in lb. per acre and L%= lint 
+percent of seed cotton (Lopez and Elam 1996). 
+Lint Yield (Prostko et al. 1998): To estimate lint yield of cotton in the field, count 
+the number of bolls in 10 feet of row. Calculate average number of bolls/foot. This average 
+is multiplied by the number of linear feet per acre according to row spacing. This will give 
+an average number of bolls per acre. This average is then multiplied by 0.0033. This 
+number will determine lint pound per acre. The lint pounds per acre are multiplied by 1.121 
+to obtain lint yield in kilograms per hectare. 
+
+24 
+ 
+Introduction of Corynespora cassiicola 
+Corynespora cassiicola is a necrotrophic fungus well known as a leaf spotting plant 
+pathogen  (Barthe et al. 2007;  Huang et al. 2010). The fungus, which was first described 
+by Berk. & M.A. Curtis as Helminthosporium cassiicola in 1868 and was renamed as 
+Corynespora cassiicola by C.T. Wei in 1950, is a cosmopolitan plant pathogen and is  
+abundantly present in subtropical and tropical countries (Barthe et al. 2007; Dixon et al. 
+2009). It has been found on 530 plant species from 380 genera including monocots, dicots, 
+ferns, one cycad and also on human skin (Dixon et al. 2009; Huang et al. 2010). 
+Economically important hosts of this pathogen include Solanum lycopersicum (tomato), 
+Glycine max (soybean), Gossypium hirsutum (cotton), Carica papaya (pawpaw), citrus, 
+Hevea brasiliensis (rubber), Vigna unguiculata (cowpea), Phaseolus vulgaris (bean), 
+Nicotiana tabacum (tobacco), and Capsicum annuum (pepper) (Barthe et al. 2007; Cutrim 
+and Silva 2003; de Lamotte et al. 2007; Dixon et al. 2009; Fernandes and Barreto 2003; 
+Jinji et al. 2007; Kwon et al. 2005; Oluma and Amuta 1999;  Pereira et al. 2003). Isolates 
+of C. cassiicola can survive as a pathogenic, saprotrophic or endotrophic fungus depending 
+on host substrate (Kingsland 1986; Schlub et al. 2007) . It can be found on different 
+substrates such as leaves, stems, flowers, fruits, roots, and nematode cysts (de Lamotte et 
+al. 2007;  Dixon et al. 2009; Huang et al. 2010).  
+Taxonomy of Corynespora cassiicola 
+Kingdom: Fungi 
+Phylum: Ascomycota 
+
+25 
+ 
+Subphylum: Pezizomycotina 
+Class: Dothideomycetes 
+Order: Pleosporales 
+Family: Corynesporascaceae 
+Genus: Corynespora 
+Species: cassiicola 
+Corynespora cassiicola has no currently known telemorphic stage (Schlub et al. 
+2007). Corynespora has the same sort of conidial structure as Helminthosporium, so they 
+are related morphologically but according to the current phylogenetic research, 
+Pyrenophora relates more closely to Corynespora compared to Helminthosporium (Schlub 
+et al. 2007). 
+Description of Corynespora cassiicola 
+Colony growth of C. cassiicola shows concentric rings which may give a flucculose 
+appearance with color varying from grey to brown (Conner et al. 2013; Schlub et al. 2007). 
+Mycelium of the fungus does not produce a stroma (Schlub et al. 2007). The conidiophores 
+produced by the fungus are simple, erect at their base, cylindrical or slightly wider at the 
+apex, intermittently branched,  smooth with 1-8 septate (Seaman et al. 1965) and 
+subhyaline to dark brown (Conner et al. 2013; Fulmer et al. 2012; Schlub et al. 2007; 
+Seaman et al. 1965). Length of the conidiophores is 85-100 µm long with width of 4-11 
+µm (Schlub et al. 2007). Enteroblastic conidiogenous cells produce conidia singly or in 
+chains at a broad apical pore on the conidiophore (Seaman et al. 1965). Conidia are variable 
+
+26 
+ 
+in shape, i.e., obclavate to cylindrical, rarely Y-shaped, and straight to slightly curved with 
+a slightly tapered hemispherical apex and truncate base, and subhyaline to brown or 
+olivaceous. The fungus has conspicuous thickened dark colored hilum (Conner et al. 2013; 
+Fulmer et al. 2012; Schlub et al. 2007; Seaman et al. 1965). Different researchers recorded 
+different sizes of conidia and different numbers of pseudoseptation in condia. For instance, 
+conidia of the fungus may be 36-186 µm long and 8-19 µm wide when grown on PDA for 
+8 days (Kwon et al. 2005). Other researchers state that conidia are 50-209 µm long and 7 
+to 15 µm wide with 4-15 pseudosepta when the fungus was cultured on V8 at 21˚C for 14 
+days at light/ dark cycle (Conner et al. 2013); approximately the same results were found 
+when the fungus was cultured on PDA at same temperature for same period at dark/ light 
+cycle with fluorescent light (Fulmer et al. 2012) whereas others state that conidia are 103-
+343 µm long and 12-25 µm wide with 3-24 pseudosepta when found on soybean host 
+(Seaman et al. 1965). Corynespora cassiicola has a bipolar germination system (Kwon et 
+al. 2005). 
+Distribution of Corynespora cassiicola 
+Corynespora cassiicola has caused crop damage resulting in high economic losses 
+in over 70 countries. It is abundantly found in tropical and subtropical areas (Barthe et al. 
+2007; Silva et al. 2003). Isolates of the fungus have been found in Canada, Japan, United 
+States, Korea, Sri Lanka and many other subtropical counties affecting soybean seedlings 
+(Kwon et al. 2005; Seaman et al. 1965; Silva et al. 2000). The pathogen has damaged rubber 
+trees in 10 top rubber producing countries with the most devastation in Indonesia (Barthe 
+
+27 
+ 
+et al. 2007). The pathogen was first found in Malaysia and then in seedling nurseries of 
+rubber trees in India in 1958 (Jinji et al. 2007; Romruensukharom et al. 2005) and causes 
+extensive premature defoliation in Sri Lanka where it became an epidemic in 1987 (Silva 
+et al. 2000; Silva et al. 2003). Corynespora cassicola is found in Brazil, West Africa, 
+Indonesia, China, Thailand (Jinji et al. 2007; Ogbebor and Adekunle 2005; Oluma and 
+Amuta 1999) and most rubber producing countries in Asia (de Lamotte and et al. 2007; 
+Jinji et al. 2007). Cucumber in Japan (Miyamoto et al. 2009), Europe (Oluma and Amuta 
+1999), Korea (Kwon et al. 2005) and the Republic of Seychelles (Kingsland 1986) and is 
+also in the United States in Florida (Blazquez 1967) are also subject to attack by C. 
+cassiicola. Corynespora spot is caused by C. cassiicola on hot pepper in China and Korea 
+(Chai et al. 2014;  JinHyeuk et al. 2001; Jinji et al. 2007). Target spot is found in all tomato 
+growing regions of the world. It was first identified by F.C. Deighton in Sierra Leone 
+(Üretimi 2004). Later this disease appeared in Korea, India, Queensland, Australia, United 
+States, Brazil and Southern Nigeria, Cuba, Sri Lanka, Romania, Republic of Seychelles 
+(Dixon et al. 2009;  Kingsland 1986; Kwon et al. 2005; Oluma and Amuta 1999; Silva et 
+al. 2000; Üretimi 2004). This fungus has been reported on the noxious weed Lantana 
+camara in Brazil (Cutrim and Silva 2003). Target spot by Corynespora cassiicola is 
+affecting cotton in India, China and the United States (Conner et al. 2013; Fulmer et al. 
+2012; Lakshmanan et al. 1990; Wei et al. 2014). Another vegetable, balsam pear, is host 
+of this fungus in the United States, Korea and Japan (Kwon et al. 2005). Corynespora 
+cassiicola is causing damage to watermelon in the Seychelles (Kingsland 1986). 
+
+28 
+ 
+Proof of pathogencity of C. cassiicola on cotton  
+A fungal suspension (2×104 spores/ml) of two isolates was used for inoculating 
+cotton and sterile water was sprayed on cotton seedlings instead of a fungal suspension, as 
+a non-inoculated control. All seedlings were incubated for 72 hrs at 21˚C in a moist 
+chamber (Conner et al. 2013). Fulmer et al. (2012) incubated seedlings for 48 hrs at 21.1˚C. 
+All inoculated cotton seedlings showed leaf spot symptoms produced by C. cassiicola in 6 
+days (Conner et al. 2013) or in 7 days (Fulmer et al. 2012), while no symptoms were found 
+on non-inoculated controls. Re-isolation of the fungus was done and then isolates were 
+cultured and confirmed by morphological characteristics (Conner et al. 2013). 
+Corynespora cassiicola sequences in the gene bank were 99% similar to the sequence of 
+archived isolates of this fungus. Koch’s postulates were also done for Corynespora leaf fall 
+disease of rubber (Jinji et al. 2007) and Corynespora leaf spot of balsam pear (Kwon et al. 
+2005). 
+Major diseases caused by Corynespora cassiicola 
+ 
+Corynespora leaf fall disease destroyed 4600 ha rubber tress (H. brasiliensis) since 
+1987 in Sri Lanka (Silva et al. 2003) which resulted in a 20-25% economic losses to rubber 
+growing countries (Silva et al. 2003). Symptoms of this disease can be seen on fruits, 
+leaves, twigs and petioles (Barthe et al. 2007; Silva et al. 2003). A characteristic symptom 
+of leaf fall disease is a fish bone or railway track-like appearance formed by the darkening 
+of the veins and necrotic spots with a brown or white papery center surrounded by dark 
+brown ring (Barthe et al. 2007; Jinji et al. 2007; Silva et al. 2003). A yellow halo can also 
+
+29 
+ 
+be seen (Jinji et al. 2007). Later, rubber leaf fall causes premature defoliation and that 
+reduces latex production (Barthe et al. 2007; Ogbebor and Adekunle 2005; Silva et al. 
+2003).  
+Another important disease is Corynespora leaf spot of cucumber (Cucumis sativus) 
+which is also known as leaf fire disease in Europe (Blazquez 1967). Leaf fire symptoms 
+are characterized by irregular yellow specks which later become angular or somewhat 
+circular with a light brown colored center and surrounded by a dark brown margin. The 
+necrotic leaves fall from the plant (Blazquez 1967).  
+Corynespora cassiicola also affects soybean. There are two symptom patterns seen 
+on soybean: one is target spot on leaves and another is stem and root rot (Seaman et al. 
+1965). In some regions of the northern United States, only the latter disease is seen (Seaman 
+et al. 1965). Dark brown streaks can be seen which later girdle hypocotyls or the root near 
+the crown  (Seaman et al. 1965). Target spot on soybean can reduce plant growth. Foliage 
+symptoms include reddish brown pin-point lesions (Seaman et al. 1965). If free moisture 
+becomes available then these spots turn into characteristic target spot symptoms with 
+concentric light and dark necrotic rings with dark brown margin (Seaman et al. 1965).  
+Corynespora cassiicola is a serious pathogen on winter-grown tomatoes and caused 
+losses of 11800 kg/ha (Pernezny et al. 2002). Leaf lesions with light brown center further 
+surrounded by dark brown margins, sometimes a yellow halo can be seen on some cultivars 
+(Schlub et al. 2007; Üretimi 2004). Diseased areas of leaves became desiccated and papery 
+(Onesirosan et al. 1975). Premature defoliation occurs with continued disease 
+
+30 
+ 
+intensification. In addition, fruits showing slight sunken lesions, which later become a large 
+darker sunken pitted area are unmarketable (Schlub et al. 2007).  
+Target spot disease caused by C. cassiicola is an emerging disease in cotton. 
+Symptoms are seen on leaves and bracts (Fulmer et al. 2012). Initially, brick red dots 
+expand to form circular or irregular concentric spots with tan to light brown centers on 
+leaves (Conner et al. 2013; Fulmer et al. 2012). Symptoms can begin around 68 days after 
+planting in susceptible varieties  in combination with frequent rain/irrigation, which can 
+lead to premature leaf fall (Conner et al. 2013). Some isolates affect the bolls. Circular 
+water soaked lesions with dark brown margins can be seen on plants infected by these 
+isolates (Lakshmanan et al. 1990). Afterwards, these lesions coalesce and become large 
+necrotic spots that further lead to boll rot (Lakshmanan et al. 1990). Target spot can cause 
+70% premature defoliation and heavy loss of lint (Fulmer et al. 2012). 
+Disease epidemiology for different hosts 
+ In soybean, disease development is more severe at 15˚C and is less severe at 20˚C 
+(Seaman et al. 1965), while target spot development on tomato occurs at 20 to 28˚C (Jones 
+and Jones 1984). Target spot requires high humidity as periods of drought during August 
+and September may decrease disease development (Seaman et al. 1965). With sesame, a 
+leaf spot caused by C. cassiicola, causes higher losses in the dry season when plants are 
+weaker and premature leaf senescence occurs under to drought conditions (Seaman et al. 
+1965). High humidity along with leaf wetness for 16 to 44 hrs is necessary for disease 
+development on tomato (Jones and Jones 1984; Schlub et al. 2007). Disease development 
+
+31 
+ 
+on Lantana camara is severe at 20 to 30˚C with leaf wetness of 6 or more hrs (Pereira et 
+al. 2003). Disease severity is highest at 28˚C (Pereira et al. 2003). Corynespora leaf spot 
+develop on pepper requires a temperatures  between 25 to 30˚C (Chai et al. 2014; Üretimi 
+2004). 
+Host specific toxin production 
+Corynespora cassiicola produces a host-selective toxin (HST) known as cassiicolin 
+(Barthe et al. 2007; de Lamotte et al. 2007; Onesirosan et al. 1975; Pereira et al. 2003; 
+Üretimi 2004). These HSTs are mostly low molecular weight secondary compounds, with 
+host specific toxicity at low concentrations (Üretimi 2004). Isolates of C. cassiicola  
+produce a toxin in synthetic medium, which is able to induce cellular damage to the specific 
+host (tomato, rubber, Lantana camara) similar to the damage caused by fungus to the host 
+(Barthe et al. 2007; de Lamotte et al. 2007; Onesirosan et al. 1975; Pereira et al. 2003; 
+Üretimi 2004). On the synthetic medium as on modified Alternaria medium (MAM), 
+maximum toxin production occurs after a 12 day incubation period (Onesirosan et al. 
+1975). The optimum temperature for toxin production in synthetic medium is 24-28˚C. The 
+triggers for maximal production of cassiicolin in synthetic medium are 3% glucose and an 
+optimum pH range of 6-7 (Onesirosan et al. 1975). Due to HSTs produced by C. cassiicola, 
+C. cassiicola has the potential to be used as a biological control agent against the noxious 
+weeds such as Lantana camara (Pereira et al. 2003). Study of HSTs can help for finding 
+detoxification genes from plants and microorganisms that can further help in identifying 
+disease resistance mechanisms against C. cassiicola (Üretimi 2004). 
+
+32 
+ 
+Isolation of the pathogen 
+Symptomatic tissue from freshly collected leaves are cut into small pieces with a 
+sterilized scissor and  surface sterilized with 70% alcohol for 3 minutes and these infected 
+tissue pieces are placed onto Potato Dextrose Agar (PDA) (Silva et al. 2003). Incubation 
+temperatures have varied from 28±2˚C for 2 days (Silva et al. 2003) or  25˚C in dark (de 
+Lamotte et al. 2007; Pereira et al. 2003), then a subculture or single spore isolation is done 
+to obtain a pure culture (Miyamoto et al. 2009; Silva et al. 2003). A variety of artificial 
+media are used to see the effect on growth of the mycelium and sporulation such as  20% 
+V-8 juice agar (Seaman et al. 1965), antibiotic V-8 juice agar  (Conner et al. 2013). 
+Alphacel agar, Difco cornmeal agar with 30 mg/liter chlortetracycline (CMA), malt agar  
+(Seaman et al. 1965). Seaman et al. (1965) found slower mycelial growth on PDA, while 
+submerged growth and scanty spore production were noted on malt-agar and CMA 
+(Seaman et al. 1965). The germination percentage is higher on V-8 agar (Seaman et al. 
+1965). Pereira et al. (2003) used media like Vegetable-broth-agar medium (VBA; prepare 
+by vegetable decoction of 25 g red beet, 25 g carrot, 25 g potato, 25 g tomato, 25 g pumpkin, 
+25 g cabbage , 25 g taro leaves, 12.5 g kale, 6.25 g shallot, and 6.25  parsley, sieve and 
+make up to 1 liter with water  and 20 g agar), Lantana leaf extract sucrose agar (LSA; 
+decoction of 200 g of triturated lantana leaves, 30 g sucrose, and 20 g agar, final volume 1 
+liter with water), Potato-Carrot-Agar (PCA). Greatest mycelial growth and sporulation was 
+observed on LSA and VBA media, respectively (Pereira et al. 2003). Other researchers use 
+Malt-Extract-Agar (MEA), Czapek-Dox-Agar (CDA) and with additions of 6 mg of 
+
+33 
+ 
+thiamine hydrochloride or 2 g biotin or 1 mg each of pyridoxine or riboflavin in these 
+medium to have more variation in mediums (Oluma and Amuta 1999). Growth is greatest 
+on MEA and slowest on PDA with thiamine as an addition. Sporulation is highest on CDA 
+with biotin and it is poorest on PDA or PDA + thiamine (Oluma and Amuta 1999).  
+Enhancing sporulation of Corynespora cassiicola 
+Mycelial growth was not seen at 5˚C or 35˚C with highly restricted mycelial growth 
+observed at 30°C (Seaman et al. 1965). Some researchers used 21˚C as an incubation 
+temperature (Conner et al. 2013) whereas other find 25±1˚C to be an optimum temperature 
+for growth of mycelium (de Lamotte et al. 2007; Dixon et al. 2009; Oluma and Amuta 
+1999; Pereira et al. 2003). Favorable temperature for sporulation of C. cassiicola is 20 to 
+28˚C but the greatest sporulation was noted at 23˚C (Pereira et al. 2003). Sporulation of C. 
+cassiicola occurs after 7 days growth but conidia numbers are higher after 15 days (Pereira 
+et al. 2003). Scraping the colony surface of this fungus with a glass slide after 3 days growth 
+and then incubating under continuous light (25 flux) at 21 to 23˚C for the next three or 
+more days can increase sporulation (Jinji et al. 2007; Onesirosan et al. 1975; Pereira et al. 
+2003).  
+Storage methods 
+A simple method is to cover the pure culture of C. cassiicola with autoclaved 
+mineral oil and store at 5˚C in the dark (Dixon et al. 2009; Miyamoto et al. 2009). 
+Immersion in sterile water is the best method for storage with 71% revival rates (Roy et al. 
+2014). For this method, a disk of actively growing fungus is taken from pure culture and 
+
+34 
+ 
+transferred to a test tube containing 10 ml sterile water. The test tube is closed properly and 
+wrapped with parafilm and stored at room temperature (de Lamotte et al. 2007; Roy et al. 
+2014). Continuous culturing used to preserve pure culture can reduce virulence of the 
+fungus with time (Roy et al. 2014). Another method is to store C. cassiicola at -20˚C. Take 
+a piece of mycelium with sterilized cork borer from the original culture and transfer it to 
+quarter strength PDA plate which is covered with 3 to 4 layers of filter paper. Incubate this 
+parafilm sealed plate at room temperature for 2 to 3 weeks in the dark, then transfer filter 
+paper in a sterilized coin envelope with sterilized forceps. Air-dry coin envelopes 
+overnight, then place in airtight container with desiccant and store at -20˚C (Brewer, 
+personal communication). 
+ 
+ 
+
+35 
+ 
+Literature cited 
+ 
+ACES (Alabama Cooperative Extension Systems). 2016. Cotton: Insect, Disease, 
+Nematode, and Weed Control Recommendation for 2016. IPM-0415. Ala. Coop. 
+Ext. Syst. Online at http://www.aces.edu/pubs/docs/I/IPM-0415/IPM-0415.pdf. 
+Accessed on 03/04/2017. 
+ 
+Atakan, E. 2006. Associations between Frankliniella spp. and Orius niger population in 
+cotton. Phytoparasitica 34:221-234. 
+ 
+Baird, R. E. 2001a. Foliar diseases. Pages 20 in: Compendium of Cotton Diseases. T.L. 
+Kirkpatrick and C.S. Rothrock, eds. APS Press, St. Paul, Minnesota. 
+ 
+Baird, R. E. 2001b. Alternaria leaf spot. Pages 20-21 in: Compendium of Cotton Diseases. 
+T.L. Kirkpatrick and C.S. Rothrock, eds. APS Press, St. Paul, Minnesota. 
+ 
+Baird, R. E. 2001c. Ascochyta blight. Pages 22 in: Compendium of Cotton Diseases. T.L. 
+Kirkpatrick and C.S. Rothrock, eds. APS Press, St. Paul, Minnesota. 
+ 
+Batson, W. E. 2001. Boll rots. Pages 36-38 in: Compendium of Cotton Diseases. T.L. 
+Kirkpatrick and C.S. Rothrock, eds. APS Press, St. Paul, Minnesota. 
+ 
+Barthe, P.,  Pujade-Renaud, V., Breton, F., Gargani, D., Thai, R., Roumestand, C., and De 
+Lamotte, F. 2007. Structural analysis of cassiicolin, a host-selective protein toxin 
+from Corynespora cassiicola. J. Molec. Biol. 367:89-101. 
+ 
+Bednarz, C., Ritchie, G., Hook, J., Yager, R., Comer, S., Cook, D., and Griner, I. 2003. 
+Cotton crop water use and irrigation scheduling. Publ. p72. University of Georgia 
+Department of Crop and Soil Sciences, Tifton and Stripling Irrigation Research 
+Park , Camilla. Online at http://www.ugacotton.com/vault/rer/2003/p72.pdf. 
+Accessed on: 05/10/2017. 
+ 
+Benedict, C. R., Kohel, R. J., and Lewis, H. L. 1999. Cotton fiber quality. Pages 269-288 
+in: Cotton: Origin, History, Technology, and Production. C.W. Smith and J.T. 
+Cothren, eds. John Wiley & Sons, Inc., New York. 
+ 
+Bennett, O. L., Rouse, R. D., Ashley, D. A., and Doss, B. D. 1965. Yield, fiber quality and 
+potassium content of irrigated cotton plants as affected by rates of potassium. 
+Agronomy J. 57: 269-299. 
+ 
+
+36 
+ 
+Blazquez, C. 1967. Corynespora leaf spot of cucumber. In: Proceedings of the Florida State 
+Horticultural Society. 80:177-182. 
+ 
+Bridge, R.R., Meredith, W. R., and Chism, J. M. 1972. Influence of planting method and 
+plant population on cotton (Gossypium hirustum L.). Agronomy J. 65:104-109. 
+ 
+Brown, J. K. 2001. Viral diseases of cotton. Pages 48-49 in: Compendium of Cotton 
+Diseases. T.L. Kirkpatrick and C.S. Rothrock, eds. APS Press, St. Paul, Minnesota. 
+ 
+Chai, A.-Li, G.-F. Du, Y.- X. Shi, X.-W. Xie and B.-J. Li. 2014. Corynespora spot of hot 
+pepper caused by Corynespora cassiicola in China. Canadian  J. Plant Path. 36:407-
+411. 
+ 
+Conner, K., Hagan, A. K., and Zhang, L. 2013. First report of Corynespora cassiicola-
+incited target spot on cotton in Alabama. Plant Dis. 97:1379-1379. 
+ 
+Cutrim, F. A. and Silva, G. S. 2003. Pathogenicity of Corynespora cassiicola to different 
+plant species. Fitopatologia Brasileira 28:193-194. 
+ 
+Davis, R. M., Nunez, J. J, and Subbarao, K. V. 1997. Benefits of cotton seed treatments for 
+control of seedling diseases in relation to inoculum densities of Pythium spp. and 
+Rhizoctonia solani. Plant Dis. 81:766-768. 
+ 
+de Lamotte, F., Duviau, M. P., Sanier, C., Thai, R., Poncet, J., Bieysse, D., and Pujade-
+Renaud, V. 2007. Purification and characterization of cassiicolin, the toxin 
+produced by Corynespora cassiicola, causal agent of the leaf fall disease of rubber 
+tree. J. Chromatography B 849:357-362. 
+ 
+DeVay, J. E. 2001. Seedling diseases. Pages 13-14 in: Compendium of Cotton Diseases. 
+T.L. Kirkpatrick and C.S. Rothrock, eds. APS Press, St. Paul, Minnesota. 
+ 
+Dixon, L. J., Schlub, R. L., Pernezny, K., and Datnoff, L. E. 2009. Host specialization and 
+phylogenetic diversity of Corynespora cassiicola. Phytopathology 99:1015-1027. 
+ 
+Eaton, F.M. 1955. Physiology of the cotton plant. Annual Rev.  Plant Physiol. 6:299-328. 
+ 
+Faria, M., and Wraight, S. P. 2001. Biological control of Bemisia tabaci with fungi. Crop 
+Protection 20:767-778. 
+ 
+Fernandes, R., and Barreto, R. 2003. Corynespora cassiicola causing leaf spots on Coleus 
+barbatus.  Plant Path. 52:786-786. 
+
+37 
+ 
+ 
+Fulmer, A. M., Walls, J. T., Dutta, B., Parkunan, V., Brock, J., and Kemerait Jr, R. C. 2012. 
+First report of target spot caused by Corynespora cassiicola on cotton in Georgia. 
+Plant Dis 96:1066. 
+ 
+Gazaway, W. S. 1998. Cotton seedling disease. ANR-011.  Ala. Coop. Ext. Syst., Auburn. 
+Online at http://www.aces.edu/pubs/docs/A/ANR-1011/index2.tmpl. Accessed on 
+04/02/2017. 
+ 
+Gerling, D., Alomar, O., and Arno, J. 2001. Biological control of Bemisia tabacia using 
+predators and parasitoids. Crop Protection 20:779-799. 
+ 
+GRIN (Germplasm Resource Information Network). Grin taxonomy for plants. Online at 
+http://www.ars-grin.gov/cgi-bin/npgs/html/taxon.pl?17917. 
+Accessed 
+on 
+05/04/2016. 
+ 
+Hagan, A., Bowen, K., Pegues, M., and Jones, J. 2015. Relation between target spot 
+intensity and seed cotton yield. Phytopathology. 105:S2.4. 
+ 
+Hake, K., Bragg, K., Mauney, J., and Metzer, B. 1990. Causes of high and low micronaire. 
+Cotton 
+Physiol. 
+Today. 
+Newsl. 
+12. 
+Online 
+at 
+https://www.cotton.org/tech/physiology/cpt/fiberquality/upload/CPT-Sep90-
+REPOP.pdf. Accessed on: 04/02/2017. 
+ 
+Hokkanen, H. M. T. 1991. Trap cropping in pest management. Annu. Rev. Entomol. 
+36:119-138. 
+Online 
+at: 
+http://www.annualreviews.org/doi/pdf/10.1146/annurev.en.36.010191.001003. 
+Accessed on 05/10/2017. 
+ 
+Howell, C.R. 2001. Diseases caused by Pythium species. Pages 14-15 in: Compendium of 
+Cotton Diseases. T.L. Kirkpatrick and C.S. Rothrock, eds. APS Press, St. Paul, 
+Minnesota. 
+ 
+Huang, H. K., Liu, C. E., Liou, J. H., Hsiue, H. C., Hsiao, C. H., and Hsueh, P. R. 2010. 
+Subcutaneous infection caused by Corynespora cassiicola, a plant pathogen. 
+Journal of Infection 60:188-190. 
+ 
+JinHyeuk, K., SooWoong, K., JeongSoo, K., and ChangSeuk, P. 2001. First report of 
+corynespora leaf spot in pepper caused by Corynespora cassicola in Korea. Plant 
+Path. J. 17:180-183. 
+ 
+
+38 
+ 
+Jinji, P., Xin, Z., Yangxian, Q., Yixian, X., Huiqiang, Z., and He, Z. 2007. First record of 
+Corynespora leaf fall disease of Hevea rubber tree in China. Australasian Plant 
+Disease Notes 2:35-36. 
+ 
+Jones, J. P. and Jones J. B. 1984. Target spot of tomato: epidemiology and control. Proc. 
+Fla. State Hort. Soc 97:216-218. 
+ 
+Kingsland, G. C. 1986. Pathogenicity and epidemiology of Corynespora cassiicola in the 
+Republic of Seychelles. International J. of Pest Manage. 32:283-287. 
+ 
+Kohel, R. J., Yu, J., Park, Y. H., and Lazo, G. R. 2001. Molecular mapping and 
+characterization of traits controlling fiber quality in cotton. Euphytica 121:163-172. 
+ 
+Kwon, J. H., Jee, H. J., and Park, C. S. 2005. Corynespora leaf spot of balsam pear caused 
+by Corynespora cassiicola in Korea. The Plant Path. J. 21:164-166. 
+            
+ Lakshmanan, P., Jeyarajan, R., and Vidhyasekaran, P. 1990. A boll rot of cotton caused 
+by Corynespora cassiicola in Tamil Nadu, India. Phytoparasitica 18:171-173. 
+ 
+Lawrence, G. W., and McLean, K. S. 2001. Reniform nematodes. Pages 15-17 in: 
+Compendium of Cotton Diseases. T.L. Kirkpatrick and C.S. Rothrock, eds. APS 
+Press, St. Paul, Minnesota. 
+ 
+Leonard, B. R., Graves, J. B., and Ellsworth, P. C. 1999. Insect and mite pests of cotton. 
+Pages 489-552 in: Cotton: Origin, History, Technology, and Production. C.W. 
+Smith and J.T. Cothren, eds. John Wiley & Sons, Inc., New York. 
+ 
+Lewis, C.F., and Richmond, T.R. 1968. Cotton as a crop. Pages 1-21 in: Advances in 
+Production and Utilization of Quality Cotton: Principles and Practices. C. F. Elliot, 
+M. Hoover and K.W. Porter, eds. The Iowa State University Press, Iowa. 
+ 
+Lopez, M.F., and Elam, E. 1996. Estimating seed yield using lint yield and lint percentage 
+of seed cotton. Texas Tech University. Proc. Beltwide Cotton Conf. 1:486-489. 
+ 
+Luo, Q., Bange, M., and Johnston, D. 2016.  Environment and cotton fiber quality. Clim. 
+Chang. 138:207-221. 
+ 
+Mitchell, C.C, and Huluka, G. 2012. The basis of soil testing in Alabama. Agronomy and 
+Soils Departmental Series No. 324A. AAES, Auburn University. Online at 
+www.aces.edu/anr/soillab/forms/documents/ay-324A.pdf. 
+Accessed 
+on: 
+05/05/2016. 
+
+39 
+ 
+ 
+Miyamoto, T., Ishii, H., Seko, T., Kobori, S., and Tomita, Y. 2009. Occurrence of 
+Corynespora cassiicola isolates resistant to boscalid on cucumber in Ibaraki 
+Prefecture, Japan. Plant Path. 58:1144-1151. 
+ 
+Mundro, J.M. 1987. Production, consumption, and taxonomy. Pages 6-40 in: Cotton. J. M. 
+Mundro, ed. Longman Scientific & Technical, and John Wiley & Sons, Inc., New 
+York. 
+ 
+MU Extension (University of Missouri Extension). 2004. Cotton Pests: Scouting and 
+Management. IPM 1025. Online at 
+http://extension.missouri.edu/p/ipm1025-2. Accessed on: 03/20/2017. 
+ 
+NCC (National Cotton Council of America). 2017a. Crop data: Export ranking. USDA-
+FAS. 
+Online 
+at 
+http://www.cotton.org/econ/cropinfo/cropdata/rankings.cfm. 
+Accessed on: 03/01/2017. 
+ 
+NCC (National Cotton Council of America). 2017b. World of cotton. USDA-FAS. Online 
+at http://www.cotton.org/econ/world/. Accessed on: 03/01/2017. 
+ 
+Norfleet, M.L., Reeves, D.W., Burmester, C.H., Mina, B., and Monks, C.D. 1997. Optimal 
+planting date for cotton in Tennessee Valley of Northern Alabama. Proc. Beltwide 
+Cotton Conf. 1:644-647. 
+ 
+Ogbebor, N. and Adekunle, A. 2005. Inhibition of conidial germination and mycelial 
+growth of Corynespora cassiicola (Berk and Curt) of rubber (Hevea brasiliensis 
+muell. Arg.) using extracts of some plants. African Journal of Biotechnology 4:9. 
+ 
+Oluma, H. and Amuta, E. 1999. Corynespora cassiicola leaf spot of pawpaw (Carica 
+papaya L.) in Nigeria. Mycopathologia 145:23-27. 
+ 
+Onesirosan, P., Mabuni, C. T., Durbin, R. D., Morin, R. B., Rich, D. H., and Arny, D. C. 
+1975. Toxin production by Corynespora cassiicola. Physiol.  Plant Path. 5:289-
+295. 
+Oosterhius, D. 2001. Physiology and nutrition of high yielding cotton in the USA. 
+Informacoes Agronomicas 95:18-24. 
+ 
+Oosterhuis, D. M., and Bourland, F. M. 2001. Development of the cotton plant. Pages 3-7 
+in: Compendium of Cotton Diseases. T.L. Kirkpatrick and C.S. Rothrock, eds. APS 
+Press, St. Paul, Minnesota. 
+ 
+
+40 
+ 
+Oosterhuis, D. M., and Jernstedt, J. 1999. Morphology and anatomy of the cotton plant. 
+Pages 175-206 in: Cotton: Origin, History, Technology, and Production. C.W. 
+Smith and J.T. Cothren, eds. John Wiley & Sons, Inc., New York. 
+ 
+Overstreet, C., and McGawley, E. C. 2001. Nematodes. Pages 38-40 in: Compendium of 
+Cotton Diseases. T.L. Kirkpatrick and C.S. Rothrock, eds. APS Press, St. Paul, 
+Minnesota. 
+ 
+Pereira, J. M., Barreto, R. W., Ellison, C. A., and Maffia, L. A. 2003. Corynespora 
+cassiicola f. sp. lantanae: a potential biocontrol agent from Brazil for Lantana 
+camara. Biol. Control 26:21-31. 
+ 
+Perlak, F.J., Oppenhuizen M., Gustafson, K., Voth, R., Sivasupramaniam, S., Heering, D., 
+Carry, B., Ihriq, R. A., and Roberts, J. K. 2001. Development and commercial use 
+of bollgard cotton in the USA-early promises versus today’s reality. The Plant J. 
+6:489-501. 
+ 
+Pernezny, K., Stoffella, P., Collins, J., Carroll, A., and Beaney, A. 2002. Control of target 
+spot of tomato with fungicides, systemic acquired resistance activators, and a 
+biocontrol agent. Plant Protection Sci.-prague- 38:81-88. 
+ 
+Prostko, E., Lemon, R., and Cothren, J.T. 1998. Field estimation of cotton yields. Texas 
+Agricultural Extention Service, The Texas A&M University System. Online at 
+http://publications.tamu.edu/COTTON/PUB_cotton_Field%20Estimation%20of%20Cott
+on%20Yields.pdf. Accessed on: 05/05/2015. 
+ 
+Proto, M., Supino, S., and Malandrino, O. 2000. Cotton: A flow cycle to exploit. Industrial 
+Crops and Products 11:173-178. 
+ 
+Ramey, H. H. Jr. 1999. Classing of fiber. Pages 709-727 in: Cotton: Origin, History, 
+Technology, and Production. C.W. Smith and J.T. Cothren, eds. John Wiley & 
+Sons, Inc., New York. 
+ 
+Robinson, A. F. 1999. Cotton nematodes. Pages 595-615 in: Cotton: Origin, History, 
+Technology, and Production. C.W. Smith and J.T. Cothren, eds. John Wiley & 
+Sons, Inc., New York. 
+ 
+Romruensukharom, P., Tragoonrung, S., Vanavichit, A., and Toojinda, T. 2005. Genetic 
+variability of Corynespora cassiicola populations in Thailand. J. Rubber Research 
+8:38-49. 
+ 
+
+41 
+ 
+Rothrock, C. S. 2001. Diseases caused by Rhizoctonia solani. Pages 15-17 in: 
+Compendium of Cotton Diseases. T.L. Kirkpatrick and C.S. Rothrock, eds. APS 
+Press, St. Paul, Minnesota. 
+ 
+Roy, C. B., Srinivas, P., and Jacob, C. K. 2014. Relative efficacy of long-term storage 
+methods on survival and virulence of Corynespora cassiicola and Phytophthora 
+meadii pathogenic on rubber (Hevea brasiliensis). Science 27:202-214. 
+ 
+Schlub, R. L., Smith, L. J., Datnoff, L. E., and Pernezny, K . 2007. An overview of target 
+spot of tomato caused by Corynespora cassiicola. II International Symposium on 
+Tomato Diseases. Acta Hort. 808:25-28. 
+ 
+Seaman, W. L., Shoemaker, R. A., and Peterson, E. A. 1965. Pathogenicity of Corynespora 
+cassiicola on soybean. Canadian J. Botany 43:1461-1469. 
+ 
+Silva, W. P. K., Wijesundera, R. L. C., Karunanayake, E. H., Jayasinghe, C. K., and 
+Priyanka, U. M. S. 2000. New hosts of Corynespora cassiicola in Sri Lanka. Plant 
+Dis. 84:202. 
+ 
+Silva, W. P., Karunanayake, E. H., Wijesundera, R. L., and Priyanka, U. 2003. Genetic 
+variation in Corynespora cassiicola: a possible relationship between host origin 
+and virulence. Mycological Research 107:567-571. 
+ 
+Silvertooth, J. C., Edmisten, K. L., and McCarty, W. H. 1999. Production practices. Pages 
+451-488 in: Cotton: Origin, History, Technology, and Production. C.W. Smith and 
+J.T. Cothren, eds. John Wiley & Sons, Inc., New York. 
+ 
+Singh, P., and Kairon, M.S. 2000. Cotton varieties and hybrids. Central Institute for Cotton 
+Research, Nagpur. CICR Technical Bulletin 13:1-3. 
+ 
+Steinkraus, D. C., Boys, G. O., and Rosenheim, J. A. 2002. Classical biological control of 
+Aphis 
+gossypii 
+(Homoptera: 
+Aphididae) 
+with 
+Neozygites 
+fresenii 
+(Entomophthorales: Neozygitaceae) in California cotton. Biological Control 
+25:297-304. 
+ 
+Stewart, J. M. 2001. Origin and diversity of cotton. Pages 1-3 in: Compendium of Cotton 
+Diseases. T.L. Kirkpatrick and C.S. Rothrock, eds. APS Press, St. Paul, Minnesota. 
+ 
+Thomas, S. H., and Kirkpatrick, T. L. 2001. Root-knot nematodes. Pages 40-42 in: 
+Compendium of Cotton Diseases. T.L. Kirkpatrick and C.S. Rothrock, eds. APS 
+Press, St. Paul, Minnesota. 
+
+42 
+ 
+ 
+Touchton, J. T., Adams F., and Burmester, C. H. 1981. Nitrogen fertilizer rates and cotton 
+petiole analysis in Alabama experiments. Alabama Agricultural Experiment 
+Station, 
+Auburn 
+University. 
+Bulletin 
+528:1-24. 
+Online 
+at 
+http://aurora.auburn.edu/bitstream/handle/11200/2451/1707BULL.pdf?sequence=
+1. Accessed on: 05/25/2017. 
+ 
+USDA-ERS (United States Department of Agriculture-Economic Research Service). 2017. 
+Cotton 
+and 
+Wool: 
+Overview. 
+Online 
+at  
+https://www.ers.usda.gov/topics/crops/cotton-wool/. Accessed on: 03/9/2017. 
+ 
+Üretimi, Ö. T. 2004. Host-specific toxin production by the tomato target leaf spot pathogen 
+Corynespora cassiicola. Turk J. Agric. For. 28:389-395. 
+ 
+Vellidis, G., Tucker, M., Perry, C., Kvien, C., and Bednarz, C. 2008. A real time wireless 
+smart sensor array for scheduling irrigation. Computers and Electronics in 
+Agriculture 61:44-50. 
+ 
+Wade, B., Kemerait, R., Brock, J., Hagan, A., Lawrence, K., Price, P., Allen, T., Faske, T., 
+Kirkpatrick, T., Dufault, N., Young-Kelly, H., Mehl, H., Isakeit, T., Wheeler, T., 
+Woodward, J., Mueller, J., and Nichols, R. 2015. Diagnosis and management of 
+foliar diseases of cotton in the Unites States. Diagnosis-Management-Foliar-
+Diseases. 
+Cotton 
+Incorp. 
+Online 
+at 
+http://www.cottoninc.com/fiber/AgriculturalDisciplines/Plant-
+Pathology/Diagnosis-Management-Foliar-Diseases/Diagnosis-Management-
+Foliar-Diseases.pdf. Accessed on: 03/05/2017. 
+ 
+Wei, Y. X., Zhang, H., Pu, J. J., and Liu, X. M. 2014. First repot of target spot of cotton 
+caused by Corynespora cassiicola in China. Plant Dis. 98:1006. 
+ 
+Whitaker, J., Culpepper, S., Harris, G., Kemerait, B., Perry, C., Roberts, P., Shurley, D., 
+Smith, A., and Porter, W. 2015. Georgia cotton production guide-2015. Collins, G. 
+ed. 2015-UGA-Cotton-Production-Guide. Coop. Exten. and the University of 
+Georgia College of Agriculture and environmental sciences, Tifton, Georgia. 
+Online at http://www.ugacotton.com/vault/file/2015-UGA-Cotton-Production-
+Guide.pdf. Accessed on 05/04/2016. 
+ 
+Williams, M. R. 2016. Cotton insect losses. Mississippi State University. Online at 
+http://www.entomology.msstate.edu/resources/cottoncrop.asp. 
+Accessed 
+on: 
+04/02/2017. 
+
+43 
+ 
+Table1. Cotton production data of top four cotton producing countries (2015).  
+Country 
+Production 
+(1000 bales) 
+Harvested Area  
+(ha) 
+Yield 
+ (kg/ ha) 
+Imports 
+(1000 bales) 
+ 
+Exports 
+(1000 bales) 
+ 
+India 
+26,400 
+11,899,781 
+483 
+1,076 
+5,764 
+China 
+22,000 
+3,050,115 
+1570 
+4,406 
+128 
+United States 
+12,888 
+3,267,836 
+859 
+33 
+9,153 
+Pakistan 
+7,000 
+2,800,020 
+545 
+3,300 
+250 
+
+44 
+ 
+Table 2. Cotton production data of the United States (2015). 
+Type of cotton 
+Planted Area 
+(ha) 
+Harvested Area 
+(ha) 
+Yield 
+(kg/ha) 
+Bales 
+(millions) 
+Gosspium hirsutum 
+3,408,262 
+3,205,110 
+846 
+12.455 
+Gossyium barbadense 
+64,142 
+62,686 
+1504 
+0.433 
+ 
+ 
+
+45 
+ 
+Table 3. Different soil groups on the basis of ECEC value (Modified from Mitchell and Huluka 2012). 
+Soil Group 
+Soil Type 
+ECEC Value (cmol/kg) 
+Soil Series 
+Soil group 1 
+Sandy 
+<4.6 
+Dothan, Troup, Orange-burg, Ruston and Alaga 
+ 
+Soil group 2 
+ 
+Loamy to Clay 
+ 
+4.6- 9.0 
+ 
+Madison, Lucedale, Hartsells, Cecil, Pacolet 
+and Savannah 
+ 
+Soil group 3 
+ 
+Clay 
+ 
+>9.0 
+ 
+Dewey, Talbott, Boswell, Iredell, Colbert and 
+Decatur 
+ 
+Soil group 4 
+ 
+Calcareous Clay of black 
+belt 
+ 
+ 
+Houstan, Sumter, Oktibehha, Leeper and 
+Vaiden 
+
+46 
+ 
+Table 4. Soil rating on the basis of extractable P and recommendation rate of P (Modified from Mitchell and Huluka 2012). 
+Extractable P 
+Soil Group 1 
+(P kg/ha) 
+Soil Group 2  
+(P kg/ha) 
+Soil Group 3  
+(P kg/ha) 
+Soil group 4  
+(P kg/ha) 
+Very Low 
+0- 13 
+0- 13 
+0- 8 
+0- 20 
+Low 
+15- 28 
+15- 28 
+9- 17 
+21- 40 
+Medium 
+29- 56 
+29- 56 
+18- 34 
+41- 81 
+High 
+57- 112 
+57- 112 
+35- 67 
+82- 161 
+Very High 
+113- 280 
+113- 280 
+68- 168 
+162- 404 
+Extremely High 
+281 + 
+281 + 
+169+ 
+405+ 
+Recommended 
+Equation 
+for 
+P2O5 
+(kg/ha) 
+where 
+(x= 
+extractable P value) 
+134.52- 2.63x 
+134.52- 2.63x 
+134.52- 4.33x 
+134.52- 1.83x 
+
+47 
+ 
+Table 5. Soil rating on the basis of extractable K and recommendation rate for K (Modified from Mitchell and Huluka 2012). 
+Extractable K 
+Soil Group 1 
+(K kg/ha) 
+Soil Group 2 
+(K kg/ha) 
+Soil Group 3 
+(K kg/ha) 
+Soil Group 4 
+(K kg/ha) 
+Very Low 
+0- 34 
+0- 50 
+0- 67 
+0- 90 
+Low 
+35- 67 
+52- 101 
+68- 135 
+91- 179 
+Medium 
+68- 135 
+102- 202 
+136- 269 
+180- 269 
+High 
+136- 269 
+203- 404 
+270- 538 
+270- 538 
+Very High 
+270- 538 
+405- 807 
+539- 1076 
+539- 1076 
+Extremely High 
+539+ 
+807+ 
+1076+ 
+1076+ 
+Recommended 
+equation 
+for 
+K2O 
+(kg/ha) 
+where 
+x= 
+Extractable K value 
+134.52- 1.10x 
+134.52- 0.75x 
+134.52- 0.56x 
+134.52- 0.53x 
+ 
+ 
+ 
+
+48 
+ 
+Table 6. Recommended fungicides for leaf spots and boll rots. 
+Fungicide Group Chemical name  
+and Trade name 
+Pathogen 
+Application 
+rate (per ha) 
+Application time and repetitions 
+(QoI 
+Strobilurins) 
+(Group 11) 
+azoxystrobin 
+QUADRIS 
+FLOWABLE 
+ 
+Ascochyta blight; 
+Glomerella spp.; Fusarium 
+spp.; Alternaria spp.; 
+Corynespora cassiicola 
+437 - 657 ml 
+ 
+ This fungicide is applied before pin head 
+square to early bloom stage. Application can be 
+repeated after 14 to 21 days. This fungicide 
+cannot be applied consecutively more than two 
+times. 
+ 
+(QoI Strobilurins 
++ Triazole) 
+(Group 11+ 
+Group 3) 
+ 
+ 
+Triazole 
+(Group 3) 
+ 
+ 
+ 
+QoI Strobilurins 
+(Group 11) 
+ 
+(Pyraclostrobin + 
+metconazole) 
+TWINLINE 
+ 
+ 
+ 
+Flutriafol 
+TOPGUARD 
+ 
+ 
+ 
+Pyraclostrobin 
+HEADLINE SC 
+ 
+ 
+ 
+ 
+ 
+Alternaria spp.; Asochyta 
+blight; Cercospora spp.; 
+Corynespora spp.; 
+Fusarium spp.; and 
+Stemphyllum spp. 
+ 
+ 
+Corynespora cassiicola 
+ 
+ 
+ 
+ 
+Alternaria spp.; Asochyta 
+blight; Cercospora spp.; 
+Corynespora spp.; 
+Fusarium spp.; and 
+Stemphyllum spp. 
+511 - 620 ml 
+ 
+ 
+ 
+ 
+ 
+511 - 1023 
+ml 
+ 
+ 
+289 - 875 ml 
+ 
+Application is done before disease 
+development. Another application is repeated 
+after 7 to 14 days. Application of TWINLINE 
+more than two consecutive sprays must be 
+avoided. 
+ 
+ 
+First application is done at first bloom stage 
+and repeated once after 7 to 14 days. Minimum 
+37.8 l spray solution is recommended. This 
+product cannot be applied more than twice. 
+ 
+Application is done before disease 
+development. Another application is repeated 
+after 7 to 14 days. Application of HEADLINE 
+more than two consecutive sprays must be 
+avoided. 
+ 
+ 
+ 
+ 
+ 
+
+49 
+ 
+II. Effect of temperature on conidial germination of Corynespora cassiicola causing 
+target spot of cotton 
+ 
+ 
+Abstract 
+ Corynespora cassiicola is a cosmopolitan pathogen that causes target spot of 
+cotton. In recent years, this disease has been commonly reported in the cotton fields of 
+southeastern and mid-southern states of the U. S. This disease can cause up to 70% 
+premature defoliation that can cause yield losses in apparently susceptible cultivars. 
+Conidial germination is the first step of the infection process of this pathogen. Therefore, 
+it is important to understand the environmental conditions required for conidial 
+germination of C. cassiicola. The goal of this study was to determine the effect of 
+temperature on conidial germination of a cotton isolate of C. cassiicola. A spore suspension 
+of an isolate of C. cassiicola was pipetted and spread onto water agar in petri plates, which 
+were maintained at six different temperatures ranging from 12 to 32ºC, and conidia 
+germination was assessed after 4, 8, and 12 hrs. Greatest conidial germination after 8 and 
+12 hrs of incubation was observed at 24ºC. Conidia failed to germinate below 24°C with a 
+4 hr incubation period and below 20°C with an 8 hr incubation period. Quadratic regression 
+analysis indicates that optimum temperature for conidia germination after 8 hr incubation 
+was 28.4ºC. 
+Keywords: Target spot, plant pathogen, cotton isolate, epidemiology 
+
+50 
+ 
+ 
+Introduction 
+Target spot of cotton is an emerging disease caused by Corynespora cassiicola, a 
+cosmopolitan plant pathogen (Sumabat et al. 2016). The disease was first reported in 
+Mississippi by Jones (1961) and again in southwestern Georgia in 2005 (Fulmer et al. 
+2012). Since 2005, this disease has been detected in U.S. southeastern and mid-southern 
+cotton-producing states (Mehl et al. 2017).  
+Cotton is an important crop in Alabama and is one of the top three agronomic crops 
+in terms of production acreage (USDA-NASS 2016). The major diseases associated with 
+cotton in Alabama are seedling diseases such as seed rot, seedling root rot, pre-emergence 
+and post-emergence damping off. These seedling diseases are associated with fungi, 
+Pythium spp., Fusarium spp., Rhizoctonia solani, and Thielaviopsis basicola (ACES 2016). 
+Other common diseases seen in Alabama are foliar diseases such as Stemphylium, 
+Cercospora, and Ascochyta leaf spots as well as target spot (Hagan and Sikora 2013).  
+Target spot is considered a substantial threat for intensively managed, irrigated 
+”rank” crop in the southern third of the Alabama (Hagan 2015). In 2012, target spot of 
+cotton caused up to 70% premature defoliation in Georgia (Fulmer et al. 2012). In 2013 at 
+a coastal southwestern Alabama study, target spot of cotton was associated with 448 kg/ha 
+lint losses in an apparently susceptible cultivar, PhytoGen 499 WRF, and 269 kg/ha lint 
+losses in an apparently less susceptible variety, Deltapine 1252 B2RF (Hagan et al. 2015).  
+
+51 
+ 
+It is important to know the conditions that favor disease development in order to 
+most efficiently manage that disease. Forecasting infection periods of a pathogen can help 
+in scheduling timely fungicide applications. Temperature and moisture duration are 
+important environmental factors for predicting infection periods and disease development 
+(Tarr 1972). The infection process by plant pathogens is divided into three phases: pre-
+entry or prepenetration, penetration and colonization (Tarr 1972). Spore germination is the 
+first step of the pre-entry phase. Moisture duration and temperature are important factors 
+that can affect the percentage of conidia that germinate and the rate of conidial germination 
+(Tarr 1972). Unfavorable temperatures can delay conidial germination (Tarr 1972). 
+Favorable temperature requirements may differ among races of a fungus (Tarr 1972). 
+Isolates of C. cassiicola from different hosts appear to have different favorable temperature 
+ranges for conidial germination. For example, a favorable temperature range for conidial 
+germination of an okra isolate of C. cassiicola was shown to be 25 to 30˚C and the highest 
+conidial germination percentage was at 25˚C (Ahmed et al. 2013). However, the ideal 
+temperature range for conidial germination of isolates of C. cassiicola from rubber was 15 
+to 35˚C (Fernando et al. 2012). Conidial germination of soybean isolates of C. cassiicola 
+in free water was favored by the temperature range of 20 to 30˚C, while on V-8 agar, and 
+a high conidial germination percentage (above 50%) was observed over temperatures 
+ranging from 10 to 30°C (Seaman et al. 1965).  
+Optimum temperatures for conidial germination can also differ from optimum 
+temperatures for vegetative growth of the same race of a fungus (Tarr 1972). This can be 
+
+52 
+ 
+seen with Urocystis occulta which requires 15˚C for conidial germination, while the 
+optimum temperature for growth of the germ tube is 24˚C (Tarr 1972). Isolates of C. 
+cassiicola from some hosts such as soybean have different optimum temperatures for 
+conidial germination and mycelial growth. As noted above, a favorable temperature range 
+for conidial germination of an isolate of C. cassiicola from soybean is 20 to 30˚C in free 
+water, while the optimum for mycelial growth is 20˚C, while at 30°C, growth was restricted 
+(Seaman et al. 1965).  
+Before the environmental conditions that favor development of target spot of cotton 
+can be properly determined, the temperature requirements for the pre-entry phase of cotton 
+isolates of C. cassiicola needs to be established. Therefore, the present study was done to 
+investigate the effect of temperature on time required for conidial germination of a cotton 
+isolate of C. cassiicola. 
+Methods and materials 
+Production of fungal colonies. An isolate of C. cassiicola (CC1) was established 
+from diseased cotton leaves collected at the Prattville Agricultural Research Unit, 
+Alabama. A diseased leaf was kept in a moist chamber for 24 hrs and then lesions on the 
+leaf were microscopically examined. Single conidia were collected from these lesions 
+using a sterilized needle.  Single conidia were placed on V8 media, prepared with 160 ml 
+of V8 juice, 3 g of calcium carbonate and 20 g of agar per liter water and the cultures 
+maintained at 28˚C. Colonies of C. cassiicola for conidia production were produced on 
+quarter-strength potato dextrose agar (qPDA), prepared with 9.75 g of potato-dextrose-agar 
+
+53 
+ 
+powder (PDA) and 11.25 g of agar powder per liter water. Fungal colonies were sub-
+cultured by removing 5-mm diameter plugs from the periphery of the 12 day old colony 
+arising from the single conidium. Plugs were placed on fresh qPDA and kept at 28°C for 
+12 days to obtain fungal colonies. These cultures were maintained by sub-culturing on fresh 
+qPDA every 12 days from the preceding fungal colonies.  
+Effect of temperature on conidia germination. A conidial suspension was 
+prepared from 12-day old colonies by filling plates with 3 ml of sterile water. The 
+mycelium was rubbed lightly with a sterile L-shaped glass rod to release conidia. The 
+resulting conidial suspension was filtered through 2 layers of cheesecloth. The 
+concentration of conidia was determined with a haemocytometer and adjusted to 2×104 
+conidia/ml.  
+Two ml of conidial suspension and 2 ml of sterile water were pipetted and spread 
+onto water agar media and the petri-dish was sealed with parafilm. Water agar medium was 
+prepared with 20 g of agar powder per liter water. The effect of temperature on germination 
+of C. cassiicola was tested at 12, 16, 20, 24, 28, and 32 °C in dark. Three replicate plates 
+were included at each temperature. The number of germinated conidia was determined in 
+each petri-dish by examining 40 arbitrarily selected conidia under the microscope after 4, 
+8, and 12 hrs of incubation at each temperature. A conidium was considered germinated 
+when its germ tube was equal to or longer than the length of the conidia. The whole 
+experiment was repeated twice. 
+
+54 
+ 
+Data analysis. Percentage of conidial germination was calculated for each plate. 
+Conidial germination percentage at six different temperatures and three incubation periods 
+was analyzed by PROC GLIMMIX using SAS 9.4 (SAS Institute Inc., Cary, NC, USA). 
+Means comparisons between temperatures were done using Fisher’s protected least 
+significant difference test using P ≤ 0.05. Regression analysis was done using conidial 
+germination percentage as a dependent variable and temperature as the independent 
+variable.  Different regression models such as linear, quadratic, and cubic regression 
+models were examined for conidial germination percentage data at three different 
+incubation periods. Regression models were considered significant if P ≤ 0.05. The 
+regression model which had best fit statistics were used to determine regression equations.      
+Results 
+Temperature (P<0.0001), incubation period (P<0.0001), and the interaction of 
+temperature and incubation period (P<0.0001), had significant effects on conidial 
+germination of a cotton isolate of C. cassiicola. An increase in conidial germination 
+percentage at tested temperatures was generally observed with increase in incubation hrs 
+(Fig. 1). Low mean conidial germination percentage (<15%) was observed at 12 and 16°C 
+across all three incubation periods (Fig. 1). Mean conidial germination percentage was 
+greatest at 24ºC for 8 and 12 hrs incubation periods (Fig. 1). No conidia germinated below 
+20 and 16ºC with 4 and 8 hrs of incubation, respectively (Fig. 1). After 12 hr incubation, 
+conidia kept at 16ºC had the lowest mean germination. At the three highest temperatures 
+
+55 
+ 
+tested (24, 28, and 32ºC), mean conidial germination was above 50 and 90% after 8 and 12 
+hrs, respectively (Fig. 1). 
+The response of conidial germination to the different temperatures after 8 and 12 
+hrs of incubation were modeled using quadratic regression analysis. The resultant quadratic 
+equation for 8 hr incubation was:  
+G = (- 0.29) × (T)2 + 16.49 × T - 170.67; R2 = 0.56, P < 0.0001; where G represents 
+conidia germination %, and T represents temperature (Fig. 2). This model indicates that 
+the optimum temperature for conidial germination after 8 hr incubation was approximately 
+28.4ºC. The quadratic equation for conidia germination percentage after 12 hr incubation 
+was: G = (-0.25) × (T)2 + 16.15 × T – 162.89; R2 = 0.81, P < 0.0001 (Fig. 3). The calculated 
+optimum temperature for conidia germination after 12 hr incubation was 32.3ºC.  
+Discussion 
+This study was conducted with the goal to evaluate the effect of temperature on 
+conidial germination of a cotton isolate of C. cassiicola. The results of this study showed 
+that conidial germination on water agar was equally high at 24 to 32°C with 12 hr 
+incubation. These results appear similar to the favorable temperature range of 25 to 30°C 
+for conidial germination of okra isolates of C. cassiicola. High conidial germination 
+percentage (≥ 60%) of a soybean isolate on V-8 agar was observed at a wide temperature 
+range, 10 to 30°C, with highest observed germination percentage (96%) at 15°C (Seaman 
+et al. 1965). In the current study, low conidial germination (≤10%) of cotton isolate was 
+observed at temperatures <20°C. The soybean isolate used in that study was collected in 
+
+56 
+ 
+September in Ottawa, Ontario (Seaman et al. 1965), and the average minimum and 
+maximum temperature of Ottawa, Ontario in September is generally approximately 10 and 
+20.5°C, respectively. Therefore, it seems that soybean isolate evaluated by Seaman et al. 
+(1965) was adapted to lower temperatures. 
+The usual average low and high temperature in August in Prattville, Alabama, from 
+where the cotton isolate (CA1) used in this study was collected, is approximately 22.5 and 
+33.3°C, respectively. As noted above, high conidial germination percentage (≥90%) was 
+observed at ≥ 24°C with 12 hr of incubation. Hence, it appears the environmental 
+temperature prevailing in the cotton growing areas in Alabama are highly favorable for the 
+conidia germination of cotton isolates of C. cassiicola.  
+In this study, bipolar germination of conidia of this cotton isolate was most 
+commonly observed. Sometimes bipolar germination was also accompanied with 
+germination of intercalary cells. However, Seaman et al. (1965) usually noticed polar 
+germination with rare germination of intercalary cells, and sometimes bipolar germination 
+of the soybean isolates of C. cassiicola was also observed. The conidial germination type 
+can be affected by time of incubation period, substrate, and temperature (Seaman et al. 
+1965). As commonly observed bipolar germination of conidia of the cotton isolate in our 
+study contrasts to the usual polar germination of soybean isolates of another study, 
+therefore, it is possible that isolates with different host origins can also affect the type of 
+conidial germination. 
+
+57 
+ 
+Our results showed that after 4 hr incubation, there was no significant difference in 
+conidial germination percentage at the six-tested temperatures, 12 to 32°C. Therefore, it 
+can be concluded that conidial germination of this cotton isolate requires more than 4 hr 
+incubation in water to obtain high conidial germination at any temperature. However, at 
+≤20°C with 4 hr incubation very low (≤0.27%) germination occurred but at ≥24°C, 
+approximately 10% conidial germination was observed. These results suggest that there is 
+a possibility of initiation of infection processes at any temperature from 24 to 32°C with 4 
+hr of incubation in water.  
+The highest conidial germination percentage was observed at 24°C but there was 
+no significant difference in conidial germination percentage after 8 or 12 hr incubation. 
+Therefore, it seems that at 24°C and 8 hr incubation, further increases in wetness duration 
+will not significantly increase the conidial germination percentage. So, it can be concluded 
+that at 24°C, 8 hr incubation period is enough for high conidial germination and initiation 
+of infection process by the cotton isolate (CA1) of C. cassiicola. 
+The three highest tested temperatures (24, 28, and 32°C) resulted in significantly 
+high conidial germination after 4, 8, and 12 hrs incubation. Hence, it appears that 
+lengthening incubation period had significant effect on conidial germination at these 
+temperatures. At lower temperatures such as <20°C, no significant increase in conidial 
+germination percentage was noted when the incubation period was extended from 4 to 12 
+hrs. Therefore, it can be assumed that conidia at <20°C requires more than 12 hr incubation 
+
+58 
+ 
+for high conidial germination as numerical increase in conidial germination was observed 
+at 12 and 16°C with the lengthening of the incubation period.  
+In conclusion, our results showed that temperature had a significant effect on the 
+time required for conidial germination of our cotton isolate of C. cassiicola. Among the six 
+tested temperatures, 24°C with 8 and 12 hrs resulted in greatest conidial germination. In 
+addition, the other two temperatures tested (28 and 32°C) with 12 hr also resulted in 
+significantly higher conidial germination than with 8 hr incubation at these temperatures. 
+Therefore, it can be concluded that at ≥24°C, an increase in incubation period can result in 
+a significant increase in conidial germination. Moreover, as noted above, the average 
+environmental temperatures in the cotton growing areas of Alabama are highly favorable 
+for conidial germination of cotton isolate of C. cassiicola and this isolate is well adapted 
+to Alabama. This result can explain the high initiation of infection process of C. cassiicola 
+on cotton. 
+ 
+ 
+
+59 
+ 
+Literature cited 
+ACES (Alabama Cooperative Extension Systems). 2016. Cotton: Insect, Disease, 
+Nematode, and Weed Control Recommendation for 2016. IPM-0415. Ala. Coop. 
+Exten. Syst. Online at http://www.aces.edu/pubs/docs/I/IPM-0415/IPM-0415.pdf. 
+Accessed on 03/04/2017. 
+ 
+Ahmed, F. A., Alam, N., and Khair, A. 2013. Incidence and biology of Corynespora 
+cassiicola (Berk. & Curt.) Wei. disease of okra in Bangladesh. Bangladesh J. Bot. 
+42:265-272. 
+ 
+Fernando, T. H. P. S., Jayasinghe, C. K., Wijesundera, R. L. C., and Siriwardane, D. 2012. 
+Some factors affecting in vitro production, germination and viability of conidia of 
+Corynespora cassiicola from Hevea brasiliensis. J. Natn. Sci. Foundation Sri 
+Lanka 40:241-249. 
+ 
+Fulmer, A. M., Walls, J. T., Dutta, B., Parkunan, V., Brock, J., and Kemerait, R. C. Jr. 
+2012. First report of target spot caused by Corynespora cassiicola on cotton in 
+Georgia. Plant Dis. 96:1066.  
+   
+Hagan, A. K. 2015. Target spot management options in Alabama cotton for 2015. PP-762. 
+Ala. 
+Coop. 
+Exten. 
+Syst., 
+Auburn. 
+Online 
+at: 
+https://sites.aces.edu/group/timelyinfo/Documents/2015%20Target%20Spot%20C
+ontrol%20Options%20Timely%20Information.pdf. Accessed on: 06/11/2017. 
+ 
+Hagan, A., Bowen, K., Pegues, M., and Jones, J. 2015. Relation between target spot 
+intensity and seed cotton yield. Phytopathology. 105:S2.4. 
+ 
+Hagan, A. K., and Sikora, E. J. 2013. Leaf spot management in Alabama cotton: Control 
+of potash-incited leaf spot disease and target spot. PP-728. Ala Coop. Exten. Syst., 
+Auburn. 
+Online 
+at: 
+https://sites.aces.edu/group/timelyinfo/Documents/2013LeafSpotDiseasesofCotto
+nTI.rev2.pdf. Accessed on: 06/11/2017. 
+ 
+Jones, J. P. 1961. A leaf spot of cotton caused by Corynespora cassiicola. Phytopathology 
+51:305-308. 
+ 
+Mehl, H. L., Dufault, N. S., Mulvaney, M. J., Hagan, A., Kelly, H., Kemerait, R. C., Price, 
+P., Allen, T. W., and Nichols, R. L. 2017. Multi-year regional evaluation of one 
+and two applications of registered and experimental fungicides for the management 
+of target spot on two cotton varieties. Proc. Beltwide Cotton. Online at: 
+
+60 
+ 
+https://ncc.confex.com/ncc/2017/webprogram/Paper17749.html. 
+Accessed 
+on: 
+07/11/2017.  
+ 
+Seaman, W. L., Shoemaker, R. A., and Peterson, E. A. 1965. Pathogenicity of Corynespora 
+cassiicola on soybean. Canadian J. Bot. 43:1461-1469. 
+ 
+Sumabat, L., Brewer, M., and Kemerait, R. 2016. Identifying diversity within Corynespora 
+cassiicola, cause of target spot of cotton, tomato, and soybean in the southeastern 
+U.S. Phytopathology 106:S4.33. 
+ 
+Tarr, S. A. J. 1972. The entry of pathogens into plants. Pages 138-169 in: The Principles 
+of Plant Pathology. S. A. J. Tarr, ed. Winchester Press, New York. 
+ 
+USDA-NASS (United States Department of Agriculture- National Agricultural Statistics 
+Service). 
+2016. 
+2016 
+State 
+agricultural 
+overview. 
+Online 
+at: 
+https://www.nass.usda.gov/Quick_Stats/Ag_Overview/stateOverview.php?state=
+ALABAMA. Accessed on: 06/12/2017. 
+ 
+ 
+ 
+ 
+                                                                                                                                                                        
+ 
+ 
+
+61 
+ 
+ 
+ 
+Figure 1. Conidia germination percentage with 4, 8, and 12 hrs incubation. Different letters 
+above bars represent significant differences among different temperatures at P=0.05. 
+ 
+ 
+
+62 
+ 
+Figure 2. Effect of temperature on conidia germination after 8 hr incubation. Quadratic 
+regression was conducted using conidia germination percentage (G) after 8 hr as the 
+dependent variable and temperature (T) as the independent variable. 
+ 
+ 
+ 
+ 
+-20
+0
+20
+40
+60
+80
+100
+12
+16
+20
+24
+28
+32
+Conidia Germination %
+Temperature
+Observe
+d values
+G = (- 0.29) × (T)2 + 16.49 × T - 170.67; R2 = 0.56; P < 0.0001
+
+63 
+ 
+Figure 3. Effect of temperature on conidia germination after 12 hr incubation. Quadratic 
+regression was conducted using conidia germination percentage (G) after 12 hr as the 
+dependent variable and temperature (T) as the independent variable. 
+ 
+0
+20
+40
+60
+80
+100
+120
+12
+16
+20
+24
+28
+32
+Conidia Germination %
+Temperature
+Observe
+d values
+G = (-0.25) × (T)2 + 16.15 × T – 162.89; R2 = 0.81; P < 0.0001
+
+64 
+ 
+III. Effect of temperature and leaf wetness duration on target spot of cotton 
+caused by Corynespora cassiicola 
+ 
+ 
+Abstract 
+Cotton is an important crop in the southeastern and mid-eastern U. S. Corynespora 
+cassiicola is causing a foliar disease, target spot, that has the potential to cause economic 
+losses to susceptible cotton varieties. To manage target spot of cotton, understanding the 
+optimum environmental conditions required for disease development is needed. Therefore, 
+the purpose of this study was to determine the favorable weather parameters, such as 
+temperature and leaf wetness duration, that affect disease onset and lesion development.  
+Five different temperatures (16, 20, 24, 28 and 32°C) and seven leaf wetness durations (8, 
+12, 16, 24, 32, 40, and 48 hrs) were tested. Plants were drop inoculated, kept in wet plastic 
+bags as specified above, and arranged in a split plot design in growth chambers that had set 
+temperatures. Greatest lesion numbers were observed at 28°C with 48 hr of leaf wetness 
+for all three C. cassiicola isolates, while isolate CA1 and CM18 at 16°C and CC1 at 32°C 
+resulted in lowest lesion numbers. Lengthening leaf wetness duration at each tested 
+temperature generally resulted in increased lesion numbers for all isolates. Earliest onset 
+of disease was 1 day after inoculation (DAI) and occurred when plants were incubated at 
+28°C with ≥8 hr leaf wetness for isolates CA1, and CM18 and with ≥24 hr leaf wetness 
+duration for isolate CC1. 
+
+65 
+ 
+Keywords: epidemiology, onset, and lesion development. 
+Introduction 
+Target spot of cotton is a foliar disease caused by Corynespora cassiicola. This 
+disease can be responsible for premature defoliation and can cause reduction in yields of 
+cotton (Hagan 2015). Corynespora cassiicola is a well-known necrotrophic, leaf spotting 
+plant pathogen that is widely distributed in subtropical and tropical regions worldwide 
+(Barthe et al. 2007;  Huang et al. 2010). Isolates of C. cassiicola have also been reported 
+to be endophytic in some hosts (Collado et al. 1999; Gond et al. 2007; Hyde et al. 2001; 
+Kingsland 1985; Lee et al. 2004). This fungus is a cosmopolitan plant pathogen and has 
+been found on 530 plant species from 380 genera including monocots, dicots, ferns, one 
+cycad, as well as on human skin (Dixon et al. 2009; Huang et al. 2010). Some economically 
+important hosts of C. cassiicola include Solanum lycopersicum (tomato) (Barthe et al. 
+2007; Schlub et al. 2009), Glycine max (soybean) (Seaman et al. 1965), Gossypium 
+hirsutum (cotton) (Conner et al. 2013; Fulmer et al. 2012), Carica papaya (papaya) (Cutrim 
+and Silva 2003; Oluma and Amuta 1999), Hevea brasiliensis (rubber) (de Lamotte et al. 
+2007; Jinji et al. 2007), Vigna unguiculata (cowpea) (Li et al. 2014), Nicotiana tabacum 
+(tobacco) (Fajola and Alasoadura 1973), and Capsicum annuum (pepper) (Chai et al. 2014). 
+Target spot of cotton is an emerging disease in the southeastern United States. 
+Target spot of cotton was first reported in Mississippi (Jones 1961). This disease was 
+reported again by a crop consultant in 2005 in southwestern Georgia (Fulmer et al. 2012). 
+Since 2005, target spot has been reported in most cotton producing states in the U. S. (Mehl 
+
+66 
+ 
+et al. 2017).  In Alabama, target spot was detected for the first time on dryland and irrigated 
+cotton in 2011 (Conner et al. 2013).  
+In Alabama, cotton is the third most important crop in terms of production acreage 
+(USDA-NASS 2016).  In the lower third of Alabama, target spot can be a damaging disease 
+in intensively managed, irrigated ‘rank’ cotton (Hagan 2015). Symptoms of this disease 
+can be seen on leaves and bracts of cotton plants (Fulmer et al. 2012). The initial symptoms 
+are small brick red lesions, which later merge and turn to circular or irregular concentric 
+spots with tan to light brown centers (Conner et al. 2013; Fulmer et al. 2012).  Lakshmanan 
+et al. (1990) reported that some isolates of C. cassiicola caused boll rot in India. Initially, 
+circular water soaked lesions with dark brown margins can be seen on which later merge 
+and become necrotic spots and these necrotic spots lead to boll rot. 
+Target spot of cotton can cause up to 70% premature defoliation (Fulmer et al. 
+2012) which can result in significant lint losses. In 2013 at a coastal southwestern Alabama 
+study, target spot of cotton was associated with 448 kg/ha lint losses in an apparently 
+susceptible cultivar, PhytoGen 499 WRF, and 269 kg/ha lint losses in an apparently less 
+susceptible variety, Deltapine 1252 B2RF (Hagan et al. 2015). 
+Plant disease management is closely related to plant disease epidemiology (Tarr 
+1972). Understanding of the effect of environmental factors on disease development is 
+important in order to manage the disease efficiently. Disease forecasting can help to 
+efficiently time fungicide applications. Temperature and moisture are two important 
+
+67 
+ 
+environmental factors which affect onset and development of foliar diseases such as target 
+spot.  
+Pathogens differ relative to the conditions that favor their development when on 
+different hosts. Isolates of C. cassiicola from different hosts appear to have different 
+optimum temperatures and leaf wetness durations for disease development. For example, 
+favourable temperatures for disease development on tomato is above 20˚C and severe 
+disease is seen at 32˚C (Schlub et al. 2009), while disease development on soybean is more 
+severe at 15˚C and no disease is detected if temperatures remain above 20˚C (Seaman et 
+al. 1965). The favorable temperature range for target spot development on Lantana camara 
+is 20 to 30˚C (Pereira et al. 2003), as compared with 25 to 30˚C for cucumber (Kwon et al. 
+2003). Although target spot of tomato requires 16 to 44 hrs of leaf wetness for disease 
+development (Jones and Jones 1984), C. cassiicola on L. camara only requires leaf wetness 
+for 6 hours for disease development (Pereira et al. 2003) while long dew periods are 
+required for disease development on cucumber (Kwon et al. 2003). Although a dry season 
+in August through September reduces disease in soybean, drought conditions in sesame 
+increases losses due to leaf spot caused by C. cassiicola. This suggests that plants become 
+more susceptible to the disease due to premature senescence occurring as a result of 
+drought (Seaman et al. 1965).  
+Target spot of cotton is becoming a serious threat to cotton growing in the southeast 
+U. S. In order to efficiently manage this disease, it is important to understand the 
+environmental conditions required for the occurrence and development of this disease. 
+
+68 
+ 
+Knowledge of favorable temperature and leaf wetness duration requirements can be used 
+to accurately predict the disease occurrence and development. 
+Materials and Methods 
+Production of fungal colonies. Two isolates of C. cassiicola (CM18 and CA1) 
+were obtained from M. Brewer’s laboratory, UGA, and one isolate of C. cassiicola (CC1) 
+was recovered from a lesion on a diseased cotton plant at the Prattville Agricultural 
+Research Unit, Prattville, Alabama, in 2015. The diseased leaf was kept in a moist chamber 
+for 24 hrs and then lesions on the leaf were microscopically examined. A sterilized needle 
+was used to dislodge a spore from the lesion, and the spore was placed on V8 media. This 
+medium was prepared with 200 ml of clarified V8 juice, 2 g of calcium carbonate and 15 
+g of agar per liter of water (Jeffers 2007). These cultures were maintained at 28˚C.  
+Spore production. Colonies of the cotton isolates of C. cassiicola (CM18, CA1, 
+CC1) were produced on quarter-strength potato dextrose agar (qPDA), prepared with 9.75 
+g of potato-dextrose-agar powder (PDA) and 11.25 g of agar powder per liter of water. 
+Fungal plugs of 5-mm diameter were taken from the periphery of the original culture petri 
+dishes at 12 days. These fungal plugs were sub-cultured on fresh qPDA every 12 days and 
+maintained at 28˚C to obtain fungal colonies for spore production. 
+Preparation of spore suspension. A spore suspension was prepared from 12 day 
+old colonies. Petri dishes containing colonies were filled with 3 ml of sterile agar water, 
+prepared with 2 g of agar powder and 0.5 ml of Tween 20 per liter. The mycelium was 
+lightly scraped with a sterile L-shaped glass rod to detach spores. The resultant spore 
+
+69 
+ 
+suspension was filtered through 4 layers of cheesecloth. The spore concentration was 
+counted by using a hemocytometer and adjusted to 4×104 spores/ml.  
+Plant production. Seeds of the upland cotton variety, PhytoGen 499 WRF, were 
+kept in a moist chamber for 2 days to initiate germination. Germinated seeds were planted 
+in potting mixture (Sun Gro professional growing mix, Seba Beach, Canada) in 9.5 × 9.5 
+cm2 plastic pots. The potting mixture was autoclaved 3 times for 60 minutes each time 
+before planting seeds. Plants were kept at 28˚C in a growth chamber and watered as 
+required.  
+Inoculation method. Plants were inoculated with each of three isolates (CA1, CC1, 
+and CM18) when 22 to 25 days old (3 to 4 true leaf stage) at 5:00 p.m. Three true leaves 
+of a plant were drop-inoculated with a pipette. Five drops of spore suspension of 40 µl each 
+were inoculated per leaf. Inoculated leaves were covered with wet tissue (Kimwipes) and 
+then the entire plant was enclosed in a plastic bag.  
+Effect of temperature and moisture on disease development. Bagged plants 
+were kept at 16, 20, 24, 28 and 32˚C in individual growth chambers and inside each 
+chamber, isolates were whole plots and leaf wetness duration were arranged as split-plot 
+treatments. Trials were repeated in growth chambers, with different temperatures, which 
+allowed for the larger unit of temperature. Twenty-one plants were inoculated with each 
+isolate, for each temperature, and the inoculated plants were kept in a growth chamber. 
+Three inoculated plants served as three subsamples for each isolate, and were removed 
+from the plastic bags at 8, 12, 16, 24, 32, 40, and 48 hrs after inoculation. Plants were 
+
+70 
+ 
+examined at 24 hr intervals following inoculation and day of disease onset was recorded. 
+Lesions were counted on three inoculated leaves at 3, 6, and 9 days after inoculation (DAI). 
+The whole experiment was repeated once. 
+Data analysis. The number of days after inoculation recorded for the onset of 
+symptoms and total number of lesions counted on three inoculated leaves for each 
+treatment at 3, 6 and 9 DAI were used for data analysis. Generalized linear mixed model 
+analyses (PROC GLIMMIX) were done using SAS 9.4 (SAS Institute Inc., Cary, NC, 
+USA) to determine the effect of factors and interactions terms on onset and lesion counts. 
+Linear and cubic regression analysis were performed using PROC REG on SAS 9.4 to 
+understand the effect of each treatment on lesion counts. 
+Results 
+Onset. There were significant effects due to temperature, leaf wetness duration, 
+isolate, and all interaction terms except for the interaction of temperature and isolate on 
+disease onset (Table 1). Earliest onset, i.e., 1 day after inoculation (DAI), was observed at 
+28˚C for isolate CA1 with 8 to 48 hrs leaf wetness duration (Fig. 1A). Similarly, isolates 
+CM18 (Fig. 1B) and CC1 (Fig. 1C) had the earliest onset 1 day after inoculation (DAI) at 
+28°C with ≥24 leaf wetness hrs.  With isolate CA1, disease onset was generally observed 
+2 DAI at 20 and 24˚C in combination with ≥12 hr leaf wetness, while plants inoculated 
+with isolates CM18 and CC1 needed ≥24 leaf wetness hr for disease onset at 2 DAI (Fig. 
+1). No disease was observed with any of the isolates at 16˚C with leaf wetness durations < 
+24 hr. Similarly, 32˚C with leaf wetness durations less than 16, 24 and 32 hr resulted in no 
+
+71 
+ 
+disease development with isolates CA1, CM18 and CC1, respectively (Fig. 1). No disease 
+onset was observed for all three isolates (CA1, CM18, CC1) at four tested temperatures 
+(16, 20, 24, and 32˚C) with 8 hr leaf wetness (Fig. 1). Disease onset was delayed with leaf 
+wetness duration of 24 hr or less at 16 and 32˚C. 
+Lesion numbers. There were significant effects due to temperature, leaf wetness 
+duration, isolate, and all interaction terms on lesion numbers at 3, 6, and 9 DAI (Table 1). 
+Positive slopes  of linear models showed that for each of the three isolates at all incubation 
+temperatures (16, 20, 24, 28, and 32°C), lengthening leaf wetness duration usually resulted 
+in increased lesion number  at 3 (Fig. 2A, 3A, 4A), 6 (Fig. 2B, 3B, 4B), and 9 DAI (Fig. 
+2C, 3C, 4C). For example, lesion numbers with isolates CA1, CM18, and CC1 at 24˚C with 
+16 hr leaf wetness duration at 3 DAI were 7.3, 5.5, and 2.0, respectively, compared with 
+139.8, 62.5, and 19.3, respectively, when leaf wetness duration increased to 48 hr. All three 
+isolates had highest lesion counts at 28˚C at 3 (Fig. 2A, 3A, 4A), 6 (Fig. 2B, 3B and 4B) 
+and 9 DAI (Fig. 2C, 3C and 4C). Highest lesion numbers at 3 (Fig. 2A, 3A, 4A), 6 (Fig. 
+2B, 3B, 4B) and 9 DAI (Fig. 2C, 3C, 4C) was observed at 28˚C with 48 hr leaf wetness 
+across all isolates. For example, the highest mean numbers of lesions at 3 DAI for CA1, 
+CM18 and CC1 were 257.2, 212.3 and 42.7, respectively. Among all five tested 
+temperatures (16, 20, 24, 28 and 32°C) at each tested leaf wetness duration, lowest lesion 
+counts at 3, 6 and 9 DAI were observed at 16˚C for isolate CA1 and CM18, while CC1 had 
+lowest lesion counts at 32˚C. Cubic regression suggested that optimum temperature for 
+isolates CA1, CM18 and CC1 with 8 hr leaf wetness is 29.1, 28.1 and 25.9°C, respectively 
+
+72 
+ 
+(Fig. 5A). Similarly, cubic regression suggested that optimum temperature for isolate CA1, 
+CM18 and CC1 with 16 hr leaf wetness (Fig. 5B) is 28.5, 28.5, 27.6°C, respectively, while 
+with 24 hr leaf wetness (Fig. 5C) optimum temperature for isolate CA1, CM18 and CC1 is 
+28.1, 27.6 and 27.8°C, respectively. 
+Overall, at 3, 6, and 9 DAI for all C. cassiicola isolates, 16 and 32˚C with each 
+tested leaf wetness durations had low lesion counts, while an increase in lesion counts were 
+noticed with a rise in temperature from 20 to 28˚C when leaf wetness duration lengthened 
+from 12 to 48 hrs (Fig. 2, 3 and 4).  Isolate CA1 was more virulent based on lesion counts, 
+followed by CM18 and then CC1.  For example, 28°C with 48 hr leaf wetness lead to 275.5, 
+233.8 and 48.8 mean lesion counts for isolate CA1, CM18 and CC1, respectively, at 9 DAI.  
+Discussion 
+The goal of this study was to investigate the influence of environmental conditions, 
+such as temperature and leaf wetness duration, that favors the onset and development of C. 
+cassiicola-incited target spot on cotton. We used onset and lesion numbers at 3, 6, and 9 
+DAI as the basis for disease evaluation.  Temperature, leaf wetness duration and their 
+interaction had significant effects on target spot development on cotton. Jones and Jones 
+(1984) also found that temperatures of 16, 20, 24, 28, and 32°C resulted in moderate disease 
+development on tomato. Similar to Jones and Jones, we found that C. cassiicola was able 
+to cause disease on cotton over the tested temperature range of 16 to 32°C, however at the 
+extreme tested temperatures (16 and 32°C) low lesion counts resulted only with ≥ 24 hr of 
+leaf wetness. 
+
+73 
+ 
+Fulmer et al. (2012) kept inoculated cotton seedlings for 48 hr in a moist chamber 
+at 21.1°C and noted disease onset within 1 week of inoculation. Similarly, Conner et al. 
+(2013) observed disease onset in 6 days when inoculated plants were kept at 21°C in a 
+moist chamber for 72 hr. We observed disease onset at 2 DAI on plants inoculated with 
+CA1 at 20°C with ≥16 hrs leaf wetness. Plants were incubated at constant temperature in 
+our study that might resulted in early onset than in the above stated studies.  
+In our study, the highest disease severity was observed at 28°C with 48 hr leaf 
+wetness (maximum leaf wetness duration tested). Seaman et al. (1965) found that day and 
+night temperatures of 25 ± 2°C and 22 ± 2°C, respectively, with 48 hr moisture, resulted 
+in numerous pinpoint lesions on the foliage of soybean. Similarly, Jones and Jones (1984) 
+found that 20 to 28°C was the favorable temperature range, with highest disease severity 
+observed at 24 and 28°C on tomato. Therefore, it seems like that favorable temperature for 
+target spot of cotton coincides those observed for target spot of soybean and tomato. 
+During our experiments, leaf wetness was required for disease onset.   No 
+symptoms were observed in our preliminary experiments with very high relative humidity 
+but without free moisture on leaf surfaces. The leaf wetness duration required for the onset 
+and development of target spot of cotton is temperature dependent similar to other 
+pathosystems such as apple scab (MacHardy and Gadoury 1988) and early blight of tomato 
+(Madden et al. 1978). Our study showed that shorter leaf wetness durations of 8 and 12 hrs 
+were sufficient for disease onset at 28 and 24°C, respectively. However, at temperature 
+extremes of 16 and 32°C, C. cassiicola required a leaf wetness duration in excess of 24 hr 
+
+74 
+ 
+for disease onset. This trend might be explained by our previous study of incubation time 
+required for spore germination of cotton isolates at different temperatures. In that study, it 
+was noted that lower temperatures such as 16°C with 12 hr (wetness period) resulted in a 
+low spore germination of approximately 10% compared with > 65% germination at 24 to 
+28°C with 8 hr wetness period, which shows that longer moisture periods are required for 
+spore germination at lower temperatures. However, approximately 90% spore germination 
+was observed at 32°C with 12 hr wetness but onset of disease was not observed < 24 hr 
+leaf wetness. This possibly suggests that at this elevated temperature, other processes such 
+as penetration and colonization of leaf tissues might be interrupted or delayed. 
+Another significant finding of our study was that lesion numbers increased linearly 
+as leaf wetness duration lengthened from 8 to 48 hrs at each tested temperature (16, 20, 24, 
+28, and 32°C). Possibly, extended leaf wetness duration gives sufficient time for spore 
+germination as above noted. This can aid in completing the infection process and result in 
+high disease severity. 
+The usual average low and high temperatures prevailing in Alabama in July to 
+September seems highly favorable for the target spot of cotton. Therefore, more numerous 
+rain events in the months of July to September in Alabama favors rapid disease 
+development that results in premature defoliation within a few days of target spot onset.  
+Our results show that with lower temperatures such as 16°C with ≥ 24 hr leaf 
+wetness, onset of disease was observed which suggests that C. cassiicola isolates from 
+cotton are adaptive to low temperatures. For isolate CA1 at 20°C to 28°C with ≥16 hr and 
+
+75 
+ 
+32°C with ≥24 hr leaf wetness, disease onset was observed 2 and 3 DAI, respectively. It 
+seems likely that this finding can explain the recent reports of target spot outbreaks in 
+cotton in Mid-south states such as Tennessee as favorable temperatures for disease 
+generally prevails in months of July to September (Kelly 2016). 
+In our study, we usually observed vein necrosis of inoculated leaves at 24 and 28°C 
+with ≥ 40 hr leaf wetness. Also, lesions started to coalesce after 9 DAI leading to premature 
+defoliation at 24 to 28°C with longer leaf wetness durations. This might have happened 
+due to cassiicolin, the toxin produced by C. cassiicola that triggers leaf abscission 
+(Onesirosan et al. 1975) and only one lesion on the main vein may be sufficient to trigger 
+this process (Chee 1988).  
+Results of this study described the effect of leaf wetness duration and temperature 
+conditions on the onset and disease severity of target spot of cotton, but this does not 
+incorporate the knowledge of the entire infection and sporulation cycle of C. cassiicola. 
+Therefore, future studies should involve the study of environmental conditions that affect 
+pathogen penetration, infection processes and sporulation on lesions. Another limitation of 
+our study is that all experiments were performed on a single apparently susceptible cotton 
+cultivar, PhytoGen 499 WRF, and the results have not been validated under field 
+conditions. Therefore, our study can be the basis of future field experiments which can 
+include the effect of moisture conditions and temperatures on infection of additional cotton 
+varieties, including apparently resistant varieties. 
+
+76 
+ 
+We observed that all three isolates (CA1, CM18 and CC1) used in this study had 
+similar favorable temperature and leaf wetness requirements for target spot of cotton. Two 
+isolates (CA1 and CM18) were from Georgia, while CC1 was isolated in Alabama. 
+Therefore, this suggests that isolates from different geographical origin have similar 
+favorable environmental conditions for causing target spot of cotton. This finding supports 
+that all cotton isolates of C. cassiicola are genotypically similar (Sumabat et al. 2016). 
+Corynespora had been known as Helminthosporium until the mid-1900’s on the 
+basis of similar morphological conidia characterstics (Schlub 2009). Our observation also 
+showed that conidial structure of cotton isolates of C. cassiicola was similar to 
+Helminthosporium. In addition, conidia of Corynespora cassiicola germinate in a similar 
+manner as conidia of Helminthosporium, i.e., conidia germinated generally from terminal 
+cells and sometimes from intercalary cells (Luttrell 1963). The temperature and leaf 
+wetness relationship that we established in this study will help in efficiently managing the 
+target spot of cotton by timely spray of fungicides. Moreover, this information can be 
+helpful in developing risk maps and pest risk assessments of C. cassiicola. 
+ 
+
+77 
+ 
+Literature cited 
+ 
+Barthe, P.,  Pujade-Renaud, V., Breton, F., Gargani, D., Thai, R., Roumestand, C., and De 
+Lamotte, F. 2007. Structural analysis of cassiicolin, a host-selective protein toxin 
+from Corynespora cassiicola. J. Molec. Biol. 367: 89-101. 
+ 
+Chai, A. L., Gong, F. D., Shi, Y. X., Xie, X. W., and Li, B. J. 2014. Corynespora spot of 
+hot pepper caused by Corynespora cassiicola in China. Canadian J. Plant Pathology 
+36:407-411. 
+ 
+Chee, K. H. 1988. Studies on sporulation, pathogenicity and epidemiology of Corynespora 
+cassiicola on Hevea rubber. J. Nat. Rubb. Res. 3:21-29. 
+ 
+Collado, J., Platas, G., Gonzalez, I., and Pelaez F. 1999. Geographical and seasonal 
+influences on the distribution of fungal endophytes in Quercus ilex. New Phytol. 
+144:525-532.  
+ 
+Conner, K., Hagan, A. K., and Zhang, L. 2013. First report of Corynespora cassiicola-
+incited target spot on cotton in Alabama. Plant Dis. 97:1379-1379. 
+ 
+Cutrim, F. A., and Silva, G. S. 2003. Pathogenicity of Corynespora cassiicola to different 
+plant species. Fitopatologia Brasileira 28:193-194. 
+ 
+de Lamotte, F., Duviau, M. P., Sanier, C., Thai, R., Poncet, J., Bieysse, D., and Pujade-
+Renaud, V. 2007.  Purification and characterization of cassiicolin, the toxin 
+produced by Corynespora cassiicola, causal agent of the leaf fall disease of rubber 
+tree. J. Chromatog. B 849:357-362. 
+ 
+Dixon, L. J., Schlub, R. L., Pernezny, K., and Datnoff, L. E. 2009. Host specialization and 
+phylogenetic diversity of Corynespora cassiicola. Phytopathology 99:1015-1027. 
+ 
+Fajola, A. O., and Alasoadura, S. O. 1973. Corynespora leaf spot, a new disease of tobacco  
+(Nicotiana tabacum L.). Plant Dis. 57:375-378. 
+ 
+Fulmer, A. M., Walls, J. T., Dutta, B., Parkunan, V., Brock, J., and Kemerait Jr, R. C. 2012. 
+First report of target spot caused by Corynespora cassiicola on cotton in Georgia. 
+Plant Dis. 96:1066. 
+ 
+Gond, S. K., Verma, V. C., Kumar, A., Kumar, V., and Kharwar, R. N. 2007. Study of 
+endophytic fungal community from different parts of Aegle marmelos Correae 
+(Rutaceae) from Varanasi (India). World J. Microbiol. Biotechnol. 23:1371-1375. 
+
+78 
+ 
+ 
+Hagan, A. K. 2015. Target spot management options in Alabama cotton for 2015. Publ. 
+PP-762. 
+Ala. 
+Coop. 
+Exten. 
+Syst., 
+Auburn. 
+Online 
+at: 
+https://sites.aces.edu/group/timelyinfo/Documents/2015%20Target%20Spot%20C
+ontrol%20Options%20Timely%20Information.pdf. Accessed on: 06/11/2017. 
+ 
+Hagan, A., Bowen, K., Pegues, M., and Jones, J. 2015. Relation between target spot 
+intensity and seed cotton yield. Phytopathology. 105(Suppl. 2):S2.4. 
+ 
+Huang, H. K., Liu, C. E., Liou, J. H., Hsiue, H. C., Hsiao, C. H., and Hsueh, P. R. 2010. 
+Subcutaneous infection caused by Corynespora cassiicola, a plant pathogen. J. 
+Infect. 60: 188-190. 
+ 
+Hyde, K. D., McKenzie, E. H. C., and Dalisay, T. U. 2001. Saprobic fungi on bamboo 
+culms. Fungal Divers. 7:35-48. 
+ 
+Jeffers, S. N. 2007. Recipes for media useful in the culture and identification of 
+Phytophthora species: V8 Agar and Broth. Dept. Entomology, Soils and Plant 
+Science, Clemson University, South Carolina. 
+ 
+Jinji, P., Xin, Z., Yangxian, Q., Yixian, X., Huiqiang, Z., and He, Z. 2007. First record of 
+Corynespora leaf fall disease of Hevea rubber tree in China. Australas. Plant Dis. 
+Notes 2:35-36. 
+ 
+Jones, J. P. 1961. A leaf spot of cotton caused by Corynespora cassiicola. Phytopathology 
+51:305-308. 
+ 
+Jones, J. P., and Jones, J. B. 1984. Target spot of tomato: epidemiology and control. Proc. 
+Fla. State Hort. Soc. 97:216-218. 
+ 
+Kelly, H. M. 2016. Target spot in cotton-the knowns and unknowns. UTcrops News Blog. 
+Institute 
+of 
+Agriculture, 
+University 
+of 
+Tennessee. 
+Online 
+at: 
+http://news.utcrops.com/2016/08/target-spot-cotton-knowns-unknowns/. Accessed 
+on: 11/03/2017. 
+Kingsland, G. C. 1985. Pathogenicity and epidemiology of Corynespora cassiicola in the 
+Republic of the Seychelles. Acta Hort.153:229-230. 
+            Kwon, M. K., Kang, B. R., Cho, B. H., and Kim, Y. C. 2003. Occurrence of target 
+leaf spot disease caused by Corynespora cassiicola on cucumber in Korea. Plant 
+Path. J. 52: 424. 
+ 
+
+79 
+ 
+Lakshmanan, P., Jeyarajan, R., and Vidhyasekaran, P. 1990. A boll rot of cotton caused by 
+Corynespora cassiicola in Tamil Nadu, India. Phytoparasitica 18:171-173. 
+ 
+ 
+Lee S., Melnik, V., Taylor, J. E., and Crous, P. W. 2004. Diversity of saprobic 
+hyphomycetes on Proteaceae and Restionaceae from South Africa. Fungal Divers. 
+17:91-114. 
+ 
+Li, J. T., Mo, S. X., and Fu, H. B. 2014. First report of target leaf spot caused by 
+Corynespora cassiicola on cowpea in China. Plant Dis. 98:1427. 
+ 
+Luttrell. E. S. 1963. Taxonomic criteria in Helminthosporium. Mycologia 55:643-674. 
+ 
+MacHardy, W. E., and Gadoury, D. M. 1989. A revision of Mill’s criteria for predicting 
+apple scab infection periods. Phytopathology 79:304-310. 
+ 
+Madden, L., Pennypacker, S. P., and MacNab, A. A. 1978. FAST, a forecast system for 
+Alternaria solani on tomato. Phytopathology 68: 1354-1358. 
+ 
+Mehl, H. L., Dufault, N. S., Mulvaney, M. J., Hagan, A., Kelly, H., Kemerait, R. C., Price, 
+P., Allen, T. W., and Nichols, R. L. 2017. Multi-year regional evaluation of one 
+and two applications of registered and experimental fungicides for the management 
+of target spot on two cotton varieties. Proc. Beltwide Cotton. Online at: 
+https://ncc.confex.com/ncc/2017/webprogram/Paper17749.html. 
+Accessed 
+on: 
+07/11/2017.  
+ 
+Oluma, H., and Amuta, E. 1999. Corynespora cassiicola leaf spot of pawpaw (Carica 
+papaya L.) in Nigeria. Mycopathologia 145:23-27. 
+ 
+Onesirosan, P., Majbuni, C. T., Durbin, R. D., Morin, R. B., Rich, D. H., and Arny, D. C. 
+1975. Toxin production by Corynespora cassiicola. Physiol. Pl. Path. 5:289-295. 
+            Pereira, J. M., Barreto, R. W., Ellison, C. A., and Maffia, L. A. 2003. Corynespora 
+cassiicola f. sp. lantanae: a potential biocontrol agent from Brazil for Lantana 
+camara. Biol. Control 26:21- 31. 
+ 
+ 
+ 
+Schlub, R. L., Smith, L. J., Datnoff, L. E., and Pernezny, K . 2009. An overview of target 
+spot of tomato caused by Corynespora cassiicola. Acta Hort. (ISHS) 808:25-28 
+ 
+Seaman, W. L., Shoemaker, R. A., and Peterson, E. A. 1965. Pathogenicity of Corynespora 
+cassiicola on soybean. Can. J. Bot. 43 :1461-1469. 
+ 
+
+80 
+ 
+Sumabat, L., Brewer, M., and Kemerait, R. 2016. Identifying diversity within C. cassiicola, 
+cause of target spot of cotton, tomato, and soybean in the southeastern U.S. 
+Phytopathology 106:S4.1 
+ 
+Tarr, S. A. J. 1972. Epidemiology: The seasonal carry-over of plant pathogens. Pages 329-
+350 in: The Principles of Plant Pathology. S. A. J. Tarr, ed. Winchester Press, New 
+York. 
+ 
+USDA-NASS (United States Department of Agriculture- National Agricultural Statistics 
+Service). 
+2016. 
+2016 
+State 
+agricultural 
+overview. 
+Online 
+at: 
+https://www.nass.usda.gov/Quick_Stats/Ag_Overview/stateOverview.php?state=
+ALABAMA. Accessed on: 06/12/2017. 
+ 
+ 
+ 
+
+81 
+ 
+Table 1. Table of significance for the effect of temperature, leaf wetness duration, and 
+isolate on disease severity (3 DAI, 6 DAI, 9 DAI) and onset by C. cassiicola.  
+ 
+Factors 
+DF 
+F value 
+Pr > F 
+Onset 
+Temperature (T) 
+4 
+66.62 
+0.0007 
+ 
+Leaf wetness duration 
+(M) 
+6 
+303.34 
+<.0001 
+ 
+Isolate (I) 
+2 
+64.20 
+<.0001 
+ 
+T×M 
+17 
+45.39 
+<.0001 
+ 
+M×I 
+12 
+67.41 
+<.0001 
+ 
+I×T 
+8 
+1.42 
+0.3255 
+ 
+T×M×I 
+29 
+2.37 
+<.0001 
+3 DAI 
+Temperature (T) 
+4 
+880.16 
+<.0001 
+ 
+Leaf wetness duration 
+(M) 
+6 
+1002.31 
+<.0001 
+ 
+Isolate (I) 
+2 
+512.48 
+<.0001 
+ 
+T×M 
+24 
+265.60 
+<.0001 
+ 
+M×I 
+12 
+139 
+<.0001 
+ 
+I×T 
+8 
+187.28 
+<.0001 
+ 
+T×M×I 
+48 
+51.43 
+<.0001 
+6 DAI 
+Temperature (T) 
+4 
+705.97 
+<.0001 
+ 
+Leaf wetness duration 
+(M) 
+6 
+1080.31 
+<.0001 
+ 
+Isolate (I) 
+2 
+685.72 
+<.0001 
+ 
+T×M 
+24 
+252.22 
+<.0001 
+ 
+M×I 
+12 
+141.14 
+<.0001 
+ 
+I×T 
+8 
+230.39 
+<.0001 
+ 
+T×M×I 
+48 
+48.21 
+<.0001 
+9 DAI 
+Temperature (T) 
+4 
+837.43 
+<.0001 
+ 
+Leaf wetness duration 
+(M) 
+6 
+1065.61 
+<.0001 
+ 
+Isolate (I) 
+2 
+691.73 
+<.0001 
+ 
+T×M 
+24 
+248.52 
+<.0001 
+ 
+M×I 
+12 
+137.58 
+<.0001 
+ 
+I×T 
+8 
+226.83 
+<.0001 
+ 
+T×M×I 
+48 
+46.67 
+<.0001 
+ 
+ 
+ 
+
+82 
+ 
+ 
+ 
+ 
+Figure 1. Effect of leaf wetness duration on days after inoculation (DAI) required for onset 
+of target spot of cotton by Corynespora cassiicola for isolates CA1 (A), CM18 (B) and 
+CC1 (C) at five different temperatures (16, 20, 24, 28 and 32°C). Different letters above 
+bars represent significant differences among all three isolates and five temperatures at 
+P=0.05. 
+ 
+
+83 
+ 
+ 
+ 
+ 
+Figure 2. Effect of leaf wetness duration on number of lesions produced by Corynespora 
+cassiicola (Isolate: CA1) at five different temperatures (16, 20, 24, 28 and 32°C) counted 
+3 (A), 6 (B) and 9 (C) days after inoculation (DAI). Linear regression was conducted for 
+incubation temperatures (16, 20, 24, 28 and 32°C) using lesion counts as a dependent 
+variable and leaf wetness duration as an independent variable. 
+-250
+25
+50
+75
+100
+125
+150
+175
+200
+225
+250
+275
+300
+325
+8
+12
+16
+20
+24
+28
+32
+36
+40
+44
+48
+No. of Lesions (3 DAI)
+Leaf wetness duration (hours)
+Isolate: CA1
+20°C
+16°C
+24°C
+28°C
+Temp 16°C; Les. = 0.43 × Mst. - 6.025; R2 = 0.518; P < 0.0001
+Temp 20°C; Les. = 1.874 × Mst. - 24.164; R2 = 0.768; P < 0.0001
+Temp 24°C; Les. = 3.773 × Mst. - 43.48; R2 = 0.939; P < 0.0001
+Temp 28°C; Les = 6 684 × Mst - 68 947; R2 = 0 954; P < 0 0001
+Temp 32°C; Les. = 0.483 × Mst. - 6.440; R2 = 0.756; P < 0.0001
+A
+-250
+25
+50
+75
+100
+125
+150
+175
+200
+225
+250
+275
+300
+325
+8
+12
+16
+20
+24
+28
+32
+36
+40
+44
+48
+No. of lesions (6DAI)
+Leaf wetness duration (hours)
+Isolate: CA1
+20°C
+16°C
+24°C
+28°C
+Temp 20°C; Les. = 2.069 × Mst. - 29.308; R2 = 0.801; P < 0.0001
+Temp 32°C; Les. = 0.536 × Mst. - 6.98; R2 = 0.809; P < 0.0001
+Temp 16°C; Les. = 0.651 × Mst. - 7.857; R2 = 0.540; P < 0.0001
+Temp 24°C; Les. = 3.986 × Mst. - 45.137; R2 = 0.945; P < 
+Temp 28°C; Les. = 6.996 × Mst. - 71.622; R2 = 0.957; P < 0.0001
+B
+-250
+25
+50
+75
+100
+125
+150
+175
+200
+225
+250
+275
+300
+325
+8
+12
+16
+20
+24
+28
+32
+36
+40
+44
+48
+No. of lesions (9DAI)
+Leaf wetness duration (hours)
+Isolate: CA1
+20°C
+16°C
+24°C
+28°C
+32°C
+Temp 16°C; Les. = 0.676 × Mst. - 8.074; R2 = 0.525; P < 0.0001
+Temp 20°C; Les. = 2.106 × Mst. - 29.226; R2 = 0.816; P < 0.0001
+Temp 24°C; Les. = 4.058 × Mst. - 46.131; R2 = 0.94; P < 0.0001
+Temp 28°C; Les. = 7.115 × Mst. - 71.907; R2 = 0.957; P < 0.0001
+Temp 32°C; Les. = 0.543 × Mst. - 7.067; R2 = 0.814; P < 0.0001
+C
+
+84 
+ 
+ 
+ 
+ 
+Figure 3. Effect of leaf wetness duration on number of lesions produced by Corynespora 
+cassiicola (Isolate: CM18) at five different temperatures (16, 20, 24, 28 and 32°C) counted 
+3 (A), 6 (B)and 9 (C) days after inoculation (DAI). Linear regression was conducted for 
+incubation temperatures (16, 20, 24, 28 and 32°C) using lesion counts as a dependent 
+variable and leaf wetness duration as an independent variable. 
+-250
+25
+50
+75
+100
+125
+150
+175
+200
+225
+250
+275
+8
+12
+16
+20
+24
+28
+32
+36
+40
+44
+48
+No. of lesions (3 DAI)
+Moisture duration (hours)
+Isolate: CM18
+32°C
+24°C
+20°C
+16°C"
+28°C
+Temp 16°C; Les. = 0.443 × Mst. - 6.449; R2 = 0.76; P < 0.0001
+Temp 20°C; Les. = 0.926 × Mst. - 12.546; R2 = 0.694; P < 0.0001
+Temp 24°C; Les. = 1.34 × Mst. - 15.816; R2 = 0.837; P < 0.0001
+Temp 28°C; Les. = 5.873 × Mst. - 68.589; R2 = 0.941; P < 0.0001
+Temp 32°C; Les. = 0.513 × Mst. - 6.904; R2 = 0.618; P < 0.0001
+A
+-25
+-5
+15
+35
+55
+75
+95
+115
+135
+155
+175
+195
+215
+235
+255
+275
+8
+12
+16
+20
+24
+28
+32
+36
+40
+44
+48
+No. of lesions (6DAI)
+Moisture duration (hours)
+Isolate: CM18
+28°C
+20°C
+16°C
+24°C
+32°C
+Temp 16°C; Les. = 0.471 × Mst. - 6.587; R2 = 0.79; P < 0.0001
+Temp 20°C; Les. = 1.013 × Mst. - 13.603; R2 = 0.76; P < 0.0001
+Temp 24°C; Les. = 1.531 × Mst. - 17.701; R2 = 0.825; P < 0.0001
+Temp 28°C; Les. = 6.156 × Mst. - 71.956; R2 = 0.948; P < 0.0001
+Temp 32°C; Les. = 0.548 × Mst. - 7.012; R2 = 0.664; P < 0.0001
+B
+-50
+-250
+25
+50
+75
+100
+125
+150
+175
+200
+225
+250
+275
+8
+12
+16
+20
+24
+28
+32
+36
+40
+44
+48
+No. of lesions (9DAI)
+Moisture duration (hours)
+Isolate: CM18
+32°C
+16°C
+20°C
+28°C
+24°C
+Temp 24°C; Les. = 1.583 × Mst. - 18.15; R2 = 0.829; P < 0.0001
+Temp 28°C; Les. = 6.33 × Mst. - 74.419; R2 = 0.951; P < 0.0001
+Temp 32°C; Les. = 0.548 × Mst. - 7.012; R2 = 0.6643; P < 0.0001
+Temp 16°C; Les. = 0.474 × Mst. - 6.634; R2 = 0.788; P < 0.0001
+Temp 20°C; Les. = 1.081 × Mst. - 14.465; R2 = 0.668; P < 0.0001
+C
+
+85 
+ 
+ 
+ 
+ 
+Figure 4. Effect of leaf wetness duration on number of lesions produced by Corynespora 
+cassiicola (Isolate: CC1) at five different temperatures (16, 20, 24, 28 and 32°C) counted 
+3 (A), 6 (B) and 9 (C) days after inoculation (DAI). Linear regression was conducted for 
+incubation temperatures (16, 20, 24, 28 and 32°C) using lesion counts as a dependent 
+variable and leaf wetness duration as an independent variable. 
+-10
+10
+30
+50
+70
+8
+12
+16
+20
+24
+28
+32
+36
+40
+44
+48
+No. of Lesions (3 DAI)
+Moisture duration (hours)
+Isolate: CC1
+16°C
+20°C
+24°C
+28°C
+Temp 20°C; Les. = 0.475 × Mst. - 5.993; R2 = 0.837; P < 0.0001
+Temp 28°C; Les. = 1.041 × Mst. - 11.763; R2 = 0.895; P < 0.0001
+Temp 24°C; Les. = 0.503 × Mst. - 5.501; R2 = 0.932; P < 0.0001
+Temp 32°C; Les. = 0.087 × Mst. - 0.948; R2 = 0.193; P < 0.0036
+Temp 16°C; Les. = 0.224 × Mst. - 3.118; R2 = 0.585; P < 0.0001
+A
+-10
+0
+10
+20
+30
+40
+50
+60
+70
+8
+12
+16
+20
+24
+28
+32
+36
+40
+44
+48
+No. of Lesions (6 DAI)
+Moisture duration (hours)
+Isolate: CC1
+32°C
+28°C
+24°C
+20°C
+16°C
+Temp 24°C; Les = 0 594 × Mst - 6 411; R2 = 0 945; P < 0 0001
+Temp 28°C; Les. = 1.117 × Mst. - 11.412; R2 = 0.905; P < 0.0001
+Temp 32°C; Les. = 0.189 × Mst. - 2.53; R2 = 0.551; P < 0.0001
+Temp 16°C; Les. = 0.264 × Mst. - 3.416; R2 = 0.657; P < 0.0001
+Temp 20°C; Les. = 0.522 × Mst. - 6.379; R2 = 0.839; P < 0.0001
+B
+-20
+0
+20
+40
+60
+80
+8
+12
+16
+20
+24
+28
+32
+36
+40
+44
+48
+No. of lesions (9DAI)
+Moisture duration (hours)
+Isolate: CC1
+20°C
+16°C
+24°C
+28°C
+32°C
+Temp 16°C; Les. = 0.264 × Mst. - 3.416; R2 = 0.657; P < 0.0001
+Temp 20°C; Les. = 0.545 × Mst. - 6.51; R2 = 0.857; P < 0.0001
+Temp 24°C; Les. = 0.605 × Mst. - 6.536; R2 = 0.946; P < 0.0001
+Temp 28°C; Les. = 1.161 × Mst. - 10.983; R2 = 0.907; P < 0.0001
+Temp 32°C; Les. = 0.189 × Mst. - 2.53; R2 = 0.551; P < 0.0001
+C
+
+86 
+ 
+ 
+ 
+ 
+Figure 5. Effect of temperature on number of lesions produced by Corynespora cassiicola 
+(Isolate: CA1) after 8(A), 16 (B) and 24 hours (B) leaf wetness duration counted 9 days 
+after inoculation (DAI). Cubic regression was conducted for leaf wetness duration (8, 16 
+and 24 hours) using lesion counts as a dependent variable and temperature as an 
+independent variable. 
+ 
+ 
+-2
+0
+2
+4
+6
+8
+16
+20
+24
+28
+32
+No. of Lesions (9 DAI)
+Temperature
+Leaf wetness duration: 8 hours
+CC1
+CM18
+CA1
+CC1; Les = 33.344 – 4.631×Temp. + 0.206×Temp.2 – 0.003×Temp.3; R2 = 0.825; P = <0.0001
+CM18; Les = 29.771 – 4.119×Temp. + 0.183×Temp.2 – 0.0026×Temp.3; R2 = 0.714; P = <0.0001
+CA1; Les = 138.933 – 19.222×Temp. + 0.854×Temp.2 – 0.012×Temp.3; R2 = 0.644; P = <0.0001
+-10
+0
+10
+20
+30
+40
+16
+20
+24
+28
+32
+No. of Lesions (9DAI)
+Temperature
+Leaf wetness duration: 16 hours
+CM18
+CC1
+CA1
+CC1; Les = 223.628 – 31.707×Temp. + 1.444×Temp.2 – 0.021×Temp.3; R2 = 0.586; P = 0.0004
+CM18; Les = 227.104 – 33.285×Temp. + 1.568×Temp.2 – 0.023×Temp.3; R2 = 0.678; P = <0.0001
+CA1; Les = 659.049 – 93.848×Temp. + 4.297×Temp.2 – 0.062×Temp.3; R2 = 0.81; P = <0.0001
+B
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+16
+20
+24
+28
+32
+No. of Lesions (9 DAI)
+Temperature
+Leaf wetness duration: 24 hours
+CC1
+CM18
+CA1
+CA1; Les = 1609.42 – 228.36×Temp + 10.47×Temp2 – 0.152×Temp3; R2= 0.83; P = <0.0001
+CM18; Les = 954.42 – 135.91×Temp + 6.24×Temp2 – 0.091×Temp3; R2 = 0.78; P = <0.0001
+CC1; Les = 902.69 – 128.93×Temp + 5.99×Temp2 – 0.088×Temp3; R2 = 0.78; P = <0.0001
+C
+A 
+
+87 
+ 
+IV. Difference in epidemiology of target spot of tomato caused by tomato and cotton 
+isolates of Corynespora cassiicola 
+ 
+ 
+Abstract 
+Target spot of tomato is caused by a cosmopolitan pathogen, Corynespora 
+cassiicola. Cotton is another important host of this pathogen. Cotton isolates are cross 
+pathogenic to tomato, therefore, the goal of this study was to determine if the favorable 
+environmental conditions differ for isolates of C. cassiicola originating from different 
+hosts. Three different temperatures (20, 24 and 28°C), and seven leaf wetness durations (8, 
+12, 16, 24, 32, 40 and 48 hrs) were tested. Plants were drop inoculated, kept in wet plastic 
+bags, and arranged in a randomized complete block in a growth chamber at a set 
+temperature. Highest lesion numbers were observed at 28°C with 48 hrs of leaf wetness for 
+both tomato isolates (TCL1 and 1343) and the cotton isolate (CA1), while 20°C resulted 
+in lowest disease severity. However, the cotton isolate caused no disease at 20°C with <40 
+hrs leaf wetness. Increases in leaf wetness duration at each of the tested temperatures 
+generally resulted in increased numbers of lesions for all isolates (TCL1, 1343 and CA1). 
+Disease onset required ≥16 hrs of leaf wetness duration at 24 and 28°C for the cotton isolate 
+(CA1), while for tomato isolates (1343 and TCL1), 28°C with ≥12 hrs and 24°C with ≥16 
+hrs leaf wetness resulted in disease onset.  
+Keywords. Temperature, leaf wetness duration, host, onset and lesion numbers. 
+
+88 
+ 
+Introduction 
+Target spot of tomato is an important foliar disease of field and greenhouse grown 
+tomatoes in Florida (Pernezny et al. 2002; Schlub et al. 2009). Target spot can cause losses 
+up to 11,800 kg/ha when the disease is not managed (Pernezny et al. 2002). This disease is 
+caused by a cosmopolitan fungus, Corynespora cassiicola, which is a well-known 
+necrotrophic leaf spotting plant pathogen abundantly present in subtropical and tropical 
+regions of the world (Barthe et al. 2007; Huang et al. 2010). This fungus has been found 
+on 530 plant species from 380 genera including monocots, dicots, ferns, and one cycad 
+(Dixon et al. 2009; Huang et al. 2010). Corynespora cassiicola causes leaf spot diseases in 
+economically important hosts such as Solanum lycopersicum (tomato) (Barthe et al. 2007; 
+Schlub et al. 2007), Glycine max (soybean) (Seaman et al. 1965), Gossypium hirsutum 
+(cotton) (Conner et al. 2013; Fulmer et al. 2012), Carica papaya (papaya) (Cutrim and 
+Silva 2003), Hevea brasiliensis (rubber) (de Lamotte et al. 2007; Jinji et al. 2007), Vigna 
+unguiculata (cowpea) (Li et al. 2014), Nicotiana tabacum (tobacco) (Fajola and 
+Alasoadura 1973), and Capsicum annuum (pepper) (Chai et al. 2014). 
+The symptoms of target spot of tomato include small necrotic lesions on foliage 
+that have light-brown centers and dark margins. Later these lesions merge and turn into 
+large blighted areas and cause premature defoliation (Pernezny et al. 2002). Symptoms on 
+tomato fruits include small, brown, sunken flecks to large deeply pitted areas which reduces 
+the market suitability of the fruit (Pernezny et al. 2002, Schlub et al. 2009).  
+
+89 
+ 
+Development of target spot of tomato occurs over the temperature range 20 to 28˚C 
+(Jones and Jones 1984). Disease severity is highest at 28˚C. Minimum wetness duration of 
+16 hrs is required for disease development and disease severity increases with as wetness 
+duration lengthened from 16 to 44 hrs (Jones and Jones 1984). 
+Studies on the cross pathogenicity of isolates of C. cassiicola from different hosts 
+has revealed that some isolates are cross pathogenic to a wide range of hosts, while others 
+are host specific (Dixon et al. 2009). Onesirosan et al. (1974) stated that a cotton isolate of 
+C. cassiicola, M3 from Mississippi, U. S., was weakly virulent to tomato, causing few-to-
+many pin-point lesions, while tomato isolate, N15 from Nigeria, was moderately virulent 
+to cotton, causing 4 to 10 mm sized lesions on leaves. Isolates of C. cassiicola, originating 
+from different hosts might have different favorable environmental requirements, which 
+affect disease severity. Therefore, the overall goal of this study was to determine the 
+difference in favorable conditions for target spot of tomato caused by tomato and cotton 
+isolates of C. cassiicola. 
+Materials and Methods 
+Production of fungal colonies. A cotton isolate of C. cassiicola (CA1) and two 
+tomato isolates (TCL1 and 1343) were obtained from M. Brewer’s laboratory, UGA. 
+Colonies of the cotton and tomato isolates of C. cassiicola (CA1, TCL1, 1343) were 
+cultured on quarter-strength potato dextrose agar (qPDA), prepared with 9.75 g of potato-
+dextrose-agar powder (PDA) and 11.25 g of agar powder per liter of water. Fungal plugs 
+of 5 mm diameter were taken from the periphery of 12-day-old cultures. These fungal plugs 
+
+90 
+ 
+were sub-cultured on fresh qPDA every 12 days and maintained at 28˚C to obtain fungal 
+colonies for conidia production. 
+Preparation of conidial suspension. A spore suspension was prepared from 12 
+day old fungal colonies. Petri dishes containing colonies were filled with 3 ml of sterile 
+agar water, prepared with 2 g of agar powder and 0.5 ml of Tween 20 per liter. The 
+mycelium was lightly scraped with a sterile L-shaped glass rod to detach conidia. The 
+resultant conidial suspension was filtered through 4 layers of cheesecloth. The conidial 
+concentration was counted by using a hemocytometer and adjusted to 4×104 conidia/ml.  
+Plant production. Seeds of the tomato cultivar, San Marzano, were kept in a moist 
+chamber for 2 days to initiate germination. Germinated seeds were planted in potting 
+mixture (Sun Gro professional growing mix, Seba Beach, Canada) in 9.5 × 9.5 cm2 plastic 
+pots. The potting mixture was autoclaved 3 times for 60 minutes each time before planting. 
+Plants were kept at 28˚C in a growth chamber and were watered as needed.  
+Inoculation method. Individual plants were inoculated with one of three isolates 
+(CA1, TCL1, or 1343) of C. cassiicola when 20 to 25 days old (3 to 4 true leaf stage) at 
+5:00 p.m. Three true leaves of a plant were drop-inoculated with a pipette. Five drops, each 
+of 40 µl conidial suspension were placed on each leaf of a plant. Inoculated leaves were 
+covered with wet tissue paper (Kimwipes) and then the entire plant was enclosed in a wet 
+plastic bag.  
+Effect of temperature and moisture on disease development. Bagged plants 
+were kept at 20, 24, and 28°C in separate growth chambers. Each growth chamber had a 
+
+91 
+ 
+set temperature and inside the growth chamber, each isolate was kept in a different block 
+with all seven tested moisture durations randomized within the block. Repetitions of the 
+trials in growth chambers, with different temperatures, allowed for the larger unit of 
+temperature.  Twenty-one plants were inoculated with each isolate, for each temperature. 
+Three inoculated plants served as three subsamples for each isolate, and were removed 
+from wet bags and wet tissue papers at 8, 12, 16, 24, 32, 40, and 48 hrs after inoculation. 
+Plants were examined at 24 hr intervals following inoculation and day of disease onset was 
+recorded. Lesions were counted on all three inoculated leaves at 3, 6, and 9 days after 
+inoculation. The whole experiment was repeated once. 
+Data analysis. The number of days after inoculation recorded for onset of 
+symptoms and total number of lesions counted on three inoculated leaves for each 
+treatment at 3, 6 and 9 DAI were used for data analysis. Generalized linear mixed model 
+analyses (PROC GLIMMIX) were done using SAS 9.4 (SAS Institute Inc., Cary, NC, 
+USA) to determine the effect of the factors and interactions on onset and lesion numbers 
+at 3, 6, and 9 DAI. Quadratic regression analysis was performed using PROC REG in SAS 
+9.4 to understand the effect of each treatment on disease severity at 3, 6, and 9 DAI. 
+Results 
+Onset. There were significant effects due to temperature, leaf wetness duration, 
+isolate, all interaction terms except interaction of isolate with temperature on disease onset 
+(Table 1). No lesions developed with 8 hr of leaf wetness, for all three tested temperatures, 
+or with 12 hr leaf wetness at 20 or 24°C (Fig. 1). Cotton isolate CA1 did not cause disease 
+
+92 
+ 
+with <16 hr wetness at 24 and 28°C or at 20°C with <40 hr wetness. Tomato isolates 1343 
+and TCL1 at 20°C with ≥ 16 and ≥24 hrs, respectively, produced lesions, while the cotton 
+isolate required ≥40 hr leaf wetness for disease onset on tomato (Fig. 1). Lesions developed 
+at 2 DAI with tomato isolates 1343 and TCL1 at ≥24°C with ≥16 hr and ≥24°C with >16 
+hr leaf wetness, respectively. Similarly, cotton isolate CA1 caused lesions at 2 DAI at 24°C 
+with ≥32 hr and 28°C with ≥16 hr leaf wetness (Fig. 1). 
+Lesion numbers. There were significant effects of temperature, leaf wetness 
+duration, isolate, and all interaction terms except temperature × isolate × leaf wetness 
+duration at 3, 6, and 9 DAI (Table 1). The effect of leaf wetness durations of 8, 12, 16, 24, 
+32, 40 and 48 hrs at the three tested temperatures (20, 24 and 28°C) on lesion numbers was 
+well described by quadratic models. Positive slopes demonstrated that for both tomato 
+isolate 1343 and TCL1 at each of the three tested incubation temperatures (20, 24 and 
+28°C), an increase in leaf wetness duration increased numbers of lesions at 3 (Fig. 2A and 
+2B), 6 (Fig. 3A and 3B) and 9 DAI (Fig. 4A and 4B). For example, 1343 and TCL1 at 24°C 
+with 16 hr leaf wetness at 9 DAI resulted in mean numbers of lesions, 6.8 and 5.3, 
+respectively, while lengthening leaf wetness to 48 hr increased the mean numbers of lesions 
+to 127.8 and 123.6, respectively. Similar trends were observed for the cotton isolate CA1 
+at 20, 24 and 28°C at 3 (Fig. 2C), 6 (Fig. 3C), and 9 DAI (Fig. 4C) but the quadratic 
+regression model was significant for 24 and 28°C only, as 20°C resulted in disease onset 
+only with 40 and 48 hrs leaf wetness. For example, for the cotton isolate CA1 at 24°C, 
+
+93 
+ 
+lengthening leaf wetness from 16 to 48 hrs increased the mean numbers of lesions from 1.6 
+to 86.0 at 9 DAI. 
+Highest lesion numbers were observed at 28°C with 48 hr leaf wetness for both 
+tomato isolates 1343 and TCL1 and the cotton isolate CA1 at 3 (Fig. 2), 6 (Fig. 3) and 9 
+DAI (Fig. 4). The highest mean lesion numbers for the tomato isolates 1343 and TCL1, 
+and cotton isolate CA1, at 3 DAI were 189.0, 132.0, and 115.6, respectively. Tomato 
+isolate 1343 at 24°C with 48 hr leaf wetness after 3 DAI resulted in 118.5 mean numbers 
+of lesions, while at 20°C with 48 hr leaf wetness the mean numbers of lesions decreased to 
+54.7. Similarly, plants inoculated with the cotton isolate CA1 at 24°C with 48 hr leaf 
+wetness developed 80 lesions by 3 DAI, while at 20°C with 48 hr leaf wetness, 15.5 lesions 
+developed. The quadratic regression suggested that optimum temperature for tomato 
+isolate TCL1 and cotton isolate CA1 with 48 hr leaf wetness (Fig. 5) is 27.1 and 30.1°C, 
+respectively. 
+Numerical increases in lesion numbers were usually observed with lengthening 
+days after inoculation for each of the three isolates (TCL1, 1343 and CA1) at each of the 
+three tested temperatures (20, 24 and 28°C). For example, mean numbers of lesions for 
+isolate 1343 at 20°C with 32 hr leaf wetness at 3 and 9 DAI were 29.3 and 32.3, 
+respectively. 
+ 
+ 
+
+94 
+ 
+Discussion 
+The goal of this study was to determine the if there was a difference in the favorable 
+temperature and moisture conditions required by cotton and tomato isolates of 
+Corynespora cassiicola for causing target spot of tomato. We recorded disease onset and 
+number of lesions at 3, 6 and 9 DAI at three tested temperatures (20, 24 and 28°C) with 
+seven tested leaf wetness durations (8, 12, 16, 24, 32, 40 and 44 hrs).  
+Results of this study showed that 28°C with 48 hrs leaf wetness duration had the 
+highest lesion numbers for the three tested isolates on tomato. This suggests that 28°C is 
+the most favorable temperature among the three tested temperatures (20, 24 and 28°C) for 
+target spot onset and development. This result also coincides with results of our previous 
+study which elucidated the optimum temperature and leaf wetness duration for target spot 
+of cotton. Similarly, Jones and Jones (1984) also showed that 28°C resulted in highest 
+disease severity of target spot of tomato. Hence, it is possible that 28°C is highly favorable 
+for disease development of target spot by cotton and tomato isolates of C. cassiicola, 
+irrespective of the host of origin. Also, onset was observed at 28°C with ≥12 hr leaf wetness 
+for both tomato isolates TCL1 and 1343 but no lesion formation was seen below 16 hr of 
+wetness for the cotton isolate CA1 at 28°C. Apparently, the cotton isolate used requires a 
+longer leaf wetness duration than the tested tomato isolates for disease onset on tomato. 
+On the other hand, our previous study showed that onset of target spot of cotton was 
+observed for isolate CA1 at 28°C with a minimum 8 hr leaf wetness duration, indicating 
+
+95 
+ 
+that the cotton isolate requires a longer leaf wetness duration for disease development on 
+tomato than on cotton. 
+The cooler temperature (20°C) evaluated herein with >40 hr wetness did not favor 
+disease development by the cotton isolate CA1 on tomato, but the tomato isolates, 1343 
+and TCL1, initiated disease at 20°C with 16 and 24 hrs leaf wetness, respectively. This 
+shows that tomato isolates can infect tomato at cooler temperatures such as 20°C, while 
+the cotton isolate needs warmer temperatures (>20°C) at longer wetness intervals to cause 
+disease on tomato. Therefore, the cotton isolate had a narrow favorable temperature range 
+(24 to 28°C) for causing target spot of tomato, while tomato isolates seem to have a broader 
+favorable temperature range (20 to 28°C) for infection on tomato. However, the cotton 
+isolate used in this study (CA1) caused moderate disease development on cotton at 20°C 
+in our previous study. Therefore, it is possible that the cotton isolates might have a broad 
+favorable temperature range on cotton as compared on other hosts and confirms host 
+specificity of tomato and cotton isolates of C. cassiicola (Sumabat et al. 2015).  
+Another significant finding of our study was that disease severity increased linearly 
+at each of the three temperatures (20, 24 and 28°C) with lengthening leaf wetness durations, 
+16 to 48 hrs. Although at 20°C, the cotton isolate could only produce visible symptoms 
+with ≥40 hr of leaf wetness, lengthening leaf wetness from 40 to 48 hrs increased mean 
+lesion numbers from 6.6 to 19 at 9 DAI. This finding indicates that longer leaf wetness 
+durations at a cooler temperature (20°C) can also cause considerable disease on tomato by 
+the cotton isolate. Also, our finding contrasts from the results of Jones and Jones (1984) 
+
+96 
+ 
+which stated that favorable leaf wetness durations for target spot of tomato was 16 to 44 
+hrs, as they noted a decrease in disease severity above 44 hr leaf wetness.  
+The cotton isolate at favorable temperatures (24 and 28°C) with ≥32 hr leaf wetness 
+duration led to a high number of lesions and lesion merger at 9 DAI indicating that the 
+cotton isolate was highly virulent at favorable temperatures with longer leaf wetness 
+durations. This result contrasts with results of Onesirosan et al. (1974) who reported that a 
+cotton isolate from Mississippi was weakly virulent on tomato and caused only a few pin 
+point lesions that did not increase in size. 
+In our study, the cotton and tomato isolates of Corynespora cassiicola resulted in 
+high disease severity on tomato at favorable temperatures (24 and 28°C) with longer leaf 
+wetness durations. This indicates that prevailing temperatures in the field for spring season 
+tomato are favorable for cotton isolate of C. cassiicola and can favor disease development 
+in the field.  
+Our study can help in understanding that prevailing temperature and leaf wetness 
+conditions in the fields can affect the cross pathogenicity of cotton isolates on tomato. The 
+temperature and leaf wetness relationship that we established in this study will help in 
+efficiently managing the target spot of tomato caused by cotton isolate by timely spray of 
+fungicides.  
+ 
+ 
+
+97 
+ 
+Literature cited 
+Barthe, P.,  Pujade-Renaud, V., Breton, F., Gargani, D., Thai, R., Roumestand, C., and De 
+Lamotte, F. 2007. Structural analysis of cassiicolin, a host-selective protein toxin 
+from Corynespora cassiicola. J. Molec. Biol. 367: 89-101. 
+ 
+Chai, A. L., Gong, F. D., Shi, Y. X., Xie, X. W., and Li, B. J. 2014. Corynespora spot of 
+hot pepper caused by Corynespora cassiicola in China. Canadian J. Plant Pathology 
+36:407-411. 
+ 
+Conner, K., Hagan, A. K., and Zhang, L. 2013. First report of Corynespora cassiicola-
+incited target spot on cotton in Alabama. Plant Dis. 97:1379-1379. 
+ 
+Cutrim, F. A., and Silva, G. S. 2003. Pathogenicity of Corynespora cassiicola to different 
+plant species. Fitopatologia Brasileira 28:193-194. 
+             
+de Lamotte, F., Duviau, M. P., Sanier, C., Thai, R., Poncet, J., Bieysse, D., and Pujade-
+Renaud, V. 2007.  Purification and characterization of cassiicolin, the toxin 
+produced by Corynespora cassiicola, causal agent of the leaf fall disease of rubber 
+tree. J. Chromatog. B 849:357-362. 
+ 
+Dixon, L. J., Schlub, R. L., Pernezny, K., and Datnoff, L. E. 2009. Host specialization and 
+phylogenetic diversity of Corynespora cassiicola. Phytopathology 99:1015-1027. 
+ 
+Fajola, A. O., and Alasoadura, S. O. 1973. Corynespora leaf spot, a new disease of tobacco 
+(Nicotiana tabacum L.). Plant Dis. 57:375-378. 
+ 
+Fulmer, A. M., Walls, J. T., Dutta, B., Parkunan, V., Brock, J., and Kemerait Jr, R. C. 2012. 
+First report of target spot caused by Corynespora cassiicola on cotton in Georgia. 
+Plant Dis. 96:1066. 
+ 
+Huang, H. K., Liu, C. E., Liou, J. H., Hsiue, H. C., Hsiao, C. H., and Hsueh, P. R. 2010. 
+Subcutaneous infection caused by Corynespora cassiicola, a plant pathogen. J. 
+Infect. 60: 188-190. 
+ 
+Jinji, P., Xin, Z., Yangxian, Q., Yixian, X., Huiqiang, Z., and He, Z. 2007. First record of 
+Corynespora leaf fall disease of Hevea rubber tree in China. Australas. Plant Dis. 
+2:35-36. 
+Jones, J. P., and Jones, J. B. 1984. Target spot of tomato: epidemiology and control. Proc. 
+Fla. State Hort. Soc. 97:216-218. 
+
+98 
+ 
+Li, J. T., Mo, S. X., and Fu, H. B. 2014. First report of target leaf spot caused by 
+Corynespora cassiicola on cowpea in China. Plant Dis. 98:1427. 
+ 
+Onesirosan, P. T., Amy, D. C., and Durbin, R. D. 1974. Host specificity of Nigerian and 
+North American isolates of Corynespora cassiicola. Phytopthology 64:1364-1367. 
+ 
+Pernezny, K., Stoffella, P., Collins, J., Carroll, A., and Beaney, A. 2002. Control of target 
+spot of tomato with fungicides, systematic acquired resistance activators, and a 
+biocontrol agent. Plant Protection Science 38:81-88. 
+ 
+Schlub, R. L., Smith, L. J., Datnoff, L. E., and Pernezny, K . 2007. An overview of target 
+spot of tomato caused by Corynespora cassiicola. II International Symposium on 
+Tomato Diseases Acta Hort. (ISHS) 808:25-28. 
+ 
+Seaman, W. L., Shoemaker, R. A., and Peterson, E. A. 1965. Pathogenicity of Corynespora 
+cassiicola on soybean. Can. J. Bot. 43:1461-1469. 
+ 
+Sumabat, L., Kemerait, R., and Brewer, M. T. 2015. Host range and phylogenetic diversity 
+of Corynespora cassiicola, cause of target spot of cotton in the southeastern USA. 
+Phytopathology 105:S4.134. 
+ 
+ 
+
+99 
+ 
+Table 1. Table of significance for the effect of temperature, leaf wetness duration, and 
+isolate on disease severity (3 DAI, 6 DAI, 9 DAI) and onset by C. cassiicola.  
+ 
+Factors 
+DF 
+F value 
+Pr > F 
+Onset 
+Temperature (T) 
+2 
+564.38 
+<.0001 
+ 
+Leaf wetness duration 
+(M) 
+5 
+68.03 
+<.0001 
+ 
+Isolate (I) 
+2 
+262.35 
+<.0001 
+ 
+T×M 
+8 
+33.37 
+<.0001 
+ 
+M×I 
+9 
+24.66 
+<.0001 
+ 
+I×T 
+4 
+115.33 
+0.4381 
+ 
+T×M×I 
+12 
+18.34 
+0.0381 
+3 DAI 
+Temperature (T) 
+2 
+84.88 
+0.0005 
+ 
+Leaf wetness duration 
+(M) 
+5 
+161.78 
+<.0001 
+ 
+Isolate (I) 
+2 
+30.12 
+<.0001 
+ 
+T×M 
+8 
+12.51 
+<.0001 
+ 
+M×I 
+9 
+3.87 
+0.0002 
+ 
+I×T 
+4 
+3.93 
+0.029 
+ 
+T×M×I 
+11 
+1.15 
+0.3254 
+6 DAI 
+Temperature (T) 
+2 
+97.30 
+0.0004 
+ 
+Leaf wetness duration 
+(M) 
+5 
+181.59 
+<.0001 
+ 
+Isolate (I) 
+2 
+34.11 
+<.0001 
+ 
+T×M 
+8 
+13.59 
+<.0001 
+ 
+M×I 
+9 
+4.01 
+0.0001 
+ 
+I×T 
+4 
+3.72 
+0.0342 
+ 
+T×M×I 
+12 
+1.08 
+0.3751 
+9 DAI 
+Temperature (T) 
+2 
+93.11 
+0.0004 
+ 
+Leaf wetness duration 
+(M) 
+5 
+183.12 
+<.0001 
+ 
+Isolate (I) 
+2 
+35 
+<.0001 
+ 
+T×M 
+8 
+13.06 
+<.0001 
+ 
+M×I 
+9 
+4.04 
+<.0001 
+ 
+I×T 
+4 
+3.51 
+0.0406 
+ 
+T×M×I 
+12 
+0.94 
+0.5051 
+ 
+ 
+ 
+
+100 
+ 
+ 
+ 
+ 
+Figure 1. Effect of leaf wetness duration on days after inoculation (DAI) required for onset 
+of target spot of tomato by Corynespora cassiicola (cotton isolate (CA1) and tomato 
+isolates (1343 and TCL1) at three different temperatures (20, 24, and 28°C). Different 
+letters above bar represent significant differences among all three isolates and three 
+temperatures at P=0.05. 
+ 
+ 
+
+101 
+ 
+ 
+Figure 2. Effect of leaf wetness duration on number of lesions produced by tomato isolate 
+1343 (A), tomato isolate TCL1 (B) and cotton isolate CA1 (C) of Corynespora cassiicola 
+at three different temperatures (20, 24 and 28°C) counted 3 days after inoculation (DAI). 
+Quadratic regression was conducted for incubation temperatures (20, 24 and 28°C) using 
+lesion numbers as a dependent variable and leaf wetness duration (Mst.) as an independent 
+variable. 
+ 
+ 
+-40
+-200
+20
+40
+60
+80
+100
+120
+140
+160
+180
+200
+220
+240
+260
+280
+8
+12
+16
+20
+24
+28
+32
+36
+40
+44
+48
+No. of lesion (3 DAI)
+Leaf wetness duration (hrs)
+Isolate: 1343
+28°C
+24°C
+20°C
+Temp 20°C; Les. = 1.397 × Mst. + 0.004 × Mst.2 - 21.602; R2 = 0.652; P < 0.0001
+Temp 24°C; Les. = 0.712 × Mst. + 0.043 × Mst.2 - 17.3; R2 = 0.791; P < 0.0001
+Temp 28°C; Les. = - 0.551 × Mst. + 0.096 × Mst.2- 4.714; R2 = 0.818; P < 0.0001
+-40
+-200
+20
+40
+60
+80
+100
+120
+140
+160
+180
+200
+220
+240
+260
+280
+8
+12
+16
+20
+24
+28
+32
+36
+40
+44
+48
+No. of lesion (3 DAI)
+Leaf wetness duration (hrs)
+Isolate: TCL1
+20°C
+24°C
+28°C
+Temp 20°C; Les. = 0.842 × Mst. + 0.013 × Mst.2 - 25.485; R2 = 0.78; P < 0.0001
+Temp 24°C; Les. = - 2.215 × Mst. + 0.091 × Mst.2 + 15.266; R2 = 0.894; P < 0.0001
+Temp 28°C; Les. = - 1.287 × Mst. + 0.082 × Mst.2 + 5.76; R2 = 0.85; P < 0.0001
+-40
+-200
+20
+40
+60
+80
+100
+120
+140
+160
+180
+200
+220
+240
+260
+280
+8
+12
+16
+20
+24
+28
+32
+36
+40
+44
+48
+No. of lesion (3 DAI)
+Leaf wetness duration (hrs)
+Isolate: CA1
+20°C
+24°C
+28°C
+Temp 24°C; Les. = - 0.303 × Mst. + 0.043 × Mst.2 - 5.866; R2 = 0.854; P < 0.0001
+Temp 28°C; Les. = - 1.81 × Mst. + 0.081 × Mst.2 + 12.058; R2 = 0.884; P < 0.0001
+A 
+B 
+ C 
+
+102 
+ 
+ 
+ 
+Figure 3. Effect of leaf wetness duration on number of lesions produced by tomato isolate 
+1343 (A), tomato isolate TCL1 (B) and cotton isolate CA1 (C) of Corynespora cassiicola 
+at three different temperatures (20, 24 and 28°C) counted 6 days after inoculation (DAI). 
+Quadratic regression was conducted for incubation temperatures (20, 24 and 28°C) using 
+lesion numbers as a dependent variable and leaf wetness duration (Mst.) as an independent 
+variable. 
+ 
+ 
+-40
+-200
+20
+40
+60
+80
+100
+120
+140
+160
+180
+200
+220
+240
+260
+280
+8
+12
+16
+20
+24
+28
+32
+36
+40
+44
+48
+No. of lesion (6 DAI)
+Leaf wetness duration (hrs)
+Isolate: 1343
+24°C
+28°C
+20°C
+Temp 20°C; Les. = 1.592 × Mst. + 0.003 × Mst.2 - 24.261; R2 = 0.707; P < 0.0001
+Temp 24°C; Les. = 1.025 × Mst. + 0.041 × Mst.2 - 20.766; R2 = 0.801; P < 0.0001
+Temp 28°C; Les. = - 0.595 × Mst. + 0.099 × Mst.2 - 3.641; R2 = 0.826; P < 0.0001
+-40
+-200
+20
+40
+60
+80
+100
+120
+140
+160
+180
+200
+220
+240
+260
+280
+8
+12
+16
+20
+24
+28
+32
+36
+40
+44
+48
+No. of lesion (6 DAI)
+Leaf wetness duration (hrs)
+Isolate: TCL1
+28°C
+24°C
+20°C
+Temp 20°C; Les. = 1.389 × Mst. + 0.007 × Mst.2 - 35.178; R2 = 0.806; P < 0.0001
+Temp 24°C; Les. = - 2.013 × Mst. + 0.09 × Mst.2 + 12.866; R2 = 0904; P < 0.0001
+Temp 28°C; Les. = - 1.094 × Mst. + 0.08 × Mst.2 + 3.896; R2 = 0.852; P < 0.0001
+B
+-40
+-200
+20
+40
+60
+80
+100
+120
+140
+160
+180
+200
+220
+240
+260
+280
+8
+12
+16
+20
+24
+28
+32
+36
+40
+44
+48
+No. of lesion (6 DAI)
+Leaf wetness duration (hrs)
+Isolate: CA1
+20°C
+24°C
+28°C
+Temp 24°C; Les. =  0.011 × Mst. + 0.04 × Mst.2 - 10.1; R2 = 0.848; P < 0.0001
+Temp 28°C; Les. = - 1.455 × Mst. + 0.077 × Mst.2 + 7.976; R2 = 0.884; P < 0.0001
+A 
+C 
+
+103 
+ 
+ 
+ 
+ 
+Figure 4. Effect of leaf wetness duration on number of lesions produced by tomato isolate 
+1343 (A), tomato isolate TCL1 (B) and cotton isolate CA1 (C) of Corynespora cassiicola 
+at three different temperatures (20, 24 and 28°C) counted 9 days after inoculation (DAI). 
+Quadratic regression was conducted for incubation temperatures (20, 24 and 28°C) using 
+lesion numbers as a dependent variable and leaf wetness duration (Mst.) as an independent 
+variable. 
+ 
+ 
+-40
+-200
+20
+40
+60
+80
+100
+120
+140
+160
+180
+200
+220
+240
+260
+280
+8
+12
+16
+20
+24
+28
+32
+36
+40
+44
+48
+No. of lesion (9 DAI)
+Leaf wetness duration (hrs)
+Isolate:1343
+24°C
+20°C
+28°C
+Temp 20°C; Les. = 1.592 × Mst. + 0.004 × Mst.2 - 24.867; R2 = 0.715; P < 0.0001
+Temp 24°C; Les. = 1.09 × Mst. + 0.041 × Mst.2 - 21.633; R2 = 0.804; P < 0.0001
+Temp 28°C; Les. = - 0.393 × Mst. + 0.097 × Mst.2 - 5.789; R2 = 0.823; P < 0.0001
+-40
+-200
+20
+40
+60
+80
+100
+120
+140
+160
+180
+200
+220
+240
+260
+280
+8
+12
+16
+20
+24
+28
+32
+36
+40
+44
+48
+No. of lesion (9 DAI)
+Leaf wetness duration (hrs)
+Isolate: TCL1
+20°C
+24°C
+28°C
+Temp 20°C; Les. = 1.652 × Mst. + 0.005 × Mst.2 - 39.826; R2 = 0.807; P < 0.0001
+Temp 24°C; Les = - 1 777 × Mst + 0 087 × Mst 2 + 9 966; R2 = 0 907; P < 0 0001
+Temp 28°C; Les = - 1 183 × Mst + 0 083 × Mst 2 + 5 259; R2 = 0 86; P < 0 0001
+-40
+-200
+20
+40
+60
+80
+100
+120
+140
+160
+180
+200
+220
+240
+260
+280
+8
+12
+16
+20
+24
+28
+32
+36
+40
+44
+48
+No. of lesion (9 DAI)
+Leaf wetness duration (hrs)
+Isolate: CA1
+20°C
+24°C
+28°C
+Temp 24°C; Les. =  0.099 × Mst. + 0.04 × Mst.2 - 11.2; R2 = 0.843; P < 0.0001
+Temp 28°C; Les. = - 1.277 × Mst. + 0.075 × Mst.2 + 5.554; R2 = 0.884; P < 0.0001
+B 
+A 
+C 
+
+104 
+ 
+ 
+Figure 5. Effect of temperature on number of lesions produced by Corynespora cassiicola 
+(Isolate: CA1 and TCL1,) after 48 hr leaf wetness counted 9 days after inoculation (DAI). 
+Quadratic regression was conducted for leaf wetness duration (48 hr) using lesion numbers 
+as a dependent variable and temperature as an independent variable. 
+ 
+ 
+0
+20
+40
+60
+80
+100
+120
+140
+160
+180
+200
+20
+24
+28
+No. of Lesions (9 DAI)
+Temperature
+CA1
+TCL1
+Iso: TCL1; Les. = 96.354 × Temp. - 1.776 × Temp.2 - 1165.83; R2 = 0.733; P < 0.0001
+Iso: CA1; Les. = 62.354 × Temp. - 1.036 × Temp.2 - 813.5; R2= 0.84; P < 0.0001
+
+105 
+ 
+V. Summary 
+ 
+ 
+The study described herein was initiated with the goal of addressing the epidemiology of 
+target spot of cotton and tomato. The main objectives of this investigation were: 1) to 
+determine the effect of temperature on conidial germination of a cotton isolate of 
+Corynespora cassiicola; 2) to determine the effect of temperature and leaf wetness duration 
+on target spot of cotton caused by C. cassiicola; and 3) to determine if there is a difference 
+in the epidemiology of target spot of cotton caused by cotton and tomato isolates of C. 
+cassiicola.  
+For objective 1, conidial suspension of cotton isolate (CC1) and sterile water were pipetted 
+and spread onto water agar media. Petri dishes were incubated at six different temperatures 
+(12, 16, 20, 24, 28 and 32°) and were evaluated for conidial germination at 4, 8 and 12 hrs 
+of incubation. Three replicate plates were included at each temperature and three trials were 
+done for this study. Temperature and wetness period had significant effects on conidial 
+germination. High conidial germination percentage was observed at 20 to 32°C after 12 hr 
+of wetness, while 4 hr of wetness allowed low conidial germination percentage. Increased 
+wetness hours at all tested temperatures increased conidial germination. These findings 
+could be useful for understanding that the average environmental temperatures in the cotton 
+growing areas of Alabama are favorable for spore germination and initiation of the 
+infection process of a cotton isolate of C. cassiicola causing target spot.
+
+106 
+ 
+Temperature and leaf wetness duration are important environmental factors for predicting 
+infection periods and disease development. Forecasting infection periods of C. cassiicola   
+can help in making timely applications of fungicide. Therefore, two trials were conducted 
+in order to determine the favorable temperature and moisture conditions that support target 
+spot of cotton caused by C. cassiicola. In both trials, treatments comprised a 5×7×3 
+factorial with five levels of temperature (16, 20, 24, 28 and 32°C), seven leaf wetness 
+durations (8, 12, 16, 24, 32, 40 and 48 hrs) and three cotton isolates of C. cassiicola (CA1, 
+CM18 and CC1). Three true leaves of individual plants were drop inoculated with each of 
+three isolates (CA1, CM18 and CC1) of C. cassiicola. Inoculated leaves were covered with 
+wet tissue paper and the entire plant was enclosed in a wet bag and incubated in separate 
+growth chambers at 16, 20, 24, 28 and 32°C. Plants were removed from wet bags and wet 
+tissue papers at 8, 12, 16, 24, 32, 40 and 48 hrs leaf wetness. Onset and lesion numbers of 
+target spot of cotton were significantly impacted by temperature, isolate and leaf wetness 
+duration. Earliest onset (1 day after inoculation) was observed at 28°C with ≥24 hr wetness. 
+Lesion numbers were higher on plants incubated at 20, 24 and 28°C with longer leaf 
+wetness durations. These findings could be useful for understanding the occurrence of 
+target spot of cotton based on the varying temperatures and rainfall patterns. The 
+temperature and leaf wetness relationship established in this study can help to efficiently 
+manage target spot of cotton. 
+In order to determine the difference in favorable environmental conditions for isolates of 
+C. cassiicola originating from different hosts, two trials were conducted on tomato. In both 
+
+107 
+ 
+trials, treatments comprised a 3×7×3 factorial with three levels of temperature (20, 24 and 
+28 °C), seven levels of leaf wetness (8, 12, 16, 24, 32, 40 and 48 hrs) and three isolates of 
+C. cassiicola (Tomato isolates: TCL1 and 1343; Cotton isolate: CA1). Three true leaves of 
+individual plants were drop inoculated with one of three isolates (TCL1, 1343 or CA1) of 
+C. cassiicola. Inoculated leaves were covered with wet tissue paper and the entire plant 
+was enclosed in a wet bag and incubated in separate growth chambers at 20, 24 and 28°C. 
+Plants were removed from wet bags and wet tissue papers at 8, 12, 16, 24, 32, 40 and 48 
+hrs leaf wetness. Onset and lesion numbers of target spot of tomato caused by tomato and 
+cotton isolates were significantly impacted by temperature, isolate and leaf wetness 
+duration. Early onset was observed at warmer temperatures (24 and 28°C) with >16 hr leaf 
+wetness. Lesion numbers on tomato were high for both tomato and cotton isolates 
+incubated at 24 and 28°C with longer wetness durations, while cooler temperature (20°C) 
+did not favor the cotton isolate on tomato and confirms that the cotton isolate is cross 
+pathogenic on tomato only at highly favorable temperatures and longer wetness durations. 
+These findings can help to understand that prevailing temperature and leaf wetness duration 
+in the field can affect the cross pathogenicity of cotton isolates of C. cassiicola.

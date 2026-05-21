@@ -1,0 +1,177 @@
+Tomato Late Blight
+Identification and Management
+A4052-01
+L
+ate blight is a plant disease that 
+affects a variety of Solanum spp., 
+including eggplant, pepper, 
+nightshade weeds, and petunia. 
+However, it is most infamously 
+known for its destruction of potato, 
+S. tuberosum, and tomato, S. 
+lycopersicum.
+Symptoms
+Symptoms of late blight may be found 
+on any above-ground part of the 
+tomato plant. Infected leaves typically 
+have green to brown patches of dead 
+tissue surrounded by a pale green 
+or gray border. When the weather 
+is very humid and wet, late blight 
+infections can appear water-soaked 
+or dark brown in color, and are often 
+described as appearing greasy. White, 
+fuzzy growth may be found on the 
+undersides of leaves or on lower stems. 
+Stem and petiole lesions are brown 
+and are typically not well defined in 
+shape. Discoloration may also occur on 
+the flowers, causing them to drop.
+Symptomatic tomato fruits appear 
+mottled, often with golden to dark 
+brown, firm, sunken surfaces. White, 
+fuzzy pathogen growth can also be 
+found in association with the fruit 
+lesions.
+Amanda Gevens and Jaime Wilbur
+Tomato leaf late blight lesions can be round to irregular 
+in shape and may have a brown dry center with pale 
+green halo when conditions are dry.
+Ripe tomato showing late blight symptoms of firm, 
+sunken lesions. Some lesions are dark brown, and others 
+are golden (above) and show rings of pathogen growth.
+Whole tomato plants defoliated due to late blight infection. Note 
+fruit hanging on plants despite loss of vines and stems.
+
+T O M A T O  L A T E  B L I G H T
+Disease spread 
+and conditions
+Phytophthora infestans is the 
+oomycete, or water mold pathogen, 
+responsible for tomato late blight. 
+In the United States, this fungus-like 
+organism overwinters primarily in 
+plant debris as mycelia, a filamentous, 
+thread-like growth of the pathogen. In 
+some countries of Europe and South 
+America, the pathogen can produce 
+a soil-persistent spore known as the 
+oospore, but this spore has not been 
+identified in the United States. The 
+pathogen spreads by movement of 
+asexual spores: sporangia (airborne 
+spores) and zoospores (water-
+swimming spores). The pathogen 
+invades host plant cells causing plant 
+death.
+The production of pathogen spores 
+is promoted by moist conditions 
+(90–100% relative humidity) with 
+moderate temperatures (60–80˚F). 
+Sporangia may germinate at 64–75˚F, 
+and zoospores are released at 46–64˚F. 
+Mycelia prefer temperatures around 
+73˚F for optimal growth.
+Disease cycle
+Phytophthora infestans reproduces 
+asexually (via sporangia and 
+zoospores). In warm weather, 
+sporangia land on susceptible host 
+tissue and directly germinate to create 
+an infection. In cooler wet weather, 
+however, sporangia produce motile 
+zoospores that can infect host tissues. 
+After just 4–5 days of sufficient 
+moisture and moderate temperatures, 
+a new phase of sporulation can occur 
+at the site of the initial infection. New 
+sporangia are then carried by wind 
+and splashed water to new plant 
+tissue, creating new infections. And 
+the disease spreads. Continued and 
+rapid repetition of this asexual disease 
+cycle causes large-scale and fast-
+advancing late blight epidemics.
+Management
+Strategies for managing late blight 
+in tomato include planting resistant 
+cultivars, eliminating volunteers 
+(tomato plants that have re-seeded 
+from the previous year’s crop), spacing 
+plants to increase airflow and reduce 
+humidity, and applying preventive and 
+effective fungicides to avoid infection.
+Various fungicides are registered for 
+use in controlling tomato late blight. 
+Some categories of fungicides are 
+appropriate in conventional systems, 
+and others are appropriate in organic 
+systems. For either production system 
+type, it is critical to apply fungicides 
+before initial infection for best control 
+of late blight.
+Commercial producers in Wisconsin 
+have adopted use of Blitecast. This 
+disease-forecasting tool indicates 
+appropriate timing for preventive 
+fungicide applications based on 
+favorable weather. This tool can aid 
+in reducing the need for multiple, 
+calendar-based fungicide applications 
+prior to actual disease risk. For further 
+information and access to Blitecast 
+information, please refer to the 
+University of Wisconsin Vegetable 
+Pathology website (www.plantpath.
+wisc.edu/wivegdis/). For Wisconsin-
+specific fungicide recommendations, 
+please refer to Commercial Vegetable 
+Production in Wisconsin (A3422), a 
+guide available through the UW-
+Extension Learning Store website 
+(learningstore.uwex.edu).
+Underside of tomato leaf showing typical late blight lesions under 
+relatively dry conditions. Lesions are brown and papery with rings of 
+white, fuzzy pathogen sporulation. Sporulation typically occurs on 
+plants not receiving direct sunlight.
+
+I D E N T I F I C A T I O N  &  M A N A G E M E N T
+Note A1 and A2 mating type interaction at bottom of figure. The U.S. does not currently have this phase of the disease cycle, 
+but in some parts of the world, the pathogen will mate and produce a soilborne spore (oospore).
+Tomato Late Blight Disease Cycle
+
+T O M A T O  L A T E  B L I G H T
+For more information
+USAblight
+www.usablight.org
+This national late blight reporting and 
+information website also provides 
+useful statewide disease occurrence, 
+management information, and alerts.
+University of Wisconsin Vegetable 
+Pathology website
+www.plantpath.wisc.edu/wivegdis/
+Commercial Vegetable Production in 
+Wisconsin (A3422)
+learningstore.uwex.edu
+Your local Extension office
+In Wisconsin: 
+yourcountyextensionoffice.org
+	
+Outside of Wisconsin: 
+www.csrees.usda.gov/Extension
+Copyright © 2014 by the Board of Regents of the University of Wisconsin System doing business as the division of Cooperative Extension of 
+the University of Wisconsin-Extension. All rights reserved.
+Authors: Amanda Gevens is assistant professor and Jaime Wilbur is graduate research assistant of plant pathology, College of Agricultural and 
+Life Sciences, University of Wisconsin–Madison. Gevens holds a joint appointment with the University of Wisconsin–Extension, Cooperative 
+Extension. Cooperative Extension publications are subject to peer review.
+University of Wisconsin-Extension, Cooperative Extension, in cooperation with the U.S. Department of Agriculture and Wisconsin counties, 
+publishes this information to further the purpose of the May 8 and June 30, 1914, Acts of Congress. An EEO/AA employer, the University of 
+Wisconsin-Extension, Cooperative Extension provides equal opportunities in employment and programming, including Title IX and ADA 
+requirements. If you have a disability and require this information in an alternative format, or if you would like to submit a copyright request, 
+please contact Cooperative Extension Publishing at 432 N. Lake St., Rm. 227, Madison, WI 53706; pubs@uwex.edu; or (608) 263-2770 (711 for 
+Relay).
+This publication is available from your county UW-Extension office (yourcountyextensionoffice.org) or from Cooperative Extension 
+Publishing. To order, call toll-free 1-877-947-7827 or visit our website at learningstore.uwex.edu.
+Tomato Late Blight: Identification & Management (A4052-01)
+I-1-2015
