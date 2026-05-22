@@ -121,8 +121,9 @@ python main.py
 Server berjalan di: **http://localhost:8000**
 
 > **⚠️ Catatan — Download model pertama kali:**
-> Server akan otomatis mengunduh model AI (~6.4 GB) saat pertama kali dijalankan.
+> Server akan otomatis mengunduh model AI (>30 GB) saat pertama kali dijalankan.
 > Pastikan koneksi internet stabil. Setelah terunduh, model tersimpan di cache dan tidak perlu diunduh ulang.
+> Jika tidak memungkinkan, jalankan frontend saja tanpa backend
 
 #### Dokumentasi API (Swagger UI)
 
