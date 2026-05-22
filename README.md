@@ -115,7 +115,7 @@ export PYTHONPATH=$(dirname $(pwd))
 #### Langkah 2.5 — Jalankan server
 
 ```bash
-python main.py
+python -m main
 ```
 
 Server berjalan di: **http://localhost:8000**
@@ -146,7 +146,7 @@ source venv/bin/activate       # Mac / Linux
 $env:PYTHONPATH = (Get-Item ..).FullName   # Windows
 export PYTHONPATH=$(dirname $(pwd))        # Mac / Linux
 
-python main.py
+python -m main
 ```
 
 ---
