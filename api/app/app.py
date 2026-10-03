@@ -2,6 +2,7 @@
 
 import datetime
 import io
+import json
 import logging
 import os
 import random
@@ -17,14 +18,14 @@ from sqlalchemy.orm import Session
 from app.config import settings
 from .db import (
     ChatLog, IotNodeDB, PlantDB, ProbeDataDB, ScannedItemDB, TacticalLogDB,
-    DiagnosisLogDB, SatelliteAnalysisLogDB, TimelineEventDB, WeatherLog,
-    create_tables, get_db, init_seed_data,
+    DiagnosisLogDB, LandParcelDB, SatelliteAnalysisLogDB, TimelineEventDB,
+    WeatherLog, create_tables, get_db, init_seed_data,
 )
 from .schema import (
     ChatRequest, ChatResponse, DiagnosisResponse, EuroSatAnalysisResponse,
     GraphProvenance,
-    IotNode, IotNodeCreate, Plant, PlantCreate, SatelliteAnalysis, ScannedItem,
-    TacticalLog,
+    IotNode, IotNodeCreate, LandCoverClass, LandParcel, LandParcelCreate, Plant,
+    PlantCreate, SatelliteAnalysis, ScannedItem, TacticalLog,
     WeatherAlertResponse, WeatherMacroResponse,
 )
 
@@ -318,6 +319,165 @@ async def delete_plant(plant_id: int, db: Session = Depends(get_db)):
     db.delete(plant)
     db.commit()
     return {"message": "Tanaman berhasil dihapus"}
+
+# ── Land parcels ──────────────────────────────────────────────────────────────
+
+def _parcel_to_schema(row: LandParcelDB) -> LandParcel:
+    """Convert a stored parcel into its API shape, decoding the geometry."""
+    from backend.services.land_service import LAND_COVER_PROFILE, DEFAULT_PROFILE
+
+    _, rationale = LAND_COVER_PROFILE.get(row.land_cover_class or "", DEFAULT_PROFILE)
+
+    return LandParcel(
+        id=row.id,
+        name=row.name,
+        zone=row.zone,
+        geometry=json.loads(row.geometry),
+        centroid_latitude=row.centroid_latitude,
+        centroid_longitude=row.centroid_longitude,
+        area_hectares=row.area_hectares,
+        land_cover_class=row.land_cover_class,
+        vegetation_density=row.vegetation_density,
+        canopy_cover=row.canopy_cover,
+        est_biomass=row.est_biomass,
+        carbon_eq=row.carbon_eq,
+        restoration_quality=row.restoration_quality,
+        confidence=row.confidence,
+        restoration_potential=row.restoration_potential,
+        rationale=rationale,
+        analyzed_at=row.analyzed_at,
+    )
+
+
+@app.get("/api/b2b/land-parcels", response_model=List[LandParcel])
+async def list_land_parcels(
+    min_potential: float = 0.0,
+    land_cover_class: Optional[str] = None,
+    db: Session = Depends(get_db),
+) -> List[LandParcel]:
+    """Restoration candidates, highest potential first."""
+    query = db.query(LandParcelDB)
+
+    if min_potential > 0:
+        query = query.filter(LandParcelDB.restoration_potential >= min_potential)
+    if land_cover_class:
+        query = query.filter(LandParcelDB.land_cover_class == land_cover_class)
+
+    rows = query.order_by(LandParcelDB.restoration_potential.desc()).all()
+    return [_parcel_to_schema(row) for row in rows]
+
+
+@app.post("/api/b2b/land-parcels", response_model=LandParcel, status_code=201)
+async def create_land_parcel(
+    parcel: LandParcelCreate,
+    db: Session = Depends(get_db),
+) -> LandParcel:
+    """Register a parcel drawn on the map, scoring it on the way in."""
+    from backend.services.land_service import (
+        geometry_to_json, polygon_area_hectares, polygon_centroid,
+        restoration_potential,
+    )
+
+    coordinates = (parcel.geometry or {}).get("coordinates")
+    if parcel.geometry.get("type") != "Polygon" or not coordinates:
+        raise HTTPException(status_code=422, detail="geometry must be a GeoJSON Polygon")
+
+    ring = coordinates[0]
+    if len(ring) < 4:
+        raise HTTPException(status_code=422, detail="A polygon ring needs at least four points")
+
+    latitude, longitude = polygon_centroid(ring)
+    score = restoration_potential(
+        parcel.land_cover_class or "", parcel.canopy_cover, parcel.confidence
+    )
+
+    row = LandParcelDB(
+        name=parcel.name,
+        zone=parcel.zone,
+        geometry=geometry_to_json(parcel.geometry),
+        centroid_latitude=latitude,
+        centroid_longitude=longitude,
+        area_hectares=polygon_area_hectares(ring),
+        land_cover_class=parcel.land_cover_class,
+        canopy_cover=parcel.canopy_cover,
+        confidence=parcel.confidence,
+        restoration_potential=score.value,
+    )
+    db.add(row)
+    db.commit()
+    db.refresh(row)
+
+    return _parcel_to_schema(row)
+
+
+@app.get("/api/b2b/land-cover-classes", response_model=List[LandCoverClass])
+async def land_cover_legend() -> List[LandCoverClass]:
+    """The land-cover legend used to score parcels.
+
+    `reference_tiles` counts the labelled EuroSAT examples behind each class.
+    Those labels are synthetic reference data, not measurements.
+    """
+    from backend.services.land_service import LAND_COVER_PROFILE
+    from backend.services.land_reference import reference_tile_counts
+
+    counts = reference_tile_counts()
+
+    return [
+        LandCoverClass(
+            name=name,
+            headroom=headroom,
+            description=description,
+            reference_tiles=counts.get(name, 0),
+        )
+        for name, (headroom, description) in sorted(
+            LAND_COVER_PROFILE.items(), key=lambda item: -item[1][0]
+        )
+    ]
+
+
+@app.post("/api/b2b/land-parcels/{parcel_id}/analyze", response_model=LandParcel)
+async def analyze_land_parcel(
+    parcel_id: int,
+    image: UploadFile = File(...),
+    db: Session = Depends(get_db),
+) -> LandParcel:
+    """Score a parcel from satellite imagery and store the result."""
+    from backend.pipelines.satellite_inference import VLMUnavailable, extract_json, run_vlm
+    from backend.services.land_service import restoration_potential
+
+    row = db.query(LandParcelDB).filter(LandParcelDB.id == parcel_id).first()
+    if not row:
+        raise HTTPException(status_code=404, detail="Parcel not found")
+
+    path = await save_upload_temp(image)
+    try:
+        raw = await run_in_threadpool(run_vlm, path, row.land_cover_class)
+    except VLMUnavailable as exc:
+        raise HTTPException(status_code=503, detail=str(exc)) from exc
+    finally:
+        if os.path.exists(path):
+            os.remove(path)
+
+    result = extract_json(raw)
+    if result is None:
+        raise HTTPException(status_code=502, detail="The vision model returned no readable JSON.")
+
+    row.vegetation_density = result.get("vegetation_density")
+    row.canopy_cover = result.get("canopy_cover")
+    row.est_biomass = result.get("est_biomass")
+    row.carbon_eq = result.get("carbon_EQ")
+    row.restoration_quality = result.get("restoration_quality")
+    row.confidence = result.get("confidence")
+    row.restoration_potential = restoration_potential(
+        row.land_cover_class or "", row.canopy_cover, row.confidence
+    ).value
+    row.analyzed_at = datetime.datetime.now(datetime.timezone.utc)
+
+    db.commit()
+    db.refresh(row)
+
+    return _parcel_to_schema(row)
+
 
 # ── Leaf diagnosis ────────────────────────────────────────────────────────────
 

@@ -159,6 +159,34 @@ class TacticalLogDB(Base):
     severity = Column(String(20), default="info")
 
 
+class LandParcelDB(Base):
+    """A candidate restoration site.
+
+    Geometry is stored as a GeoJSON Polygon so a parcel describes an area
+    rather than a point; the IoT node tables remain point-based.
+    """
+
+    __tablename__ = "land_parcels"
+
+    id = Column(PrimaryKey, primary_key=True, index=True, autoincrement=True)
+    name = Column(String(120), nullable=False)
+    zone = Column(String(80))
+    geometry = Column(Text, nullable=False)
+    centroid_latitude = Column(Float, nullable=False)
+    centroid_longitude = Column(Float, nullable=False)
+    area_hectares = Column(Float)
+    land_cover_class = Column(String(80))
+    vegetation_density = Column(String(50))
+    canopy_cover = Column(Float)
+    est_biomass = Column(Float)
+    carbon_eq = Column(Float)
+    restoration_quality = Column(String(50))
+    confidence = Column(Float)
+    restoration_potential = Column(Float, index=True)
+    analyzed_at = Column(DateTime)
+    created_at = Column(DateTime, default=_utc_now)
+
+
 class DiagnosisLogDB(Base):
     """A stored leaf-disease classification for one plant."""
 
@@ -214,9 +242,69 @@ def get_db():
         db.close()
 
 
+def seed_land_parcels(db) -> int:
+    """Create demo restoration parcels around the monitored site.
+
+    Anchored to the same Jakarta coordinates as the seeded IoT fleet, so the
+    map shows parcels and sensors in one coherent place. The EuroSAT corpus in
+    misc/ supplies the land-cover vocabulary but carries no coordinates, so it
+    is not used to place anything.
+    """
+    from backend.services.land_service import (
+        geometry_to_json, polygon_area_hectares, polygon_centroid,
+        restoration_potential, square_around,
+    )
+
+    if db.query(LandParcelDB).first():
+        return 0
+
+    # (name, zone, lat, lon, size_m, land cover, canopy, biomass, carbon, confidence)
+    demo_parcels = [
+        ("Northern Grazing Strip", "Sektor A - Utara", -6.1746, 106.8285, 900,
+         "Pasture", 0.08, 0.12, 0.05, 0.88),
+        ("Southern Scrub Margin", "Sektor B - Selatan", -6.1792, 106.8198, 750,
+         "HerbaceousVegetation", 0.18, 0.22, 0.11, 0.81),
+        ("Riverside Buffer", "Sektor B - Selatan", -6.1771, 106.8232, 500,
+         "River", 0.05, 0.08, 0.03, 0.74),
+        ("East Field Rotation", "Sektor C - Timur", -6.1733, 106.8321, 1100,
+         "AnnualCrop", 0.26, 0.34, 0.18, 0.86),
+        ("Greenhouse Verge", "Greenhouse Utama", -6.1714, 106.8296, 400,
+         "PermanentCrop", 0.42, 0.48, 0.3, 0.79),
+        ("Established Woodlot", "Sektor A - Utara", -6.1709, 106.8258, 850,
+         "Forest", 0.88, 0.91, 0.76, 0.93),
+    ]
+
+    for (name, zone, lat, lon, size, cover, canopy, biomass, carbon, confidence) in demo_parcels:
+        geometry = square_around(lat, lon, size)
+        ring = geometry["coordinates"][0]
+        centroid_lat, centroid_lon = polygon_centroid(ring)
+        score = restoration_potential(cover, canopy, confidence)
+
+        db.add(LandParcelDB(
+            name=name,
+            zone=zone,
+            geometry=geometry_to_json(geometry),
+            centroid_latitude=centroid_lat,
+            centroid_longitude=centroid_lon,
+            area_hectares=polygon_area_hectares(ring),
+            land_cover_class=cover,
+            vegetation_density="high" if canopy > 0.6 else "medium" if canopy > 0.2 else "low",
+            canopy_cover=canopy,
+            est_biomass=biomass,
+            carbon_eq=carbon,
+            restoration_quality="strong" if canopy > 0.6 else "moderate" if canopy > 0.2 else "poor",
+            confidence=confidence,
+            restoration_potential=score.value,
+        ))
+
+    db.commit()
+    return len(demo_parcels)
+
+
 def init_seed_data():
     """Populate demo rows for any table that is still empty."""
     db = SessionLocal()
+    seed_land_parcels(db)
 
     # Seed Plant
     if not db.query(PlantDB).filter(PlantDB.id == 1).first():

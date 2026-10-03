@@ -1,7 +1,7 @@
 from datetime import datetime
 from typing import List, Literal, Optional
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from pydantic.alias_generators import to_camel
 
 
@@ -64,6 +64,50 @@ class ChatResponse(CamelModel):
     text: str
     tags: Optional[List[str]] = None
     provenance: Optional[GraphProvenance] = None
+
+
+# ── Land parcels ──────────────────────────────────────────────────────────────
+
+class LandParcelCreate(CamelModel):
+    """A new restoration candidate, drawn on the map."""
+
+    name: str
+    zone: Optional[str] = None
+    geometry: dict
+    land_cover_class: Optional[str] = None
+    canopy_cover: Optional[float] = Field(default=None, ge=0, le=1)
+    confidence: Optional[float] = Field(default=None, ge=0, le=1)
+
+
+class LandParcel(CamelModel):
+    """A scored restoration candidate."""
+
+    id: int
+    name: str
+    zone: Optional[str] = None
+    geometry: dict
+    centroid_latitude: float
+    centroid_longitude: float
+    area_hectares: Optional[float] = None
+    land_cover_class: Optional[str] = None
+    vegetation_density: Optional[str] = None
+    canopy_cover: Optional[float] = None
+    est_biomass: Optional[float] = None
+    carbon_eq: Optional[float] = None
+    restoration_quality: Optional[str] = None
+    confidence: Optional[float] = None
+    restoration_potential: Optional[float] = None
+    rationale: Optional[str] = None
+    analyzed_at: Optional[datetime] = None
+
+
+class LandCoverClass(CamelModel):
+    """One entry in the land-cover legend."""
+
+    name: str
+    headroom: float
+    description: str
+    reference_tiles: int
 
 
 # ── Leaf diagnosis ────────────────────────────────────────────────────────────
