@@ -1,11 +1,6 @@
-#!/bin/bash
-
-set -e
-
-echo "Deploying system..."
-
-docker-compose pull
-docker-compose build
-docker-compose up -d
-
-echo "Deployment complete."
+#!/usr/bin/env bash
+# Pull, build and restart.
+set -euo pipefail
+cd "$(dirname "$0")/../.."
+docker compose pull
+docker compose up -d --build
