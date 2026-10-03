@@ -1,374 +1,243 @@
-# AI Format Workspace
+# Plantatio
 
-Template workspace modular untuk proyek AI — dirancang agar scalable dari eksperimen lokal hingga production.
+AI growing intelligence for green produce, spanning two audiences: home
+growers tending a few plants, and restoration operators managing land at
+scale.
 
-**Cocok untuk:** LLM systems · RAG pipelines · Multi-agent architectures · Fine-tuning · Ollama deployment · Evaluation · Research
+The system answers growing questions from a **knowledge graph** built out of
+agronomy research, classifies **leaf disease** from a photograph, and scores
+**satellite imagery** to find land worth restoring.
 
----
-
-## Daftar Isi
-
-- [Prasyarat](#prasyarat)
-- [Struktur Proyek](#struktur-proyek)
-- [Cara Menjalankan](#cara-menjalankan)
-  - [1. Clone Repository](#1-clone-repository)
-  - [2. Menjalankan Backend](#2-menjalankan-backend)
-  - [3. Menjalankan Frontend](#3-menjalankan-frontend)
-- [Penjelasan Folder](#penjelasan-folder)
-- [Catatan Arsitektur](#catatan-arsitektur)
+> Portfolio project. The architecture is real and runs end to end; the
+> operational data is seeded demo content, and limitations are listed at the
+> bottom rather than hidden.
 
 ---
 
-## Prasyarat
+## What it does
 
-Pastikan tools berikut sudah terinstall sebelum memulai:
+| | For growers (`/b2c`) | For enterprise (`/b2b`) |
+|---|---|---|
+| **Assistant** | Grounded answers about plant care, with the retrieved facts shown | Same graph, framed around operations |
+| **Vision** | Photograph a leaf, get a ranked disease diagnosis | Satellite audit comparing a baseline and current image |
+| **Monitoring** | Per-plant probe readings and a care timeline | Sensor fleet and restoration parcels on a live map |
+| **Discovery** | — | Green Lands: candidate parcels ranked by restoration potential |
 
-| Tool | Versi Minimum |
-|------|---------------|
-| Python | 3.10+ |
-| pip | terbaru |
-| Node.js & npm | terbaru |
-| Git | terbaru |
+### How an answer is produced
+
+```
+Question
+   │
+   ├─ 1. Decompose      LLM splits the question into sub-questions
+   │
+   ├─ 2. Retrieve       each sub-question becomes Cypher, run against Neo4j
+   │                    (schema injected into the prompt; keyword fallback
+   │                     when the generated query returns nothing)
+   │
+   ├─ 3. Reason         step-by-step reasoning over the retrieved subgraph
+   │
+   └─ 4. Answer         grower-facing reply + the facts it came from
+```
+
+Orchestrated with LangGraph over a shared typed state. The retrieved facts are
+returned to the UI, so every reply can be expanded to show its evidence — a
+reply with nothing behind it says so rather than inventing support.
 
 ---
 
-## Struktur Proyek
+## Architecture
 
 ```
-AI FORMAT WORKSPACE/
-│
-├── backend/                # API, services, pipelines, retrieval
-├── frontend/               # UI dan dashboard
-├── training/               # Fine-tuning dan dataset pipeline
-├── deployment/             # Docker, Nginx, Ngrok, scripts
-├── docs/                   # Dokumentasi teknis
-├── tests/                  # Unit, integration, dan evaluation tests
-├── notebooks/              # Jupyter notebooks untuk eksperimen
-├── outputs/                # Hasil generate: laporan, analytics, benchmark
-├── logs/                   # Runtime logs per komponen
-├── models/                 # Penyimpanan model lokal
-│
-├── docker-compose.yaml     # Orkestrasi multi-container
-├── .env                    # Environment variables
-├── .gitignore
-├── LICENSE
-└── README.md
+┌──────────────────────────────────────────────────────────────┐
+│  React 19 · TanStack Start/Router · Tailwind v4 · shadcn/ui  │
+│  /  ·  /b2c  ·  /garden/:id  ·  /b2b/{esg,green-lands,…}     │
+└───────────────────────────┬──────────────────────────────────┘
+                            │  VITE_API_BASE_URL
+┌───────────────────────────▼──────────────────────────────────┐
+│  FastAPI  ·  SQLAlchemy  ·  Pydantic v2                      │
+│  plants · chat · diagnose · land-parcels · satellite         │
+└───┬──────────────────┬──────────────────┬───────────────────-┘
+    │                  │                  │
+┌───▼──────────┐ ┌─────▼────────┐ ┌───────▼─────────┐
+│ LangGraph    │ │ ResNet-50    │ │ Qwen2.5-VL      │
+│ agent        │ │ leaf CNN     │ │ satellite VLM   │
+└───┬──────────┘ └──────────────┘ └─────────────────┘
+    │
+┌───▼──────────────────┐   ┌──────────────────────┐
+│ Neo4j knowledge graph│   │ Postgres / SQLite    │
+│ 2,061 triplets       │   │ plants, parcels, logs│
+└──────────────────────┘   └──────────────────────┘
 ```
+
+### Tech stack
+
+| Layer | Choice |
+|---|---|
+| Frontend | React 19, TanStack Start + Router (SSR), Tailwind CSS v4, shadcn/ui, TanStack Query |
+| Map | Leaflet + react-leaflet over OpenStreetMap |
+| API | FastAPI, Pydantic v2, SQLAlchemy 2 |
+| Agent | LangGraph, HuggingFace Transformers |
+| Knowledge graph | Neo4j, text-to-Cypher retrieval |
+| Vision | PyTorch / torchvision (ResNet-50), Qwen2.5-VL via HF Inference |
+| Database | Postgres in production, SQLite locally |
 
 ---
 
-## Cara Menjalankan
+## Setup
 
-### 1. Clone Repository
+### Prerequisites
 
-```bash
-git clone <url-repository-ini>
-cd <nama-folder-repository>
-```
+Python 3.11+, Node 20+, and — optionally — Docker, a Neo4j instance, and a GPU
+for the agent.
 
----
-
-### 2. Menjalankan Backend
-
-#### Langkah 2.1 — Masuk ke folder API
+### 1. Configure
 
 ```bash
-cd api
+git clone <this-repo> && cd Plantatio
+cp .env.example .env
 ```
 
-#### Langkah 2.2 — Buat virtual environment
+Everything is read from `.env`. The app starts with none of it filled in; each
+capability degrades with an explicit message rather than failing silently.
+
+### 2. Backend
 
 ```bash
-python -m venv venv
+python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install -r api/requirements.txt
+
+export PYTHONPATH="$PWD:$PWD/api"                   # Windows: $env:PYTHONPATH="$PWD;$PWD\api"
+uvicorn app.app:app --app-dir api --reload
 ```
 
-Aktifkan virtual environment:
+API on <http://localhost:8000>, docs at `/docs`.
 
-```bash
-# Windows
-venv\Scripts\activate
-
-# Mac / Linux
-source venv/bin/activate
-```
-
-Jika berhasil, prompt terminal akan berubah menjadi `(venv)`.
-
-#### Langkah 2.3 — Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-#### Langkah 2.4 — Set PYTHONPATH
-
-> **Wajib dilakukan** agar Python dapat menemukan folder `backend/`.
-
-```bash
-# Windows
-$env:PYTHONPATH = (Get-Item ..).FullName
-
-# Mac / Linux
-export PYTHONPATH=$(dirname $(pwd))
-```
-
-#### Langkah 2.5 — Jalankan server
-
-```bash
-python -m main
-```
-
-Server berjalan di: **http://localhost:8000**
-
-> **⚠️ Catatan — Download model pertama kali:**
-> Server akan otomatis mengunduh model AI (>30 GB) saat pertama kali dijalankan.
-> Pastikan koneksi internet stabil. Setelah terunduh, model tersimpan di cache dan tidak perlu diunduh ulang.
-> Jika tidak memungkinkan, jalankan frontend saja tanpa backend
-
-#### Dokumentasi API (Swagger UI)
-
-Setelah server berjalan, buka:
-
-```
-http://localhost:8000/docs
-```
-
-#### Menjalankan ulang backend (setelah instalasi pertama)
-
-```bash
-cd api
-
-# Aktifkan virtual environment
-venv\Scripts\activate          # Windows
-source venv/bin/activate       # Mac / Linux
-
-# Set PYTHONPATH
-$env:PYTHONPATH = (Get-Item ..).FullName   # Windows
-export PYTHONPATH=$(dirname $(pwd))        # Mac / Linux
-
-python -m main
-```
-
----
-
-### 3. Menjalankan Frontend
-
-> **Buka terminal baru** — pastikan backend sudah berjalan di `http://localhost:8000` sebelum memulai frontend.
-
-#### Langkah 3.1 — Masuk ke folder frontend
-
-```bash
-cd frontend
-```
-
-#### Langkah 3.2 — Install dependencies (hanya pertama kali)
+### 3. Frontend
 
 ```bash
 npm install
-```
-
-#### Langkah 3.3 — Jalankan development server
-
-```bash
 npm run dev
 ```
 
-Frontend berjalan di: **http://localhost:8080**
+### 4. Knowledge graph (optional but recommended)
 
-#### Menjalankan ulang frontend (setelah instalasi pertama)
+Start Neo4j, put its credentials in `.env`, then load the graph:
 
 ```bash
-cd frontend
-npm run dev
+python -m RAG.GRAPHRAG.src.pipeline.rag.neo4j_push
 ```
+
+This ingests 2,061 subject–relation–object triplets extracted from 62 tomato
+research papers, as 10 node labels (Disease, Pest, Nutrient, Symptom,
+Solution and others) and 36 relationship types. Without it, retrieval returns
+nothing and the assistant says so.
+
+### 5. The agent's model
+
+`PLANTATIO_LLM_MODEL_ID` defaults to `nvidia/Llama-3.1-8B-Instruct-NVFP4`.
+
+> **NVFP4 needs NVIDIA Blackwell tensor cores** (RTX 50-series, B200). On older
+> GPUs or CPU it will not load, and the chat endpoint returns a 503 naming the
+> requirement. Point the variable at a model your hardware can run — for
+> example `meta-llama/Llama-3.1-8B-Instruct` or `Qwen/Qwen2.5-7B-Instruct`.
+
+One model instance serves all four roles (decomposition, text-to-Cypher,
+reasoning, answering) with per-role decoding budgets, loaded on first use so
+the API starts instantly.
+
+### 6. Leaf classifier (optional)
+
+Needs a trained checkpoint. See [`training/README.md`](training/README.md) for
+the dataset layout and the two commands. Until one exists,
+`POST /api/plants/{id}/diagnose` returns 503 pointing at those instructions —
+it will not invent a diagnosis.
+
+### Docker
+
+```bash
+cp .env.example .env
+bash deployment/scripts/start.sh
+```
+
+Brings up the API, the built frontend, Neo4j with a persistent volume, and an
+nginx proxy.
 
 ---
 
-## Penjelasan Folder
+## What this demonstrates
 
-### `backend/`
+- **Knowledge-graph construction** — 62 research papers reduced to 2,061 typed
+  triplets, loaded as a labelled property graph with validated identifiers.
+- **GraphRAG retrieval** — natural language to Cypher with the live schema
+  injected into the prompt, LLM-output repair, an injected `LIMIT`, retry with
+  backoff, and a keyword fallback when the generated query finds nothing.
+- **Agent orchestration** — a four-node LangGraph pipeline over typed state,
+  with retrieval provenance carried through to the UI.
+- **Applied computer vision** — a ResNet-50 transfer-learning classifier with
+  class-weighted loss for an imbalanced dataset, early stopping, and ROC/PR
+  evaluation; plus a VLM scoring satellite imagery into comparable metrics.
+- **Honest ML product design** — every model path degrades explicitly. No
+  capability shows a fabricated result when its model is absent.
+- **Full-stack delivery** — typed end to end, SSR frontend, containerised, with
+  a test suite covering the contracts that previously broke silently.
 
-Layer utama aplikasi server. Menangani seluruh logika backend, mulai dari API hingga eksekusi pipeline.
+---
+
+## Project structure
 
 ```
+api/                 FastAPI app: routes, schemas, ORM, configuration
 backend/
-├── api/            # FastAPI — routes, middleware, schemas, entrypoint (main.py)
-├── core/           # Infrastruktur inti: tracing, logging, graph, state, streaming, decorators, observability
-├── services/       # Business logic services
-│   ├── llm_service.py          # Model inference & Ollama requests
-│   ├── embedding_service.py    # Embedding generation
-│   ├── retrieval_service.py    # Document retrieval orchestration
-│   ├── routing_service.py      # Intent routing & pipeline selection
-│   ├── memory_service.py       # Conversation memory
-│   └── evaluation_service.py   # Evaluation & scoring
-├── pipelines/      # Eksekusi pipeline: main, RAG, agents, evaluation
-├── retrieval/      # Sistem retrieval: vector (ChromaDB/FAISS/Qdrant), graph (Neo4j), hybrid
-├── models/         # Abstraksi model: LLM wrappers & embedding wrappers
-├── database/       # Integrasi database (Neo4j)
-└── configs/        # Konfigurasi YAML: models, prompts, pipelines, logging
+  pipelines/         LangGraph agent, CNN inference, satellite VLM
+  services/          vision diagnosis, land scoring, reference data
+RAG/GRAPHRAG/        knowledge graph: text-to-Cypher, Neo4j, prompts
+  tomat/             62 source research papers
+src/                 React frontend
+training/            CNN training and LLM fine-tuning pipelines
+tests/               pytest suite
+deployment/          Dockerfiles, nginx, scripts
 ```
 
 ---
 
-### `frontend/`
+## Testing
 
-Aplikasi antarmuka pengguna.
+```bash
+python -m pytest tests/ -q     # 44 tests
+npx tsc --noEmit               # typecheck
+npx eslint .                   # lint
+npm run build                  # production build
+```
 
-```
-frontend/
-└── main_app/
-    ├── components/   # Reusable UI components
-    ├── pages/        # Halaman / views
-    ├── services/     # Komunikasi ke backend API
-    ├── utils/        # Fungsi utilitas
-    ├── assets/       # Gambar, ikon, CSS
-    └── app.py        # Entrypoint frontend
-```
+The suite deliberately covers the seams that failed before: that the whole
+import chain resolves, that the chat request contract is what the client
+sends, that the agent runs end to end against injected fakes, that the
+classifier's checkpoint round-trips, and that inference transforms are
+deterministic.
 
 ---
 
-### `training/`
+## Limitations
 
-Sistem fine-tuning dan manajemen dataset.
+Stated plainly, because a portfolio project that overclaims is worse than one
+that does not.
 
-```
-training/
-├── configs/          # Konfigurasi: model, LoRA, dataset
-├── preprocessing/    # Skrip preprocessing dataset
-│   ├── clean_dataset.py        # Cleaning data
-│   ├── chunk_documents.py      # Chunking dokumen
-│   ├── generate_qa_pairs.py    # Generate data QA sintetis
-│   └── build_dataset.py        # Format dataset final
-├── scripts/          # Training scripts: SFT, PPO, DPO, evaluation, exporting
-├── utils/            # Utilities: model loading, GGUF conversion, Ollama export
-├── datasets/
-│   ├── raw/          # Dataset mentah
-│   ├── processed/    # Dataset yang sudah diproses
-│   ├── formatted/    # Dataset berformat instruksi
-│   └── evaluation/   # Dataset untuk evaluasi
-└── outputs/
-    ├── adapters/     # LoRA adapters
-    ├── merged/       # Model hasil merge
-    ├── gguf/         # Model format GGUF
-    ├── checkpoints/  # Training checkpoints
-    ├── runs/         # Experiment runs
-    ├── metrics/      # Metrik training
-    └── logs/         # Log training
-```
+- **Demo data is seeded.** Plants, sensors and land parcels are fixtures around
+  one Jakarta site. Nothing is connected to real telemetry.
+- **The EuroSAT reference labels are synthetic.** `misc/eurosat_vlm_labels.jsonl`
+  was produced by prompting a model that had already been told each tile's
+  class, so the labels are leaked and internally inconsistent. They populate
+  the land-cover legend and tests only — nothing is mapped or measured from
+  them, and the UI says so.
+- **The satellite demo pair is not co-registered.** The 1986/2019 Landsat
+  frames (via Google Earth Timelapse) are different crops of the same terrain,
+  so the comparison is indicative rather than a pixel-level difference.
+- **There is no authentication.** The enterprise console is open.
+- **The knowledge graph covers tomato agronomy only.**
+- **No leaf-classifier weights are distributed.** The architecture is a
+  reconstruction against the training script's checkpoint contract, so a
+  retrain is required.
 
----
+## License
 
-### `deployment/`
-
-Infrastruktur deployment dan orkestrasi container.
-
-```
-deployment/
-├── docker/           # Dockerfiles: backend, frontend, nginx, ollama
-├── nginx/            # Konfigurasi reverse proxy (nginx.conf)
-├── ngrok/            # Konfigurasi tunnel publik (ngrok.yaml, start_ngrok.sh)
-└── scripts/          # Skrip otomasi
-    ├── deploy.sh     # Deploy semua services
-    ├── rebuild.sh    # Rebuild containers
-    ├── start.sh      # Start services
-    └── stop.sh       # Stop services
-```
-
----
-
-### `tests/`
-
-Infrastruktur testing.
-
-```
-tests/
-├── api/          # API endpoint tests
-├── pipelines/    # Pipeline tests
-├── retrieval/    # Retrieval system tests
-├── services/     # Service unit tests
-├── evaluation/   # Evaluation tests
-└── integration/  # End-to-end integration tests
-```
-
----
-
-### `docs/`
-
-Dokumentasi teknis lengkap.
-
-| File | Isi |
-|------|-----|
-| `architecture.md` | Arsitektur sistem |
-| `pipeline.md` | Penjelasan pipeline |
-| `deployment.md` | Panduan deployment |
-| `training.md` | Panduan training |
-| `api.md` | Dokumentasi API |
-| `evaluation.md` | Metodologi evaluasi |
-| `observability.md` | Monitoring & tracing |
-
----
-
-### `notebooks/`
-
-Jupyter notebooks untuk eksperimen, analisis, debugging, dan visualisasi.
-
----
-
-### `outputs/`
-
-Hasil generate dari sistem.
-
-```
-outputs/
-├── reports/           # Laporan generate
-├── analytics/         # Output analitik
-├── exports/           # File ekspor
-├── generated_answer/  # Respons yang dihasilkan
-└── benchmark_results/ # Hasil benchmark
-```
-
----
-
-### `logs/`
-
-Runtime logs per komponen.
-
-```
-logs/
-├── api/         ├── retrieval/   ├── llm/
-├── pipelines/   ├── evaluations/ ├── sessions/
-├── traces/      ├── errors/      └── archive/
-```
-
----
-
-### `models/`
-
-Penyimpanan model lokal: base models, quantized models, GGUF models, exported models.
-
----
-
-### File Root
-
-| File | Fungsi |
-|------|--------|
-| `docker-compose.yaml` | Orkestrasi container: backend, frontend, ollama, database, nginx |
-| `.env` | Environment variables: API keys, paths, model names, credentials |
-| `.gitignore` | Mengecualikan: models, checkpoints, logs, venv, datasets |
-| `LICENSE` | Lisensi proyek |
-| `README.md` | Dokumentasi ini |
-
----
-
-## Catatan Arsitektur
-
-Workspace ini dirancang untuk scale dari proyek personal hingga enterprise AI applications.
-
-Arsitektur memisahkan komponen secara eksplisit:
-
-```
-inference  ·  orchestration  ·  retrieval
-training   ·  deployment     ·  evaluation  ·  observability
-```
-
-Tujuannya agar sistem tetap **modular**, **maintainable**, **scalable**, dan **production-ready**.
+MIT — see [LICENSE](LICENSE).

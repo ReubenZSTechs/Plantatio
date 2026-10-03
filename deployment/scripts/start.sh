@@ -1,10 +1,13 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# Build and start the full local stack.
+set -euo pipefail
+cd "$(dirname "$0")/../.."
 
-echo "Starting full LLM system..."
+[ -f .env ] || { echo "No .env found. Copy .env.example to .env first."; exit 1; }
 
-docker-compose up -d --build
+docker compose up -d --build
 
-echo "System running:"
-echo "Frontend: http://localhost:8501"
-echo "Backend: http://localhost:8000"
-echo "Nginx: http://localhost:80"
+echo "Web      http://localhost:8080"
+echo "API      http://localhost:8000/docs"
+echo "Neo4j    http://localhost:7474"
+echo "Proxy    http://localhost"

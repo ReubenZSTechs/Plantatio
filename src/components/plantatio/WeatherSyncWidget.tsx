@@ -1,9 +1,16 @@
 import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
+import { API_BASE_URL } from "@/lib/api";
 import { Cloud, CloudRain, Sun, AlertTriangle } from "lucide-react";
 
 const iconFor = (k: string) =>
-  k === "rain" ? <CloudRain className="h-4 w-4" /> : k === "cloud" ? <Cloud className="h-4 w-4" /> : <Sun className="h-4 w-4" />;
+  k === "rain" ? (
+    <CloudRain className="h-4 w-4" />
+  ) : k === "cloud" ? (
+    <Cloud className="h-4 w-4" />
+  ) : (
+    <Sun className="h-4 w-4" />
+  );
 
 interface ForecastItem {
   day: string;
@@ -34,12 +41,12 @@ export function WeatherSyncWidget() {
       try {
         // Mengambil data dari kedua API secara bersamaan
         const [weatherRes, alertRes] = await Promise.all([
-          fetch("http://localhost:8000/api/v1/weather/macro"),
-          fetch("http://localhost:8000/api/v1/weather/alert")
+          fetch(`${API_BASE_URL}/v1/weather/macro`),
+          fetch(`${API_BASE_URL}/v1/weather/alert`),
         ]);
 
         if (!weatherRes.ok || !alertRes.ok) {
-          throw new Error("Gagal mengambil data dari server");
+          throw new Error("Could not load conditions from the server");
         }
 
         const weatherData = await weatherRes.json();
@@ -67,21 +74,23 @@ export function WeatherSyncWidget() {
 
   return (
     <Card className="overflow-hidden">
-      <div
-        className="p-5 text-primary-foreground"
-        style={{ background: "var(--gradient-hero)" }}
-      >
+      <div className="p-5 text-on-hero" style={{ background: "var(--gradient-hero)" }}>
         <div className="flex items-center justify-between">
           <div>
             <div className="text-xs uppercase tracking-wide opacity-80">{weather.city}</div>
             <div className="text-4xl font-semibold">{weather.tempC}°</div>
-            <div className="text-sm opacity-90">{weather.condition} · {weather.humidity}% humidity</div>
+            <div className="text-sm opacity-90">
+              {weather.condition} · {weather.humidity}% humidity
+            </div>
           </div>
           <Sun className="h-12 w-12 opacity-90" />
         </div>
         <div className="mt-4 grid grid-cols-5 gap-2">
           {weather.forecast.map((d) => (
-            <div key={d.day} className="rounded-lg bg-white/15 p-2 text-center text-xs backdrop-blur-sm">
+            <div
+              key={d.day}
+              className="rounded-lg bg-white/15 p-2 text-center text-xs backdrop-blur-sm"
+            >
               <div className="opacity-80">{d.day}</div>
               <div className="my-1 flex justify-center">{iconFor(d.icon)}</div>
               <div className="font-medium">{d.tempC}°</div>
@@ -89,7 +98,7 @@ export function WeatherSyncWidget() {
           ))}
         </div>
       </div>
-      
+
       {/* Tampilkan bagian alert hanya jika data alert berhasil diambil dari API */}
       {alert && (
         <div className="flex gap-3 border-l-4 border-warning bg-warning/10 p-4">

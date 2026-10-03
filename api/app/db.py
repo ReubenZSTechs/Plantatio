@@ -1,38 +1,45 @@
+"""SQLAlchemy models, engine and session management for the Plantatio API."""
+
 import datetime
+
 from sqlalchemy import (
     create_engine, Column, BigInteger, Integer, String,
     Float, DateTime, ForeignKey, Text
 )
+from sqlalchemy.dialects import postgresql
 from sqlalchemy.orm import declarative_base, sessionmaker, relationship
-from urllib.parse import quote_plus
 
-# ── Konfigurasi Database (Supabase Transaction Pooler) ─────────────────────────
-raw_password = "PlantatioP4ss1231"          # password BARU
-project_ref = "bfuzqnvyauqxudqmczmq"
-db_user = f"postgres.{project_ref}"
+from app.config import settings
 
-encoded_password = quote_plus(str(raw_password))
+DATABASE_URL = settings.database_url
 
-DATABASE_URL = (
-    "postgresql+psycopg2://"
-    f"{db_user}:{encoded_password}"
-    "@aws-1-ap-northeast-1.pooler.supabase.com:6543/postgres"
-    "?sslmode=require"
-)
 
 # ── SQLAlchemy Engine ─────────────────────────────────────────────────────────
-engine = create_engine(
-    DATABASE_URL,
-    pool_pre_ping=True,
-    pool_size=5,        # aman untuk pooler
-    max_overflow=10,
-)
+_engine_options: dict = {"pool_pre_ping": True}
+if DATABASE_URL.startswith("sqlite"):
+    _engine_options["connect_args"] = {"check_same_thread": False}
+else:
+    _engine_options.update(pool_size=5, max_overflow=10)
+
+engine = create_engine(DATABASE_URL, **_engine_options)
 
 SessionLocal = sessionmaker(
     autocommit=False,
     autoflush=False,
     bind=engine,
 )
+
+# SQLite only auto-increments INTEGER PRIMARY KEY, not BIGINT, so a plain
+# BigInteger surrogate key fails to insert there. Using a variant keeps 64-bit
+# ids on Postgres while staying portable for local runs and tests.
+PrimaryKey = BigInteger().with_variant(Integer, "sqlite")
+ForeignKeyType = BigInteger().with_variant(Integer, "sqlite")
+
+
+def _utc_now() -> datetime.datetime:
+    """Current UTC time, used as the default for timestamp columns."""
+    return datetime.datetime.now(datetime.timezone.utc)
+
 
 Base = declarative_base()
 
@@ -41,27 +48,27 @@ Base = declarative_base()
 class ChatLog(Base):
     __tablename__ = "chat_logs"
 
-    id = Column(BigInteger, primary_key=True, index=True, autoincrement=True)
-    plant_id = Column(BigInteger, ForeignKey("plants.id"), nullable=True)
+    id = Column(PrimaryKey, primary_key=True, index=True, autoincrement=True)
+    plant_id = Column(ForeignKeyType, ForeignKey("plants.id"), nullable=True)
     user_message = Column(Text, nullable=False)
     bot_response = Column(Text, nullable=False)
-    timestamp = Column(DateTime, default=datetime.datetime.utcnow)
+    timestamp = Column(DateTime, default=_utc_now)
 
 
 class WeatherLog(Base):
     __tablename__ = "weather_logs"
 
-    id = Column(BigInteger, primary_key=True, index=True, autoincrement=True)
+    id = Column(PrimaryKey, primary_key=True, index=True, autoincrement=True)
     city = Column(String(100), nullable=False)
     tempC = Column(Float, nullable=False)
     condition = Column(String(100), nullable=False)
-    timestamp = Column(DateTime, default=datetime.datetime.utcnow)
+    timestamp = Column(DateTime, default=_utc_now)
 
 
 class PlantDB(Base):
     __tablename__ = "plants"
 
-    id = Column(BigInteger, primary_key=True, index=True, autoincrement=True)
+    id = Column(PrimaryKey, primary_key=True, index=True, autoincrement=True)
     nickname = Column(String(100), nullable=False)
     species = Column(String(200), default="")
     image = Column(Text, default="")
@@ -85,8 +92,8 @@ class PlantDB(Base):
 class ProbeDataDB(Base):
     __tablename__ = "probe_data"
 
-    id = Column(BigInteger, primary_key=True, index=True, autoincrement=True)
-    plant_id = Column(BigInteger, ForeignKey("plants.id"), unique=True)
+    id = Column(PrimaryKey, primary_key=True, index=True, autoincrement=True)
+    plant_id = Column(ForeignKeyType, ForeignKey("plants.id"), unique=True)
     moisture = Column(Float, default=50.0)
     nutrients = Column(Float, default=50.0)
     light = Column(Float, default=60.0)
@@ -98,8 +105,8 @@ class ProbeDataDB(Base):
 class TimelineEventDB(Base):
     __tablename__ = "timeline_events"
 
-    id = Column(BigInteger, primary_key=True, index=True, autoincrement=True)
-    plant_id = Column(BigInteger, ForeignKey("plants.id"))
+    id = Column(PrimaryKey, primary_key=True, index=True, autoincrement=True)
+    plant_id = Column(ForeignKeyType, ForeignKey("plants.id"))
     date = Column(String(50), nullable=False)
     event = Column(String(200), nullable=False)
     note = Column(Text, nullable=False)
@@ -113,7 +120,7 @@ class ScannedItemDB(Base):
 
     # ID tetap String karena frontend pakai format seperti "PRB-1234"
     id = Column(String(50), primary_key=True, index=True)
-    plant_id = Column(BigInteger, ForeignKey("plants.id"))
+    plant_id = Column(ForeignKeyType, ForeignKey("plants.id"))
     category = Column(String(50), nullable=False)
     name = Column(String(200), nullable=False)
     brand = Column(String(200), nullable=True)
@@ -146,17 +153,62 @@ class IotNodeDB(Base):
 class TacticalLogDB(Base):
     __tablename__ = "tactical_logs"
 
-    id = Column(BigInteger, primary_key=True, index=True, autoincrement=True)
+    id = Column(PrimaryKey, primary_key=True, index=True, autoincrement=True)
     time = Column(String(10), nullable=False)
     action = Column(Text, nullable=False)
     severity = Column(String(20), default="info")
 
 
+class LandParcelDB(Base):
+    """A candidate restoration site.
+
+    Geometry is stored as a GeoJSON Polygon so a parcel describes an area
+    rather than a point; the IoT node tables remain point-based.
+    """
+
+    __tablename__ = "land_parcels"
+
+    id = Column(PrimaryKey, primary_key=True, index=True, autoincrement=True)
+    name = Column(String(120), nullable=False)
+    zone = Column(String(80))
+    geometry = Column(Text, nullable=False)
+    centroid_latitude = Column(Float, nullable=False)
+    centroid_longitude = Column(Float, nullable=False)
+    area_hectares = Column(Float)
+    land_cover_class = Column(String(80))
+    vegetation_density = Column(String(50))
+    canopy_cover = Column(Float)
+    est_biomass = Column(Float)
+    carbon_eq = Column(Float)
+    restoration_quality = Column(String(50))
+    confidence = Column(Float)
+    restoration_potential = Column(Float, index=True)
+    analyzed_at = Column(DateTime)
+    created_at = Column(DateTime, default=_utc_now)
+
+
+class DiagnosisLogDB(Base):
+    """A stored leaf-disease classification for one plant."""
+
+    __tablename__ = "diagnosis_logs"
+
+    id = Column(PrimaryKey, primary_key=True, index=True, autoincrement=True)
+    plant_id = Column(ForeignKeyType, ForeignKey("plants.id"))
+    top_class = Column(String(120), nullable=False)
+    label = Column(String(120))
+    confidence = Column(Float)
+    is_defective = Column(Integer, default=0)
+    health_score = Column(Float)
+    summary = Column(Text)
+    timestamp = Column(DateTime, default=_utc_now)
+
+
 class SatelliteAnalysisLogDB(Base):
     __tablename__ = "satellite_analysis_logs"
 
-    id = Column(BigInteger, primary_key=True, index=True, autoincrement=True)
+    id = Column(PrimaryKey, primary_key=True, index=True, autoincrement=True)
     image_path = Column(Text, nullable=False)
+    pre_image_path = Column(Text)
     class_name = Column(String(100), nullable=False)
     vegetation_density = Column(String(50))
     canopy_cover = Column(Float)
@@ -164,17 +216,25 @@ class SatelliteAnalysisLogDB(Base):
     carbon_eq = Column(Float)
     restoration_quality = Column(String(50))
     confidence = Column(Float)
-    timestamp = Column(DateTime, default=datetime.datetime.utcnow)
+    canopy_cover_change = Column(Float)
+    biomass_change = Column(Float)
+    carbon_change = Column(Float)
+    timestamp = Column(DateTime, default=_utc_now)
 
 
-# ── Buat Semua Tabel (jalankan sekali saat startup) ────────────────────────────
-Base.metadata.create_all(bind=engine)
+# ── Schema and session helpers ────────────────────────────────────────────────
 
+def create_tables() -> None:
+    """Create any missing tables.
 
-# ── Utilitas ───────────────────────────────────────────────────────────────────
+    Called from the application lifespan rather than at import, so importing
+    this module never opens a database connection.
+    """
+    Base.metadata.create_all(bind=engine)
+
 
 def get_db():
-    """Dependency injection untuk FastAPI route."""
+    """Yield a request-scoped session, closing it when the request ends."""
     db = SessionLocal()
     try:
         yield db
@@ -182,9 +242,69 @@ def get_db():
         db.close()
 
 
+def seed_land_parcels(db) -> int:
+    """Create demo restoration parcels around the monitored site.
+
+    Anchored to the same Jakarta coordinates as the seeded IoT fleet, so the
+    map shows parcels and sensors in one coherent place. The EuroSAT corpus in
+    misc/ supplies the land-cover vocabulary but carries no coordinates, so it
+    is not used to place anything.
+    """
+    from backend.services.land_service import (
+        geometry_to_json, polygon_area_hectares, polygon_centroid,
+        restoration_potential, square_around,
+    )
+
+    if db.query(LandParcelDB).first():
+        return 0
+
+    # (name, zone, lat, lon, size_m, land cover, canopy, biomass, carbon, confidence)
+    demo_parcels = [
+        ("Northern Grazing Strip", "North Sector A", -6.1746, 106.8285, 900,
+         "Pasture", 0.08, 0.12, 0.05, 0.88),
+        ("Southern Scrub Margin", "South Sector B", -6.1792, 106.8198, 750,
+         "HerbaceousVegetation", 0.18, 0.22, 0.11, 0.81),
+        ("Riverside Buffer", "South Sector B", -6.1771, 106.8232, 500,
+         "River", 0.05, 0.08, 0.03, 0.74),
+        ("East Field Rotation", "East Sector C", -6.1733, 106.8321, 1100,
+         "AnnualCrop", 0.26, 0.34, 0.18, 0.86),
+        ("Greenhouse Verge", "Main Greenhouse", -6.1714, 106.8296, 400,
+         "PermanentCrop", 0.42, 0.48, 0.3, 0.79),
+        ("Established Woodlot", "North Sector A", -6.1709, 106.8258, 850,
+         "Forest", 0.88, 0.91, 0.76, 0.93),
+    ]
+
+    for (name, zone, lat, lon, size, cover, canopy, biomass, carbon, confidence) in demo_parcels:
+        geometry = square_around(lat, lon, size)
+        ring = geometry["coordinates"][0]
+        centroid_lat, centroid_lon = polygon_centroid(ring)
+        score = restoration_potential(cover, canopy, confidence)
+
+        db.add(LandParcelDB(
+            name=name,
+            zone=zone,
+            geometry=geometry_to_json(geometry),
+            centroid_latitude=centroid_lat,
+            centroid_longitude=centroid_lon,
+            area_hectares=polygon_area_hectares(ring),
+            land_cover_class=cover,
+            vegetation_density="high" if canopy > 0.6 else "medium" if canopy > 0.2 else "low",
+            canopy_cover=canopy,
+            est_biomass=biomass,
+            carbon_eq=carbon,
+            restoration_quality="strong" if canopy > 0.6 else "moderate" if canopy > 0.2 else "poor",
+            confidence=confidence,
+            restoration_potential=score.value,
+        ))
+
+    db.commit()
+    return len(demo_parcels)
+
+
 def init_seed_data():
-    """Isi data awal jika tabel masih kosong."""
+    """Populate demo rows for any table that is still empty."""
     db = SessionLocal()
+    seed_land_parcels(db)
 
     # Seed Plant
     if not db.query(PlantDB).filter(PlantDB.id == 1).first():
@@ -203,24 +323,24 @@ def init_seed_data():
             light=80.0, temperature=26.0
         ))
         db.add_all([
-            TimelineEventDB(plant_id=1, date="10 Oct", event="Ditanam", note="Bibit dipindahkan ke pot"),
-            TimelineEventDB(plant_id=1, date="12 Oct", event="Disiram", note="Penyiraman pertama"),
+            TimelineEventDB(plant_id=1, date="10 Oct", event="Planted", note="Seedling moved into its pot"),
+            TimelineEventDB(plant_id=1, date="12 Oct", event="Watered", note="First watering"),
         ])
         db.commit()
 
     # Seed IoT Nodes
     if not db.query(IotNodeDB).first():
         db.add_all([
-            IotNodeDB(id="NODE-1042", zone="Sektor A - Utara",   battery=85, moisture=62, status="ok",       latitude=-6.1754, longitude=106.8272),
-            IotNodeDB(id="NODE-2199", zone="Sektor B - Selatan", battery=12, moisture=28, status="critical", latitude=-6.1780, longitude=106.8210),
-            IotNodeDB(id="NODE-3011", zone="Greenhouse Utama",   battery=45, moisture=50, status="warn",     latitude=-6.1720, longitude=106.8300),
+            IotNodeDB(id="NODE-1042", zone="North Sector A",   battery=85, moisture=62, status="ok",       latitude=-6.1754, longitude=106.8272),
+            IotNodeDB(id="NODE-2199", zone="South Sector B", battery=12, moisture=28, status="critical", latitude=-6.1780, longitude=106.8210),
+            IotNodeDB(id="NODE-3011", zone="Main Greenhouse",   battery=45, moisture=50, status="warn",     latitude=-6.1720, longitude=106.8300),
         ])
         db.commit()
 
     # Seed Tactical Logs
     if not db.query(TacticalLogDB).first():
         db.add_all([
-            TacticalLogDB(time="10:42", action="Auto-adjust irrigation Sektor B",  severity="info"),
+            TacticalLogDB(time="10:42", action="Auto-adjusted irrigation in South Sector B",  severity="info"),
             TacticalLogDB(time="11:15", action="Flagged NODE-2199 battery low",    severity="warn"),
             TacticalLogDB(time="11:30", action="Halted fertigation (High wind risk)", severity="critical"),
         ])

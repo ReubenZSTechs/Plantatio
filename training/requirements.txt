@@ -63,3 +63,7 @@ mistral-common
 # OPTIONAL EXPERIMENT TRACKING
 # =========================================================
 tensorboard
+
+# Imported by training/scripts/train_cnn.py
+matplotlib
+seaborn

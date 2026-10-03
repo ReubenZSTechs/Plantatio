@@ -13,7 +13,14 @@ import { Route as B2cRouteImport } from './routes/b2c'
 import { Route as B2bRouteImport } from './routes/b2b'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as GardenIndexRouteImport } from './routes/garden.index'
+import { Route as B2bIndexRouteImport } from './routes/b2b.index'
 import { Route as GardenPlantIdRouteImport } from './routes/garden.$plantId'
+import { Route as B2bPredictionsRouteImport } from './routes/b2b.predictions'
+import { Route as B2bMapRouteImport } from './routes/b2b.map'
+import { Route as B2bInsightsRouteImport } from './routes/b2b.insights'
+import { Route as B2bGreenLandsRouteImport } from './routes/b2b.green-lands'
+import { Route as B2bEsgRouteImport } from './routes/b2b.esg'
+import { Route as B2bDevicesRouteImport } from './routes/b2b.devices'
 
 const B2cRoute = B2cRouteImport.update({
   id: '/b2c',
@@ -35,45 +42,136 @@ const GardenIndexRoute = GardenIndexRouteImport.update({
   path: '/garden/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const B2bIndexRoute = B2bIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => B2bRoute,
+} as any)
 const GardenPlantIdRoute = GardenPlantIdRouteImport.update({
   id: '/garden/$plantId',
   path: '/garden/$plantId',
   getParentRoute: () => rootRouteImport,
 } as any)
+const B2bPredictionsRoute = B2bPredictionsRouteImport.update({
+  id: '/predictions',
+  path: '/predictions',
+  getParentRoute: () => B2bRoute,
+} as any)
+const B2bMapRoute = B2bMapRouteImport.update({
+  id: '/map',
+  path: '/map',
+  getParentRoute: () => B2bRoute,
+} as any)
+const B2bInsightsRoute = B2bInsightsRouteImport.update({
+  id: '/insights',
+  path: '/insights',
+  getParentRoute: () => B2bRoute,
+} as any)
+const B2bGreenLandsRoute = B2bGreenLandsRouteImport.update({
+  id: '/green-lands',
+  path: '/green-lands',
+  getParentRoute: () => B2bRoute,
+} as any)
+const B2bEsgRoute = B2bEsgRouteImport.update({
+  id: '/esg',
+  path: '/esg',
+  getParentRoute: () => B2bRoute,
+} as any)
+const B2bDevicesRoute = B2bDevicesRouteImport.update({
+  id: '/devices',
+  path: '/devices',
+  getParentRoute: () => B2bRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/b2b': typeof B2bRoute
+  '/b2b': typeof B2bRouteWithChildren
   '/b2c': typeof B2cRoute
+  '/b2b/devices': typeof B2bDevicesRoute
+  '/b2b/esg': typeof B2bEsgRoute
+  '/b2b/green-lands': typeof B2bGreenLandsRoute
+  '/b2b/insights': typeof B2bInsightsRoute
+  '/b2b/map': typeof B2bMapRoute
+  '/b2b/predictions': typeof B2bPredictionsRoute
   '/garden/$plantId': typeof GardenPlantIdRoute
+  '/b2b/': typeof B2bIndexRoute
   '/garden/': typeof GardenIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/b2b': typeof B2bRoute
   '/b2c': typeof B2cRoute
+  '/b2b/devices': typeof B2bDevicesRoute
+  '/b2b/esg': typeof B2bEsgRoute
+  '/b2b/green-lands': typeof B2bGreenLandsRoute
+  '/b2b/insights': typeof B2bInsightsRoute
+  '/b2b/map': typeof B2bMapRoute
+  '/b2b/predictions': typeof B2bPredictionsRoute
   '/garden/$plantId': typeof GardenPlantIdRoute
+  '/b2b': typeof B2bIndexRoute
   '/garden': typeof GardenIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/b2b': typeof B2bRoute
+  '/b2b': typeof B2bRouteWithChildren
   '/b2c': typeof B2cRoute
+  '/b2b/devices': typeof B2bDevicesRoute
+  '/b2b/esg': typeof B2bEsgRoute
+  '/b2b/green-lands': typeof B2bGreenLandsRoute
+  '/b2b/insights': typeof B2bInsightsRoute
+  '/b2b/map': typeof B2bMapRoute
+  '/b2b/predictions': typeof B2bPredictionsRoute
   '/garden/$plantId': typeof GardenPlantIdRoute
+  '/b2b/': typeof B2bIndexRoute
   '/garden/': typeof GardenIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/b2b' | '/b2c' | '/garden/$plantId' | '/garden/'
+  fullPaths:
+    | '/'
+    | '/b2b'
+    | '/b2c'
+    | '/b2b/devices'
+    | '/b2b/esg'
+    | '/b2b/green-lands'
+    | '/b2b/insights'
+    | '/b2b/map'
+    | '/b2b/predictions'
+    | '/garden/$plantId'
+    | '/b2b/'
+    | '/garden/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/b2b' | '/b2c' | '/garden/$plantId' | '/garden'
-  id: '__root__' | '/' | '/b2b' | '/b2c' | '/garden/$plantId' | '/garden/'
+  to:
+    | '/'
+    | '/b2c'
+    | '/b2b/devices'
+    | '/b2b/esg'
+    | '/b2b/green-lands'
+    | '/b2b/insights'
+    | '/b2b/map'
+    | '/b2b/predictions'
+    | '/garden/$plantId'
+    | '/b2b'
+    | '/garden'
+  id:
+    | '__root__'
+    | '/'
+    | '/b2b'
+    | '/b2c'
+    | '/b2b/devices'
+    | '/b2b/esg'
+    | '/b2b/green-lands'
+    | '/b2b/insights'
+    | '/b2b/map'
+    | '/b2b/predictions'
+    | '/garden/$plantId'
+    | '/b2b/'
+    | '/garden/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  B2bRoute: typeof B2bRoute
+  B2bRoute: typeof B2bRouteWithChildren
   B2cRoute: typeof B2cRoute
   GardenPlantIdRoute: typeof GardenPlantIdRoute
   GardenIndexRoute: typeof GardenIndexRoute
@@ -109,6 +207,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GardenIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/b2b/': {
+      id: '/b2b/'
+      path: '/'
+      fullPath: '/b2b/'
+      preLoaderRoute: typeof B2bIndexRouteImport
+      parentRoute: typeof B2bRoute
+    }
     '/garden/$plantId': {
       id: '/garden/$plantId'
       path: '/garden/$plantId'
@@ -116,12 +221,76 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GardenPlantIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/b2b/predictions': {
+      id: '/b2b/predictions'
+      path: '/predictions'
+      fullPath: '/b2b/predictions'
+      preLoaderRoute: typeof B2bPredictionsRouteImport
+      parentRoute: typeof B2bRoute
+    }
+    '/b2b/map': {
+      id: '/b2b/map'
+      path: '/map'
+      fullPath: '/b2b/map'
+      preLoaderRoute: typeof B2bMapRouteImport
+      parentRoute: typeof B2bRoute
+    }
+    '/b2b/insights': {
+      id: '/b2b/insights'
+      path: '/insights'
+      fullPath: '/b2b/insights'
+      preLoaderRoute: typeof B2bInsightsRouteImport
+      parentRoute: typeof B2bRoute
+    }
+    '/b2b/green-lands': {
+      id: '/b2b/green-lands'
+      path: '/green-lands'
+      fullPath: '/b2b/green-lands'
+      preLoaderRoute: typeof B2bGreenLandsRouteImport
+      parentRoute: typeof B2bRoute
+    }
+    '/b2b/esg': {
+      id: '/b2b/esg'
+      path: '/esg'
+      fullPath: '/b2b/esg'
+      preLoaderRoute: typeof B2bEsgRouteImport
+      parentRoute: typeof B2bRoute
+    }
+    '/b2b/devices': {
+      id: '/b2b/devices'
+      path: '/devices'
+      fullPath: '/b2b/devices'
+      preLoaderRoute: typeof B2bDevicesRouteImport
+      parentRoute: typeof B2bRoute
+    }
   }
 }
 
+interface B2bRouteChildren {
+  B2bDevicesRoute: typeof B2bDevicesRoute
+  B2bEsgRoute: typeof B2bEsgRoute
+  B2bGreenLandsRoute: typeof B2bGreenLandsRoute
+  B2bInsightsRoute: typeof B2bInsightsRoute
+  B2bMapRoute: typeof B2bMapRoute
+  B2bPredictionsRoute: typeof B2bPredictionsRoute
+  B2bIndexRoute: typeof B2bIndexRoute
+}
+
+const B2bRouteChildren: B2bRouteChildren = {
+  B2bDevicesRoute: B2bDevicesRoute,
+  B2bEsgRoute: B2bEsgRoute,
+  B2bGreenLandsRoute: B2bGreenLandsRoute,
+  B2bInsightsRoute: B2bInsightsRoute,
+  B2bMapRoute: B2bMapRoute,
+  B2bPredictionsRoute: B2bPredictionsRoute,
+  B2bIndexRoute: B2bIndexRoute,
+}
+
+const B2bRouteWithChildren = B2bRoute._addFileChildren(B2bRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  B2bRoute: B2bRoute,
+  B2bRoute: B2bRouteWithChildren,
   B2cRoute: B2cRoute,
   GardenPlantIdRoute: GardenPlantIdRoute,
   GardenIndexRoute: GardenIndexRoute,

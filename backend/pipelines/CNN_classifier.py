@@ -1,109 +1,155 @@
+"""Inference for the tomato leaf-disease classifier.
+
+Loads a checkpoint written by ``training/scripts/train_cnn.py`` and classifies
+single images or whole folders. The model is cached per checkpoint path so a
+server can call ``predict_image`` repeatedly without reloading weights.
+"""
+
+from __future__ import annotations
+
 import argparse
+import json
+import logging
 import os
+from functools import lru_cache
+from pathlib import Path
+
 import torch
 from PIL import Image
 
+from training.configs.datasets.cnn_DataLoader import eval_transform
 from training.configs.models.CNN_model import Model
-from training.configs.datasets.cnn_DataLoader import transform
+
+logger = logging.getLogger(__name__)
+
+DEFAULT_CHECKPOINT = Path("models/plant_CNN_classifier_model.pth")
+
+# Hyperparameters the checkpoint stores for rebuilding the network.
+_CONFIG_KEYS = (
+    "output_head", "out1", "out2", "hidden1", "hidden2", "hidden3",
+    "dropout1", "dropout2", "dropout3", "resnet50_use",
+)
 
 
-# =========================
-# DEVICE
-# =========================
-DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+class CheckpointMissing(FileNotFoundError):
+    """Raised when no trained classifier is available."""
 
 
-# =========================
-# LOAD MODEL
-# =========================
-def load_model(model_path):
-    checkpoint = torch.load(model_path, map_location=DEVICE)
+def _device() -> torch.device:
+    return torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    model = Model(output_head=checkpoint["config"]["output_head"])
+
+@lru_cache(maxsize=2)
+def load_model(model_path: str | Path = DEFAULT_CHECKPOINT) -> tuple[Model, list[str]]:
+    """Load a checkpoint and return (model, class_names).
+
+    Args:
+        model_path: Path to a checkpoint produced by the training script.
+
+    Returns:
+        The model in eval mode, and the class names in label-index order.
+
+    Raises:
+        CheckpointMissing: If no checkpoint exists at `model_path`.
+    """
+    path = Path(model_path)
+    if not path.is_file():
+        raise CheckpointMissing(
+            f"No classifier checkpoint at {path}. Train one with "
+            "`python -m training.scripts.train_cnn`, or set "
+            "PLANTATIO_CNN_CHECKPOINT to an existing file."
+        )
+
+    device = _device()
+    # weights_only defaults to True from PyTorch 2.6 and would reject the
+    # config dict this checkpoint stores alongside the tensors.
+    checkpoint = torch.load(path, map_location=device, weights_only=False)
+
+    config = checkpoint.get("config", {})
+    # Every stored hyperparameter is passed through; using only output_head
+    # produced a shape mismatch for any non-default checkpoint.
+    kwargs = {key: config[key] for key in _CONFIG_KEYS if key in config}
+
+    model = Model(**kwargs, pretrained=False)
     model.load_state_dict(checkpoint["state_dict"])
+    model.to(device).eval()
 
-    model.to(DEVICE)
-    model.eval()
+    class_names = checkpoint.get("class_names") or [
+        str(index) for index in range(model.output_head)
+    ]
 
-    return model
+    logger.info("Loaded classifier from %s with %d classes.", path, len(class_names))
+    return model, class_names
 
 
-# =========================
-# PREDICT SINGLE IMAGE
-# =========================
-def predict_image(model, image_path, topk=3):
-    image = Image.open(image_path).convert("RGB")
-    x = transform(image).unsqueeze(0).to(DEVICE)
+def predict_image(image: Image.Image | str | Path, model_path: str | Path = DEFAULT_CHECKPOINT,
+                  topk: int = 3) -> list[dict]:
+    """Classify one image.
+
+    Args:
+        image: A PIL image, or a path to one.
+        model_path: Checkpoint to use.
+        topk: How many ranked predictions to return.
+
+    Returns:
+        Ranked predictions, each ``{"class_id", "class_name", "confidence"}``.
+    """
+    model, class_names = load_model(model_path)
+
+    pil_image = image if isinstance(image, Image.Image) else Image.open(image)
+    tensor = eval_transform(pil_image.convert("RGB")).unsqueeze(0).to(_device())
 
     with torch.no_grad():
-        outputs = model(x)
-        probs = torch.softmax(outputs, dim=1)[0]
+        probabilities = torch.softmax(model(tensor), dim=1)[0]
 
-        top_probs, top_idxs = torch.topk(probs, topk)
+    count = min(topk, probabilities.numel())
+    scores, indices = torch.topk(probabilities, count)
 
-    results = []
-    for i in range(topk):
-        results.append({
-            "class_id": top_idxs[i].item(),
-            "confidence": top_probs[i].item()
-        })
-
-    return results
-
-
-# =========================
-# PREDICT FOLDER
-# =========================
-def predict_folder(model, folder_path, topk=3):
-    results = {}
-
-    for file in os.listdir(folder_path):
-        if file.lower().endswith((".jpg", ".jpeg", ".png")):
-            path = os.path.join(folder_path, file)
-            results[file] = predict_image(model, path, topk)
-
-    return results
+    return [
+        {
+            "class_id": int(index),
+            "class_name": class_names[int(index)] if int(index) < len(class_names) else str(int(index)),
+            "confidence": float(score),
+        }
+        for score, index in zip(scores, indices)
+    ]
 
 
-# =========================
-# MAIN
-# =========================
-def main():
-    parser = argparse.ArgumentParser(description="CNN Inference Script")
+def predict_folder(folder_path: str | Path, model_path: str | Path = DEFAULT_CHECKPOINT,
+                   topk: int = 3) -> dict[str, list[dict]]:
+    """Classify every image in a folder, keyed by filename."""
+    folder = Path(folder_path)
+    suffixes = {".jpg", ".jpeg", ".png"}
 
-    parser.add_argument("--model", type=str, default="models/plant_CNN_classifier_model.pth")
-    parser.add_argument("--image", type=str, help="Path to image")
-    parser.add_argument("--folder", type=str, help="Path to folder of images")
-    parser.add_argument("--topk", type=int, default=3, help="Top-K predictions")
+    return {
+        entry.name: predict_image(entry, model_path, topk)
+        for entry in sorted(folder.iterdir())
+        if entry.suffix.lower() in suffixes
+    }
 
+
+def main() -> None:
+    logging.basicConfig(level=logging.INFO, format="%(levelname)-8s %(message)s")
+
+    parser = argparse.ArgumentParser(description="Classify tomato leaf images")
+    parser.add_argument(
+        "--model",
+        default=os.getenv("PLANTATIO_CNN_CHECKPOINT", str(DEFAULT_CHECKPOINT)),
+    )
+    parser.add_argument("--image", help="Path to a single image")
+    parser.add_argument("--folder", help="Path to a folder of images")
+    parser.add_argument("--topk", type=int, default=3)
     args = parser.parse_args()
 
-    model = load_model(args.model)
+    if not args.image and not args.folder:
+        parser.error("provide --image or --folder")
 
-    # =========================
-    # SINGLE IMAGE MODE
-    # =========================
     if args.image:
-        results = predict_image(model, args.image, args.topk)
-
-        print("\n=== PREDICTION ===")
-        for r in results:
-            print(f"Class ID: {r['class_id']} | Confidence: {r['confidence']:.4f}")
-
-    # =========================
-    # FOLDER MODE
-    # =========================
-    elif args.folder:
-        results = predict_folder(model, args.folder, args.topk)
-
-        print("\n=== BATCH PREDICTION ===")
-        for img_name, preds in results.items():
-            print(f"\n{img_name}")
-            for p in preds:
-                print(f"  Class ID: {p['class_id']} | Confidence: {p['confidence']:.4f}")
-
+        result = predict_image(args.image, args.model, args.topk)
     else:
-        print("Please provide --image or --folder")
+        result = predict_folder(args.folder, args.model, args.topk)
+
+    print(json.dumps(result, indent=2))
 
 
 if __name__ == "__main__":

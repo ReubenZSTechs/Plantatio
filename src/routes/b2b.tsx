@@ -1,18 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
+
 import { B2BMainLayout } from "@/components/plantatio/B2BMainLayout";
-import { Toaster } from "@/components/ui/sonner";
 
 export const Route = createFileRoute("/b2b")({
-  component: () => (
-    <>
-      <B2BMainLayout />
-      <Toaster />
-    </>
-  ),
+  component: B2BMainLayout,
   head: () => ({
     meta: [
-      { title: "PLANTATIO B2B — ESG Orchestration" },
-      { name: "description", content: "Enterprise restoration dashboard, IoT orchestration, and audited ESG reporting." },
+      { title: "Plantatio for Enterprise — restoration and ESG" },
+      {
+        name: "description",
+        content:
+          "Satellite restoration audits, green-land discovery, IoT orchestration and ESG reporting.",
+      },
     ],
   }),
 });
