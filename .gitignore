@@ -12,6 +12,9 @@ venv/
 node_modules/
 .vite/
 .tanstack/
+dist/
+.output/
+.wrangler/
 
 # ── Secrets ───────────────────────────────────────────────────────────────────
 .env
