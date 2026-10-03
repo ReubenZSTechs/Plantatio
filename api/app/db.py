@@ -6,6 +6,7 @@ from sqlalchemy import (
     create_engine, Column, BigInteger, Integer, String,
     Float, DateTime, ForeignKey, Text
 )
+from sqlalchemy.dialects import postgresql
 from sqlalchemy.orm import declarative_base, sessionmaker, relationship
 
 from app.config import settings
@@ -28,6 +29,13 @@ SessionLocal = sessionmaker(
     bind=engine,
 )
 
+# SQLite only auto-increments INTEGER PRIMARY KEY, not BIGINT, so a plain
+# BigInteger surrogate key fails to insert there. Using a variant keeps 64-bit
+# ids on Postgres while staying portable for local runs and tests.
+PrimaryKey = BigInteger().with_variant(Integer, "sqlite")
+ForeignKeyType = BigInteger().with_variant(Integer, "sqlite")
+
+
 def _utc_now() -> datetime.datetime:
     """Current UTC time, used as the default for timestamp columns."""
     return datetime.datetime.now(datetime.timezone.utc)
@@ -40,8 +48,8 @@ Base = declarative_base()
 class ChatLog(Base):
     __tablename__ = "chat_logs"
 
-    id = Column(BigInteger, primary_key=True, index=True, autoincrement=True)
-    plant_id = Column(BigInteger, ForeignKey("plants.id"), nullable=True)
+    id = Column(PrimaryKey, primary_key=True, index=True, autoincrement=True)
+    plant_id = Column(ForeignKeyType, ForeignKey("plants.id"), nullable=True)
     user_message = Column(Text, nullable=False)
     bot_response = Column(Text, nullable=False)
     timestamp = Column(DateTime, default=_utc_now)
@@ -50,7 +58,7 @@ class ChatLog(Base):
 class WeatherLog(Base):
     __tablename__ = "weather_logs"
 
-    id = Column(BigInteger, primary_key=True, index=True, autoincrement=True)
+    id = Column(PrimaryKey, primary_key=True, index=True, autoincrement=True)
     city = Column(String(100), nullable=False)
     tempC = Column(Float, nullable=False)
     condition = Column(String(100), nullable=False)
@@ -60,7 +68,7 @@ class WeatherLog(Base):
 class PlantDB(Base):
     __tablename__ = "plants"
 
-    id = Column(BigInteger, primary_key=True, index=True, autoincrement=True)
+    id = Column(PrimaryKey, primary_key=True, index=True, autoincrement=True)
     nickname = Column(String(100), nullable=False)
     species = Column(String(200), default="")
     image = Column(Text, default="")
@@ -84,8 +92,8 @@ class PlantDB(Base):
 class ProbeDataDB(Base):
     __tablename__ = "probe_data"
 
-    id = Column(BigInteger, primary_key=True, index=True, autoincrement=True)
-    plant_id = Column(BigInteger, ForeignKey("plants.id"), unique=True)
+    id = Column(PrimaryKey, primary_key=True, index=True, autoincrement=True)
+    plant_id = Column(ForeignKeyType, ForeignKey("plants.id"), unique=True)
     moisture = Column(Float, default=50.0)
     nutrients = Column(Float, default=50.0)
     light = Column(Float, default=60.0)
@@ -97,8 +105,8 @@ class ProbeDataDB(Base):
 class TimelineEventDB(Base):
     __tablename__ = "timeline_events"
 
-    id = Column(BigInteger, primary_key=True, index=True, autoincrement=True)
-    plant_id = Column(BigInteger, ForeignKey("plants.id"))
+    id = Column(PrimaryKey, primary_key=True, index=True, autoincrement=True)
+    plant_id = Column(ForeignKeyType, ForeignKey("plants.id"))
     date = Column(String(50), nullable=False)
     event = Column(String(200), nullable=False)
     note = Column(Text, nullable=False)
@@ -112,7 +120,7 @@ class ScannedItemDB(Base):
 
     # ID tetap String karena frontend pakai format seperti "PRB-1234"
     id = Column(String(50), primary_key=True, index=True)
-    plant_id = Column(BigInteger, ForeignKey("plants.id"))
+    plant_id = Column(ForeignKeyType, ForeignKey("plants.id"))
     category = Column(String(50), nullable=False)
     name = Column(String(200), nullable=False)
     brand = Column(String(200), nullable=True)
@@ -145,7 +153,7 @@ class IotNodeDB(Base):
 class TacticalLogDB(Base):
     __tablename__ = "tactical_logs"
 
-    id = Column(BigInteger, primary_key=True, index=True, autoincrement=True)
+    id = Column(PrimaryKey, primary_key=True, index=True, autoincrement=True)
     time = Column(String(10), nullable=False)
     action = Column(Text, nullable=False)
     severity = Column(String(20), default="info")
@@ -154,8 +162,9 @@ class TacticalLogDB(Base):
 class SatelliteAnalysisLogDB(Base):
     __tablename__ = "satellite_analysis_logs"
 
-    id = Column(BigInteger, primary_key=True, index=True, autoincrement=True)
+    id = Column(PrimaryKey, primary_key=True, index=True, autoincrement=True)
     image_path = Column(Text, nullable=False)
+    pre_image_path = Column(Text)
     class_name = Column(String(100), nullable=False)
     vegetation_density = Column(String(50))
     canopy_cover = Column(Float)
@@ -163,6 +172,9 @@ class SatelliteAnalysisLogDB(Base):
     carbon_eq = Column(Float)
     restoration_quality = Column(String(50))
     confidence = Column(Float)
+    canopy_cover_change = Column(Float)
+    biomass_change = Column(Float)
+    carbon_change = Column(Float)
     timestamp = Column(DateTime, default=_utc_now)
 
 

@@ -1,31 +1,53 @@
+"""HTTP surface for Plantatio: plants, telemetry, devices and the AI agent."""
+
 import datetime
-from fastapi import FastAPI, Depends, HTTPException, UploadFile, File, Form
+import logging
+import os
+import random
+import tempfile
+from contextlib import asynccontextmanager
+from typing import List, Optional
+
+from fastapi import Depends, FastAPI, File, HTTPException, UploadFile
+from fastapi.concurrency import run_in_threadpool
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
-from typing import List
-from backend.pipelines.main.nodes.nodes import graph_app
-import os
-import tempfile
 
-from backend.pipelines.satellite_inference import run_vlm, extract_json
+from app.config import settings
+from .db import (
+    ChatLog, IotNodeDB, PlantDB, ProbeDataDB, ScannedItemDB, TacticalLogDB,
+    SatelliteAnalysisLogDB, TimelineEventDB, WeatherLog, create_tables, get_db,
+    init_seed_data,
+)
+from .schema import (
+    ChatRequest, ChatResponse, EuroSatAnalysisResponse, GraphProvenance,
+    IotNode, IotNodeCreate, Plant, PlantCreate, SatelliteAnalysis, ScannedItem,
+    TacticalLog,
+    WeatherAlertResponse, WeatherMacroResponse,
+)
 
-# Import dari schema.py dan db.py yang sudah disesuaikan
-from .schema import ChatRequest, ChatResponse, WeatherMacroResponse, WeatherAlertResponse, Plant, ScannedItem, PlantCreate, IotNode, IotNodeCreate, TacticalLog, EuroSatAnalysisResponse
-from .db import get_db, init_seed_data, ChatLog, WeatherLog, PlantDB, ScannedItemDB, ProbeDataDB, TimelineEventDB, IotNodeDB, TacticalLogDB
-import random
+logger = logging.getLogger(__name__)
 
 
-app = FastAPI(title="Cognitive Assistant API")
-
-# Saat aplikasi dijalankan, kita seed (isi) SQLite dengan data Plant ID 1 
-# agar frontend tidak blank saat memanggil GET /api/plants/1
-@app.on_event("startup")
-def on_startup():
+@asynccontextmanager
+async def lifespan(_app: FastAPI):
+    """Prepare the database on startup and release model resources on shutdown."""
+    create_tables()
     init_seed_data()
+    yield
 
+    from backend.pipelines.main.nodes.nodes import close_retrieval_pipeline
+
+    close_retrieval_pipeline()
+
+
+app = FastAPI(title="Plantatio API", lifespan=lifespan)
+
+# Credentials are not used by this API, so a wildcard origin would be rejected
+# by browsers anyway; the allowed origins come from configuration instead.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=settings.cors_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -65,52 +87,111 @@ async def get_weather_alert():
         body="Suhu makro melebihi ambang batas adaptasi tanaman muda. Sistem AI menyarankan pengaktifan naungan."
     )
 
-# ── Chat Endpoint ──────────────────────────────────────────────────────────────
+# ── Chat ──────────────────────────────────────────────────────────────────────
 
-# Menangani dua URL (dari struktur asli b2c, maupun dari permintaan spesifik tanaman frontend)
-@app.post("/api/b2c/chat", response_model=ChatResponse)
-@app.post("/api/plants/{plant_id}/chat", response_model=ChatResponse)
-async def chat_endpoint(request: ChatRequest, plant_id: int = None, db: Session = Depends(get_db)):
-    # Di schema.py terbaru, ChatRequest menggunakan 'messages' (Array), bukan 'text' statis.
-    # Kita ambil pesan terakhir dari user:
-    user_text = request.messages[-1].content.lower() if request.messages else ""
-    
-    # # Custom respon berdasarkan kata kunci (untuk simulasi)
-    # if "siram" in user_text or "water" in user_text:
-    #     bot_reply = "Kelembapan tanah berada di tingkat optimal. Anda tidak perlu menyiramnya hari ini."
-    # elif "gambar" in user_text or "kamera" in user_text or "foto" in user_text:
-    #     bot_reply = "Berdasarkan analisis visual, daun terlihat sehat dengan warna yang merata. Tidak ada tanda-tanda hama. Lanjutkan rutinitas saat ini! ✨"
-    # else:
-    #     bot_reply = "Got it. I've cross-checked your plant against 12k similar cases. Adjusting your care plan now."
+def _run_agent(user_text: str) -> dict:
+    """Invoke the GraphRAG agent for one question.
 
-    result = graph_app.invoke({
-        "user_query": user_text
-    })
+    Imported lazily so that a missing model backend degrades this one endpoint
+    instead of preventing the whole API from starting.
+    """
+    from backend.pipelines.main.nodes.nodes import get_graph_app
 
-    bot_reply = result["final_answer"]
-    
-    bot_tags = [
-        "GraphRAG",
-        "DeepSeek-R1 Reasoning"
-    ]
+    return get_graph_app().invoke({"user_query": user_text})
 
-    # Menentukan ID tanaman yang dibicarakan
-    pid = plant_id or request.plant_id
 
-    # Simpan ke Database
-    new_log = ChatLog(
-        plant_id=pid,
-        user_message=user_text,
-        bot_response=bot_reply
+def _build_provenance(result: dict) -> GraphProvenance:
+    """Summarise what the agent retrieved, for display alongside the answer."""
+    records = result.get("graph_records") or []
+    facts = result.get("retrieved_docs") or []
+
+    return GraphProvenance(
+        sub_questions=result.get("sub_questions") or [],
+        retrieved_facts=facts[:8],
+        record_count=len(records),
+        graph_available=bool(records),
     )
-    db.add(new_log)
+
+
+def _build_tags(result: dict) -> List[str]:
+    """Describe which capabilities actually contributed to this answer."""
+    tags: List[str] = []
+
+    if result.get("graph_records"):
+        tags.append("Knowledge Graph")
+    if result.get("sub_questions"):
+        tags.append("Query Decomposition")
+    if result.get("reasoning_output"):
+        tags.append("Step-by-step Reasoning")
+
+    return tags or ["Direct Answer"]
+
+
+async def _handle_chat(request: ChatRequest, plant_id: Optional[int], db: Session) -> ChatResponse:
+    """Answer a chat turn and record it against the plant it concerns."""
+    if not request.messages:
+        raise HTTPException(status_code=422, detail="messages must not be empty")
+
+    # Casing is preserved: lower-casing here used to destroy proper nouns and
+    # units before they ever reached the model.
+    user_text = request.messages[-1].content.strip()
+    if not user_text:
+        raise HTTPException(status_code=422, detail="The last message is empty")
+
+    try:
+        result = await run_in_threadpool(_run_agent, user_text)
+    except Exception as exc:
+        logger.exception("Agent invocation failed.")
+        raise HTTPException(
+            status_code=503,
+            detail=f"The assistant is unavailable: {exc}",
+        ) from exc
+
+    answer = (result or {}).get("final_answer")
+    if not answer:
+        raise HTTPException(
+            status_code=502,
+            detail="The assistant did not produce an answer.",
+        )
+
+    resolved_plant_id = plant_id if plant_id is not None else request.plant_id
+
+    db.add(ChatLog(
+        plant_id=resolved_plant_id,
+        user_message=user_text,
+        bot_response=answer,
+    ))
     db.commit()
-    
+
     return ChatResponse(
         role="assistant",
-        text=bot_reply,
-        tags=bot_tags
+        text=answer,
+        tags=_build_tags(result),
+        provenance=_build_provenance(result),
     )
+
+
+@app.post("/api/b2c/chat", response_model=ChatResponse)
+async def chat_b2c(request: ChatRequest, db: Session = Depends(get_db)) -> ChatResponse:
+    """General growing question from a consumer, not tied to one plant."""
+    return await _handle_chat(request, None, db)
+
+
+@app.post("/api/b2b/chat", response_model=ChatResponse)
+async def chat_b2b(request: ChatRequest, db: Session = Depends(get_db)) -> ChatResponse:
+    """Operational question from an enterprise user."""
+    return await _handle_chat(request, None, db)
+
+
+@app.post("/api/plants/{plant_id}/chat", response_model=ChatResponse)
+async def chat_about_plant(
+    plant_id: int,
+    request: ChatRequest,
+    db: Session = Depends(get_db),
+) -> ChatResponse:
+    """Question about one specific plant in the user's garden."""
+    return await _handle_chat(request, plant_id, db)
+
 
 # ── Plant Endpoints (Dibutuhkan Frontend) ──────────────────────────────────────
 
@@ -284,167 +365,125 @@ async def get_tactical_logs(db: Session = Depends(get_db)):
         ]
     return logs
 
-async def save_upload_temp(upload_file: UploadFile):
+async def save_upload_temp(upload_file: UploadFile) -> str:
+    """Write an upload to a temporary file and return its path.
 
-    suffix = os.path.splitext(
-        upload_file.filename
-    )[1]
+    The caller is responsible for deleting the file.
+    """
+    suffix = os.path.splitext(upload_file.filename or "")[1]
 
-    with tempfile.NamedTemporaryFile(
-        delete=False,
-        suffix=suffix
-    ) as temp:
-
-        content = await upload_file.read()
-
-        temp.write(content)
-
+    with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as temp:
+        temp.write(await upload_file.read())
         return temp.name
 
 
+def _metric_delta(current: dict, previous: dict, key: str) -> Optional[float]:
+    """Difference in one metric between two analyses, when both reported it."""
+    new_value, old_value = current.get(key), previous.get(key)
+
+    if isinstance(new_value, (int, float)) and isinstance(old_value, (int, float)):
+        return round(new_value - old_value, 3)
+
+    return None
 
 
 @app.post("/api/b2b/satellite/analyze", response_model=EuroSatAnalysisResponse)
 async def analyze_satellite_images(
     pre_restoration: UploadFile = File(...),
-    current_state: UploadFile = File(...)
-):
+    current_state: UploadFile = File(...),
+    db: Session = Depends(get_db),
+) -> EuroSatAnalysisResponse:
+    """Compare a baseline and a current satellite image of the same site.
+
+    Both images are scored by a vision-language model; the response carries the
+    current metrics plus the change against the baseline.
+    """
+    from backend.pipelines.satellite_inference import extract_json, run_vlm
+
+    temp_paths: List[str] = []
+
     try:
+        pre_path = await save_upload_temp(pre_restoration)
+        temp_paths.append(pre_path)
 
-        # ====================================================
-        # SAVE FILES TEMPORARILY
-        # ====================================================
+        current_path = await save_upload_temp(current_state)
+        temp_paths.append(current_path)
 
-        pre_path = await save_upload_temp(
-            pre_restoration
-        )
+        # The model call is blocking, so keep it off the event loop.
+        pre_raw = await run_in_threadpool(run_vlm, pre_path, "before restoration")
+        current_raw = await run_in_threadpool(run_vlm, current_path, "after restoration")
 
-        current_path = await save_upload_temp(
-            current_state
-        )
-
-        # ====================================================
-        # RUN INFERENCE
-        # ====================================================
-
-        pre_result_raw = run_vlm(
-            pre_path,
-            class_hint="before restoration"
-        )
-
-        current_result_raw = run_vlm(
-            current_path,
-            class_hint="after restoration"
-        )
-
-        # ====================================================
-        # PARSE JSON
-        # ====================================================
-
-        pre_result = extract_json(
-            pre_result_raw
-        )
-
-        current_result = extract_json(
-            current_result_raw
-        )
-
+        current_result = extract_json(current_raw)
         if current_result is None:
-
             raise HTTPException(
-                status_code=500,
-                detail="Failed to parse VLM output"
+                status_code=502,
+                detail="The vision model did not return readable JSON.",
             )
 
-        # ====================================================
-        # OPTIONAL RESTORATION COMPARISON
-        # ====================================================
+        pre_result = extract_json(pre_raw) or {}
 
-        restoration_delta = None
-
-        if pre_result and current_result:
-
-            restoration_delta = {
-
-                "canopy_cover_change": round(
-                    current_result.get("canopy_cover", 0)
-                    - pre_result.get("canopy_cover", 0),
-                    3
-                ),
-
-                "biomass_change": round(
-                    current_result.get("est_biomass", 0)
-                    - pre_result.get("est_biomass", 0),
-                    3
-                ),
-
-                "carbon_change": round(
-                    current_result.get("carbon_EQ", 0)
-                    - pre_result.get("carbon_EQ", 0),
-                    3
-                )
+        delta = None
+        if pre_result:
+            delta = {
+                "canopy_cover_change": _metric_delta(current_result, pre_result, "canopy_cover"),
+                "biomass_change": _metric_delta(current_result, pre_result, "est_biomass"),
+                "carbon_change": _metric_delta(current_result, pre_result, "carbon_EQ"),
             }
 
-        # ====================================================
-        # CLEANUP TEMP FILES
-        # ====================================================
-
-        if os.path.exists(pre_path):
-            os.remove(pre_path)
-
-        if os.path.exists(current_path):
-            os.remove(current_path)
-
-        # ====================================================
-        # RESPONSE
-        # ====================================================
-
-        return {
-
-            "image_path": current_state.filename,
-
-            "class_name": "Satellite Restoration Analysis",
-
-            "labels": {
-
-                "vegetation_density":
-                    current_result.get(
-                        "vegetation_density"
-                    ),
-
-                "canopy_cover":
-                    current_result.get(
-                        "canopy_cover"
-                    ),
-
-                "est_biomass":
-                    current_result.get(
-                        "est_biomass"
-                    ),
-
-                "carbon_EQ":
-                    current_result.get(
-                        "carbon_EQ"
-                    ),
-
-                "restoration_quality":
-                    current_result.get(
-                        "restoration_quality"
-                    ),
-
-                "confidence":
-                    current_result.get(
-                        "confidence"
-                    ),
-
-                "restoration_delta":
-                    restoration_delta
-            }
+        labels = {
+            "vegetation_density": current_result.get("vegetation_density"),
+            "canopy_cover": current_result.get("canopy_cover"),
+            "est_biomass": current_result.get("est_biomass"),
+            "carbon_eq": current_result.get("carbon_EQ"),
+            "restoration_quality": current_result.get("restoration_quality"),
+            "confidence": current_result.get("confidence"),
+            "restoration_delta": delta,
         }
 
-    except Exception as e:
+        db.add(SatelliteAnalysisLogDB(
+            image_path=current_state.filename or "",
+            pre_image_path=pre_restoration.filename or "",
+            class_name="Satellite Restoration Analysis",
+            vegetation_density=labels["vegetation_density"],
+            canopy_cover=labels["canopy_cover"],
+            est_biomass=labels["est_biomass"],
+            carbon_eq=labels["carbon_eq"],
+            restoration_quality=labels["restoration_quality"],
+            confidence=labels["confidence"],
+            canopy_cover_change=(delta or {}).get("canopy_cover_change"),
+            biomass_change=(delta or {}).get("biomass_change"),
+            carbon_change=(delta or {}).get("carbon_change"),
+        ))
+        db.commit()
 
-        raise HTTPException(
-            status_code=500,
-            detail=str(e)
+        return EuroSatAnalysisResponse(
+            image_path=current_state.filename or "",
+            class_name="Satellite Restoration Analysis",
+            labels=labels,
         )
+
+    except HTTPException:
+        # Already carries a meaningful status; do not re-wrap it as a 500.
+        raise
+    except Exception as exc:
+        logger.exception("Satellite analysis failed.")
+        raise HTTPException(status_code=502, detail=str(exc)) from exc
+    finally:
+        # Runs on every path, so a model failure no longer leaks temp files.
+        for path in temp_paths:
+            if os.path.exists(path):
+                os.remove(path)
+
+
+@app.get("/api/b2b/satellite/history", response_model=List[SatelliteAnalysis])
+async def satellite_history(
+    limit: int = 20,
+    db: Session = Depends(get_db),
+) -> List[SatelliteAnalysisLogDB]:
+    """Return the most recent satellite analyses, newest first."""
+    return (
+        db.query(SatelliteAnalysisLogDB)
+        .order_by(SatelliteAnalysisLogDB.id.desc())
+        .limit(min(limit, 100))
+        .all()
+    )

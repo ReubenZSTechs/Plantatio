@@ -1,15 +1,22 @@
-from pydantic import BaseModel, ConfigDict, Field
+from datetime import datetime
+from typing import List, Literal, Optional
+
+from pydantic import BaseModel, ConfigDict
 from pydantic.alias_generators import to_camel
-from typing import List, Optional, Literal
 
 
-# ── Base Model ─────────────────────────────────────────────────────────────────
-# Otomatis mengubah snake_case (Python) ↔ camelCase (JSON/Frontend)
+# ── Base model ────────────────────────────────────────────────────────────────
+
 class CamelModel(BaseModel):
+    """Maps Python snake_case to the camelCase the frontend expects.
+
+    `from_attributes` lets SQLAlchemy rows serialise directly.
+    """
+
     model_config = ConfigDict(
         alias_generator=to_camel,
         populate_by_name=True,
-        from_attributes=True,   # wajib untuk SQLAlchemy ORM → Pydantic
+        from_attributes=True,
     )
 
 
@@ -18,20 +25,45 @@ class CamelModel(BaseModel):
 ScanCategory = Literal["sensor", "seed", "soil", "fertilizer", "other"]
 
 
-# ── Chat ───────────────────────────────────────────────────────────────────────
+# ── Chat ──────────────────────────────────────────────────────────────────────
+
+ChatScope = Literal["b2c", "b2b", "plant"]
+
 
 class ChatMessage(CamelModel):
+    """One turn in the conversation."""
+
     role: str
     content: str
 
+
 class ChatRequest(CamelModel):
+    """A chat turn plus the context it should be answered in."""
+
     messages: List[ChatMessage]
     plant_id: Optional[int] = None
+    scope: ChatScope = "b2c"
+
+
+class GraphProvenance(CamelModel):
+    """What the agent retrieved on the way to its answer.
+
+    Surfaced so the UI can show real sources instead of decorative badges.
+    """
+
+    sub_questions: List[str] = []
+    retrieved_facts: List[str] = []
+    record_count: int = 0
+    graph_available: bool = True
+
 
 class ChatResponse(CamelModel):
+    """The assistant's reply and the evidence behind it."""
+
     role: str
     text: str
     tags: Optional[List[str]] = None
+    provenance: Optional[GraphProvenance] = None
 
 
 # ── Weather ────────────────────────────────────────────────────────────────────
@@ -143,15 +175,55 @@ class TacticalLog(CamelModel):
 
 # ── Satellite ML Analysis (EuroSAT) ───────────────────────────────────────────
 
+class RestorationDelta(CamelModel):
+    """Change between the baseline and current images."""
+
+    canopy_cover_change: Optional[float] = None
+    biomass_change: Optional[float] = None
+    carbon_change: Optional[float] = None
+
+
 class MLLabels(CamelModel):
-    vegetation_density: str
-    canopy_cover: float
-    est_biomass: float
-    carbon_eq: float = Field(alias="carbon_EQ")
-    restoration_quality: str
-    confidence: float
+    """Ecological metrics estimated from one satellite image.
+
+    Every field is optional: these come from a vision-language model that may
+    omit keys, and a missing value should not turn into a 500.
+    """
+
+    vegetation_density: Optional[str] = None
+    canopy_cover: Optional[float] = None
+    est_biomass: Optional[float] = None
+    # No alias here. `Field(alias="carbon_EQ")` overrode the camelCase
+    # generator, so the response carried `carbon_EQ` while the frontend read
+    # `carbonEq` and the tile rendered blank.
+    carbon_eq: Optional[float] = None
+    restoration_quality: Optional[str] = None
+    confidence: Optional[float] = None
+    restoration_delta: Optional[RestorationDelta] = None
+
 
 class EuroSatAnalysisResponse(CamelModel):
+    """Result of comparing a baseline and a current satellite image."""
+
     image_path: str
     class_name: str
     labels: MLLabels
+
+
+class SatelliteAnalysis(CamelModel):
+    """A stored satellite analysis, as returned by the history endpoint."""
+
+    id: int
+    image_path: str
+    pre_image_path: Optional[str] = None
+    class_name: str
+    vegetation_density: Optional[str] = None
+    canopy_cover: Optional[float] = None
+    est_biomass: Optional[float] = None
+    carbon_eq: Optional[float] = None
+    restoration_quality: Optional[str] = None
+    confidence: Optional[float] = None
+    canopy_cover_change: Optional[float] = None
+    biomass_change: Optional[float] = None
+    carbon_change: Optional[float] = None
+    timestamp: Optional[datetime] = None

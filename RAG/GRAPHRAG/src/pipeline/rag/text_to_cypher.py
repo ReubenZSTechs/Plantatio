@@ -18,12 +18,12 @@ import logging
 import re
 import time
 import traceback
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Any, Optional
 
-from src.pipeline.rag.connect_to_neo4j import Neo4jHandler
-from src.models.LLM.v2_LLM import LLMManager
-from src.utils.prompt_templates_v2 import get_text_to_cypher_system_prompt
+from RAG.GRAPHRAG.src.pipeline.rag.connect_to_neo4j import Neo4jHandler
+from RAG.GRAPHRAG.src.models.LLM.v2_LLM import LLMManager
+from RAG.GRAPHRAG.src.utils.prompt_templates_v2 import get_text_to_cypher_system_prompt
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -68,11 +68,24 @@ class TextToCypherPipeline:
       }
     """
 
-    def __init__(self):
-        self.llm = LLMManager()
+    def __init__(self, llm=None, handler=None):
+        """Build the pipeline, optionally with injected collaborators.
 
-        self.handler = Neo4jHandler()
-        self.handler.connect()
+        Passing `llm` or `handler` lets tests exercise the pipeline without a
+        language model or a live database. When the graph is not configured the
+        pipeline still constructs; queries then return an explanatory error
+        rather than raising, so the API stays up.
+        """
+        self.llm = llm or LLMManager(role="text_to_cypher")
+        self.handler = handler or Neo4jHandler()
+        self.connected = False
+
+        try:
+            if handler is None:
+                self.handler.connect()
+            self.connected = True
+        except Exception as exc:
+            logger.warning("Knowledge graph unavailable: %s", exc)
 
         self._schema_cache: Optional[str] = None
 
@@ -567,89 +580,7 @@ class TextToCypherPipeline:
     # DEBUG HELPERS
     # ─────────────────────────────────────────────────────────────
 
-    def debug_neo4j(self) -> None:
-        """
-        Print diagnostic info about what's actually in Neo4j.
-        Run this to troubleshoot empty query results.
-        """
 
-        checks = [
-            (
-                "Node labels in DB",
-                "CALL db.labels() YIELD label RETURN label",
-            ),
-            (
-                "Relationship types in DB",
-                "CALL db.relationshipTypes() YIELD relationshipType RETURN relationshipType",
-            ),
-            (
-                "Sample nodes with name property (top 20)",
-                "MATCH (n) WHERE n.name IS NOT NULL "
-                "RETURN labels(n) AS labels, n.name AS name LIMIT 20",
-            ),
-            (
-                "Total node count",
-                "MATCH (n) RETURN count(n) AS total",
-            ),
-            (
-                "Total relationship count",
-                "MATCH ()-[r]->() RETURN count(r) AS total",
-            ),
-            (
-                "All property keys used",
-                "CALL db.propertyKeys() YIELD propertyKey RETURN propertyKey",
-            ),
-        ]
-
-        print("\n" + "=" * 60)
-        print("NEO4J DIAGNOSTIC REPORT")
-        print("=" * 60)
-
-        for title, cypher in checks:
-            print(f"\n── {title} ──")
-            print(f"   {cypher}")
-            try:
-                records, _, _ = self.handler.execute_query(cypher)
-                rows = self._serialize_records(records)
-                if rows:
-                    for row in rows:
-                        print(f"   {row}")
-                else:
-                    print("   (no results)")
-            except Exception as e:
-                print(f"   ERROR: {e}")
-
-        print("\n" + "=" * 60)
-
-    def debug_search(self, keyword: str) -> None:
-        """
-        Free-text search across all node properties for a keyword.
-        Useful to confirm data exists before running structured queries.
-        """
-
-        cypher = (
-            "MATCH (n) "
-            "WHERE any(key IN keys(n) WHERE "
-            "toLower(toString(n[key])) CONTAINS toLower($kw)) "
-            "RETURN labels(n) AS labels, n AS props LIMIT 20"
-        )
-
-        print(f"\n── Searching all nodes for: '{keyword}' ──")
-
-        try:
-            records, _, _ = self.handler.execute_query(
-                cypher,
-                parameters={"kw": keyword},
-            )
-            rows = self._serialize_records(records)
-            if rows:
-                for row in rows:
-                    print(f"   {row}")
-            else:
-                print(f"   No nodes found containing '{keyword}'.")
-                print("   ➜ Check if the data was loaded / label names match schema.")
-        except Exception as e:
-            print(f"   ERROR: {e}")
 
     # ─────────────────────────────────────────────────────────────
     # MAIN PIPELINE
@@ -677,8 +608,20 @@ class TextToCypherPipeline:
 
         start = time.perf_counter()
 
+        if not self.connected:
+            return {
+                "timestamp": datetime.now(timezone.utc).isoformat(),
+                "question": natural_language_input,
+                "cypher": "",
+                "return_type": "none",
+                "params": {},
+                "records": [],
+                "metadata": {"result_count": 0, "elapsed_ms": 0},
+                "error": "Knowledge graph is not configured.",
+            }
+
         output = {
-            "timestamp":   datetime.utcnow().isoformat(),
+            "timestamp":   datetime.now(timezone.utc).isoformat(),
             "question":    natural_language_input,
             "cypher":      "",
             "return_type": "",
@@ -849,18 +792,16 @@ class TextToCypherPipeline:
 
 def run_interactive_session(pipeline: TextToCypherPipeline):
     """
-    Interactive REPL for manual testing.
+    Interactive REPL for manually exercising the retriever.
 
     Special commands:
-      :debug          — print full Neo4j diagnostic report
-      :search <kw>    — search all node properties for keyword
-      :schema         — print cached schema
-      :refresh        — clear and re-fetch schema
-      exit / quit     — exit
+      :schema      print the cached graph schema
+      :refresh     clear the schema cache so the next query re-fetches it
+      exit / quit  leave the session
     """
 
     print("\n=== Text-to-Cypher (Knowledge Graph) ===")
-    print("Commands: :debug | :search <keyword> | :schema | :refresh | exit\n")
+    print("Commands: :schema | :refresh | exit\n")
 
     while True:
 
@@ -877,19 +818,6 @@ def run_interactive_session(pipeline: TextToCypherPipeline):
         if user_input.lower() in {"exit", "quit"}:
             print("Goodbye.")
             break
-
-        # ── Special debug commands ────────────────────────────────
-        if user_input == ":debug":
-            pipeline.debug_neo4j()
-            continue
-
-        if user_input.startswith(":search "):
-            keyword = user_input[len(":search "):].strip()
-            if keyword:
-                pipeline.debug_search(keyword)
-            else:
-                print("Usage: :search <keyword>")
-            continue
 
         if user_input == ":schema":
             print("\n── Cached Schema ──")
