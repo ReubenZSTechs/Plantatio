@@ -66,6 +66,30 @@ class ChatResponse(CamelModel):
     provenance: Optional[GraphProvenance] = None
 
 
+# ── Leaf diagnosis ────────────────────────────────────────────────────────────
+
+class DiagnosisPrediction(CamelModel):
+    """One ranked class from the leaf classifier."""
+
+    class_id: int
+    class_name: str
+    label: str
+    confidence: float
+
+
+class DiagnosisResponse(CamelModel):
+    """A leaf-disease classification and the verdict drawn from it."""
+
+    plant_id: Optional[int] = None
+    predictions: List[DiagnosisPrediction] = []
+    top_class: str
+    label: str
+    confidence: float
+    is_defective: bool
+    health_score: float
+    summary: str
+
+
 # ── Weather ────────────────────────────────────────────────────────────────────
 
 class ForecastItem(CamelModel):

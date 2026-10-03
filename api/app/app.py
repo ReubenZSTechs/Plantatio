@@ -1,6 +1,7 @@
 """HTTP surface for Plantatio: plants, telemetry, devices and the AI agent."""
 
 import datetime
+import io
 import logging
 import os
 import random
@@ -16,11 +17,12 @@ from sqlalchemy.orm import Session
 from app.config import settings
 from .db import (
     ChatLog, IotNodeDB, PlantDB, ProbeDataDB, ScannedItemDB, TacticalLogDB,
-    SatelliteAnalysisLogDB, TimelineEventDB, WeatherLog, create_tables, get_db,
-    init_seed_data,
+    DiagnosisLogDB, SatelliteAnalysisLogDB, TimelineEventDB, WeatherLog,
+    create_tables, get_db, init_seed_data,
 )
 from .schema import (
-    ChatRequest, ChatResponse, EuroSatAnalysisResponse, GraphProvenance,
+    ChatRequest, ChatResponse, DiagnosisResponse, EuroSatAnalysisResponse,
+    GraphProvenance,
     IotNode, IotNodeCreate, Plant, PlantCreate, SatelliteAnalysis, ScannedItem,
     TacticalLog,
     WeatherAlertResponse, WeatherMacroResponse,
@@ -316,6 +318,75 @@ async def delete_plant(plant_id: int, db: Session = Depends(get_db)):
     db.delete(plant)
     db.commit()
     return {"message": "Tanaman berhasil dihapus"}
+
+# ── Leaf diagnosis ────────────────────────────────────────────────────────────
+
+@app.post("/api/plants/{plant_id}/diagnose", response_model=DiagnosisResponse)
+async def diagnose_plant(
+    plant_id: int,
+    image: UploadFile = File(...),
+    db: Session = Depends(get_db),
+) -> DiagnosisResponse:
+    """Classify a leaf photograph and record the result against the plant.
+
+    Returns 503 while no trained checkpoint is present rather than inventing a
+    diagnosis.
+    """
+    from backend.services.vision_service import DiagnosisUnavailable, diagnose_image
+
+    plant = db.query(PlantDB).filter(PlantDB.id == plant_id).first()
+    if not plant:
+        raise HTTPException(status_code=404, detail="Plant not found")
+
+    payload = await image.read()
+    if not payload:
+        raise HTTPException(status_code=422, detail="The uploaded image is empty")
+
+    try:
+        from PIL import Image as PILImage
+
+        pil_image = PILImage.open(io.BytesIO(payload))
+        diagnosis = await run_in_threadpool(diagnose_image, pil_image)
+    except DiagnosisUnavailable as exc:
+        raise HTTPException(status_code=503, detail=str(exc)) from exc
+    except HTTPException:
+        raise
+    except Exception as exc:
+        logger.exception("Leaf diagnosis failed.")
+        raise HTTPException(status_code=422, detail=f"Could not read the image: {exc}") from exc
+
+    db.add(DiagnosisLogDB(
+        plant_id=plant_id,
+        top_class=diagnosis.top_class,
+        label=diagnosis.predictions[0]["label"],
+        confidence=diagnosis.confidence,
+        is_defective=int(diagnosis.is_defective),
+        health_score=diagnosis.health_score,
+        summary=diagnosis.summary,
+    ))
+
+    # The health badge was a static seeded number; let it track the model.
+    plant.health = diagnosis.health_score
+
+    db.add(TimelineEventDB(
+        plant_id=plant_id,
+        date=datetime.datetime.now().strftime("%d %b"),
+        event="Leaf scan",
+        note=diagnosis.summary,
+    ))
+    db.commit()
+
+    return DiagnosisResponse(
+        plant_id=plant_id,
+        predictions=diagnosis.predictions,
+        top_class=diagnosis.top_class,
+        label=diagnosis.predictions[0]["label"],
+        confidence=diagnosis.confidence,
+        is_defective=diagnosis.is_defective,
+        health_score=diagnosis.health_score,
+        summary=diagnosis.summary,
+    )
+
 
 # ── Device Manager B2B Endpoints ──────────────────────────────────────────────
 

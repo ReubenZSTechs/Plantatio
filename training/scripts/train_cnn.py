@@ -1,98 +1,115 @@
-from training.configs.models.CNN_model import Model
-from training.configs.datasets.cnn_DataLoader import TomatoDataset, transform
+"""Train the tomato leaf-disease classifier.
 
-import torch
-from torch.utils.data import random_split, DataLoader
-from PIL import Image
+Reads the CSV index built by `training/preprocessing/build_dataset_CNN.py`,
+trains with class-weighted cross-entropy and early stopping, writes evaluation
+plots, and saves a checkpoint carrying both the architecture hyperparameters
+and the class names needed at inference.
 
-import pandas as pd
+Usage:
+    python -m training.scripts.train_cnn
+"""
+
+import logging
+import os
+from pathlib import Path
+
+import matplotlib
 import numpy as np
 import seaborn as sns
-import matplotlib.pyplot as plt
+import torch
+from torch.utils.data import DataLoader, random_split
 from tqdm import tqdm
-import os
+
+matplotlib.use("Agg")  # Plots are written to disk; never block on a window.
+import matplotlib.pyplot as plt
+
+from training.configs.datasets.cnn_DataLoader import (
+    TomatoDataset, eval_transform, train_transform,
+)
+from training.configs.models.CNN_model import Model
 
 from sklearn.metrics import classification_report, confusion_matrix, roc_curve, auc, roc_auc_score, precision_recall_curve, average_precision_score
 from sklearn.preprocessing import label_binarize
 from collections import Counter
 
-import warnings
-warnings.filterwarnings(action='ignore')
+logging.basicConfig(level=logging.INFO, format="%(levelname)-8s %(message)s")
+logger = logging.getLogger(__name__)
 
 CONFIG = {
     'BATCH_SIZE': 32,
     'DEVICE': 'cuda' if torch.cuda.is_available() else 'cpu',
     'EPOCH': 30,
-    'DATASET_PATH': 'training/datasets/formatted/directory_dataset.csv',
-    'NUM_CLASSES': 10,
+    'DATASET_PATH': os.getenv(
+        "CNN_DATASET_CSV", 'training/datasets/formatted/directory_dataset.csv'
+    ),
     'PATIENCE': 3,
+    'SEED': 42,
+    'MODEL_OUT': Path(os.getenv(
+        "PLANTATIO_CNN_CHECKPOINT", "models/plant_CNN_classifier_model.pth"
+    )),
+    'PLOT_DIR': Path("training/datasets/evaluation"),
 }
 
-if torch.cuda.is_available():
-    print(f"Using GPU")
-else:
-    print(f"Using CPU")
+# A fixed seed keeps the train/val/test split reproducible across runs.
+torch.manual_seed(CONFIG['SEED'])
+np.random.seed(CONFIG['SEED'])
 
+CONFIG['MODEL_OUT'].parent.mkdir(parents=True, exist_ok=True)
+CONFIG['PLOT_DIR'].mkdir(parents=True, exist_ok=True)
 
-dataset = TomatoDataset(csv_file=CONFIG['DATASET_PATH'], transform=transform)
+logger.info("Training on %s", CONFIG['DEVICE'].upper())
 
-train_data, val_data, test_data = random_split(dataset=dataset, lengths=[0.7, 0.2, 0.1])
+dataset = TomatoDataset(csv_file=CONFIG['DATASET_PATH'], transform=train_transform)
+
+# Class order comes from the dataset itself, so the labels written into the
+# checkpoint always match the indices the model was trained on. Reading
+# os.listdir(DATA_FILEPATH) instead gave an unrelated order, and silently
+# listed the working directory when the variable was unset.
+class_names = list(dataset.classes)
+logger.info("Found %d classes: %s", len(class_names), ", ".join(class_names))
+
+train_data, val_data, test_data = random_split(
+    dataset=dataset,
+    lengths=[0.7, 0.2, 0.1],
+    generator=torch.Generator().manual_seed(CONFIG['SEED']),
+)
+
+# Validation and test must not be augmented; they shared the training
+# transform, which made their metrics noisy and optimistic.
+val_data.dataset = TomatoDataset(CONFIG['DATASET_PATH'], transform=eval_transform)
+test_data.dataset = TomatoDataset(CONFIG['DATASET_PATH'], transform=eval_transform)
 
 train_loader = DataLoader(dataset=train_data, batch_size=CONFIG['BATCH_SIZE'], shuffle=True)
-val_loader = DataLoader(dataset=val_data, batch_size=CONFIG['BATCH_SIZE'], shuffle=True)
+val_loader = DataLoader(dataset=val_data, batch_size=CONFIG['BATCH_SIZE'], shuffle=False)
 test_loader = DataLoader(dataset=test_data, batch_size=CONFIG['BATCH_SIZE'], shuffle=False)
 
-for img, label in train_loader:
-    img_single = img[0]
-
-    img_np = img_single.cpu().numpy()
-
-    # Rearrange dimensions from [C, H, W] → [H, W, C]
-    img_np = img_np.transpose((1, 2, 0))
-
-    img_np = (img_np * 0.5) + 0.5  # example for [-1,1] range
-
-    plt.imshow(img_np)
-    plt.title(f"Label: {label[0].item()}")
-    plt.axis("off")
-    plt.show()
-
-    break
-
-print()
-
-print(f"There are {len(train_loader)} training data batches")
-print(f"There are {len(val_loader)} validation data batches")
-print(f"There are {len(test_loader)} testing data batches\n") 
-
-
-# Compute Class Weights
-class_names = []
-
-for class_name in os.listdir(os.getenv("DATA_FILEPATH")):
-    class_names.append(class_name)
-
-print(class_names)
+logger.info(
+    "Batches - train: %d, validation: %d, test: %d",
+    len(train_loader), len(val_loader), len(test_loader),
+)
 
 
 def compute_class_weights(loader, num_classes, device):
-    filepath = os.getenv("CLASS_WEIGHT_SAVE")
+    """Return inverse-frequency class weights, caching them to disk."""
+    filepath = os.getenv(
+        "CLASS_WEIGHT_SAVE", str(CONFIG['PLOT_DIR'] / "class_weights.pt")
+    )
 
     if os.path.exists(filepath) and os.path.getsize(filepath) > 0:
 
-        print(f"Loading existing class weights from:\n{filepath}\n")
+        logger.info("Loading cached class weights from %s", filepath)
 
         weights = torch.load(filepath, map_location=device)
 
-        print("Loaded Class Weights:\n")
+        logger.info("Loaded Class Weights:\n")
 
         for i, cls in enumerate(class_names):
-            print(f"{cls}: {weights[i].item():.4f}")
+            logger.info(f"{cls}: {weights[i].item():.4f}")
 
         return weights
     
 
-    print("Computing class weights...\n")
+    logger.info("Computing class weights...")
 
     counts = Counter()
 
@@ -107,25 +124,22 @@ def compute_class_weights(loader, num_classes, device):
         device=device
     )
 
-    print("\nComputed Class Weights:\n")
+    logger.info("Computed class weights:")
 
     for i, cls in enumerate(class_names):
-        print(
-            f"{cls}: {weights[i].item():.4f} "
-            f"(count = {counts[i]})"
-        )
+        logger.info("  %-40s %.4f (count=%d)", cls, weights[i].item(), counts[i])
 
     os.makedirs(os.path.dirname(filepath), exist_ok=True)
 
     torch.save(weights, filepath)
 
-    print(f"\nSaved class weights to:\n{filepath}")
+    logger.info("Saved class weights to %s", filepath)
 
     return weights
 
 
 # Training and validation loop
-plant_clas_model = Model(output_head=10).to(CONFIG['DEVICE'])
+plant_clas_model = Model(output_head=len(class_names)).to(CONFIG['DEVICE'])
 
 train_loss_arr = []
 val_loss_arr = []
@@ -143,7 +157,7 @@ loss_func = torch.nn.CrossEntropyLoss(weight=class_weights)
 optimizer = torch.optim.AdamW(plant_clas_model.parameters(), lr=1e-4, weight_decay=1e-2)
 
 for epoch in range(CONFIG['EPOCH']):
-    print(f"\nEpoch {epoch+1}/{CONFIG['EPOCH']}")
+    logger.info("Epoch %d/%d", epoch + 1, CONFIG['EPOCH'])
     plant_clas_model.train()
     loss_sum = 0
     total = 0
@@ -211,16 +225,16 @@ for epoch in range(CONFIG['EPOCH']):
         best_model_state = plant_clas_model.state_dict()
     else:
         epochs_no_improve += 1
-        print(f"Validation loss did not improve ({epochs_no_improve}/{CONFIG['PATIENCE']})")
+        logger.info(f"Validation loss did not improve ({epochs_no_improve}/{CONFIG['PATIENCE']})")
 
         if epochs_no_improve >= CONFIG['PATIENCE']:
-            print("\nEarly stopping triggered.")
+            logger.info("\nEarly stopping triggered.")
             break
 
 # restore the best model weights
 if best_model_state:
     plant_clas_model.load_state_dict(best_model_state)
-    print("Best model weights restored.")
+    logger.info("Best model weights restored.")
 
 
 test_loss_sum = 0
@@ -256,11 +270,11 @@ with torch.no_grad():
 epoch_test_loss = test_loss_sum / len(test_loader)
 epoch_test_acc = correct / total
 
-print(f"Loss: {epoch_test_loss}")
-print(f"Accuracy: {epoch_test_acc}")
+logger.info(f"Loss: {epoch_test_loss}")
+logger.info(f"Accuracy: {epoch_test_acc}")
 
 
-print("\nClassification Report:\n")
+logger.info("\nClassification Report:\n")
 print(classification_report(all_labels, all_preds, target_names=class_names, digits=4))
 
 
@@ -273,7 +287,7 @@ sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', cbar=True,
 plt.xlabel('Predicted Labels')
 plt.ylabel('True Labels')
 plt.title('Confusion Matrix Heatmap')
-plt.savefig('training/datasets/evaluation/confusion_matrix.png')
+plt.savefig(CONFIG['PLOT_DIR'] / 'confusion_matrix.png')
 
 
 
@@ -284,7 +298,7 @@ plt.plot(val_loss_arr, label="Validation loss")
 plt.xlabel("Epoch")
 plt.ylabel("Loss")
 plt.legend()
-plt.savefig('training/datasets/evaluation/training_validation_loss.png')
+plt.savefig(CONFIG['PLOT_DIR'] / 'training_validation_loss.png')
 
 
 plt.figure(figsize=(8, 5))
@@ -294,7 +308,7 @@ plt.plot(val_acc_arr, label="Validation accuracy")
 plt.xlabel("Epoch")
 plt.ylabel("Accuracy")
 plt.legend()
-plt.savefig("training/datasets/evaluation/training_validation_accuracy.png")
+plt.savefig(CONFIG['PLOT_DIR'] / 'training_validation_accuracy.png')
 
 y_true = np.array(all_labels)
 y_prob = np.array(all_probs)
@@ -314,11 +328,11 @@ for i in range(n_classes):
 roc_auc["macro"] = roc_auc_score(y_true_bin, y_prob, average="macro", multi_class="ovr")
 roc_auc["micro"] = roc_auc_score(y_true_bin, y_prob, average="micro", multi_class="ovr")
 
-print("\nROC-AUC Scores:")
+logger.info("\nROC-AUC Scores:")
 for i, name in enumerate(class_names):
-    print(f"{name}: {roc_auc[i]:.4f}")
-print(f"Macro ROC-AUC: {roc_auc['macro']:.4f}")
-print(f"Micro ROC-AUC: {roc_auc['micro']:.4f}")
+    logger.info(f"{name}: {roc_auc[i]:.4f}")
+logger.info(f"Macro ROC-AUC: {roc_auc['macro']:.4f}")
+logger.info(f"Micro ROC-AUC: {roc_auc['micro']:.4f}")
 
 plt.figure(figsize=(8,6))
 for i, name in enumerate(class_names):
@@ -330,7 +344,7 @@ plt.ylabel("True Positive Rate")
 plt.title("Multiclass ROC Curve (OvR)")
 plt.legend()
 plt.tight_layout()
-plt.savefig("training/datasets/evaluation/multiclass_ROC_Curve.png")
+plt.savefig(CONFIG['PLOT_DIR'] / 'multiclass_ROC_Curve.png')
 
 precision = {}
 recall = {}
@@ -343,11 +357,11 @@ for i in range(n_classes):
 avg_precision["macro"] = average_precision_score(y_true_bin, y_prob, average="macro")
 avg_precision["micro"] = average_precision_score(y_true_bin, y_prob, average="micro")
 
-print("\nPR-AUC Scores:")
+logger.info("\nPR-AUC Scores:")
 for i, name in enumerate(class_names):
-    print(f"{name}: {avg_precision[i]:.4f}")
-print(f"Macro PR-AUC: {avg_precision['macro']:.4f}")
-print(f"Micro PR-AUC: {avg_precision['micro']:.4f}")
+    logger.info(f"{name}: {avg_precision[i]:.4f}")
+logger.info(f"Macro PR-AUC: {avg_precision['macro']:.4f}")
+logger.info(f"Micro PR-AUC: {avg_precision['micro']:.4f}")
 
 plt.figure(figsize=(8,6))
 for i, name in enumerate(class_names):
@@ -358,25 +372,18 @@ plt.ylabel("Precision")
 plt.title("Multiclass Precision-Recall Curve (OvR)")
 plt.legend()
 plt.tight_layout()
-plt.savefig('training/datasets/evaluation/multiclass_PR_Curve.png')
+plt.savefig(CONFIG['PLOT_DIR'] / 'multiclass_PR_Curve.png')
 
 
-# Saving the model
-model_architecture = {
+# Saving the model.
+# class_names is persisted alongside the weights: without it, inference could
+# only report integer indices that nothing could map back to a disease.
+checkpoint = {
     'state_dict': plant_clas_model.state_dict(),
-
-    'config': {
-        'output_head': plant_clas_model.output_head,
-        'dropout1': plant_clas_model.dropout1,
-        'dropout2': plant_clas_model.dropout2,
-        'dropout3': plant_clas_model.dropout3,
-        'hidden1': plant_clas_model.hidden1,
-        'hidden2': plant_clas_model.hidden2,
-        'hidden3': plant_clas_model.hidden3,
-        'out1': plant_clas_model.out1,
-        'out2': plant_clas_model.out2,
-        'resnet50_use': plant_clas_model.resnet50_use
-    }
+    'config': plant_clas_model.config,
+    'class_names': class_names,
 }
 
-torch.save(model_architecture, "models/plant_CNN_classifier_model.pth")
+torch.save(checkpoint, CONFIG['MODEL_OUT'])
+
+logger.info("Saved checkpoint to %s", CONFIG['MODEL_OUT'])

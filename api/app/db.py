@@ -159,6 +159,22 @@ class TacticalLogDB(Base):
     severity = Column(String(20), default="info")
 
 
+class DiagnosisLogDB(Base):
+    """A stored leaf-disease classification for one plant."""
+
+    __tablename__ = "diagnosis_logs"
+
+    id = Column(PrimaryKey, primary_key=True, index=True, autoincrement=True)
+    plant_id = Column(ForeignKeyType, ForeignKey("plants.id"))
+    top_class = Column(String(120), nullable=False)
+    label = Column(String(120))
+    confidence = Column(Float)
+    is_defective = Column(Integer, default=0)
+    health_score = Column(Float)
+    summary = Column(Text)
+    timestamp = Column(DateTime, default=_utc_now)
+
+
 class SatelliteAnalysisLogDB(Base):
     __tablename__ = "satellite_analysis_logs"
 
