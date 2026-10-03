@@ -1,144 +1,142 @@
+"""Thin wrapper around the Neo4j driver used by the GraphRAG retriever.
+
+Connection details come from the environment (NEO4J_URI, NEO4J_USER,
+NEO4J_PASSWORD, NEO4J_DATABASE) so no credential is stored in source.
+"""
+
+from __future__ import annotations
+
+import logging
+import os
+
 from neo4j import GraphDatabase
-from requests import session
 
-# URI examples: "neo4j://localhost", "neo4j+s://xxx.databases.neo4j.io"
-URI = "neo4j+s://0178696e.databases.neo4j.io"
-AUTH = ("0178696e", "YJ3Qg2EupZUgBX7X9DnJRUzF3-OH8GmviRTAsC-dxfc")
-DATABASE = "0178696e"
+logger = logging.getLogger(__name__)
 
-# URI = "neo4j://127.0.0.1:7687"
-# AUTH = ("neo4j", "CRCP4ss!")
-# DATABASE = "neo4j"
 
-# with GraphDatabase.driver(URI, auth=AUTH) as driver:
-#     driver.verify_connectivity()
+class Neo4jNotConfigured(RuntimeError):
+    """Raised when the graph is used before its credentials are supplied."""
 
-#     records, summary, keys = driver.execute_query("""
-#         MATCH (n:Entity) RETURN n LIMIT 25;
-#         """,
-#         database_="bible",
-#     )
 
-#     # Loop through results and do something with them
-#     # for record in records:
-#     #     print(record.data())  # obtain record as dict
+def _graph_env() -> tuple[str, str, str, str]:
+    """Return (uri, user, password, database) from the environment."""
+    return (
+        os.getenv("NEO4J_URI", "").strip(),
+        os.getenv("NEO4J_USER", "").strip(),
+        os.getenv("NEO4J_PASSWORD", "").strip(),
+        os.getenv("NEO4J_DATABASE", "neo4j").strip() or "neo4j",
+    )
 
-#     # print("============")
-#     # for i in records:
-#     #     print(i)
-#     # print("============")
-#     # for i in records:
-#     #     print(i.data())
-#     # print("============")
-#     # print(summary)
-#     # print("============")
-#     # print(keys)
 
-#     # Summary information
-#     # print("The query `{query}` returned {records_count} records in {time} ms.".format(
-#     #     query=summary.query, records_count=len(records),
-#     #     time=summary.result_available_after
-#     # ))
-
+def graph_is_configured() -> bool:
+    """True when enough environment detail exists to attempt a connection."""
+    uri, user, password, _ = _graph_env()
+    return bool(uri and user and password)
 
 
 class Neo4jHandler:
-    def __init__(self, uri=URI, auth=AUTH):
-        self.uri = uri
-        self.auth = auth
-        self.database = DATABASE
+    """Owns a Neo4j driver and exposes the queries the pipeline needs.
+
+    Supports the context-manager protocol so callers can guarantee the driver
+    is closed:
+
+        with Neo4jHandler() as handler:
+            records, summary, keys = handler.get_neo4j_entities()
+    """
+
+    def __init__(self, uri: str | None = None, auth: tuple[str, str] | None = None,
+                 database: str | None = None):
+        env_uri, env_user, env_password, env_database = _graph_env()
+
+        self.uri = uri or env_uri
+        self.auth = auth or (env_user, env_password)
+        self.database = database or env_database
         self.driver = None
 
-    def connect(self):
+    def __enter__(self) -> "Neo4jHandler":
+        self.connect()
+        return self
+
+    def __exit__(self, exc_type, exc, tb) -> None:
+        self.close()
+
+    def connect(self) -> None:
+        """Open the driver, verifying that credentials are present first."""
+        if not (self.uri and self.auth[0] and self.auth[1]):
+            raise Neo4jNotConfigured(
+                "Neo4j is not configured. Set NEO4J_URI, NEO4J_USER and "
+                "NEO4J_PASSWORD (see .env.example)."
+            )
+
         self.driver = GraphDatabase.driver(self.uri, auth=self.auth)
+        logger.info("Connected to Neo4j database %r.", self.database)
 
-    def execute_query(self, query, parameters=None):
+    def execute_query(self, query: str, parameters: dict | None = None):
+        """Run a Cypher query, returning the driver's (records, summary, keys)."""
         if not self.driver:
-            raise Exception("Driver not connected. Call connect() first.")
+            raise Neo4jNotConfigured("Driver not connected. Call connect() first.")
 
-        records, summary, keys = self.driver.execute_query(
+        return self.driver.execute_query(
             query,
             parameters or {},
-            database_=self.database
+            database_=self.database,
         )
 
-        return records, summary, keys
-
-    def close(self):
+    def close(self) -> None:
+        """Close the driver if one is open."""
         if self.driver:
             self.driver.close()
             self.driver = None
 
-    def close_neo4j_driver(self, driver):
-        driver.close()
+    def get_neo4j_entities(self, limit: int = 25):
+        """Return up to `limit` :Entity nodes."""
+        return self.execute_query("MATCH (n:Entity) RETURN n LIMIT $limit", {"limit": limit})
 
+    def get_neo4j_relationships(self, limit: int = 25):
+        """Return up to `limit` relationships of any type."""
+        return self.execute_query("MATCH ()-[r]->() RETURN r LIMIT $limit", {"limit": limit})
 
-    def get_neo4j_entities(self, limit=25):
-        query = f"""
-            MATCH (n:Entity) RETURN n LIMIT {limit};
-            """
-        return self.execute_query(query)
+    def get_neo4j_all_nodes(self, limit: int = 25):
+        """Return up to `limit` nodes of any label."""
+        return self.execute_query("MATCH (n) RETURN n LIMIT $limit", {"limit": limit})
 
-    def get_neo4j_relationships(self, limit=25):
-        query = f"""
-            MATCH ()-[r]->() RETURN r LIMIT {limit};
-            """
-        return self.execute_query(query)
+    def get_neo4j_all_data(self, limit: int = 25):
+        """Return up to `limit` (source)-[rel]->(target) triples."""
+        return self.execute_query(
+            "MATCH (n)-[r]->(m) RETURN n, r, m LIMIT $limit", {"limit": limit}
+        )
 
-    def get_neo4j_all_nodes(self, limit=25):
-        query = f"""
-            MATCH (n) RETURN n LIMIT {limit};
-            """
-        return self.execute_query(query)
+    def get_neo4j_data_by_label(self, label: str, limit: int = 25):
+        """Return up to `limit` nodes carrying `label`.
 
-    def get_neo4j_all_data(self, limit=25):
-        query = f"""
-            MATCH (n)-[r]->(m) RETURN n, r, m LIMIT {limit};
-            """
-        return self.execute_query(query)
+        The label is interpolated because Cypher cannot parameterise labels; it
+        is validated first so the call cannot be used to inject Cypher.
+        """
+        if not label.isidentifier():
+            raise ValueError(f"Invalid node label: {label!r}")
 
-    def get_neo4j_data_by_label(self, label, limit=25):
-        query = f"""
-            MATCH (n:{label}) RETURN n LIMIT {limit};
-            """
-        return self.execute_query(query)
+        return self.execute_query(f"MATCH (n:`{label}`) RETURN n LIMIT $limit", {"limit": limit})
 
     def get_neo4j_schema(self):
-        query = """
-            CALL db.schema.visualization();
-            """
-        return self.execute_query(query)
+        """Return the graph's node labels and relationship types."""
+        return self.execute_query("CALL db.schema.visualization()")
 
-    def print_schema(self):
-        records, summary, keys = handler.get_neo4j_schema()
-        print(records)
+    def describe_schema(self) -> str:
+        """Render the graph schema as readable text for prompt injection."""
+        records, _, _ = self.get_neo4j_schema()
         schema = records[0].data()
 
-        print("\n========== NODE LABELS ==========\n")
+        labels = [node["name"] for node in schema.get("nodes", [])]
+        relationships = [
+            f"(:{rel[0]['name']})-[:{rel[1]}]->(:{rel[2]['name']})"
+            for rel in schema.get("relationships", [])
+        ]
 
-        for node in schema["nodes"]:
-            print(f"- {node['name']}")
+        return (
+            "Node labels: " + ", ".join(labels) + "\n"
+            "Relationships:\n  " + "\n  ".join(relationships)
+        )
 
-        print("\n====== RELATIONSHIP TYPES ======\n")
-
-        for rel in schema["relationships"]:
-
-            source = rel[0]["name"]
-            relation = rel[1]
-            target = rel[2]["name"]
-
-            print(f"(:{source})-[:{relation}]->(:{target})")
-
-    def clear_database(self):
-        query = """
-            MATCH (n) DETACH DELETE n;
-            """
-        return self.execute_query(query)
-
-    
-
-if __name__ == "__main__":
-    handler = Neo4jHandler()
-    handler.connect()
-    # handler.clear_database()
-    handler.print_schema()
+    def clear_database(self) -> None:
+        """Delete every node and relationship. Irreversible."""
+        self.execute_query("MATCH (n) DETACH DELETE n")

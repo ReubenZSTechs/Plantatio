@@ -1,42 +1,39 @@
-/.DS_Store
-/training/datasets
-/models
-/__pycache__
-node_modules/
-api/venv/
-__pycache__/
-*.pyc
-*.db
-.env
-node_modules/
-.vite/
-__pycache__/
-*.pyc
+# ── OS ────────────────────────────────────────────────────────────────────────
+.DS_Store
 
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.pyc
+api/venv/
+venv/
+.venv/
+
+# ── Node / frontend ───────────────────────────────────────────────────────────
 node_modules/
 .vite/
 .tanstack/
 
-__pycache__/
-*.pyc
-
+# ── Secrets ───────────────────────────────────────────────────────────────────
 .env
+.env.local
 
-models/
-outputs/
-logs/
-
-training/datasets/
-
+# ── Model weights and checkpoints ─────────────────────────────────────────────
+# Anchored to the repo root on purpose. An unanchored `models/` also matches
+# source packages such as RAG/GRAPHRAG/src/models/ and training/configs/models/,
+# which is how LLMManager and CNN_model were silently dropped from this repo.
+/models/
 *.pt
 *.pth
 *.ckpt
 *.bin
+*.safetensors
+*.gguf
 
-RAG/GRAPHRAG/data/
-training/sft/data/
-
+# ── Datasets and generated output ─────────────────────────────────────────────
+/training/datasets/
+/training/sft/data/
+/RAG/GRAPHRAG/data/
+/outputs/
+/logs/
 *.db
-*.json
-
-JANGAN khawatir:
+*.sqlite3

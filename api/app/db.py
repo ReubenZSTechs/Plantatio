@@ -1,38 +1,37 @@
+"""SQLAlchemy models, engine and session management for the Plantatio API."""
+
 import datetime
+
 from sqlalchemy import (
     create_engine, Column, BigInteger, Integer, String,
     Float, DateTime, ForeignKey, Text
 )
 from sqlalchemy.orm import declarative_base, sessionmaker, relationship
-from urllib.parse import quote_plus
 
-# ── Konfigurasi Database (Supabase Transaction Pooler) ─────────────────────────
-raw_password = "PlantatioP4ss1231"          # password BARU
-project_ref = "bfuzqnvyauqxudqmczmq"
-db_user = f"postgres.{project_ref}"
+from app.config import settings
 
-encoded_password = quote_plus(str(raw_password))
+DATABASE_URL = settings.database_url
 
-DATABASE_URL = (
-    "postgresql+psycopg2://"
-    f"{db_user}:{encoded_password}"
-    "@aws-1-ap-northeast-1.pooler.supabase.com:6543/postgres"
-    "?sslmode=require"
-)
 
 # ── SQLAlchemy Engine ─────────────────────────────────────────────────────────
-engine = create_engine(
-    DATABASE_URL,
-    pool_pre_ping=True,
-    pool_size=5,        # aman untuk pooler
-    max_overflow=10,
-)
+_engine_options: dict = {"pool_pre_ping": True}
+if DATABASE_URL.startswith("sqlite"):
+    _engine_options["connect_args"] = {"check_same_thread": False}
+else:
+    _engine_options.update(pool_size=5, max_overflow=10)
+
+engine = create_engine(DATABASE_URL, **_engine_options)
 
 SessionLocal = sessionmaker(
     autocommit=False,
     autoflush=False,
     bind=engine,
 )
+
+def _utc_now() -> datetime.datetime:
+    """Current UTC time, used as the default for timestamp columns."""
+    return datetime.datetime.now(datetime.timezone.utc)
+
 
 Base = declarative_base()
 
@@ -45,7 +44,7 @@ class ChatLog(Base):
     plant_id = Column(BigInteger, ForeignKey("plants.id"), nullable=True)
     user_message = Column(Text, nullable=False)
     bot_response = Column(Text, nullable=False)
-    timestamp = Column(DateTime, default=datetime.datetime.utcnow)
+    timestamp = Column(DateTime, default=_utc_now)
 
 
 class WeatherLog(Base):
@@ -55,7 +54,7 @@ class WeatherLog(Base):
     city = Column(String(100), nullable=False)
     tempC = Column(Float, nullable=False)
     condition = Column(String(100), nullable=False)
-    timestamp = Column(DateTime, default=datetime.datetime.utcnow)
+    timestamp = Column(DateTime, default=_utc_now)
 
 
 class PlantDB(Base):
@@ -164,17 +163,22 @@ class SatelliteAnalysisLogDB(Base):
     carbon_eq = Column(Float)
     restoration_quality = Column(String(50))
     confidence = Column(Float)
-    timestamp = Column(DateTime, default=datetime.datetime.utcnow)
+    timestamp = Column(DateTime, default=_utc_now)
 
 
-# ── Buat Semua Tabel (jalankan sekali saat startup) ────────────────────────────
-Base.metadata.create_all(bind=engine)
+# ── Schema and session helpers ────────────────────────────────────────────────
 
+def create_tables() -> None:
+    """Create any missing tables.
 
-# ── Utilitas ───────────────────────────────────────────────────────────────────
+    Called from the application lifespan rather than at import, so importing
+    this module never opens a database connection.
+    """
+    Base.metadata.create_all(bind=engine)
+
 
 def get_db():
-    """Dependency injection untuk FastAPI route."""
+    """Yield a request-scoped session, closing it when the request ends."""
     db = SessionLocal()
     try:
         yield db
@@ -183,7 +187,7 @@ def get_db():
 
 
 def init_seed_data():
-    """Isi data awal jika tabel masih kosong."""
+    """Populate demo rows for any table that is still empty."""
     db = SessionLocal()
 
     # Seed Plant

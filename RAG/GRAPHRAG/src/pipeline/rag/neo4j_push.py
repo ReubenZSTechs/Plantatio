@@ -1,65 +1,114 @@
-import json
-from neo4j import GraphDatabase
-from tqdm import tqdm
+"""Load the tomato triplet dataset into Neo4j as a labelled knowledge graph.
 
-# =========================
-# Neo4j Aura Credentials
-# =========================
+Each JSONL record carries a sentence and the triplets extracted from it. The
+subject and object NER types become node labels and the relation becomes the
+edge type, so the graph keeps the structure the text-to-Cypher retriever
+queries against.
 
-URI = "neo4j+s://0178696e.databases.neo4j.io"
-USERNAME = "0178696e"
-NEO4J_PASSWORD = "YJ3Qg2EupZUgBX7X9DnJRUzF3-OH8GmviRTAsC-dxfc"
-NEO4J_DATABASE = "0178696e"
-
-JSONL_PATH = "src/pipeline/rag/tomato_triplets_dataset.jsonl"
-
-driver = GraphDatabase.driver(
-    URI,
-    auth=(USERNAME, NEO4J_PASSWORD)
-)
-
-# =========================
-# Cypher Query
-# =========================
-
-QUERY = """
-MERGE (s:Entity {name: $subject})
-SET s.ner = $subj_ner
-
-MERGE (o:Entity {name: $object})
-SET o.ner = $obj_ner
-
-MERGE (s)-[r:RELATION {type: $relation}]->(o)
-SET r.text = $text
+Usage:
+    python -m RAG.GRAPHRAG.src.pipeline.rag.neo4j_push [--jsonl PATH] [--wipe]
 """
 
-# =========================
-# Insert Function
-# =========================
+from __future__ import annotations
 
-def insert_triplet(tx, item):
-    triplet = item["triplets"][0]
+import argparse
+import json
+import logging
+import re
+from pathlib import Path
+
+from RAG.GRAPHRAG.src.pipeline.rag.connect_to_neo4j import Neo4jHandler
+
+logger = logging.getLogger(__name__)
+
+DEFAULT_JSONL = Path(__file__).with_name("tomato_triplets_dataset.jsonl")
+
+_IDENTIFIER_SAFE = re.compile(r"[^A-Za-z0-9_]")
+
+
+def sanitize_identifier(value: str, fallback: str) -> str:
+    """Turn free text into a Cypher-safe label or relationship type.
+
+    Cypher cannot parameterise labels or relationship types, so they are
+    interpolated. Restricting them to word characters keeps that safe.
+    """
+    cleaned = _IDENTIFIER_SAFE.sub("_", value.strip().upper()).strip("_")
+    if not cleaned or cleaned[0].isdigit():
+        cleaned = f"{fallback}_{cleaned}" if cleaned else fallback
+    return cleaned
+
+
+def load_triplets(jsonl_path: Path) -> list[dict]:
+    """Read every triplet from the dataset, flattened across records."""
+    triplets: list[dict] = []
+
+    with jsonl_path.open("r", encoding="utf-8") as handle:
+        for line_number, raw_line in enumerate(handle, start=1):
+            line = raw_line.strip()
+            if not line:
+                continue
+
+            try:
+                record = json.loads(line)
+            except json.JSONDecodeError:
+                logger.warning("Skipping malformed JSON on line %d.", line_number)
+                continue
+
+            # The original loader took only triplets[0] and silently dropped
+            # the rest; every triplet in a record is kept here.
+            for triplet in record.get("triplets", []):
+                triplets.append({**triplet, "text": record.get("text", "")})
+
+    return triplets
+
+
+def insert_triplet(tx, triplet: dict) -> None:
+    """MERGE one subject-relation-object triple into the graph."""
+    subject_label = sanitize_identifier(triplet.get("subj_ner", ""), "ENTITY")
+    object_label = sanitize_identifier(triplet.get("obj_ner", ""), "ENTITY")
+    relation = sanitize_identifier(triplet.get("relation", ""), "RELATED_TO")
 
     tx.run(
-        QUERY,
+        f"""
+        MERGE (s:`{subject_label}` {{name: $subject}})
+        MERGE (o:`{object_label}` {{name: $object}})
+        MERGE (s)-[r:`{relation}`]->(o)
+        SET r.text = $text
+        """,
         subject=triplet["subject"],
-        relation=triplet["relation"],
         object=triplet["object"],
-        subj_ner=triplet["subj_ner"],
-        obj_ner=triplet["obj_ner"],
-        text=item["text"]
+        text=triplet["text"],
     )
 
-# =========================
-# Main Import
-# =========================
 
-with open(JSONL_PATH, "r", encoding="utf-8") as f:
-    lines = [json.loads(line) for line in f]
+def ingest(jsonl_path: Path = DEFAULT_JSONL, wipe: bool = False) -> int:
+    """Load the dataset into Neo4j, returning the number of triplets written."""
+    triplets = load_triplets(jsonl_path)
+    logger.info("Loaded %d triplets from %s.", len(triplets), jsonl_path)
 
-with driver.session(database=NEO4J_DATABASE) as session:
-    for item in tqdm(lines):
-        session.execute_write(insert_triplet, item)
+    with Neo4jHandler() as handler:
+        if wipe:
+            logger.warning("Clearing the existing graph before ingest.")
+            handler.clear_database()
 
-driver.close()
-print("Import completed!")
+        with handler.driver.session(database=handler.database) as session:
+            for triplet in triplets:
+                session.execute_write(insert_triplet, triplet)
+
+    return len(triplets)
+
+
+def main() -> None:
+    logging.basicConfig(level=logging.INFO, format="%(levelname)-8s %(message)s")
+
+    parser = argparse.ArgumentParser(description="Ingest tomato triplets into Neo4j")
+    parser.add_argument("--jsonl", type=Path, default=DEFAULT_JSONL, help="Dataset path")
+    parser.add_argument("--wipe", action="store_true", help="Clear the graph first")
+    args = parser.parse_args()
+
+    count = ingest(args.jsonl, wipe=args.wipe)
+    logger.info("Ingested %d triplets.", count)
+
+
+if __name__ == "__main__":
+    main()
