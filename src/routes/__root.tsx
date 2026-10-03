@@ -8,6 +8,8 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 
+import { Toaster } from "@/components/ui/sonner";
+
 import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
@@ -19,12 +21,24 @@ function NotFoundComponent() {
         <p className="mt-2 text-sm text-muted-foreground">
           The page you're looking for doesn't exist or has been moved.
         </p>
-        <div className="mt-6">
+        <div className="mt-6 flex flex-wrap justify-center gap-2">
           <Link
             to="/"
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
             Go home
+          </Link>
+          <Link
+            to="/b2c"
+            className="inline-flex items-center justify-center rounded-md border border-input px-4 py-2 text-sm font-medium transition-colors hover:bg-accent"
+          >
+            For growers
+          </Link>
+          <Link
+            to="/b2b"
+            className="inline-flex items-center justify-center rounded-md border border-input px-4 py-2 text-sm font-medium transition-colors hover:bg-accent"
+          >
+            For enterprise
           </Link>
         </div>
       </div>
@@ -32,8 +46,7 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
-  console.error(error);
+function ErrorComponent({ reset }: { error: Error; reset: () => void }) {
   const router = useRouter();
 
   return (
@@ -72,18 +85,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Plantatio" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
+      { title: "Plantatio — AI growing intelligence" },
+      {
+        name: "description",
+        content:
+          "Knowledge-graph assistant, leaf-disease classification and satellite restoration analysis for growers and restoration operators.",
+      },
       { property: "og:title", content: "Plantatio" },
-      { property: "og:description", content: "Plantatio - Your Smart Plant Companion" },
+      {
+        property: "og:description",
+        content: "AI growing intelligence for consumer gardens and restoration at scale.",
+      },
       { property: "og:type", content: "website" },
     ],
     links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
+      { rel: "stylesheet", href: appCss },
+      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
     ],
   }),
   shellComponent: RootShell,
@@ -112,6 +129,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <Outlet />
+      <Toaster />
     </QueryClientProvider>
   );
 }

@@ -5,12 +5,29 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
-  Table, TableBody, TableCell, TableHead, TableHeader, TableRow,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
 } from "@/components/ui/table";
-import { Battery, BatteryLow, Cpu, Wrench, ShoppingCart, Plus, MapPin, X, Check, Loader2 } from "lucide-react";
+import {
+  Battery,
+  BatteryLow,
+  Cpu,
+  Wrench,
+  ShoppingCart,
+  Plus,
+  MapPin,
+  X,
+  Check,
+  Loader2,
+} from "lucide-react";
 import { toast } from "sonner";
+import { API_BASE_URL } from "@/lib/api";
 
-const API_BASE = "http://localhost:8000/api/b2b";
+const API_BASE = `${API_BASE_URL}/b2b`;
 
 const statusVariant: Record<string, string> = {
   ok: "bg-emerald-500/15 text-emerald-600 border-emerald-500/30",
@@ -43,7 +60,7 @@ export function DeviceManager() {
     fetch(`${API_BASE}/devices`)
       .then((res) => res.json())
       .then((data) => setDevices(data))
-      .catch(() => toast.error("Gagal memuat perangkat dari server."))
+      .catch(() => toast.error("Could not load devices from the server."))
       .finally(() => setIsLoading(false));
   };
 
@@ -70,16 +87,17 @@ export function DeviceManager() {
       });
 
       if (!res.ok) throw new Error();
-      toast.success("Sensor baru berhasil didaftarkan");
+      toast.success("Sensor registered");
       fetchDevices(); // Refresh data
       setShowAddModal(false);
-      setZone(""); setLatitude(""); setLongitude("");
+      setZone("");
+      setLatitude("");
+      setLongitude("");
     } catch {
-      toast.error("Gagal menambahkan sensor");
+      toast.error("Could not register the sensor");
     }
   };
 
-  // POST: Fitur Mock Procurement dkk
   const handleDiagnose = async (id: string) => {
     await fetch(`${API_BASE}/devices/${id}/diagnose`, { method: "POST" });
     toast.info(`Ping diagnostic dikirim ke ${id}`);
@@ -105,7 +123,7 @@ export function DeviceManager() {
           setLongitude(position.coords.longitude.toFixed(6));
           toast.success("Koordinat didapatkan");
         },
-        () => toast.error("Gagal mendapatkan lokasi GPS. Pastikan izin lokasi aktif.")
+        () => toast.error("Could not read GPS location. Check that location access is allowed."),
       );
     } else {
       toast.error("Browser Anda tidak mendukung GPS.");
@@ -117,16 +135,20 @@ export function DeviceManager() {
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
           <h1 className="text-2xl font-semibold tracking-tight">Device Manager</h1>
-          <p className="text-sm text-muted-foreground">Manajemen sensor lapangan, baterai, dan pengadaan barang.</p>
+          <p className="text-sm text-muted-foreground">
+            Field sensor management, baterai, dan pengadaan barang.
+          </p>
         </div>
         <Button className="bg-primary" onClick={() => setShowAddModal(true)}>
-          <Plus className="mr-2 h-4 w-4" /> Register Sensor Baru
+          <Plus className="mr-2 h-4 w-4" /> Register sensor
         </Button>
       </div>
 
       <Card className="overflow-hidden">
         {isLoading ? (
-          <div className="flex justify-center p-8"><Loader2 className="h-6 w-6 animate-spin text-primary" /></div>
+          <div className="flex justify-center p-8">
+            <Loader2 className="h-6 w-6 animate-spin text-primary" />
+          </div>
         ) : (
           <div className="overflow-x-auto">
             <Table>
@@ -142,29 +164,43 @@ export function DeviceManager() {
               </TableHeader>
               <TableBody>
                 {devices.length === 0 ? (
-                  <TableRow><TableCell colSpan={6} className="text-center py-6 text-muted-foreground">Belum ada sensor terdaftar</TableCell></TableRow>
+                  <TableRow>
+                    <TableCell colSpan={6} className="text-center py-6 text-muted-foreground">
+                      Belum ada sensor terdaftar
+                    </TableCell>
+                  </TableRow>
                 ) : (
                   devices.map((n) => (
                     <TableRow key={n.id}>
-                      <TableCell className="font-mono text-xs font-bold text-primary/80">{n.id}</TableCell>
+                      <TableCell className="font-mono text-xs font-bold text-primary/80">
+                        {n.id}
+                      </TableCell>
                       <TableCell>
                         <p className="font-medium">{n.zone}</p>
                         <p className="text-[10px] text-muted-foreground flex items-center gap-1 mt-0.5">
-                           <MapPin className="h-3 w-3" /> {n.latitude}, {n.longitude}
+                          <MapPin className="h-3 w-3" /> {n.latitude}, {n.longitude}
                         </p>
                       </TableCell>
                       <TableCell>
                         <span className="flex items-center gap-1.5 font-medium">
-                          {n.battery < 20 ? <BatteryLow className="h-4 w-4 text-destructive animate-pulse" /> : <Battery className="h-4 w-4 text-emerald-500" />}
+                          {n.battery < 20 ? (
+                            <BatteryLow className="h-4 w-4 text-destructive animate-pulse" />
+                          ) : (
+                            <Battery className="h-4 w-4 text-emerald-500" />
+                          )}
                           {n.battery}%
                         </span>
                       </TableCell>
                       <TableCell>{n.moisture}%</TableCell>
                       <TableCell>
-                        <Badge variant="outline" className={statusVariant[n.status]}>{n.status.toUpperCase()}</Badge>
+                        <Badge variant="outline" className={statusVariant[n.status]}>
+                          {n.status.toUpperCase()}
+                        </Badge>
                       </TableCell>
                       <TableCell className="text-right">
-                        <Button size="sm" variant="ghost" onClick={() => handleDiagnose(n.id)}>Diagnose</Button>
+                        <Button size="sm" variant="ghost" onClick={() => handleDiagnose(n.id)}>
+                          Diagnose
+                        </Button>
                       </TableCell>
                     </TableRow>
                   ))
@@ -182,7 +218,9 @@ export function DeviceManager() {
             <div>
               <Cpu className="mb-3 h-6 w-6 text-primary" />
               <div className="font-semibold">Order Smart Probes</div>
-              <p className="mt-1 text-sm text-muted-foreground">Plantatio Probe v3 — soil moisture, NPK, temperature, LoRa mesh.</p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Plantatio Probe v3 — soil moisture, NPK, temperature, LoRa mesh.
+              </p>
             </div>
             <div className="mt-4 flex items-center justify-between border-t pt-4">
               <span className="text-sm font-medium">€89 / unit · MOQ 10</span>
@@ -195,11 +233,18 @@ export function DeviceManager() {
             <div>
               <Wrench className="mb-3 h-6 w-6 text-amber-500" />
               <div className="font-semibold">Request On-Site Maintenance</div>
-              <p className="mt-1 text-sm text-muted-foreground">Dispatch a certified field technician for failing nodes.</p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Dispatch a certified field technician for failing nodes.
+              </p>
             </div>
             <div className="mt-4 flex items-center justify-between border-t pt-4">
               <span className="text-sm font-medium text-amber-600">2 critical nodes flagged</span>
-              <Button size="sm" variant="outline" className="border-amber-200 text-amber-700 hover:bg-amber-50" onClick={handleMaintenance}>
+              <Button
+                size="sm"
+                variant="outline"
+                className="border-amber-200 text-amber-700 hover:bg-amber-50"
+                onClick={handleMaintenance}
+              >
                 <Wrench className="mr-2 h-4 w-4" /> Dispatch
               </Button>
             </div>
@@ -213,32 +258,62 @@ export function DeviceManager() {
           <div className="w-full max-w-sm rounded-2xl bg-background shadow-2xl">
             <div className="flex items-center justify-between border-b px-5 py-4">
               <h2 className="font-semibold">Register Node Sensor</h2>
-              <Button size="icon" variant="ghost" className="h-7 w-7" onClick={() => setShowAddModal(false)}><X className="h-4 w-4" /></Button>
+              <Button
+                size="icon"
+                variant="ghost"
+                className="h-7 w-7"
+                onClick={() => setShowAddModal(false)}
+              >
+                <X className="h-4 w-4" />
+              </Button>
             </div>
             <div className="p-5 space-y-4">
               <div className="space-y-1.5">
                 <Label>Nama Zona / Penempatan</Label>
-                <Input placeholder="e.g. Sektor C - Barat" value={zone} onChange={e => setZone(e.target.value)} />
+                <Input
+                  placeholder="e.g. West Sector C"
+                  value={zone}
+                  onChange={(e) => setZone(e.target.value)}
+                />
               </div>
-              
+
               <div className="grid grid-cols-2 gap-3">
                 <div className="space-y-1.5">
                   <Label>Latitude</Label>
-                  <Input type="number" placeholder="-6.200" value={latitude} onChange={e => setLatitude(e.target.value)} />
+                  <Input
+                    type="number"
+                    placeholder="-6.200"
+                    value={latitude}
+                    onChange={(e) => setLatitude(e.target.value)}
+                  />
                 </div>
                 <div className="space-y-1.5">
                   <Label>Longitude</Label>
-                  <Input type="number" placeholder="106.816" value={longitude} onChange={e => setLongitude(e.target.value)} />
+                  <Input
+                    type="number"
+                    placeholder="106.816"
+                    value={longitude}
+                    onChange={(e) => setLongitude(e.target.value)}
+                  />
                 </div>
               </div>
-              
-              <Button type="button" variant="secondary" className="w-full gap-2 text-xs h-8 bg-blue-50 text-blue-600 hover:bg-blue-100 dark:bg-blue-900/30 dark:text-blue-400" onClick={handleGetLocation}>
+
+              <Button
+                type="button"
+                variant="secondary"
+                className="w-full gap-2 text-xs h-8 bg-blue-50 text-blue-600 hover:bg-blue-100 dark:bg-blue-900/30 dark:text-blue-400"
+                onClick={handleGetLocation}
+              >
                 <MapPin className="h-3.5 w-3.5" /> Gunakan GPS Saat Ini
               </Button>
             </div>
             <div className="flex gap-2 border-t px-5 py-4">
-              <Button variant="outline" className="flex-1" onClick={() => setShowAddModal(false)}>Batal</Button>
-              <Button className="flex-1" onClick={handleAddDevice}><Check className="mr-2 h-4 w-4" /> Simpan Node</Button>
+              <Button variant="outline" className="flex-1" onClick={() => setShowAddModal(false)}>
+                Cancel
+              </Button>
+              <Button className="flex-1" onClick={handleAddDevice}>
+                <Check className="mr-2 h-4 w-4" /> Save Node
+              </Button>
             </div>
           </div>
         </div>

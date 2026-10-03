@@ -61,33 +61,33 @@ app.add_middleware(
 @app.get("/api/v1/weather/macro", response_model=WeatherMacroResponse)
 async def get_weather_macro(db: Session = Depends(get_db)):
     new_log = WeatherLog(
-        city="Kawasan Restorasi, Jakarta",
+        city="Restoration Zone, Jakarta",
         tempC=32.0,
-        condition="Cerah Berawan"
+        condition="Partly cloudy"
     )
     db.add(new_log)
     db.commit()
 
     # Menggunakan temp_c sesuai properti Pydantic (diubah otomatis ke tempC oleh CamelModel di schema)
     return WeatherMacroResponse(
-        city="Kawasan Restorasi, Jakarta",
+        city="Restoration Zone, Jakarta",
         temp_c=32,
-        condition="Cerah Berawan",
+        condition="Partly cloudy",
         humidity=65,
         forecast=[
-            {"day": "Sen", "icon": "sun", "temp_c": 33},
-            {"day": "Sel", "icon": "cloud", "temp_c": 31},
-            {"day": "Rab", "icon": "rain", "temp_c": 28},
-            {"day": "Kam", "icon": "rain", "temp_c": 27},
-            {"day": "Jum", "icon": "cloud", "temp_c": 30},
+            {"day": "Mon", "icon": "sun", "temp_c": 33},
+            {"day": "Tue", "icon": "cloud", "temp_c": 31},
+            {"day": "Wed", "icon": "rain", "temp_c": 28},
+            {"day": "Thu", "icon": "rain", "temp_c": 27},
+            {"day": "Fri", "icon": "cloud", "temp_c": 30},
         ]
     )
 
 @app.get("/api/v1/weather/alert", response_model=WeatherAlertResponse)
 async def get_weather_alert():
     return WeatherAlertResponse(
-        title="Peringatan Cekaman Panas (Heat Stress)",
-        body="Suhu makro melebihi ambang batas adaptasi tanaman muda. Sistem AI menyarankan pengaktifan naungan."
+        title="Heat stress warning",
+        body="Macro temperature is above the adaptation threshold for young plants. Consider deploying shade cover."
     )
 
 # ── Chat ──────────────────────────────────────────────────────────────────────
@@ -202,22 +202,22 @@ async def chat_about_plant(
 async def get_plant(plant_id: int, db: Session = Depends(get_db)):
     plant = db.query(PlantDB).filter(PlantDB.id == plant_id).first()
     if not plant:
-        raise HTTPException(status_code=404, detail="Tanaman tidak ditemukan")
+        raise HTTPException(status_code=404, detail="Plant not found")
     return plant
 
 @app.post("/api/plants/{plant_id}/scan", response_model=Plant)
 async def scan_item(plant_id: int, item: ScannedItem, db: Session = Depends(get_db)):
     plant = db.query(PlantDB).filter(PlantDB.id == plant_id).first()
     if not plant:
-        raise HTTPException(status_code=404, detail="Tanaman tidak ditemukan")
+        raise HTTPException(status_code=404, detail="Plant not found")
     
-    # Hapus data lama yang punya kategori sama agar tidak terjadi duplikasi "Sensor" / "Bibit" dsb
+    # Replace any previous item in the same category so a plant does not
+    # accumulate duplicate sensors or seed records.
     db.query(ScannedItemDB).filter(
         ScannedItemDB.plant_id == plant_id, 
         ScannedItemDB.category == item.category
     ).delete()
     
-    # Masukkan item baru
     new_item = ScannedItemDB(
         id=item.id,
         plant_id=plant_id,
@@ -236,46 +236,40 @@ async def scan_item(plant_id: int, item: ScannedItem, db: Session = Depends(get_
     )
     db.add(new_item)
 
-    # Ubah data Sensor Probe jika yang discan adalah sensor
+    # A scanned sensor brings the probe readings online.
     if item.category == "sensor" and plant.probe:
         plant.probe.moisture = 72.0
         plant.probe.nutrients = 68.0
         plant.probe.light = 85.0
         plant.probe.temperature = 24.0
 
-    # Tambahkan event ke timeline
     event_labels = {
-        "sensor": "Sensor dipasang", "seed": "Bibit dikonfirmasi", 
-        "soil": "Media tanam diganti", "fertilizer": "Pupuk ditambahkan", "other": "Konteks diperbarui"
+        "sensor": "Sensor installed", "seed": "Seed confirmed", 
+        "soil": "Growing medium changed", "fertilizer": "Fertiliser applied", "other": "Context updated"
     }
     today = datetime.datetime.now().strftime("%d %b")
     
     new_timeline = TimelineEventDB(
         plant_id=plant_id,
         date=today,
-        event=event_labels.get(item.category, "Item ditambahkan"),
-        note=f"{item.name} ({item.brand or ''}) tersinkron ke AI",
+        event=event_labels.get(item.category, "Item added"),
+        note=f"{item.name} ({item.brand or ''}) synced",
         scan_category=item.category
     )
     db.add(new_timeline)
 
-    # Commit semua perubahan
     db.commit()
     db.refresh(plant)
     
-    # Return plant akan dikonversi menjadi JSON oleh Pydantic (di schema.py)
     return plant
 
-# 1. GET: Ambil daftar seluruh tanaman di kebun
 @app.get("/api/plants", response_model=List[Plant])
 async def get_all_plants(db: Session = Depends(get_db)):
     plants = db.query(PlantDB).all()
     return plants
 
-# 2. POST: Buat tanaman baru (saat scan bibit/sensor baru)
 @app.post("/api/plants", response_model=Plant)
 async def create_plant(plant_req: PlantCreate, db: Session = Depends(get_db)):
-    # Buat objek tanaman baru
     new_plant = PlantDB(
         nickname=plant_req.nickname,
         species=plant_req.species,
@@ -287,20 +281,19 @@ async def create_plant(plant_req: PlantCreate, db: Session = Depends(get_db)):
     db.commit()
     db.refresh(new_plant)
 
-    # Secara otomatis buatkan Probe (Sensor Data) default yang kosong
+    # Every plant starts with a probe so the UI has readings to show.
     default_probe = ProbeDataDB(
         plant_id=new_plant.id,
         moisture=50.0, nutrients=50.0, light=50.0, temperature=24.0
     )
     db.add(default_probe)
 
-    # Tambahkan timeline bahwa ia baru saja dibuat
     today = datetime.datetime.now().strftime("%d %b")
     creation_timeline = TimelineEventDB(
         plant_id=new_plant.id,
         date=today,
-        event="Terdaftar",
-        note="Ditambahkan via Plantatio Scanner"
+        event="Registered",
+        note="Added via the Plantatio scanner"
     )
     db.add(creation_timeline)
     
@@ -309,16 +302,15 @@ async def create_plant(plant_req: PlantCreate, db: Session = Depends(get_db)):
     
     return new_plant
 
-# 3. DELETE: Hapus tanaman
 @app.delete("/api/plants/{plant_id}")
 async def delete_plant(plant_id: int, db: Session = Depends(get_db)):
     plant = db.query(PlantDB).filter(PlantDB.id == plant_id).first()
     if not plant:
-        raise HTTPException(status_code=404, detail="Tanaman tidak ditemukan")
+        raise HTTPException(status_code=404, detail="Plant not found")
     
     db.delete(plant)
     db.commit()
-    return {"message": "Tanaman berhasil dihapus"}
+    return {"message": "Plant deleted"}
 
 # ── Land parcels ──────────────────────────────────────────────────────────────
 
@@ -556,14 +548,14 @@ async def get_devices(db: Session = Depends(get_db)):
 
 @app.post("/api/b2b/devices", response_model=IotNode)
 async def create_device(node: IotNodeCreate, db: Session = Depends(get_db)):
-    # Generate ID acak seperti "NODE-8472"
+    # Node ids look like "NODE-8472".
     new_id = f"NODE-{random.randint(1000, 9999)}"
     
     new_node = IotNodeDB(
         id=new_id,
         zone=node.zone,
-        battery=100, # Perangkat baru baterainya 100%
-        moisture=random.randint(40, 80), # Data awal simulasi
+        battery=100,
+        moisture=random.randint(40, 80),
         status="ok",
         latitude=node.latitude,
         longitude=node.longitude
@@ -588,10 +580,10 @@ async def request_maintenance():
 @app.get("/api/b2b/agents/log", response_model=List[TacticalLog])
 async def get_tactical_logs(db: Session = Depends(get_db)):
     logs = db.query(TacticalLogDB).order_by(TacticalLogDB.id.desc()).limit(10).all()
-    # Jika tabel kosong, kita berikan fallback default agar map berfungsi
+    # Fall back to sample rows so the activity feed is never blank.
     if not logs:
         return [
-            {"id": 1, "time": "10:42", "action": "Auto-adjust irrigation Sektor B", "severity": "info"},
+            {"id": 1, "time": "10:42", "action": "Auto-adjusted irrigation in South Sector B", "severity": "info"},
             {"id": 2, "time": "11:15", "action": "Flagged NODE-2199 battery low", "severity": "warn"},
         ]
     return logs

@@ -260,17 +260,17 @@ def seed_land_parcels(db) -> int:
 
     # (name, zone, lat, lon, size_m, land cover, canopy, biomass, carbon, confidence)
     demo_parcels = [
-        ("Northern Grazing Strip", "Sektor A - Utara", -6.1746, 106.8285, 900,
+        ("Northern Grazing Strip", "North Sector A", -6.1746, 106.8285, 900,
          "Pasture", 0.08, 0.12, 0.05, 0.88),
-        ("Southern Scrub Margin", "Sektor B - Selatan", -6.1792, 106.8198, 750,
+        ("Southern Scrub Margin", "South Sector B", -6.1792, 106.8198, 750,
          "HerbaceousVegetation", 0.18, 0.22, 0.11, 0.81),
-        ("Riverside Buffer", "Sektor B - Selatan", -6.1771, 106.8232, 500,
+        ("Riverside Buffer", "South Sector B", -6.1771, 106.8232, 500,
          "River", 0.05, 0.08, 0.03, 0.74),
-        ("East Field Rotation", "Sektor C - Timur", -6.1733, 106.8321, 1100,
+        ("East Field Rotation", "East Sector C", -6.1733, 106.8321, 1100,
          "AnnualCrop", 0.26, 0.34, 0.18, 0.86),
-        ("Greenhouse Verge", "Greenhouse Utama", -6.1714, 106.8296, 400,
+        ("Greenhouse Verge", "Main Greenhouse", -6.1714, 106.8296, 400,
          "PermanentCrop", 0.42, 0.48, 0.3, 0.79),
-        ("Established Woodlot", "Sektor A - Utara", -6.1709, 106.8258, 850,
+        ("Established Woodlot", "North Sector A", -6.1709, 106.8258, 850,
          "Forest", 0.88, 0.91, 0.76, 0.93),
     ]
 
@@ -323,24 +323,24 @@ def init_seed_data():
             light=80.0, temperature=26.0
         ))
         db.add_all([
-            TimelineEventDB(plant_id=1, date="10 Oct", event="Ditanam", note="Bibit dipindahkan ke pot"),
-            TimelineEventDB(plant_id=1, date="12 Oct", event="Disiram", note="Penyiraman pertama"),
+            TimelineEventDB(plant_id=1, date="10 Oct", event="Planted", note="Seedling moved into its pot"),
+            TimelineEventDB(plant_id=1, date="12 Oct", event="Watered", note="First watering"),
         ])
         db.commit()
 
     # Seed IoT Nodes
     if not db.query(IotNodeDB).first():
         db.add_all([
-            IotNodeDB(id="NODE-1042", zone="Sektor A - Utara",   battery=85, moisture=62, status="ok",       latitude=-6.1754, longitude=106.8272),
-            IotNodeDB(id="NODE-2199", zone="Sektor B - Selatan", battery=12, moisture=28, status="critical", latitude=-6.1780, longitude=106.8210),
-            IotNodeDB(id="NODE-3011", zone="Greenhouse Utama",   battery=45, moisture=50, status="warn",     latitude=-6.1720, longitude=106.8300),
+            IotNodeDB(id="NODE-1042", zone="North Sector A",   battery=85, moisture=62, status="ok",       latitude=-6.1754, longitude=106.8272),
+            IotNodeDB(id="NODE-2199", zone="South Sector B", battery=12, moisture=28, status="critical", latitude=-6.1780, longitude=106.8210),
+            IotNodeDB(id="NODE-3011", zone="Main Greenhouse",   battery=45, moisture=50, status="warn",     latitude=-6.1720, longitude=106.8300),
         ])
         db.commit()
 
     # Seed Tactical Logs
     if not db.query(TacticalLogDB).first():
         db.add_all([
-            TacticalLogDB(time="10:42", action="Auto-adjust irrigation Sektor B",  severity="info"),
+            TacticalLogDB(time="10:42", action="Auto-adjusted irrigation in South Sector B",  severity="info"),
             TacticalLogDB(time="11:15", action="Flagged NODE-2199 battery low",    severity="warn"),
             TacticalLogDB(time="11:30", action="Halted fertigation (High wind risk)", severity="critical"),
         ])

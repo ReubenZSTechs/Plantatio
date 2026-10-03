@@ -111,7 +111,11 @@ def get_settings() -> Settings:
 
     return Settings(
         database_url=_env("DATABASE_URL", f"sqlite:///{REPO_ROOT / 'plantatio.db'}"),
-        cors_origins=_env_list("CORS_ORIGINS", "http://localhost:3000,http://localhost:5173"),
+        cors_origins=_env_list(
+            "CORS_ORIGINS",
+            "http://localhost:3000,http://localhost:5173,http://localhost:8080,"
+            "http://127.0.0.1:3000,http://127.0.0.1:5173,http://127.0.0.1:8080",
+        ),
         neo4j=Neo4jSettings(
             uri=_env("NEO4J_URI"),
             user=_env("NEO4J_USER"),
